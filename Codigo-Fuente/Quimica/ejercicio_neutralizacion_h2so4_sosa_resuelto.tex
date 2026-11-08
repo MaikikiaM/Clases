@@ -1,0 +1,86 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent\textbf{1. Resolución del ejercicio de neutralización (\ce{H2SO4 + NaOH}):}
+
+\vspace{0.2cm}
+\noindent\textbf{Cálculo de masas molares ($M$):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item $M(\ce{H2SO4}) = 2 \cdot 1 + 32 + 4 \cdot 16 = 98\text{ g/mol}$
+    \item $M(\ce{NaOH}) = 23 + 16 + 1 = 40\text{ g/mol}$
+    \item $M(\ce{Na2SO4}) = 2 \cdot 23 + 32 + 4 \cdot 16 = 142\text{ g/mol}$
+    \item $M(\ce{H2O}) = 2 \cdot 1 + 16 = 18\text{ g/mol}$
+\end{itemize}
+
+\vspace{0.2cm}
+\noindent\textbf{a) Ajuste de la ecuación química:}
+\[
+\ce{H2SO4 (aq) + 2 NaOH (aq) -> Na2SO4 (aq) + 2 H2O (l)}
+\]
+
+\vspace{0.1cm}
+\noindent\textbf{b) Determinación del reactivo limitante y reactivo en exceso:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Moles iniciales de cada reactivo:
+    \[
+    n(\ce{H2SO4}) = \frac{49\text{ g}}{98\text{ g/mol}} = 0{,}50\text{ mol de \ce{H2SO4}}
+    \]
+    \[
+    n(\ce{NaOH}) = \frac{32\text{ g}}{40\text{ g/mol}} = 0{,}80\text{ mol de \ce{NaOH}}
+    \]
+    \item Relación estequiométrica: $1\text{ mol de \ce{H2SO4}}$ reacciona con $2\text{ mol de \ce{NaOH}}$.
+    \item Cantidad de \ce{H2SO4} necesaria para consumir todo el \ce{NaOH}:
+    \[
+    n(\ce{H2SO4})_{\text{necesario}} = 0{,}80\text{ mol \ce{NaOH}} \cdot \frac{1\text{ mol \ce{H2SO4}}}{2\text{ mol \ce{NaOH}}} = 0{,}40\text{ mol de \ce{H2SO4}}
+    \]
+    \item Como disponemos de $0{,}50\text{ mol}$ de \ce{H2SO4} ($0{,}50 > 0{,}40$), el \textbf{reactivo limitante} es el hidróxido de sodio (\ce{NaOH}) y el \textbf{reactivo en exceso} es el ácido sulfúrico (\ce{H2SO4}).
+\end{itemize}
+
+\vspace{0.1cm}
+\noindent\textbf{c) Masa de sulfato de sodio (\ce{Na2SO4}) formada:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Calculamos los moles y la masa a partir del reactivo limitante ($0{,}80\text{ mol de \ce{NaOH}}$):
+    \[
+    n(\ce{Na2SO4}) = 0{,}80\text{ mol \ce{NaOH}} \cdot \frac{1\text{ mol \ce{Na2SO4}}}{2\text{ mol \ce{NaOH}}} = 0{,}40\text{ mol de \ce{Na2SO4}}
+    \]
+    \[
+    m(\ce{Na2SO4}) = 0{,}40\text{ mol} \cdot 142\text{ g/mol} = \mathbf{56{,}8\text{ g de \ce{Na2SO4}}}
+    \]
+\end{itemize}
+
+\vspace{0.1cm}
+\noindent\textbf{d) Cantidad y masa del reactivo en exceso sobrante:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Moles de \ce{H2SO4} que reaccionan: $0{,}40\text{ mol}$.
+    \item Moles sobrantes: $n_{\text{sobrante}} = 0{,}50\text{ mol} - 0{,}40\text{ mol} = \mathbf{0{,}10\text{ mol de \ce{H2SO4}}}$.
+    \item Masa sobrante: $m_{\text{sobrante}} = 0{,}10\text{ mol} \cdot 98\text{ g/mol} = \mathbf{9{,}8\text{ g de \ce{H2SO4}}}$.
+\end{itemize}
+
+\vspace{0.1cm}
+\noindent\textbf{e) Masa de agua formada y comprobación de la ley de Lavoisier:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Moles de agua producidos: $0{,}80\text{ mol \ce{NaOH}} \cdot \frac{2\text{ mol \ce{H2O}}}{2\text{ mol \ce{NaOH}}} = 0{,}80\text{ mol de \ce{H2O}}$.
+    \item Masa de agua: $m(\ce{H2O}) = 0{,}80\text{ mol} \cdot 18\text{ g/mol} = \mathbf{14{,}4\text{ g de \ce{H2O}}}$.
+    \item Comprobación de la conservación de la masa:
+    \[
+    m_{\text{inicial}} = 49{,}0\text{ g} + 32{,}0\text{ g} = 81{,}0\text{ g}
+    \]
+    \[
+    m_{\text{final}} = 56{,}8\text{ g (\ce{Na2SO4})} + 14{,}4\text{ g (\ce{H2O})} + 9{,}8\text{ g (\ce{H2SO4} sobrante)} = 81{,}0\text{ g}
+    \]
+    Se cumple la ley de Lavoisier ($m_{\text{inicial}} = m_{\text{final}} = 81{,}0\text{ g}$).
+\end{itemize}
+
+\end{document}

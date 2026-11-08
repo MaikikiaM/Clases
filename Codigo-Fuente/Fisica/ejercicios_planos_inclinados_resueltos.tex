@@ -1,0 +1,165 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, angles, quotes}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\tcbset{
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\begin{document}
+\pagestyle{empty}
+
+% PÁGINA 1: RESOLUCIÓN 1
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 1 (Plano Inclinado con Tracción y Rozamiento)}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato | $m = 10\text{ kg}$, $\alpha = 30^\circ$, $\mu = 0{,}25$, $F = 100\text{ N}$}}
+\end{center}
+
+\vspace{0.2cm}
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=Stealth]
+    % Plano
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$30^\circ$};
+    
+    % Bloque y fuerzas
+    \begin{scope}[shift={(3.5, 2.02)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,1);
+        \node at (0,0.5) {$m$};
+        
+        % Fuerzas en ejes del plano
+        \draw[very thick, red, ->] (0.8,0.5) -- (2.6,0.5) node[above] {$\vec{F}$};
+        \draw[very thick, blue!80!black, ->] (0,1) -- (0,2.5) node[right] {$\vec{N}$};
+        \draw[very thick, orange!90!black, ->] (-0.8,0.5) -- (-2.0,0.5) node[above] {$\vec{F}_r$};
+        \draw[dashed, black!60, ->] (0,0.5) -- (-1.8,0.5) node[below] {$\vec{P}_x$};
+        \draw[dashed, black!60, ->] (0,0.5) -- (0,-1.8) node[left] {$\vec{P}_y$};
+    \end{scope}
+    
+    % Peso real vertical
+    \draw[very thick, black, ->] (3.5, 2.35) -- (3.5, 0.2) node[right] {$\vec{P} = m\vec{g}$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-0.1cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Descomposición del peso ($P = mg = 10 \cdot 9{,}8 = 98\text{ N}$):}
+    \[
+    P_x = P \cdot \sin 30^\circ = 98 \cdot 0{,}5 = \mathbf{49\text{ N}} \qquad P_y = P \cdot \cos 30^\circ = 98 \cdot \frac{\sqrt{3}}{2} = \mathbf{84{,}87\text{ N}}
+    \]
+
+    \item \textbf{Fuerza normal ($N$) y fuerza de rozamiento ($F_r$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Eje Y ($\sum F_y = 0$): $N - P_y = 0 \implies \mathbf{N = P_y = 84{,}87\text{ N}}$.
+        \item Fuerza de rozamiento: $\mathbf{F_r = \mu \cdot N} = 0{,}25 \cdot 84{,}87 = \mathbf{21{,}22\text{ N}}$.
+    \end{itemize}
+
+    \item \textbf{Aceleración del bloque al subir por el plano:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Eje X ($\sum F_x = m \cdot a$):
+        \[
+        F - P_x - F_r = m \cdot a \implies 100 - 49 - 21{,}22 = 10 \cdot a
+        \]
+        \[
+        29{,}78 = 10 \cdot a \implies \mathbf{a = 2{,}98\text{ m/s}^2}
+        \]
+    \end{itemize}
+
+    \item \textbf{Cinemática del movimiento sobre el plano ($L = 10\text{ m}$, $v_0 = 0$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Tiempo: $L = \frac{1}{2}at^2 \implies t = \sqrt{\frac{2L}{a}} = \sqrt{\frac{2 \cdot 10}{2{,}978}} = \mathbf{2{,}59\text{ s}}$.
+        \item Velocidad final: $v = a \cdot t = 2{,}978 \cdot 2{,}592 = \mathbf{7{,}72\text{ m/s}}$.
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% PÁGINA 2: RESOLUCIÓN 2
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 2 (Sistema de Dos Cuerpos Conectados)}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato | $m_1 = 6\text{ kg}$, $m_2 = 8\text{ kg}$, $\alpha = 30^\circ$, $\mu = 0{,}20$}}
+\end{center}
+
+\vspace{0.2cm}
+\begin{center}
+\begin{tikzpicture}[scale=1, >=Stealth]
+    % Cuña
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$30^\circ$};
+    
+    % Polea
+    \draw[thick, fill=gray!40] (6, 3.464) circle (0.35);
+    \fill[black] (6,3.464) circle (0.06);
+    
+    % Bloque 1 y fuerzas
+    \begin{scope}[shift={(3.0, 1.732)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,0.9);
+        \node at (0,0.45) {$m_1$};
+        \draw[very thick, green!60!black, ->] (0.8,0.45) -- (2.2,0.45) node[above] {$\vec{T}$};
+        \draw[very thick, blue!80!black, ->] (0,0.9) -- (0,2.1) node[right] {$\vec{N}_1$};
+        \draw[very thick, orange!90!black, ->] (-0.8,0.45) -- (-1.8,0.45) node[above] {$\vec{F}_{r1}$};
+        \draw[dashed, black!60, ->] (0,0.45) -- (-1.4,0.45) node[below] {$\vec{P}_{1x}$};
+        \draw[dashed, black!60, ->] (0,0.45) -- (0,-1.4) node[left] {$\vec{P}_{1y}$};
+    \end{scope}
+    \draw[thick] (3.5, 2.45) -- (6, 3.8);
+    \draw[thick] (6.35, 3.464) -- (6.35, 1.6);
+    
+    % Bloque 2 y fuerzas
+    \draw[thick, fill=orange!20] (5.85, 0.7) rectangle (6.85, 1.6);
+    \node at (6.35, 1.15) {$m_2$};
+    \draw[very thick, green!60!black, ->] (6.35, 1.6) -- (6.35, 2.7) node[right] {$\vec{T}$};
+    \draw[very thick, black, ->] (6.35, 0.7) -- (6.35, -0.6) node[right] {$\vec{P}_2 = m_2\vec{g}$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-0.1cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Cálculo de componentes de las fuerzas:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item $P_1 = m_1 g = 6 \cdot 9{,}8 = 58{,}8\text{ N} \implies P_{1x} = 58{,}8 \sin 30^\circ = \mathbf{29{,}4\text{ N}}, \quad P_{1y} = 58{,}8 \cos 30^\circ = \mathbf{50{,}92\text{ N}}$.
+        \item $N_1 = P_{1y} = 50{,}92\text{ N} \implies F_{r1} = \mu \cdot N_1 = 0{,}20 \cdot 50{,}92 = \mathbf{10{,}18\text{ N}}$.
+        \item $P_2 = m_2 g = 8 \cdot 9{,}8 = \mathbf{78{,}4\text{ N}}$.
+    \end{itemize}
+
+    \item \textbf{Determinación del sentido del movimiento:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Fuerza motriz a favor de que $m_2$ baje: $P_2 = 78{,}4\text{ N}$.
+        \item Fuerzas resistentes que se oponen: $P_{1x} + F_{r1} = 29{,}4 + 10{,}18 = 39{,}58\text{ N}$.
+        \item Como $\mathbf{78{,}4\text{ N} > 39{,}58\text{ N}}$, el sistema \textbf{acelera con $m_2$ descendiendo y $m_1$ subiendo por la rampa}.
+    \end{itemize}
+
+    \item \textbf{Ecuaciones de Newton y cálculo de la aceleración ($a$):}
+    \[
+    \begin{cases}
+    \text{Cuerpo 1 (sube):} & T - P_{1x} - F_{r1} = m_1 \cdot a \implies T - 39{,}58 = 6a \\
+    \text{Cuerpo 2 (baja):} & P_2 - T = m_2 \cdot a \implies 78{,}4 - T = 8a
+    \end{cases}
+    \]
+    Sumando ambas ecuaciones (se anula la tensión $T$):
+    \[
+    78{,}4 - 39{,}58 = (6 + 8) \cdot a \implies 38{,}82 = 14 \cdot a \implies \mathbf{a = 2{,}77\text{ m/s}^2}
+    \]
+
+    \item \textbf{Cálculo de la tensión de la cuerda ($T$):}
+    Despejando de la ecuación del cuerpo 2:
+    \[
+    T = P_2 - m_2 \cdot a = 78{,}4 - 8(2{,}773) = 78{,}4 - 22{,}18 = \mathbf{56{,}22\text{ N}}
+    \]
+\end{enumerate}
+
+\end{document}

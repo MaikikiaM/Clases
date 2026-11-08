@@ -1,0 +1,476 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, angles, quotes}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\tcbset{
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\begin{document}
+\pagestyle{empty}
+
+% =========================================================================
+% PÁGINA 1: MATEMÁTICAS - RESOLUCIÓN 1 (MODELO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 1 (Recta Tangente y Normal — Modelo)}}\\[4pt]
+    {\large \textbf{Función: $f(x) = x^3 - 4x^2 + x + 6$ en $x_0 = 3$}}
+\end{center}
+
+\vspace{0.3cm}
+\begin{tcolorbox}
+\textbf{Fórmulas aplicadas:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Punto de tangencia: $P(x_0, y_0) = (x_0, f(x_0))$.
+    \item Pendiente tangente: $m = f'(x_0) \implies \text{Recta tangente: } y - y_0 = f'(x_0)(x - x_0)$.
+    \item Pendiente normal: $m_{\text{norm}} = -\frac{1}{f'(x_0)} \implies \text{Recta normal: } y - y_0 = -\frac{1}{f'(x_0)}(x - x_0)$.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item \textbf{Ecuación de la recta tangente en $x_0 = 3$:}
+    \begin{enumerate}[label=\arabic*., leftmargin=1.5em, itemsep=2pt]
+        \item \textbf{Ordenada del punto:}
+        \[
+        y_0 = f(3) = 3^3 - 4(3^2) + 3 + 6 = 27 - 36 + 3 + 6 = \mathbf{0} \implies P(3, 0)
+        \]
+        \item \textbf{Derivada general:}
+        \[
+        f'(x) = 3x^2 - 8x + 1
+        \]
+        \item \textbf{Pendiente en el punto ($x = 3$):}
+        \[
+        m = f'(3) = 3(3^2) - 8(3) + 1 = 27 - 24 + 1 = \mathbf{4}
+        \]
+        \item \textbf{Ecuación de la recta tangente:}
+        \[
+        y - 0 = 4(x - 3) \implies \mathbf{y = 4x - 12}
+        \]
+    \end{enumerate}
+
+    \item \textbf{Ecuación de la recta normal en $x_0 = 3$:}
+    \begin{enumerate}[label=\arabic*., leftmargin=1.5em, itemsep=2pt]
+        \item \textbf{Pendiente de la recta normal:}
+        \[
+        m_{\text{normal}} = -\frac{1}{m} = -\frac{1}{4}
+        \]
+        \item \textbf{Ecuación de la recta normal:}
+        \[
+        y - 0 = -\frac{1}{4}(x - 3) \implies \mathbf{y = -\frac{1}{4}x + \frac{3}{4}} \quad (\text{o en forma general: } x + 4y - 3 = 0)
+        \]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 2: MATEMÁTICAS - RESOLUCIÓN 2 (PRÁCTICA ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 2 (Recta Tangente y Normal — Práctica)}}\\[4pt]
+    {\large \textbf{Función: $g(x) = x^3 - 2x^2 - x + 2$ en $x_0 = 2$}}
+\end{center}
+
+\vspace{0.3cm}
+\begin{tcolorbox}
+\textbf{Fórmulas aplicadas:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Punto de tangencia: $P(x_0, y_0) = (x_0, g(x_0))$.
+    \item Pendiente tangente: $m = g'(x_0) \implies \text{Recta tangente: } y - y_0 = g'(x_0)(x - x_0)$.
+    \item Pendiente normal: $m_{\text{norm}} = -\frac{1}{g'(x_0)} \implies \text{Recta normal: } y - y_0 = -\frac{1}{g'(x_0)}(x - x_0)$.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item \textbf{Ecuación de la recta tangente en $x_0 = 2$:}
+    \begin{enumerate}[label=\arabic*., leftmargin=1.5em, itemsep=2pt]
+        \item \textbf{Ordenada del punto:}
+        \[
+        y_0 = g(2) = 2^3 - 2(2^2) - 2 + 2 = 8 - 8 - 2 + 2 = \mathbf{0} \implies P(2, 0)
+        \]
+        \item \textbf{Derivada general:}
+        \[
+        g'(x) = 3x^2 - 4x - 1
+        \]
+        \item \textbf{Pendiente en el punto ($x = 2$):}
+        \[
+        m = g'(2) = 3(2^2) - 4(2) - 1 = 12 - 8 - 1 = \mathbf{3}
+        \]
+        \item \textbf{Ecuación de la recta tangente:}
+        \[
+        y - 0 = 3(x - 2) \implies \mathbf{y = 3x - 6}
+        \]
+    \end{enumerate}
+
+    \item \textbf{Ecuación de la recta normal en $x_0 = 2$:}
+    \begin{enumerate}[label=\arabic*., leftmargin=1.5em, itemsep=2pt]
+        \item \textbf{Pendiente de la recta normal:}
+        \[
+        m_{\text{normal}} = -\frac{1}{m} = -\frac{1}{3}
+        \]
+        \item \textbf{Ecuación de la recta normal:}
+        \[
+        y - 0 = -\frac{1}{3}(x - 2) \implies \mathbf{y = -\frac{1}{3}x + \frac{2}{3}} \quad (\text{o en forma general: } x + 3y - 2 = 0)
+        \]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 3: MATEMÁTICAS - RESOLUCIÓN 3 (MODELO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 3 (Optimización: Huerto y Río — Modelo)}}\\[4pt]
+    {\large \textbf{Maximización de área con $120\text{ m}$ de valla disponible}}
+\end{center}
+
+\vspace{0.4cm}
+\noindent\textbf{Planteamiento geométrico y ligadura:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Sean $x$ los dos lados perpendiculares a la orilla del río e $y$ el lado paralelo al río.
+    \item \textbf{Ecuación de ligadura (longitud de valla):}
+    \[
+    2x + y = 120 \implies \mathbf{y = 120 - 2x}
+    \]
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item \textbf{Función área $A(x)$ y dominio:}
+    \[
+    A(x) = \text{base} \times \text{altura} = y \cdot x = (120 - 2x)x = \mathbf{120x - 2x^2} \quad (\text{con } 0 < x < 60)
+    \]
+
+    \item \textbf{Cálculo de las dimensiones óptimas:}
+    \begin{enumerate}[label=\arabic*., leftmargin=1.5em, itemsep=2pt]
+        \item Derivamos la función área e igualamos a cero:
+        \[
+        A'(x) = 120 - 4x = 0 \implies 4x = 120 \implies \mathbf{x = 30\text{ m}}
+        \]
+        \item Calculamos la otra dimensión $y$:
+        \[
+        y = 120 - 2(30) = 120 - 60 = \mathbf{60\text{ m}}
+        \]
+        \item \textbf{Dimensiones óptimas:} \textbf{$30\text{ m}$ de fondo} y \textbf{$60\text{ m}$ de frente al río}.
+    \end{enumerate}
+
+    \item \textbf{Área máxima y justificación con la 2.ª derivada:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item \textbf{Área máxima cercada:}
+        \[
+        A_{\text{máx}} = A(30) = 30\text{ m} \times 60\text{ m} = \mathbf{1800\text{ m}^2}
+        \]
+        \item \textbf{Comprobación de máximo:}
+        \[
+        A''(x) = -4 \implies A''(30) = -4 < 0 \implies \text{\textbf{Máximo absoluto}}.
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 4: MATEMÁTICAS - RESOLUCIÓN 4 (PRÁCTICA ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 4 (Optimización: Corral y Muro — Práctica)}}\\[4pt]
+    {\large \textbf{Maximización de área con $180\text{ m}$ de valla disponible}}
+\end{center}
+
+\vspace{0.4cm}
+\noindent\textbf{Planteamiento geométrico y ligadura:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Sean $x$ los dos lados perpendiculares a la pared del establo e $y$ el lado paralelo a la pared.
+    \item \textbf{Ecuación de ligadura (longitud de valla):}
+    \[
+    2x + y = 180 \implies \mathbf{y = 180 - 2x}
+    \]
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item \textbf{Función área $A(x)$ y dominio:}
+    \[
+    A(x) = \text{base} \times \text{altura} = y \cdot x = (180 - 2x)x = \mathbf{180x - 2x^2} \quad (\text{con } 0 < x < 90)
+    \]
+
+    \item \textbf{Cálculo de las dimensiones óptimas:}
+    \begin{enumerate}[label=\arabic*., leftmargin=1.5em, itemsep=2pt]
+        \item Derivamos la función área e igualamos a cero:
+        \[
+        A'(x) = 180 - 4x = 0 \implies 4x = 180 \implies \mathbf{x = 45\text{ m}}
+        \]
+        \item Calculamos la otra dimensión $y$:
+        \[
+        y = 180 - 2(45) = 180 - 90 = \mathbf{90\text{ m}}
+        \]
+        \item \textbf{Dimensiones óptimas:} \textbf{$45\text{ m}$ de fondo} y \textbf{$90\text{ m}$ de frente a la pared}.
+    \end{enumerate}
+
+    \item \textbf{Área máxima y justificación con la 2.ª derivada:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item \textbf{Área máxima cercada:}
+        \[
+        A_{\text{máx}} = A(45) = 45\text{ m} \times 90\text{ m} = \mathbf{4050\text{ m}^2}
+        \]
+        \item \textbf{Comprobación de máximo:}
+        \[
+        A''(x) = -4 \implies A''(45) = -4 < 0 \implies \text{\textbf{Máximo absoluto}}.
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 5: FÍSICA - RESOLUCIÓN 5 (MODELO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 5 (Plano Inclinado con Rozamiento — Modelo)}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato | $m = 10\text{ kg}$, $\alpha = 30^\circ$, $\mu = 0{,}25$, $F = 100\text{ N}$}}
+\end{center}
+
+\vspace{0.1cm}
+\begin{center}
+\begin{tikzpicture}[scale=1.05, >=Stealth]
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$30^\circ$};
+    
+    \begin{scope}[shift={(3.5, 2.02)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,1);
+        \node at (0,0.5) {$m$};
+        
+        \draw[very thick, red, ->] (0.8,0.5) -- (2.6,0.5) node[above] {$\vec{F}$};
+        \draw[very thick, blue!80!black, ->] (0,1) -- (0,2.5) node[right] {$\vec{N}$};
+        \draw[very thick, orange!90!black, ->] (-0.8,0.5) -- (-2.0,0.5) node[above] {$\vec{F}_r$};
+        \draw[dashed, black!60, ->] (0,0.5) -- (-1.8,0.5) node[below] {$\vec{P}_x$};
+        \draw[dashed, black!60, ->] (0,0.5) -- (0,-1.8) node[left] {$\vec{P}_y$};
+    \end{scope}
+    \draw[very thick, black, ->] (3.5, 2.35) -- (3.5, 0.2) node[right] {$\vec{P} = m\vec{g}$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-0.1cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=4pt]
+    \item \textbf{Descomposición del peso ($P = mg = 10 \cdot 9{,}8 = 98\text{ N}$):}
+    \[
+    P_x = P \cdot \sin 30^\circ = 98 \cdot 0{,}5 = \mathbf{49\text{ N}} \qquad P_y = P \cdot \cos 30^\circ = 98 \cdot \frac{\sqrt{3}}{2} = \mathbf{84{,}87\text{ N}}
+    \]
+
+    \item \textbf{Fuerza normal ($N$) y fuerza de rozamiento ($F_r$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Eje Y ($\sum F_y = 0$): $N - P_y = 0 \implies \mathbf{N = P_y = 84{,}87\text{ N}}$.
+        \item Fuerza de rozamiento: $\mathbf{F_r = \mu \cdot N} = 0{,}25 \cdot 84{,}87 = \mathbf{21{,}22\text{ N}}$.
+    \end{itemize}
+
+    \item \textbf{Aceleración del bloque al subir por el plano:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Eje X ($\sum F_x = m \cdot a$):
+        \[
+        F - P_x - F_r = m \cdot a \implies 100 - 49 - 21{,}22 = 10 \cdot a \implies \mathbf{a = 2{,}98\text{ m/s}^2}
+        \]
+    \end{itemize}
+
+    \item \textbf{Cinemática del movimiento sobre el plano ($L = 10\text{ m}$, $v_0 = 0$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Tiempo: $L = \frac{1}{2}at^2 \implies t = \sqrt{\frac{2L}{a}} = \sqrt{\frac{2 \cdot 10}{2{,}978}} = \mathbf{2{,}59\text{ s}}$.
+        \item Velocidad final: $v = a \cdot t = 2{,}978 \cdot 2{,}592 = \mathbf{7{,}72\text{ m/s}}$.
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 6: FÍSICA - RESOLUCIÓN 6 (PRÁCTICA ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 6 (Plano Inclinado con Rozamiento — Práctica)}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato | $m = 8\text{ kg}$, $\alpha = 30^\circ$, $\mu = 0{,}20$, $F = 80\text{ N}$}}
+\end{center}
+
+\vspace{0.1cm}
+\begin{center}
+\begin{tikzpicture}[scale=1.05, >=Stealth]
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$30^\circ$};
+    
+    \begin{scope}[shift={(3.5, 2.02)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,1);
+        \node at (0,0.5) {$m$};
+        
+        \draw[very thick, red, ->] (0.8,0.5) -- (2.6,0.5) node[above] {$\vec{F}$};
+        \draw[very thick, blue!80!black, ->] (0,1) -- (0,2.5) node[right] {$\vec{N}$};
+        \draw[very thick, orange!90!black, ->] (-0.8,0.5) -- (-2.0,0.5) node[above] {$\vec{F}_r$};
+        \draw[dashed, black!60, ->] (0,0.5) -- (-1.8,0.5) node[below] {$\vec{P}_x$};
+        \draw[dashed, black!60, ->] (0,0.5) -- (0,-1.8) node[left] {$\vec{P}_y$};
+    \end{scope}
+    \draw[very thick, black, ->] (3.5, 2.35) -- (3.5, 0.2) node[right] {$\vec{P} = m\vec{g}$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-0.1cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=4pt]
+    \item \textbf{Descomposición del peso ($P = mg = 8 \cdot 9{,}8 = 78{,}4\text{ N}$):}
+    \[
+    P_x = P \cdot \sin 30^\circ = 78{,}4 \cdot 0{,}5 = \mathbf{39{,}2\text{ N}} \qquad P_y = P \cdot \cos 30^\circ = 78{,}4 \cdot \frac{\sqrt{3}}{2} = \mathbf{67{,}90\text{ N}}
+    \]
+
+    \item \textbf{Fuerza normal ($N$) y fuerza de rozamiento ($F_r$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Eje Y ($\sum F_y = 0$): $N - P_y = 0 \implies \mathbf{N = P_y = 67{,}90\text{ N}}$.
+        \item Fuerza de rozamiento: $\mathbf{F_r = \mu \cdot N} = 0{,}20 \cdot 67{,}90 = \mathbf{13{,}58\text{ N}}$.
+    \end{itemize}
+
+    \item \textbf{Aceleración del bloque al subir por el plano:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Eje X ($\sum F_x = m \cdot a$):
+        \[
+        F - P_x - F_r = m \cdot a \implies 80 - 39{,}2 - 13{,}58 = 8 \cdot a
+        \]
+        \[
+        27{,}22 = 8 \cdot a \implies \mathbf{a = 3{,}40\text{ m/s}^2}
+        \]
+    \end{itemize}
+
+    \item \textbf{Cinemática del movimiento sobre el plano ($L = 10\text{ m}$, $v_0 = 0$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Tiempo: $L = \frac{1}{2}at^2 \implies t = \sqrt{\frac{2L}{a}} = \sqrt{\frac{2 \cdot 10}{3{,}4025}} = \mathbf{2{,}42\text{ s}}$.
+        \item Velocidad final: $v = a \cdot t = 3{,}4025 \cdot 2{,}424 = \mathbf{8{,}25\text{ m/s}}$.
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 7: QUÍMICA - RESOLUCIÓN 7 (MODELO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 7 (Combustión de Propano — Modelo)}}\\[4pt]
+    {\large \textbf{Química 1.º de Bachillerato}}
+\end{center}
+
+\vspace{0.3cm}
+\noindent\textbf{Cálculo de masas molares ($M$):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item $M(\ce{C3H8}) = 3(12) + 8(1) = 44\text{ g/mol} \qquad M(\ce{CO2}) = 12 + 2(16) = 44\text{ g/mol}$
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item \textbf{Ajuste de la reacción química:}
+    \[
+    \ce{C3H8 (g) + 5 O2 (g) -> 3 CO2 (g) + 4 H2O (l)}
+    \]
+
+    \item \textbf{Moles y masa teórica máxima de \ce{CO2} ($100\%$ de rendimiento):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Moles de reactivo inicial (\ce{C3H8}):
+        \[
+        n(\ce{C3H8}) = \frac{88\text{ g}}{44\text{ g/mol}} = 2{,}00\text{ mol de \ce{C3H8}}
+        \]
+        \item Relación estequiométrica ($1\text{ mol \ce{C3H8}} : 3\text{ mol \ce{CO2}}$):
+        \[
+        n_{\text{teórico}}(\ce{CO2}) = 2{,}00\text{ mol \ce{C3H8}} \times \frac{3\text{ mol \ce{CO2}}}{1\text{ mol \ce{C3H8}}} = \mathbf{6{,}00\text{ mol de \ce{CO2}}}
+        \]
+        \item Masa teórica de \ce{CO2}:
+        \[
+        m_{\text{teórica}}(\ce{CO2}) = 6{,}00\text{ mol} \times 44\text{ g/mol} = \mathbf{264\text{ g de \ce{CO2}}}
+        \]
+    \end{itemize}
+
+    \item \textbf{Masa real de \ce{CO2} emitida con un rendimiento del $85\%$:}
+    \[
+    m_{\text{real}}(\ce{CO2}) = m_{\text{teórica}} \times 0{,}85 = 264\text{ g} \times 0{,}85 = \mathbf{224{,}4\text{ g de \ce{CO2}}}
+    \]
+
+    \item \textbf{Volumen real de \ce{CO2} en Condiciones Normales ($\text{C.N.}$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Moles reales de \ce{CO2} producidos al $85\%$:
+        \[
+        n_{\text{real}}(\ce{CO2}) = 6{,}00\text{ mol} \times 0{,}85 = 5{,}10\text{ mol de \ce{CO2}}
+        \]
+        \item Volumen en C.N. ($V_{\text{molar}} = 22{,}4\text{ L/mol}$):
+        \[
+        V_{\text{real}}(\ce{CO2}) = 5{,}10\text{ mol} \times 22{,}4\text{ L/mol} = \mathbf{114{,}24\text{ L de \ce{CO2}}}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 8: QUÍMICA - RESOLUCIÓN 8 (PRÁCTICA ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicio 8 (Combustión de Pentano — Práctica)}}\\[4pt]
+    {\large \textbf{Química 1.º de Bachillerato}}
+\end{center}
+
+\vspace{0.3cm}
+\noindent\textbf{Cálculo de masas molares ($M$):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item $M(\ce{C5H12}) = 5(12) + 12(1) = 72\text{ g/mol} \qquad M(\ce{CO2}) = 12 + 2(16) = 44\text{ g/mol}$
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item \textbf{Ajuste de la ecuación química:}
+    \[
+    \ce{C5H12 (g) + 8 O2 (g) -> 5 CO2 (g) + 6 H2O (l)}
+    \]
+
+    \item \textbf{Moles y masa teórica máxima de dióxido de carbono (\ce{CO2}) al $100\%$:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Moles iniciales de pentano:
+        \[
+        n(\ce{C5H12}) = \frac{144\text{ g}}{72\text{ g/mol}} = 2{,}00\text{ mol de \ce{C5H12}}
+        \]
+        \item Moles teóricos de \ce{CO2} ($1\text{ mol \ce{C5H12}} : 5\text{ mol \ce{CO2}}$):
+        \[
+        n_{\text{teórico}}(\ce{CO2}) = 2{,}00\text{ mol \ce{C5H12}} \times \frac{5\text{ mol \ce{CO2}}}{1\text{ mol \ce{C5H12}}} = \mathbf{10{,}00\text{ mol de \ce{CO2}}}
+        \]
+        \item Masa teórica de \ce{CO2}:
+        \[
+        m_{\text{teórica}}(\ce{CO2}) = 10{,}00\text{ mol} \times 44\text{ g/mol} = \mathbf{440\text{ g de \ce{CO2}}}
+        \]
+    \end{itemize}
+
+    \item \textbf{Masa real de dióxido de carbono (\ce{CO2}) con rendimiento del $75\%$:}
+    \[
+    m_{\text{real}}(\ce{CO2}) = m_{\text{teórica}} \times 0{,}75 = 440\text{ g} \times 0{,}75 = \mathbf{330\text{ g de \ce{CO2}}}
+    \]
+
+    \item \textbf{Volumen real de \ce{CO2} en Condiciones Normales ($\text{C.N.}$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Moles reales de \ce{CO2} producidos al $75\%$:
+        \[
+        n_{\text{real}}(\ce{CO2}) = 10{,}00\text{ mol} \times 0{,}75 = 7{,}50\text{ mol de \ce{CO2}}
+        \]
+        \item Volumen en C.N. ($V_{\text{molar}} = 22{,}4\text{ L/mol}$):
+        \[
+        V_{\text{real}}(\ce{CO2}) = 7{,}50\text{ mol} \times 22{,}4\text{ L/mol} = \mathbf{168{,}00\text{ L de \ce{CO2}}}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

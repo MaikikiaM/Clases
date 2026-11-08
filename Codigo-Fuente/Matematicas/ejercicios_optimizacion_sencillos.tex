@@ -1,0 +1,38 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    {\LARGE \textbf{Problemas de Optimización con Derivadas}}\\[4pt]
+    {\large \textbf{Matemáticas 1.º de Bachillerato}}
+\end{center}
+
+\vspace{0.4cm}
+\noindent\textbf{1. (Cercado de máxima superficie):} Un agricultor dispone de $120\text{ metros}$ de valla metálica para delimitar un huerto rectangular. Uno de los lados del terreno limita con la orilla recta de un río, por lo que ese lado no necesita valla.
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item Expresa el área del huerto como una función de la longitud de uno de sus lados perpendiculares al río ($x$).
+    \item Determina las dimensiones ($x$ e $y$) que debe tener el rectángulo para que la superficie cercada sea máxima.
+    \item Calcula el valor de dicha área máxima y justifica, mediante el criterio de la segunda derivada, que se trata efectivamente de un máximo.
+\end{enumerate}
+
+\vspace{0.7cm}
+\noindent\textbf{2. (Caja de volumen máximo):} Se desea construir una caja abierta (sin tapa superior) a partir de una lámina cuadrada de cartón de $30\text{ cm} \times 30\text{ cm}$, recortando cuatro cuadrados iguales de lado $x$ en cada una de sus esquinas y doblando los bordes hacia arriba.
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item Escribe la función del volumen de la caja, $V(x)$, en función de la longitud $x$ del corte de las esquinas, indicando su dominio geométrico.
+    \item Halla la longitud $x$ que debe cortarse para que el volumen de la caja resultante sea máximo.
+    \item Calcula el volumen máximo de la caja en $\text{cm}^3$ y en litros ($\text{L}$), comprobando con la segunda derivada que se trata de un máximo.
+\end{enumerate}
+
+\end{document}

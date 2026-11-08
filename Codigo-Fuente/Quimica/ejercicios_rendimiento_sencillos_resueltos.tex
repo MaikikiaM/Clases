@@ -1,0 +1,97 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicios de Rendimiento de Reacciones}}\\[4pt]
+    {\large \textbf{Física y Química 4.º ESO / 1.º Bachillerato}}
+\end{center}
+
+\vspace{0.3cm}
+\noindent\textbf{Concepto clave de rendimiento porcentual:}
+\[
+\text{Rendimiento (\%)} = \frac{\text{Cantidad real obtenida (experimental)}}{\text{Cantidad teórica calculada por estequiometría}} \times 100
+\]
+
+\vspace{0.3cm}
+\noindent\textbf{1. Resolución del ejercicio de descomposición de \ce{KClO3}:}
+\[
+\ce{2 KClO3 (s) -> 2 KCl (s) + 3 O2 (g)}
+\]
+
+\noindent\textbf{Cálculo de masas molares ($M$):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item $M(\ce{KClO3}) = 39 + 35{,}5 + 3(16) = 122{,}5\text{ g/mol}$
+    \item $M(\ce{O2}) = 2(16) = 32\text{ g/mol}$
+\end{itemize}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=5pt]
+    \item \textbf{Moles y masa teórica máxima de \ce{O2} ($100\%$ de rendimiento):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item Moles de reactivo que reaccionan:
+        \[
+        n(\ce{KClO3}) = \frac{122{,}5\text{ g}}{122{,}5\text{ g/mol}} = 1{,}00\text{ mol de \ce{KClO3}}
+        \]
+        \item Según la estequiometría ($2\text{ mol \ce{KClO3}} : 3\text{ mol \ce{O2}}$):
+        \[
+        n_{\text{teórico}}(\ce{O2}) = 1{,}00\text{ mol \ce{KClO3}} \times \frac{3\text{ mol \ce{O2}}}{2\text{ mol \ce{KClO3}}} = \mathbf{1{,}50\text{ mol de \ce{O2}}}
+        \]
+        \item Masa teórica máxima producida:
+        \[
+        m_{\text{teórica}}(\ce{O2}) = 1{,}50\text{ mol} \times 32\text{ g/mol} = \mathbf{48{,}0\text{ g de \ce{O2}}}
+        \]
+    \end{itemize}
+
+    \item \textbf{Porcentaje de rendimiento del proceso:}
+    \[
+    \text{Rendimiento} = \frac{m_{\text{real}}}{m_{\text{teórica}}} \times 100 = \frac{38{,}4\text{ g}}{48{,}0\text{ g}} \times 100 = \mathbf{80\%}
+    \]
+\end{enumerate}
+
+\vspace{0.4cm}
+\noindent\textbf{2. Resolución del ejercicio de reacción de \ce{Zn} con \ce{HCl} (Rendimiento = 75\%):}
+\[
+\ce{Zn (s) + 2 HCl (aq) -> ZnCl2 (aq) + H2 (g)}
+\]
+
+\noindent\textbf{Cálculo de masas molares ($M$):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item $M(\ce{Zn}) = 65{,}4\text{ g/mol} \qquad M(\ce{ZnCl2}) = 65{,}4 + 2(35{,}5) = 136{,}4\text{ g/mol}$
+    \item Moles de zinc iniciales: $n(\ce{Zn}) = \frac{65{,}4\text{ g}}{65{,}4\text{ g/mol}} = 1{,}00\text{ mol de \ce{Zn}}$.
+\end{itemize}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=5pt]
+    \item \textbf{Masa teórica de cloruro de zinc (\ce{ZnCl2}) al $100\%$:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item Relación estequiométrica $1:1 \implies n_{\text{teórico}}(\ce{ZnCl2}) = 1{,}00\text{ mol de \ce{ZnCl2}}$.
+        \item Masa teórica: $m_{\text{teórica}}(\ce{ZnCl2}) = 1{,}00\text{ mol} \times 136{,}4\text{ g/mol} = \mathbf{136{,}4\text{ g de \ce{ZnCl2}}}$.
+    \end{itemize}
+
+    \item \textbf{Masa real de \ce{ZnCl2} obtenida (Rendimiento = $75\%$):}
+    \[
+    m_{\text{real}}(\ce{ZnCl2}) = m_{\text{teórica}} \times 0{,}75 = 136{,}4\text{ g} \times 0{,}75 = \mathbf{102{,}3\text{ g de \ce{ZnCl2}}}
+    \]
+
+    \item \textbf{Volumen real de \ce{H2} en Condiciones Normales ($\text{C.N.}$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item Moles teóricos de \ce{H2} ($1:1$): $n_{\text{teórico}}(\ce{H2}) = 1{,}00\text{ mol de \ce{H2}}$.
+        \item Moles reales producidos al $75\%$: $n_{\text{real}}(\ce{H2}) = 1{,}00\text{ mol} \times 0{,}75 = 0{,}75\text{ mol de \ce{H2}}$.
+        \item Volumen real en C.N. ($V_{\text{molar}} = 22{,}4\text{ L/mol}$):
+        \[
+        V_{\text{real}}(\ce{H2}) = 0{,}75\text{ mol} \times 22{,}4\text{ L/mol} = \mathbf{16{,}8\text{ L de \ce{H2}}}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

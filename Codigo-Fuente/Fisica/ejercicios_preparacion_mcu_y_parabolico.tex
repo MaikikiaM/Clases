@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\tcbset{
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    {\LARGE \textbf{Ficha de Trabajo: Cinemática Vectorial, MCU y Tiro Parabólico}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato | Preparación para Cinemática Vectorial y Curvatura}}
+\end{center}
+
+\vspace{0.3cm}
+\begin{tcolorbox}
+\textbf{Formulario de apoyo intrínseco y vectorial:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Velocidad y aceleración vectoriales: $\vec{v}(t) = \frac{d\vec{r}}{dt}$, \quad $\vec{a}(t) = \frac{d\vec{v}}{dt}$.
+    \item Aceleración tangencial: $a_t = \frac{\vec{v} \cdot \vec{a}}{|\vec{v}|} = \frac{dv}{dt}$. \quad Mide la variación del módulo de la velocidad.
+    \item Aceleración normal / centrípeta: $a_n = \sqrt{a^2 - a_t^2} = \frac{|\vec{v} \times \vec{a}|}{|\vec{v}|} = \frac{v^2}{\rho}$. \quad Mide el cambio de dirección.
+    \item Radio de curvatura: $\rho = \frac{v^2}{a_n}$. \quad En un MCU: $\rho = R \implies a_n = \frac{v^2}{R} = \omega^2 R$.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.4cm}
+\noindent\textbf{Bloque 1: Movimiento Circular Uniforme y Componentes de la Aceleración}
+
+\vspace{0.2cm}
+\noindent\textbf{1.} Un móvil describe un Movimiento Circular Uniforme (MCU) en una pista de radio $R = 50\text{ m}$ con una velocidad angular constante $\omega = 4\text{ rad/s}$.
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item Calcula el período ($T$) y la frecuencia ($f$) del movimiento.
+    \item Determina el módulo de la velocidad lineal ($v$) del móvil.
+    \item Calcula la aceleración normal o centrípeta ($a_n$).
+    \item Sabiendo que en MCU la aceleración tangencial es $a_t = 0$, justifica que el radio de curvatura en cualquier punto coincide con el radio de la circunferencia ($\rho = R$).
+\end{enumerate}
+
+\vspace{0.5cm}
+\noindent\textbf{2.} Un vehículo circula por una curva de radio $R = 80\text{ m}$. En un instante determinado, su rapidez es $v = 20\text{ m/s}$ y el conductor pisa el acelerador, produciendo una aceleración tangencial constante $a_t = 3\text{ m/s}^2$.
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item Calcula la aceleración normal ($a_n$) en ese instante.
+    \item Determina el módulo de la aceleración total ($\vec{a} = \vec{a}_t + \vec{a}_n$).
+    \item Calcula el radio de curvatura ($\rho$) a partir de $v$ y $a_n$ y explica por qué coincide con el radio de la curva.
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{Bloque 2: Tiro Parabólico, Cinemática Vectorial y Radio de Curvatura}
+
+\vspace{0.4cm}
+\noindent\textbf{3.} Desde lo alto de un acantilado vertical de $y_0 = 45\text{ m}$ de altura sobre el nivel del mar, se lanza horizontalmente un proyectil con una velocidad inicial de $v_0 = 30\text{ m/s}$ ($g = 9{,}8\text{ m/s}^2$).
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item Escribe las ecuaciones vectoriales de posición $\vec{r}(t) = x(t)\,\vec{i} + y(t)\,\vec{j}$ y de velocidad $\vec{v}(t)$.
+    \item Obtén la ecuación de la trayectoria $y(x)$ eliminando el tiempo $t$. ¿Qué forma geométrica tiene?
+    \item Calcula el tiempo que tarda el proyectil en impactar contra el agua ($y = 0$) y el alcance horizontal máximo ($x_{\text{máx}}$).
+    \item Halla el vector velocidad $\vec{v}$ y su rapidez al tocar el agua.
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textbf{4.} Una partícula describe un tiro parabólico cuya ecuación vectorial de posición en el Sistema Internacional viene dada por:
+\[
+\vec{r}(t) = (20t)\,\vec{i} + (15t - 5t^2)\,\vec{j}\text{ (m)}
+\]
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item Obtén las expresiones vectoriales de la velocidad $\vec{v}(t)$ y de la aceleración $\vec{a}(t)$ mediante derivación respecto al tiempo.
+    \item Deduce la ecuación cartesiana de la trayectoria $y(x)$ y determina la altura máxima alcanzada (instante en que $v_y = 0$).
+    \item En el punto más alto de la trayectoria ($t = 1{,}5\text{ s}$), calcula la velocidad $v$, la aceleración tangencial $a_t$, la aceleración normal $a_n$ y el radio de curvatura $\rho$.
+    \item En el instante $t = 1\text{ s}$, calcula:
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item El vector velocidad $\vec{v}(1)$ y su módulo $|\vec{v}(1)|$.
+        \item La aceleración tangencial $a_t = \frac{\vec{v} \cdot \vec{a}}{|\vec{v}|}$.
+        \item La aceleración normal $a_n = \sqrt{a^2 - a_t^2}$.
+        \item El radio de curvatura $\rho = \frac{v^2}{a_n}$.
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

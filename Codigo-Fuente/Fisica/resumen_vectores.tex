@@ -1,0 +1,144 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[margin=1.1cm, top=1.0cm, bottom=1.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\tcbset{
+  colback=gray!5!white,
+  colframe=gray!60!black,
+  boxrule=0.5pt,
+  arc=2pt,
+  left=4pt, right=4pt, top=3pt, bottom=3pt
+}
+
+\titleformat{\section}{\small\bfseries\color{blue!70!black}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\titleformat{\subsection}{\footnotesize\bfseries\color{black!80}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{3pt}{2pt}
+
+\setlist{nosep, leftmargin=1.2em}
+\setlength{\columnsep}{12pt}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+    {\large \textbf{\textsf{RESUMEN GENERAL: TEORÍA Y ÁLGEBRA VECTORIAL}}}\\[2pt]
+    {\footnotesize \textsf{Definiciones, Propiedades, Representación Analítica, Productos Escalar y Vectorial, y Aplicaciones Físicas}}
+\end{center}
+\vspace{-4pt}
+
+\begin{multicols}{2}
+
+\section{1. Fundamentos y Naturaleza del Vector}
+\begin{itemize}
+    \item \textbf{Visión Estática:} Puntos en reposo en el espacio cartesiano ($P(x,y,z)$ en 2D/3D).
+    \item \textbf{Visión Dinámica / Cambio:} Añade magnitud, línea de acción y sentido. El vector $\vec{v} = \vec{AB}$ une origen $A$ con extremo $B$.
+    \item \textbf{3 Elementos Definitorios:}
+    \begin{enumerate}
+        \item \textbf{Módulo ($|\vec{v}|$):} Longitud del segmento orientado ($|\vec{v}| = \overline{AB}$).
+        \item \textbf{Dirección:} Línea recta soporte $r$ que une $A$ y $B$.
+        \item \textbf{Sentido:} Indicado por la flecha ($\exists$ orden $A \to B$).
+    \end{enumerate}
+    \item \textbf{Vector de Posición:} $\vec{r} = \vec{OP}$. Indica desde dónde se observa el sistema y añade dinamismo.
+    \item \textbf{Espacio Vectorial ($V$):} Conjunto de vectores con operaciones interna y externa. Todo $\vec{v} \in V$ se expresa como combinación lineal (C.L.) de una base.
+\end{itemize}
+
+\section{2. Álgebra Vectorial y Bases}
+\subsection{Suma y Resta ($\vec{a} \pm \vec{b}$)}
+\begin{itemize}
+    \item \textbf{Operación interna ($V$):} $\vec{c} = \vec{a} + \vec{b}$; resta: $\vec{c}' = \vec{a} - \vec{b} = \vec{a} + (-\vec{b})$.
+    \item \textbf{Propiedades:} Conmutativa ($\vec{v}+\vec{w}=\vec{w}+\vec{v}$), Asociativa ($(\vec{v}+\vec{w})+\vec{u}=\vec{v}+(\vec{w}+\vec{u})$), Elemento neutro ($\vec{v}+\vec{0}=\vec{v}$) y Elemento opuesto ($\vec{v}+(-\vec{v})=\vec{0}$).
+\end{itemize}
+
+\subsection{Producto por un Escalar ($m \in \mathbb{R}$)}
+\begin{itemize}
+    \item \textbf{Operación externa ($\mathbb{R} \times V \to V$):} Dilata, contrae o invierte ($m\vec{v}$).
+    \item \textbf{Propiedades:} Conmutativa ($m\vec{v}=\vec{v}m$), Asociativa mixta ($(nm)\vec{v}=n(m\vec{v})$), Distributiva en $\mathbb{R}$ ($(n+m)\vec{v}=n\vec{v}+m\vec{v}$), Distributiva en $V$ ($n(\vec{v}+\vec{u})=n\vec{v}+n\vec{u}$) y Elemento unidad ($1\vec{v}=\vec{v}$).
+\end{itemize}
+
+\subsection{Combinación Lineal y Clasificación de Bases}
+\begin{itemize}
+    \item \textbf{Combinación Lineal:} $\vec{w} = a\vec{u} + b\vec{v}$.
+    \item \textbf{Base:} Vectores linealmente independientes ($\vec{u} \neq k\vec{v}$, no colineales).
+    \item \textbf{Tipos de Bases:}
+    \begin{itemize}
+        \item \textit{No ortogonal:} Vectores con ángulo $\alpha \neq 90^\circ$.
+        \item \textit{Ortogonal:} $\vec{u} \perp \vec{v}$, pero con módulos $|\vec{u}| \neq |\vec{v}|$.
+        \item \textit{Ortonormal:} Mutuamente perpendiculares y unitarios ($|\vec{u}_1|=|\vec{u}_2|=1$, $\vec{u}_1 \perp \vec{u}_2$). Base estándar: $\{\vec{i}, \vec{j}, \vec{k}\}$.
+    \end{itemize}
+\end{itemize}
+
+\section{3. Representación Analítica (Base Ortonormal)}
+\begin{itemize}
+    \item \textbf{Componentes:} $\vec{v}(v_x, v_y) = v_x \vec{i} + v_y \vec{j}$.
+    \item \textbf{Módulo:} $|\vec{v}| = +\sqrt{v_x^2 + v_y^2}$ (Teorema de Pitágoras).
+    \item \textbf{Suma/Resta:} $\vec{u} \pm \vec{v} = (u_x \pm v_x, \, u_y \pm v_y)$.
+    \item \textbf{Producto por escalar:} $m\vec{u} = (m u_x, \, m u_y)$.
+    \item \textbf{Normalización (Vector unitario):} $\vec{u}_{\vec{v}} = \dfrac{\vec{v}}{|\vec{v}|}$ (donde $|\vec{u}_{\vec{v}}| = 1$).
+    \item \textbf{C.L. analítica:} $\vec{w} = a\vec{u} + b\vec{v} \iff \begin{cases} w_x = a u_x + b v_x \\ w_y = a u_y + b v_y \end{cases}$
+\end{itemize}
+
+\section{4. Producto Escalar y Vector Proyección}
+\begin{itemize}
+    \item \textbf{Definición geométrica:} $\vec{u} \cdot \vec{v} = |\vec{u}| \cdot |\vec{v}| \cdot \cos \alpha = u_x v_x + u_y v_y \in \mathbb{R}$.
+    \item \textbf{Proyección Escalar:} $\overline{PM} = |\vec{u}|\cos\alpha = \dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$ (longitud con signo).
+    \item \textbf{Vector Proyección ($\vec{u}_\parallel$):} Proyección vectorial a lo largo de $\vec{v}$:
+    $$\vec{u}_\parallel = \vec{\text{proy}}_{\vec{v}}(\vec{u}) = \overline{PM}\cdot \frac{\vec{v}}{|\vec{v}|} = \left(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|^2}\right)\vec{v}$$
+    \item \textbf{Descomposición y Teorema de Pitágoras:} $\vec{u} = \vec{u}_\parallel + \vec{u}_\perp$ con $\vec{u}_\parallel \perp \vec{u}_\perp$. Forman un triángulo rectángulo con hipotenusa $\vec{u}$:
+    $$|\vec{u}|^2 = |\vec{u}_\parallel|^2 + |\vec{u}_\perp|^2$$
+    $$|\vec{u}_\perp| = \sqrt{|\vec{u}|^2 - |\vec{u}_\parallel|^2} = \sqrt{|\vec{u}|^2 - \left(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|}\right)^2} = |\vec{u}|\sin\alpha$$
+    \item \textbf{Ortogonalidad ($\perp$):} $\vec{u} \perp \vec{v} \iff \vec{u}\cdot\vec{v} = 0 \iff u_x v_x + u_y v_y = 0$.
+    \begin{itemize}
+        \item \textit{En 2D:} $(u_x, u_y) \perp (-u_y, u_x)$ y $(u_y, -u_x)$.
+    \end{itemize}
+    \item \textbf{Cálculo del ángulo $\alpha$:}
+    $\cos \alpha = \frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|} = \frac{u_x v_x + u_y v_y}{\sqrt{u_x^2+u_y^2}\sqrt{v_x^2+v_y^2}}$.
+    ($>0 \implies$ agudo; $<0 \implies$ obtuso).
+\end{itemize}
+
+\section{5. Producto Vectorial ($\vec{a} \times \vec{b}$)}
+\begin{itemize}
+    \item \textbf{Definición geométrica:} Genera un nuevo vector $\vec{c} = \vec{a} \times \vec{b}$:
+    \begin{enumerate}
+        \item \textbf{Módulo:} $|\vec{a} \times \vec{b}| = |\vec{a}| \cdot |\vec{b}| \cdot \sin \alpha$ (área del paralelogramo).
+        \item \textbf{Dirección:} Perpendicular al plano de $\vec{a}$ y $\vec{b}$ ($\perp \vec{a}$ y $\perp \vec{b}$).
+        \item \textbf{Sentido:} Regla del tornillo / mano derecha.
+    \end{enumerate}
+    \item \textbf{Anticonmutatividad:} $\vec{a} \times \vec{b} = - (\vec{b} \times \vec{a})$.
+    \item \textbf{Paralelismo:} $\vec{a} \parallel \vec{b} \implies \vec{a} \times \vec{b} = \vec{0}$ (pues $\sin 0^\circ = \sin 180^\circ = 0$).
+    \item \textbf{Productos entre versores canónicos:}
+    \begin{itemize}
+        \item $\vec{i}\times\vec{i} = \vec{j}\times\vec{j} = \vec{k}\times\vec{k} = \vec{0}$
+        \item Cíclicos ($+$): $\vec{i}\times\vec{j}=\vec{k}$, $\vec{j}\times\vec{k}=\vec{i}$, $\vec{k}\times\vec{i}=\vec{j}$
+        \item Inversos ($-$): $\vec{j}\times\vec{i}=-\vec{k}$, $\vec{k}\times\vec{j}=-\vec{i}$, $\vec{i}\times\vec{k}=-\vec{j}$
+    \end{itemize}
+    \item \textbf{Cálculo mnemotécnico por Determinantes:}
+    $$\vec{a}\times\vec{b} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ a_x & a_y & a_z \\ b_x & b_y & b_z \end{vmatrix} = \vec{i}\begin{vmatrix} a_y & a_z \\ b_y & b_z \end{vmatrix} - \vec{j}\begin{vmatrix} a_x & a_z \\ b_x & b_z \end{vmatrix} + \vec{k}\begin{vmatrix} a_x & a_y \\ b_x & b_y \end{vmatrix}$$
+    $$= (a_y b_z - a_z b_y)\vec{i} + (a_z b_x - a_x b_z)\vec{j} + (a_x b_y - a_y b_x)\vec{k}$$
+\end{itemize}
+
+\section{6. Aplicaciones Físicas y Geométricas}
+\subsection{Momento de un Vector respecto a un Punto ($\vec{M}_O^{\vec{v}}$)}
+Concepto fundamental en física (momento de fuerzas, momento cinético):
+$$\vec{M}_O^{\vec{v}} = \vec{r} \times \vec{v} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ r_x & r_y & r_z \\ v_x & v_y & v_z \end{vmatrix}$$
+donde $\vec{r}$ es el vector posición o distancia desde el centro de momentos $O$ hasta el punto de aplicación de $\vec{v}$.
+
+\subsection{Representación Vectorial de una Superficie}
+Para cualquier superficie plana \textbf{abierta y finita} de área $S$:
+\begin{itemize}
+    \item Se asocia un vector superficie $\vec{S}$.
+    \item \textbf{Módulo:} $|\vec{S}| = S$ (área de la superficie).
+    \item \textbf{Dirección:} Normal (perpendicular) a la superficie.
+    \item \textbf{Punto de aplicación:} En un punto $O$ interior de la superficie.
+\end{itemize}
+
+\end{multicols}
+
+\end{document}

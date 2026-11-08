@@ -1,0 +1,336 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper, top=1.8cm, bottom=1.8cm, left=2cm, right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{lmodern}
+
+% Sin encabezados ni pies de página (páginas limpias con fondo blanco)
+\pagestyle{empty}
+
+% Configuración de colores sobrios estilo Word / Examen oficial
+\definecolor{wordblue}{RGB}{31, 78, 121}
+\definecolor{boxbg}{RGB}{250, 251, 252}
+\definecolor{boxframe}{RGB}{190, 198, 206}
+
+% Formato de títulos de sección
+\titleformat{name=\section,numberless}{\large\bfseries\color{wordblue}}{}{0em}{}[\vspace{-2pt}\titlerule]
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Cajas para enunciados
+\newtcolorbox{ejerciciobox}[1]{
+  colback=boxbg,
+  colframe=wordblue,
+  arc=1.5mm,
+  boxrule=1pt,
+  left=6mm, right=6mm, top=4mm, bottom=4mm,
+  title={\textbf{#1}},
+  coltitle=white,
+  colbacktitle=wordblue,
+  fonttitle=\small\bfseries
+}
+
+\begin{document}
+
+% ==============================================================================
+% PÁGINA 1: HOJA DE ENUNCIADOS (LAS 4 FUNCIONES)
+% ==============================================================================
+\begin{center}
+    {\LARGE \textbf{\color{wordblue} Estudio y Representación Gráfica de Funciones}}\\[3mm]
+    {\large \textbf{Boletín de Ejercicios Tipo Examen}}
+\end{center}
+
+\vspace{3mm}
+\hrule
+\vspace{5mm}
+
+\noindent \textbf{Enunciado:} Para cada una de las siguientes funciones, realizar el estudio analítico completo siguiendo el orden estándar de examen:
+\begin{enumerate}\itemsep 1.5pt
+    \item \textbf{Dominio de definición} ($\text{Dom}(f)$).
+    \item \textbf{Puntos de corte con los ejes} coordenados y regiones de signo.
+    \item \textbf{Simetrías} (estudio de paridad o imparidad tras los cortes).
+    \item \textbf{Asíntotas y ramas infinitas} (verticales, horizontales y oblicuas con posición relativa).
+    \item \textbf{Monotonía y extremos relativos} (cálculo de $f'$, tabla de signos y coordenadas $(x, y)$).
+    \item \textbf{Curvatura y puntos de inflexión} (cálculo de $f''$, tabla de curvatura e inflexiones).
+    \item \textbf{Representación gráfica} cartesiana a escala con todos los elementos notables.
+\end{enumerate}
+
+\vspace{5mm}
+
+\begin{ejerciciobox}{Bloque 1: Nivel Estándar -- Racionales con Asíntota Oblicua}
+\vspace{2mm}
+\noindent \textbf{Ejercicio 1} \textit{(Modelo Base 1A):}
+$$\mathbf{f(x) = \frac{x^2}{x - 1}}$$
+
+\vspace{2mm}
+\noindent \textbf{Ejercicio 2} \textit{(Modelo Gemelo 1B, idéntica dificultad):}
+$$\mathbf{g(x) = \frac{x^2}{x + 1}}$$
+\end{ejerciciobox}
+
+\vspace{5mm}
+
+\begin{ejerciciobox}{Bloque 2: Nivel Avanzado -- Trascendentes Mixtas Polinomio-Exponencial}
+\vspace{2mm}
+\noindent \textbf{Ejercicio 3} \textit{(Modelo Base 2A):}
+$$\mathbf{f(x) = (x^2 - 3) e^{-x}}$$
+
+\vspace{2mm}
+\noindent \textbf{Ejercicio 4} \textit{(Modelo Gemelo 2B, idéntica dificultad):}
+$$\mathbf{g(x) = (x^2 - 3) e^{x}}$$
+\end{ejerciciobox}
+
+\vspace{6mm}
+\begin{center}
+\small \textit{En las páginas siguientes se desarrolla la resolución analítica paso a paso y la representación gráfica de cada función.}
+\end{center}
+
+\newpage
+
+% ==============================================================================
+% PÁGINA 2: RESOLUCIÓN EJERCICIO 1
+% ==============================================================================
+\section*{Resolución de la Función 1: $f(x) = \frac{x^2}{x - 1}$}
+
+\textbf{1. Dominio:}
+Denominador nulo en $x - 1 = 0 \iff x = 1 \implies \mathbf{\text{Dom}(f) = \mathbb{R} \setminus \{1\} = (-\infty, 1) \cup (1, +\infty)}$.
+
+\textbf{2. Cortes con los Ejes y Signo:}
+\begin{itemize}\itemsep 0pt
+    \item Con eje $Y$ ($x = 0$): $f(0) = \frac{0}{-1} = 0 \implies \mathbf{(0, 0)}$.
+    \item Con eje $X$ ($y = 0$): $\frac{x^2}{x-1} = 0 \implies x^2 = 0 \implies x = 0 \implies \mathbf{(0, 0)}$.
+    \item Signo: En $(-\infty, 0) \to f < 0$; en $(0, 1) \to f < 0$; en $(1, +\infty) \to f > 0$.
+\end{itemize}
+
+\textbf{3. Simetría:}
+$f(-x) = \frac{(-x)^2}{-x - 1} = \frac{x^2}{-x - 1}$. Como $f(-x) \neq f(x)$ y $f(-x) \neq -f(x) \implies$ \textbf{No tiene simetría par ni impar}.
+
+\textbf{4. Asíntotas y Ramas Infinitas:}
+\begin{itemize}\itemsep 0.5pt
+    \item \textbf{Asíntota Vertical en $x = 1$:} $\lim_{x \to 1^-} \frac{x^2}{x - 1} = \frac{1}{0^-} = -\infty$; \quad $\lim_{x \to 1^+} \frac{x^2}{x - 1} = \frac{1}{0^+} = +\infty$.
+    \item \textbf{Asíntota Horizontal:} $\lim_{x \to \pm\infty} \frac{x^2}{x - 1} = \pm\infty \implies$ No existe asíntota horizontal.
+    \item \textbf{Asíntota Oblicua ($y = mx + n$):} Dividiendo: $x^2 = (x - 1)(x + 1) + 1 \implies \frac{x^2}{x - 1} = x + 1 + \frac{1}{x - 1}$.\\
+    Asíntota Oblicua: $\mathbf{y = x + 1}$. (Posición: si $x \to +\infty$, por encima; si $x \to -\infty$, por debajo).
+\end{itemize}
+
+\textbf{5. Monotonía y Extremos Relativos:}
+$$f'(x) = \frac{2x(x - 1) - x^2(1)}{(x - 1)^2} = \frac{x^2 - 2x}{(x - 1)^2} = \frac{x(x - 2)}{(x - 1)^2}$$
+Puntos críticos ($f'(x) = 0$): $x = 0, \; x = 2$. Punto fuera del dominio: $x = 1$.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Intervalo} & $(-\infty, 0)$ & $(0, 1)$ & $(1, 2)$ & $(2, +\infty)$ \\ \hline
+\textbf{Signo de $f'(x)$} & $+$ & $-$ & $-$ & $+$ \\ \hline
+\textbf{Comportamiento} & Creciente ($\nearrow$) & Decreciente ($\searrow$) & Decreciente ($\searrow$) & Creciente ($\nearrow$) \\ \hline
+\end{tabular}
+\end{center}
+\vspace{-2pt}
+\begin{itemize}\itemsep 0pt
+    \item \textbf{Máximo relativo en $(0, 0)$}: $f(0) = 0$. \quad | \quad \textbf{Mínimo relativo en $(2, 4)$}: $f(2) = 4$.
+    \item Crecimiento: $(-\infty, 0) \cup (2, +\infty)$. \quad | \quad Decrecimiento: $(0, 1) \cup (1, 2)$.
+\end{itemize}
+
+\textbf{6. Curvatura y Puntos de Inflexión:}
+$f''(x) = \frac{2}{(x - 1)^3} \neq 0 \implies$ \textbf{No existen puntos de inflexión}.\\
+En $(-\infty, 1)$, $f''(x) < 0 \implies$ \textbf{Cóncava} ($\cap$); \quad En $(1, +\infty)$, $f''(x) > 0 \implies$ \textbf{Convexa} ($\cup$).
+
+\begin{center}
+    \includegraphics[width=0.56\textwidth]{fig_1a.pdf}\\
+    \vspace{-2pt}
+    \footnotesize \textbf{Gráfica 1:} Representación analítica completa de $f(x) = \frac{x^2}{x-1}$.
+\end{center}
+
+\newpage
+
+% ==============================================================================
+% PÁGINA 3: RESOLUCIÓN EJERCICIO 2
+% ==============================================================================
+\section*{Resolución de la Función 2: $g(x) = \frac{x^2}{x + 1}$}
+
+\textbf{1. Dominio:}
+Denominador nulo en $x + 1 = 0 \iff x = -1 \implies \mathbf{\text{Dom}(g) = \mathbb{R} \setminus \{-1\} = (-\infty, -1) \cup (-1, +\infty)}$.
+
+\textbf{2. Cortes con los Ejes y Signo:}
+\begin{itemize}\itemsep 0pt
+    \item Con eje $Y$ ($x = 0$): $g(0) = 0 \implies \mathbf{(0, 0)}$.
+    \item Con eje $X$ ($y = 0$): $x^2 = 0 \implies x = 0 \implies \mathbf{(0, 0)}$.
+    \item Signo: En $(-\infty, -1) \to g < 0$; en $(-1, 0) \to g > 0$; en $(0, +\infty) \to g > 0$.
+\end{itemize}
+
+\textbf{3. Simetría:}
+$g(-x) = \frac{(-x)^2}{-x + 1} = \frac{x^2}{-x + 1}$. Como $g(-x) \neq g(x)$ y $g(-x) \neq -g(x) \implies$ \textbf{No tiene simetría par ni impar}.
+
+\textbf{4. Asíntotas y Ramas Infinitas:}
+\begin{itemize}\itemsep 0.5pt
+    \item \textbf{Asíntota Vertical en $x = -1$:} $\lim_{x \to -1^-} \frac{x^2}{x + 1} = \frac{1}{0^-} = -\infty$; \quad $\lim_{x \to -1^+} \frac{x^2}{x + 1} = \frac{1}{0^+} = +\infty$.
+    \item \textbf{Asíntota Horizontal:} $\lim_{x \to \pm\infty} \frac{x^2}{x + 1} = \pm\infty \implies$ No existe asíntota horizontal.
+    \item \textbf{Asíntota Oblicua ($y = mx + n$):} Dividiendo: $x^2 = (x + 1)(x - 1) + 1 \implies \frac{x^2}{x + 1} = x - 1 + \frac{1}{x + 1}$.\\
+    Asíntota Oblicua: $\mathbf{y = x - 1}$. (Posición: si $x \to +\infty$, por encima; si $x \to -\infty$, por debajo).
+\end{itemize}
+
+\textbf{5. Monotonía y Extremos Relativos:}
+$$g'(x) = \frac{2x(x + 1) - x^2(1)}{(x + 1)^2} = \frac{x^2 + 2x}{(x + 1)^2} = \frac{x(x + 2)}{(x + 1)^2}$$
+Puntos críticos ($g'(x) = 0$): $x = -2, \; x = 0$. Punto fuera del dominio: $x = -1$.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Intervalo} & $(-\infty, -2)$ & $(-2, -1)$ & $(-1, 0)$ & $(0, +\infty)$ \\ \hline
+\textbf{Signo de $g'(x)$} & $+$ & $-$ & $-$ & $+$ \\ \hline
+\textbf{Comportamiento} & Creciente ($\nearrow$) & Decreciente ($\searrow$) & Decreciente ($\searrow$) & Creciente ($\nearrow$) \\ \hline
+\end{tabular}
+\end{center}
+\vspace{-2pt}
+\begin{itemize}\itemsep 0pt
+    \item \textbf{Máximo relativo en $(-2, -4)$}: $g(-2) = -4$. \quad | \quad \textbf{Mínimo relativo en $(0, 0)$}: $g(0) = 0$.
+    \item Crecimiento: $(-\infty, -2) \cup (0, +\infty)$. \quad | \quad Decrecimiento: $(-2, -1) \cup (-1, 0)$.
+\end{itemize}
+
+\textbf{6. Curvatura y Puntos de Inflexión:}
+$g''(x) = \frac{2}{(x + 1)^3} \neq 0 \implies$ \textbf{No existen puntos de inflexión}.\\
+En $(-\infty, -1)$, $g''(x) < 0 \implies$ \textbf{Cóncava} ($\cap$); \quad En $(-1, +\infty)$, $g''(x) > 0 \implies$ \textbf{Convexa} ($\cup$).
+
+\begin{center}
+    \includegraphics[width=0.56\textwidth]{fig_1b.pdf}\\
+    \vspace{-2pt}
+    \footnotesize \textbf{Gráfica 2:} Representación analítica completa de $g(x) = \frac{x^2}{x+1}$.
+\end{center}
+
+\newpage
+
+% ==============================================================================
+% PÁGINA 4: RESOLUCIÓN EJERCICIO 3
+% ==============================================================================
+\section*{Resolución de la Función 3: $f(x) = (x^2 - 3) e^{-x}$}
+
+\textbf{1. Dominio:}
+Definida en todo $\mathbb{R} \implies \mathbf{\text{Dom}(f) = \mathbb{R}}$. Función continua y derivable en todo $\mathbb{R}$.
+
+\textbf{2. Cortes con los Ejes y Signo:}
+\begin{itemize}\itemsep 0pt
+    \item Con eje $Y$ ($x = 0$): $f(0) = -3 \cdot e^0 = -3 \implies \mathbf{(0, -3)}$.
+    \item Con eje $X$ ($y = 0$): Como $e^{-x} > 0$, $x^2 - 3 = 0 \implies x = \pm\sqrt{3} \implies \mathbf{(-\sqrt{3}, 0)}$ y $\mathbf{(\sqrt{3}, 0)}$.
+    \item Signo: Positiva en $(-\infty, -\sqrt{3}) \cup (\sqrt{3}, +\infty)$; \quad Negativa en $(-\sqrt{3}, \sqrt{3})$.
+\end{itemize}
+
+\textbf{3. Simetría:}
+$f(-x) = ((-x)^2 - 3)e^{-(-x)} = (x^2 - 3)e^x \neq \pm f(x) \implies$ \textbf{Sin simetría par ni impar}.
+
+\textbf{4. Ramas Infinitas y Asíntotas:}
+\begin{itemize}\itemsep 0.5pt
+    \item \textbf{Asíntotas Verticales:} No existen ($\text{Dom}(f) = \mathbb{R}$).
+    \item \textbf{Comportamiento en $+\infty$ (Asíntota Horizontal):}
+    $$\lim_{x \to +\infty} \frac{x^2 - 3}{e^x} \left[\frac{\infty}{\infty}\right] \stackrel{\text{L'Hôp}}{=} \lim_{x \to +\infty} \frac{2x}{e^x} \stackrel{\text{L'Hôp}}{=} \lim_{x \to +\infty} \frac{2}{e^x} = 0 \implies \mathbf{\text{A.H. } y = 0 \text{ cuando } x \to +\infty}$$
+    (Corta a su propia asíntota en $x = \pm\sqrt{3}$; para $x > \sqrt{3}$, la curva amortigua por encima).
+    \item \textbf{Comportamiento en $-\infty$ (Rama Parabólica):}
+    $\lim_{x \to -\infty} (x^2 - 3)e^{-x} = (+\infty)(+\infty) = +\infty$. Como $\lim_{x \to -\infty} \frac{f(x)}{x} = -\infty$, hay una \textbf{rama parabólica}.
+\end{itemize}
+
+\textbf{5. Monotonía y Extremos Relativos:}
+$$f'(x) = 2x e^{-x} + (x^2 - 3)(-e^{-x}) = -(x^2 - 2x - 3) e^{-x} = -(x - 3)(x + 1) e^{-x}$$
+Puntos críticos ($f'(x) = 0$): $x = -1, \; x = 3$ (dado que $e^{-x} > 0$ siempre).
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Intervalo} & $(-\infty, -1)$ & $(-1, 3)$ & $(3, +\infty)$ \\ \hline
+\textbf{Signo de $-(x-3)(x+1)$} & $-$ & $+$ & $-$ \\ \hline
+\textbf{Comportamiento} & Decreciente ($\searrow$) & Creciente ($\nearrow$) & Decreciente ($\searrow$) \\ \hline
+\end{tabular}
+\end{center}
+\vspace{-2pt}
+\begin{itemize}\itemsep 0pt
+    \item \textbf{Mínimo relativo en $(-1, -2e)$}: $f(-1) = -2e \approx -5.44$.
+    \item \textbf{Máximo relativo en $(3, 6/e^3)$}: $f(3) = \frac{6}{e^3} \approx 0.30$.
+    \item Crecimiento: $(-1, 3)$. \quad | \quad Decrecimiento: $(-\infty, -1) \cup (3, +\infty)$.
+\end{itemize}
+
+\textbf{6. Curvatura y Puntos de Inflexión:}
+$$f''(x) = (-2x + 2) e^{-x} + (-x^2 + 2x + 3)(-e^{-x}) = (x^2 - 4x - 1) e^{-x}$$
+$f''(x) = 0 \iff x^2 - 4x - 1 = 0 \implies \mathbf{x = 2 \pm \sqrt{5}}$ ($x_1 \approx -0.24, \; x_2 \approx 4.24$).\\
+Al haber cambio efectivo de signo en $f''$, existen dos \textbf{Puntos de Inflexión en $x = 2 \pm \sqrt{5}$}.\\
+Convexa ($\cup$) en $(-\infty, 2-\sqrt{5}) \cup (2+\sqrt{5}, +\infty)$; \quad Cóncava ($\cap$) en $(2-\sqrt{5}, 2+\sqrt{5})$.
+
+\begin{center}
+    \includegraphics[width=0.56\textwidth]{fig_2a.pdf}\\
+    \vspace{-2pt}
+    \footnotesize \textbf{Gráfica 3:} Representación analítica completa de $f(x) = (x^2 - 3)e^{-x}$.
+\end{center}
+
+\newpage
+
+% ==============================================================================
+% PÁGINA 5: RESOLUCIÓN EJERCICIO 4
+% ==============================================================================
+\section*{Resolución de la Función 4: $g(x) = (x^2 - 3) e^{x}$}
+
+\textbf{1. Dominio:}
+Definida en todo $\mathbb{R} \implies \mathbf{\text{Dom}(g) = \mathbb{R}}$. Función continua y derivable en todo $\mathbb{R}$.
+
+\textbf{2. Cortes con los Ejes y Signo:}
+\begin{itemize}\itemsep 0pt
+    \item Con eje $Y$ ($x = 0$): $g(0) = -3 \cdot e^0 = -3 \implies \mathbf{(0, -3)}$.
+    \item Con eje $X$ ($y = 0$): $x^2 - 3 = 0 \implies x = \pm\sqrt{3} \implies \mathbf{(-\sqrt{3}, 0)}$ y $\mathbf{(\sqrt{3}, 0)}$.
+    \item Signo: Positiva en $(-\infty, -\sqrt{3}) \cup (\sqrt{3}, +\infty)$; \quad Negativa en $(-\sqrt{3}, \sqrt{3})$.
+\end{itemize}
+
+\textbf{3. Simetría:}
+$g(-x) = ((-x)^2 - 3)e^{-x} = (x^2 - 3)e^{-x} \neq \pm g(x) \implies$ \textbf{Sin simetría par ni impar}.
+
+\textbf{4. Ramas Infinitas y Asíntotas:}
+\begin{itemize}\itemsep 0.5pt
+    \item \textbf{Asíntotas Verticales:} No existen ($\text{Dom}(g) = \mathbb{R}$).
+    \item \textbf{Comportamiento en $-\infty$ (Asíntota Horizontal):}
+    $$\lim_{x \to -\infty} (x^2 - 3)e^x = \lim_{t \to +\infty} \frac{t^2 - 3}{e^t} \stackrel{\text{L'Hôp}}{=} \lim_{t \to +\infty} \frac{2t}{e^t} \stackrel{\text{L'Hôp}}{=} 0 \implies \mathbf{\text{A.H. } y = 0 \text{ cuando } x \to -\infty}$$
+    \item \textbf{Comportamiento en $+\infty$ (Rama Parabólica):}
+    $\lim_{x \to +\infty} (x^2 - 3)e^x = (+\infty)(+\infty) = +\infty$. Como $\lim_{x \to +\infty} \frac{g(x)}{x} = +\infty$, hay una \textbf{rama parabólica}.
+\end{itemize}
+
+\textbf{5. Monotonía y Extremos Relativos:}
+$$g'(x) = 2x e^x + (x^2 - 3)e^x = (x^2 + 2x - 3) e^x = (x + 3)(x - 1) e^x$$
+Puntos críticos ($g'(x) = 0$): $x = -3, \; x = 1$ (dado que $e^x > 0$ siempre).
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Intervalo} & $(-\infty, -3)$ & $(-3, 1)$ & $(1, +\infty)$ \\ \hline
+\textbf{Signo de $(x+3)(x-1)$} & $+$ & $-$ & $+$ \\ \hline
+\textbf{Comportamiento} & Creciente ($\nearrow$) & Decreciente ($\searrow$) & Creciente ($\nearrow$) \\ \hline
+\end{tabular}
+\end{center}
+\vspace{-2pt}
+\begin{itemize}\itemsep 0pt
+    \item \textbf{Máximo relativo en $(-3, 6/e^3)$}: $g(-3) = \frac{6}{e^3} \approx 0.30$.
+    \item \textbf{Mínimo relativo en $(1, -2e)$}: $g(1) = -2e \approx -5.44$.
+    \item Crecimiento: $(-\infty, -3) \cup (1, +\infty)$. \quad | \quad Decrecimiento: $(-3, 1)$.
+\end{itemize}
+
+\textbf{6. Curvatura y Puntos de Inflexión:}
+$$g''(x) = (2x + 2) e^x + (x^2 + 2x - 3)e^x = (x^2 + 4x - 1) e^x$$
+$g''(x) = 0 \iff x^2 + 4x - 1 = 0 \implies \mathbf{x = -2 \pm \sqrt{5}}$ ($x_1 \approx -4.24, \; x_2 \approx 0.24$).\\
+Al haber cambio efectivo de signo en $g''$, existen dos \textbf{Puntos de Inflexión en $x = -2 \pm \sqrt{5}$}.\\
+Convexa ($\cup$) en $(-\infty, -2-\sqrt{5}) \cup (-2+\sqrt{5}, +\infty)$; \quad Cóncava ($\cap$) en $(-2-\sqrt{5}, -2+\sqrt{5})$.
+
+\begin{center}
+    \includegraphics[width=0.56\textwidth]{fig_2b.pdf}\\
+    \vspace{-2pt}
+    \footnotesize \textbf{Gráfica 4:} Representación analítica completa de $g(x) = (x^2 - 3)e^{x}$.
+\end{center}
+
+\end{document}

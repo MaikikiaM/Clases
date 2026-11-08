@@ -1,0 +1,174 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\tcbset{
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    {\LARGE \textbf{Guía Completa: Movimiento Circular (MCU y MCUA)}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato / 4.º ESO}}
+\end{center}
+
+\vspace{0.2cm}
+\noindent\textbf{1. Magnitudes Angulares y Lineales}
+
+\noindent En cualquier movimiento circular de radio $R$, las magnitudes sobre la trayectoria curva (lineales) se relacionan con el ángulo girado (angulares) a través de la propia \textbf{definición de radián} ($\text{ángulo en rad} = \frac{\text{arco}}{\text{radio}}$):
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Magnitud lineal (S.I.)} & \textbf{Relación con el radio} & \textbf{Magnitud angular (S.I.)} \\
+\midrule
+Posición sobre la curva: $s\text{ (m)}$ & $s = \varphi \cdot R$ & Posición angular: $\varphi\text{ (rad)}$ \\
+\textbf{Espacio recorrido:} $\Delta s\text{ (m)}$ & $\mathbf{\Delta s = \Delta\varphi \cdot R}$ & \textbf{Ángulo girado:} $\mathbf{\Delta\varphi\text{ (rad)}}$ \\
+Velocidad lineal: $v\text{ (m/s)}$ & $v = \omega \cdot R$ & Velocidad angular: $\omega\text{ (rad/s)}$ \\
+Aceleración tangencial: $a_t\text{ (m/s}^2\text{)}$ & $a_t = \alpha \cdot R$ & Aceleración angular: $\alpha\text{ (rad/s}^2\text{)}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.1cm}
+\begin{tcolorbox}
+\textbf{Factores de conversión y aclaraciones clave:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item \textbf{Diferencia entre posición ($\varphi$) y ángulo girado ($\Delta\varphi$):} La posición $\varphi$ sitúa al objeto respecto al origen ($0\text{ rad}$). El espacio recorrido real es siempre el incremento: $\Delta s = \Delta\varphi \cdot R = (\varphi - \varphi_0) \cdot R$.
+    \item \textbf{De vueltas o revoluciones a radianes:} $1\text{ vuelta} = 1\text{ rev} = 360^\circ = 2\pi\text{ rad} \approx 6{,}283\text{ rad}$.
+    \item \textbf{De rpm (revoluciones por minuto) a rad/s:}
+    \[
+    \omega\text{ (rad/s)} = N\text{ (rpm)} \times \frac{2\pi\text{ rad}}{1\text{ rev}} \times \frac{1\text{ min}}{60\text{ s}} = N \cdot \frac{\pi}{30}
+    \]
+    \item \textbf{Cuidado con el diámetro:} Si te dan el diámetro $D$, el radio es $R = \frac{D}{2}$ (en metros).
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+\noindent\textbf{2. Aceleración en el Movimiento Circular: Tangencial vs. Normal}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item \textbf{Aceleración tangencial ($a_t$):} Mide la variación del \textbf{módulo} de la velocidad (si va más rápido o más lento).
+    \[
+    a_t = \alpha \cdot R = \frac{dv}{dt} \quad (\text{En MCU es } 0\text{; en MCUA es constante})
+    \]
+    \item \textbf{Aceleración normal o centrípeta ($a_n$ o $a_c$):} Mide la variación de la \textbf{dirección} del vector velocidad (apunta hacia el centro del giro). \textbf{Existe SIEMPRE que haya curva}:
+    \[
+    a_n = a_c = \frac{v^2}{R} = \omega^2 \cdot R
+    \]
+    \item \textbf{Aceleración total ($a$):} Como $\vec{a}_t \perp \vec{a}_n$, el módulo de la aceleración total es:
+    \[
+    a = \sqrt{a_t^2 + a_n^2}
+    \]
+\end{itemize}
+
+\vspace{0.2cm}
+\noindent\textbf{3. MCU (Movimiento Circular Uniforme)}
+
+\noindent La velocidad angular es constante ($\omega = \text{cte} \implies \alpha = 0 \implies a_t = 0$). Solo existe aceleración normal ($a_n$).
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Ecuación angular:} $\varphi(t) = \varphi_0 + \omega \cdot t \implies \Delta\varphi = \omega \cdot t$
+    \item \textbf{Período ($T$):} Tiempo en dar 1 vuelta completa: $T = \frac{2\pi}{\omega}\text{ (s)}$
+    \item \textbf{Frecuencia ($f$):} Número de vueltas por segundo: $f = \frac{1}{T} = \frac{\omega}{2\pi}\text{ (Hz o s}^{-1}\text{)}$
+\end{itemize}
+
+\vspace{0.2cm}
+\noindent\textbf{4. MCUA (Movimiento Circular Uniformemente Acelerado)}
+
+\noindent La aceleración angular es constante ($\alpha = \text{cte} \neq 0$). Existen simultáneamente $a_t$ y $a_n$.
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item $\omega(t) = \omega_0 + \alpha \cdot t$
+    \item $\varphi(t) = \varphi_0 + \omega_0 \cdot t + \frac{1}{2}\alpha \cdot t^2 \implies \Delta\varphi = \omega_0 \cdot t + \frac{1}{2}\alpha \cdot t^2$
+    \item $\omega^2 = \omega_0^2 + 2\alpha \cdot \Delta\varphi \quad (\text{Ecuación independiente del tiempo})$
+    \item $\text{N.º de vueltas} = \frac{\Delta\varphi\text{ (rad)}}{2\pi}$
+\end{itemize}
+
+\newpage
+
+\noindent\textbf{5. Ejercicios Resueltos Paso a Paso}
+
+\vspace{0.2cm}
+\noindent\textbf{Ejercicio 1 (MCU - Tipo Examen):} Un objeto describe un MCU de radio $R = 30\text{ cm} = 0{,}30\text{ m}$, girando a $120\text{ rpm}$. Determina: a) $\omega$ en rad/s, b) velocidad lineal $v$, c) aceleración centrípeta $a_c$.
+
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{a) Velocidad angular:}
+    \[
+    \omega = 120\text{ rpm} \times \frac{2\pi\text{ rad}}{1\text{ rev}} \times \frac{1\text{ min}}{60\text{ s}} = 4\pi \approx \mathbf{12{,}57\text{ rad/s}}
+    \]
+    \item \textbf{b) Velocidad lineal:}
+    \[
+    v = \omega \cdot R = 12{,}566\text{ rad/s} \times 0{,}30\text{ m} \approx \mathbf{3{,}77\text{ m/s}}
+    \]
+    \item \textbf{c) Aceleración centrípeta:}
+    \[
+    a_c = \omega^2 \cdot R = (12{,}566)^2 \times 0{,}30 \approx \mathbf{47{,}37\text{ m/s}^2} \quad \left(\text{o bien } a_c = \frac{v^2}{R} = \frac{3{,}77^2}{0{,}30} \approx 47{,}38\text{ m/s}^2\right)
+    \]
+\end{itemize}
+
+\vspace{0.3cm}
+\noindent\textbf{Ejercicio 2 (MCUA - Aceleración desde reposo):} Un disco de diámetro $0{,}5\text{ m}$ ($R = 0{,}25\text{ m}$) parte del reposo ($\omega_0 = 0$) con $\alpha = 1{,}2\text{ rad/s}^2$. Al completar $10\text{ vueltas}$, calcula: a) $\omega$, b) tiempo empleado, c) velocidad lineal del borde, d) aceleraciones $a_t$ y $a_n$.
+
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Ángulo girado:} $\Delta\varphi = 10\text{ vueltas} \times 2\pi\text{ rad/vuelta} = 20\pi\text{ rad} \approx 62{,}83\text{ rad}$.
+    \item \textbf{a) Velocidad angular final:}
+    \[
+    \omega^2 = \omega_0^2 + 2\alpha\Delta\varphi = 0 + 2(1{,}2)(20\pi) = 48\pi \approx 150{,}80 \implies \omega = \sqrt{150{,}80} \approx \mathbf{12{,}28\text{ rad/s}}
+    \]
+    \item \textbf{b) Tiempo empleado:}
+    \[
+    \omega = \omega_0 + \alpha \cdot t \implies t = \frac{\omega - \omega_0}{\alpha} = \frac{12{,}28}{1{,}2} \approx \mathbf{10{,}23\text{ s}}
+    \]
+    \item \textbf{c) Velocidad lineal en el borde:}
+    \[
+    v = \omega \cdot R = 12{,}28\text{ rad/s} \times 0{,}25\text{ m} \approx \mathbf{3{,}07\text{ m/s}}
+    \]
+    \item \textbf{d) Aceleración tangencial y normal:}
+    \[
+    a_t = \alpha \cdot R = 1{,}2\text{ rad/s}^2 \times 0{,}25\text{ m} = \mathbf{0{,}30\text{ m/s}^2}
+    \]
+    \[
+    a_n = \omega^2 \cdot R = (12{,}28)^2 \times 0{,}25 \approx \mathbf{37{,}70\text{ m/s}^2}
+    \]
+\end{itemize}
+
+\vspace{0.3cm}
+\noindent\textbf{Ejercicio 3 (Frenado y detención):} Las ruedas de un vehículo tienen diámetro de $60\text{ cm}$ ($R = 0{,}30\text{ m}$) y giran a $956\text{ rpm}$. a) Calcula $\omega$ y $v$. b) Si frena uniformemente hasta detenerse en $5\text{ s}$, calcula la aceleración angular $\alpha$, la aceleración tangencial $a_t$ y el número de vueltas hasta parar.
+
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{a) Velocidad angular y lineal inicial:}
+    \[
+    \omega_0 = 956\text{ rpm} \times \frac{2\pi}{60} \approx \mathbf{100{,}11\text{ rad/s}} \qquad v = \omega_0 \cdot R = 100{,}11 \times 0{,}30 \approx \mathbf{30{,}03\text{ m/s}} \text{ (108 km/h)}
+    \]
+    \item \textbf{Aceleración centrípeta inicial:} $a_c = \omega_0^2 \cdot R = (100{,}11)^2 \times 0{,}30 \approx \mathbf{3006{,}7\text{ m/s}^2}$.
+    \item \textbf{b) Aceleraciones de frenado ($\omega_f = 0$, $t = 5\text{ s}$):}
+    \[
+    \alpha = \frac{\omega_f - \omega_0}{t} = \frac{0 - 100{,}11}{5} = \mathbf{-20{,}02\text{ rad/s}^2}
+    \]
+    \[
+    a_t = \alpha \cdot R = -20{,}02 \times 0{,}30 = \mathbf{-6{,}01\text{ m/s}^2}
+    \]
+    \item \textbf{c) Número de vueltas hasta detenerse:}
+    \[
+    \Delta\varphi = \omega_0 t + \frac{1}{2}\alpha t^2 = (100{,}11)(5) + \frac{1}{2}(-20{,}02)(5^2) = 500{,}55 - 250{,}25 = 250{,}30\text{ rad}
+    \]
+    \[
+    \text{N.º de vueltas} = \frac{\Delta\varphi}{2\pi} = \frac{250{,}30}{2\pi} \approx \mathbf{39{,}84\text{ vueltas}}
+    \]
+\end{itemize}
+
+\end{document}

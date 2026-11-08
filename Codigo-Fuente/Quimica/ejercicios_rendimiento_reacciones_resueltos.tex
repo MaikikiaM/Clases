@@ -1,0 +1,124 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent\textbf{1. Resolución del ejercicio de síntesis de amoníaco (\ce{NH3}):}
+
+\vspace{0.2cm}
+\noindent\textbf{Cálculo de masas molares ($M$):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item $M(\ce{N2}) = 2 \cdot 14 = 28\text{ g/mol}$
+    \item $M(\ce{H2}) = 2 \cdot 1 = 2\text{ g/mol}$
+    \item $M(\ce{NH3}) = 14 + 3(1) = 17\text{ g/mol}$
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{a) Ajuste de la reacción:}
+\[
+\ce{N2 (g) + 3 H2 (g) -> 2 NH3 (g)}
+\]
+
+\vspace{0.1cm}
+\noindent\textbf{b) Reactivo limitante y reactivo en exceso:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Cantidades iniciales en moles:
+    \[
+    n(\ce{N2}) = \frac{140\text{ g}}{28\text{ g/mol}} = 5{,}00\text{ mol de \ce{N2}} \qquad n(\ce{H2}) = \frac{36\text{ g}}{2\text{ g/mol}} = 18{,}0\text{ mol de \ce{H2}}
+    \]
+    \item Según la estequiometría ($1\text{ mol \ce{N2}} : 3\text{ mol \ce{H2}}$), para consumir $5{,}00\text{ mol de \ce{N2}}$:
+    \[
+    n(\ce{H2})_{\text{necesario}} = 5{,}00\text{ mol \ce{N2}} \times \frac{3\text{ mol \ce{H2}}}{1\text{ mol \ce{N2}}} = 15{,}0\text{ mol de \ce{H2}}
+    \]
+    \item Como disponemos de $18{,}0\text{ mol de \ce{H2}}$ ($18{,}0 > 15{,}0$), el \textbf{reactivo limitante} es el nitrógeno (\ce{N2}) y el \textbf{reactivo en exceso} es el hidrógeno (\ce{H2}).
+\end{itemize}
+
+\vspace{0.1cm}
+\noindent\textbf{c) Masa teórica máxima de \ce{NH3} ($100\%$ de rendimiento):}
+\[
+n_{\text{teórico}}(\ce{NH3}) = 5{,}00\text{ mol \ce{N2}} \times \frac{2\text{ mol \ce{NH3}}}{1\text{ mol \ce{N2}}} = 10{,}0\text{ mol de \ce{NH3}}
+\]
+\[
+m_{\text{teórica}}(\ce{NH3}) = 10{,}0\text{ mol} \times 17\text{ g/mol} = \mathbf{170\text{ g de \ce{NH3}}}
+\]
+
+\vspace{0.1cm}
+\noindent\textbf{d) Masa real obtenida ($80\%$ de rendimiento):}
+\[
+m_{\text{real}}(\ce{NH3}) = m_{\text{teórica}} \times 0{,}80 = 170\text{ g} \times 0{,}80 = \mathbf{136\text{ g de \ce{NH3}}}
+\]
+
+\vspace{0.1cm}
+\noindent\textbf{e) Reactivo en exceso sobrante:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Moles sobrantes: $n_{\text{sobrante}} = 18{,}0\text{ mol} - 15{,}0\text{ mol} = \mathbf{3{,}0\text{ mol de \ce{H2}}}$.
+    \item Masa sobrante: $m_{\text{sobrante}} = 3{,}0\text{ mol} \times 2\text{ g/mol} = \mathbf{6{,}0\text{ g de \ce{H2}}}$.
+\end{itemize}
+
+\newpage
+
+\noindent\textbf{2. Resolución del ejercicio de descomposición térmica de \ce{CaCO3}:}
+
+\vspace{0.2cm}
+\noindent\textbf{Cálculo de masas molares ($M$):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item $M(\ce{CaCO3}) = 40 + 12 + 3(16) = 100\text{ g/mol}$
+    \item $M(\ce{CaO}) = 40 + 16 = 56\text{ g/mol}$
+    \item $M(\ce{CO2}) = 12 + 2(16) = 44\text{ g/mol}$
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{a) Ajuste de la reacción química:}
+\[
+\ce{CaCO3 (s) -> CaO (s) + CO2 (g)} \quad (\text{Relación estequiométrica } 1:1:1)
+\]
+
+\vspace{0.1cm}
+\noindent\textbf{b) Masa teórica máxima de óxido de calcio (\ce{CaO}):}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Moles iniciales de reactivo:
+    \[
+    n(\ce{CaCO3}) = \frac{250\text{ g}}{100\text{ g/mol}} = 2{,}50\text{ mol de \ce{CaCO3}}
+    \]
+    \item Moles teóricos y masa teórica de \ce{CaO} producida:
+    \[
+    n_{\text{teórico}}(\ce{CaO}) = 2{,}50\text{ mol \ce{CaCO3}} \times \frac{1\text{ mol \ce{CaO}}}{1\text{ mol \ce{CaCO3}}} = 2{,}50\text{ mol de \ce{CaO}}
+    \]
+    \[
+    m_{\text{teórica}}(\ce{CaO}) = 2{,}50\text{ mol} \times 56\text{ g/mol} = \mathbf{140\text{ g de \ce{CaO}}}
+    \]
+\end{itemize}
+
+\vspace{0.1cm}
+\noindent\textbf{c) Rendimiento porcentual del proceso:}
+\[
+\text{Rendimiento} = \frac{m_{\text{real}}}{m_{\text{teórica}}} \times 100 = \frac{112\text{ g}}{140\text{ g}} \times 100 = \mathbf{80\%}
+\]
+
+\vspace{0.1cm}
+\noindent\textbf{d) Masa real de dióxido de carbono (\ce{CO2}) desprendida:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Cantidad teórica esperada de \ce{CO2}:
+    \[
+    n_{\text{teórico}}(\ce{CO2}) = 2{,}50\text{ mol \ce{CaCO3}} \times \frac{1\text{ mol \ce{CO2}}}{1\text{ mol \ce{CaCO3}}} = 2{,}50\text{ mol de \ce{CO2}}
+    \]
+    \[
+    m_{\text{teórica}}(\ce{CO2}) = 2{,}50\text{ mol} \times 44\text{ g/mol} = 110\text{ g de \ce{CO2}}
+    \]
+    \item Masa real obtenida aplicando el rendimiento del $80\%$:
+    \[
+    m_{\text{real}}(\ce{CO2}) = m_{\text{teórica}} \times 0{,}80 = 110\text{ g} \times 0{,}80 = \mathbf{88\text{ g de \ce{CO2}}}
+    \]
+\end{itemize}
+
+\end{document}

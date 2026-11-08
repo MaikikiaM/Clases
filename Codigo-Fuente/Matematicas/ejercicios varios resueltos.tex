@@ -1,0 +1,213 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\tcbset{
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\begin{document}
+\pagestyle{empty}
+
+% =========================================================================
+% EJERCICIO 1
+% =========================================================================
+\noindent\textbf{Ejercicio 1}\\
+\textbf{Condiciones iniciales y descomposición vectorial:}\\
+$(x_0, y_0) = (0, 0)$. Con $v_0 = 20\text{ m/s}$ y $\alpha = 30^\circ$:\\
+$v_{0x} = 20 \cos 30^\circ = 10\sqrt{3} \approx 17{,}32\text{ m/s}, \quad v_{0y} = 20 \sin 30^\circ = 10{,}00\text{ m/s}$.
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Ecuaciones del movimiento en cada eje:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item \textbf{Eje $X$ (MRU):} $\quad x(t) = v_{0x} \cdot t = \mathbf{10\sqrt{3}\,t\text{ (m)}} \approx 17{,}32\,t, \qquad v_x(t) = \mathbf{10\sqrt{3}\text{ m/s}} \approx 17{,}32\text{ m/s}$
+        \item \textbf{Eje $Y$ (MRUA):} $\quad y(t) = v_{0y} \cdot t - \frac{1}{2}gt^2 = \mathbf{10t - 4{,}9t^2\text{ (m)}}, \qquad v_y(t) = v_{0y} - gt = \mathbf{10 - 9{,}8t\text{ (m/s)}}$
+    \end{itemize}
+    \item \textbf{Tiempo de subida y altura máxima ($v_y = 0$):}
+    \[
+    10 - 9{,}8t_s = 0 \implies t_s = \frac{10}{9{,}8} \approx \mathbf{1{,}02\text{ s}}
+    \]
+    \[
+    y_{\text{máx}} = 10(1{,}0204) - 4{,}9(1{,}0204)^2 \approx \mathbf{5{,}10\text{ m}}
+    \]
+    \item \textbf{Tiempo total en el aire ($y = 0$):}
+    \[
+    10t - 4{,}9t^2 = 0 \implies t_{\text{vuelo}} = \frac{10}{4{,}9} \approx \mathbf{2{,}04\text{ s}} \quad (2 \cdot t_s)
+    \]
+    \item \textbf{Distancia horizontal hasta el impacto:}
+    \[
+    x = v_{0x} \cdot t_{\text{vuelo}} = 10\sqrt{3} \times 2{,}0408 \approx \mathbf{35{,}35\text{ m}}
+    \]
+    \item \textbf{Vector velocidad y módulo de impacto:}
+    \[
+    \vec{v}_{\text{impacto}} = 10\sqrt{3}\,\vec{i} - 10\,\vec{j}\text{ m/s} \approx \mathbf{17{,}32\,\vec{i} - 10{,}00\,\vec{j}\text{ m/s}} \implies |\vec{v}| = \mathbf{20{,}00\text{ m/s}}
+    \]
+\end{enumerate}
+
+\vspace{0.4cm}
+% =========================================================================
+% EJERCICIO 2
+% =========================================================================
+\noindent\textbf{Ejercicio 2}\\
+\textbf{Condiciones iniciales:}\\
+Origen en la base del acantilado: $(x_0, y_0) = (0, 45\text{ m})$. Con $v_0 = 30\text{ m/s}$ y $\alpha = 30^\circ$:\\
+$v_{0x} = 30 \cos 30^\circ = 15\sqrt{3} \approx 25{,}98\text{ m/s}, \quad v_{0y} = 30 \sin 30^\circ = 15{,}00\text{ m/s}$.
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Ecuaciones del movimiento en cada eje:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item \textbf{Eje $X$ (MRU):} $\quad x(t) = v_{0x} \cdot t = \mathbf{15\sqrt{3}\,t\text{ (m)}} \approx 25{,}98\,t, \qquad v_x(t) = \mathbf{15\sqrt{3}\text{ m/s}} \approx 25{,}98\text{ m/s}$
+        \item \textbf{Eje $Y$ (MRUA):} $\quad y(t) = y_0 + v_{0y} \cdot t - \frac{1}{2}gt^2 = \mathbf{45 + 15t - 4{,}9t^2\text{ (m)}}, \qquad v_y(t) = \mathbf{15 - 9{,}8t\text{ (m/s)}}$
+    \end{itemize}
+    \item \textbf{Tiempo hasta la cúspide y cota máxima:}
+    $15 - 9{,}8t = 0 \implies t_{\text{cima}} \approx \mathbf{1{,}53\text{ s}}$.
+    \[
+    y_{\text{máx}} = 45 + 15(1{,}5306) - 4{,}9(1{,}5306)^2 = \mathbf{56{,}48\text{ m}}
+    \]
+    \item \textbf{Tiempo de vuelo hasta impactar en el agua ($y = 0$):}
+    \[
+    4{,}9t^2 - 15t - 45 = 0 \implies t = \frac{15 + \sqrt{225 + 882}}{9{,}8} = \frac{15 + \sqrt{1107}}{9{,}8} \approx \mathbf{4{,}93\text{ s}}
+    \]
+    \item \textbf{Distancia horizontal desde la base del acantilado:}
+    \[
+    x = 15\sqrt{3} \times 4{,}9257 \approx \mathbf{127{,}97\text{ m}} \approx \mathbf{128{,}0\text{ m}}
+    \]
+    \item \textbf{Vector velocidad y módulo de impacto:}
+    \[
+    \vec{v}_{\text{impacto}} = \mathbf{25{,}98\,\vec{i} - 33{,}27\,\vec{j}\text{ m/s}} \implies |\vec{v}| = \sqrt{25{,}98^2 + (-33{,}27)^2} = \sqrt{1782} \approx \mathbf{42{,}21\text{ m/s}}
+    \]
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% EJERCICIO 3
+% =========================================================================
+\noindent\textbf{Ejercicio 3}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Diagrama y componentes del peso ($m = 8\text{ kg}$, $\alpha = 30^\circ$, $g = 9{,}8\text{ m/s}^2$):}
+    \[
+    P = m g = 78{,}40\text{ N} \implies P_x = P \sin 30^\circ = \mathbf{39{,}20\text{ N}}, \quad P_y = P \cos 30^\circ = \mathbf{67{,}90\text{ N}}
+    \]
+    \item \textbf{Fuerza normal y fuerza de rozamiento:}
+    \[
+    N = P_y = \mathbf{67{,}90\text{ N}} \qquad F_r = \mu \cdot N = 0{,}20 \times 67{,}896\text{ N} \approx \mathbf{13{,}58\text{ N}}
+    \]
+    \item \textbf{Segunda Ley de Newton y aceleración de ascenso:}
+    \[
+    \sum F_x = F - P_x - F_r = m \cdot a \implies 85 - 39{,}20 - 13{,}58 = 8 a \implies 32{,}22 = 8 a \implies a \approx \mathbf{4{,}03\text{ m/s}^2}
+    \]
+    \item \textbf{Cinemática del tramo ($d = 10\text{ m}$, $v_0 = 0$):}
+    \[
+    t = \sqrt{\frac{2d}{a}} = \sqrt{\frac{20}{4{,}0275}} \approx \mathbf{2{,}23\text{ s}} \qquad v = a \cdot t = \sqrt{2 a d} \approx \mathbf{8{,}98\text{ m/s}}
+    \]
+\end{enumerate}
+
+\vspace{0.4cm}
+% =========================================================================
+% EJERCICIO 4
+% =========================================================================
+\noindent\textbf{Ejercicio 4}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Ecuación ajustada:} $\ce{H2SO4 + 2 NaOH -> Na2SO4 + 2 H2O}$
+    \item \textbf{Moles de ácido y de hidróxido requeridos:}
+    $n(\ce{H2SO4}) = 0{,}40\text{ M} \times 0{,}250\text{ L} = \mathbf{0{,}100\text{ mol}} \implies n(\ce{NaOH}) = 0{,}100 \times 2 = \mathbf{0{,}200\text{ mol}}$.
+    \item \textbf{Masa de reactivo puro:} $m(\ce{NaOH}) = 0{,}200\text{ mol} \times 40{,}0\text{ g/mol} = \mathbf{8{,}00\text{ g}}$.
+    \item \textbf{Volumen de disolución $1{,}25\text{ M}$:} $V = \frac{0{,}200\text{ mol}}{1{,}25\text{ M}} = 0{,}160\text{ L} = \mathbf{160\text{ mL}}$.
+    \item \textbf{Masa de sulfato sódico formado:} $m(\ce{Na2SO4}) = 0{,}100\text{ mol} \times 142{,}0\text{ g/mol} = \mathbf{14{,}20\text{ g}}$.
+\end{enumerate}
+
+\vspace{0.4cm}
+% =========================================================================
+% EJERCICIO 5
+% =========================================================================
+\noindent\textbf{Ejercicio 5}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Ecuación ajustada:} $\ce{N2 (g) + 3 H2 (g) -> 2 NH3 (g)}$.
+    \item \textbf{Reactivo limitante y reactivo en exceso:}
+    $n(\ce{N2}) = \frac{56{,}0}{28{,}0} = 2{,}00\text{ mol}$; $n(\ce{H2}) = \frac{18{,}0}{2{,}0} = 9{,}00\text{ mol}$.\\
+    Para $2\text{ mol } \ce{N2}$ se requieren $6\text{ mol } \ce{H2}$. Como hay $9\text{ mol}$, el \textbf{\ce{N2} es el reactivo limitante} y el \textbf{\ce{H2} está en exceso}.
+    \item \textbf{Masa sobrante en exceso:} $n_{\text{sobrante}}(\ce{H2}) = 3{,}00\text{ mol} \implies m_{\text{sobrante}} = 3{,}00 \times 2{,}0 = \mathbf{6{,}00\text{ g de } \ce{H2}}$.
+    \item \textbf{Masa teórica máxima de \ce{NH3} ($100\%$):} $n_{\text{teórico}} = 4{,}00\text{ mol} \implies m_{\text{teórica}} = 4{,}00 \times 17{,}0 = \mathbf{68{,}00\text{ g de } \ce{NH3}}$.
+    \item \textbf{Rendimiento del $85{,}0\%$ y volumen a $25^\circ\text{C}$ ($298\text{ K}$) y $1\text{ atm}$:}
+    $m_{\text{real}} = 68{,}00 \times 0{,}850 = \mathbf{57{,}80\text{ g de } \ce{NH3}}$;\quad $n_{\text{real}} = 3{,}40\text{ mol}$.\\
+    Aplicando la ecuación de estado de los gases ideales ($P \cdot V = n \cdot R \cdot T$):
+    \[
+    V_{\text{real}} = \frac{n_{\text{real}} \cdot R \cdot T}{P} = \frac{3{,}40\text{ mol} \times 0{,}082\text{ atm}\cdot\text{L}/(\text{mol}\cdot\text{K}) \times 298\text{ K}}{1\text{ atm}} = \mathbf{83{,}08\text{ L de } \ce{NH3}}
+    \]
+    \textit{(O bien empleando el volumen molar a $25^\circ\text{C}$: $V_m \approx 24{,}4\text{ L/mol} \implies 3{,}40 \times 24{,}4 = \mathbf{82{,}96\text{ L}}$).}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% EJERCICIO 6
+% =========================================================================
+\noindent\textbf{Ejercicio 6}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Planteamiento geométrico y relación entre variables:}
+    Triángulo rectángulo de catetos $56\text{ m}$ (base) y $42\text{ m}$ (altura). Área total: $A_T = \frac{56 \times 42}{2} = 1176\text{ m}^2$.\\
+    Dimensiones del rectángulo techado: $x$ e $y$ ($0 \le x \le 56$). Por semejanza de triángulos:
+    \[
+    \frac{42 - y}{x} = \frac{42}{56} = \frac{3}{4} \implies y = 42 - \frac{3}{4}x
+    \]
+    Área techada: $A_{\text{techada}} = x \cdot y = 42x - \frac{3}{4}x^2$.\\
+    Área no techada: $A_{\text{no techada}} = 1176 - A_{\text{techada}} = 1176 - 42x + \frac{3}{4}x^2$.
+    \item \textbf{Función de coste total y minimización:}
+    Coste unitario: $30\text{ €/m}^2$ (techada) y $50\text{ €/m}^2$ (no techada).
+    \[
+    C(x) = 30 \cdot A_{\text{techada}} + 50(1176 - A_{\text{techada}}) = 58800 - 20 \cdot A_{\text{techada}} = \mathbf{15x^2 - 840x + 58800}
+    \]
+    Derivando e igualando a cero:
+    \[
+    C'(x) = 30x - 840 = 0 \implies x = \frac{840}{30} = \mathbf{28\text{ m}}
+    \]
+    Segunda derivada: $C''(x) = 30 > 0 \implies$ En $x = 28\text{ m}$ se alcanza un \textbf{MÍNIMO ABSOLUTO}.
+    \item \textbf{Dimensiones óptimas y coste mínimo:}
+    \[
+    x = \mathbf{28\text{ m}}, \qquad y = 42 - \frac{3}{4}(28) = \mathbf{21\text{ m}}
+    \]
+    Las dimensiones óptimas de la zona cubierta son de $\mathbf{28\text{ m}}$ y $\mathbf{21\text{ m}}$ (la mitad de cada cateto).\\
+    Superficie techada: $A = 588\text{ m}^2$. Coste mínimo total: $C = 80 \times 588 = \mathbf{47\,040\text{ €}}$.
+\end{enumerate}
+
+\vspace{0.4cm}
+% =========================================================================
+% EJERCICIO 7
+% =========================================================================
+\noindent\textbf{Ejercicio 7}
+\[
+f(x) = \frac{|2x - 4|}{x + 1}
+\]
+\textbf{Estudio analítico para pintar la función:}
+\begin{itemize}[leftmargin=1.5em, itemsep=5pt]
+    \item \textbf{1. Desdoblamiento a trozos ($x \ne -1$):}
+    \[
+    f(x) = \begin{cases} \mathbf{\dfrac{4 - 2x}{x + 1}}, & \text{si } x < 2 \text{ con } x \ne -1 \\[8pt] \mathbf{\dfrac{2x - 4}{x + 1}}, & \text{si } x \ge 2 \end{cases}
+    \]
+    \item \textbf{2. Dominio, cortes con los ejes y signo:}
+    $\text{Dom}(f) = \mathbb{R} \setminus \{-1\}$. Corte $OX$: $\mathbf{(2, 0)}$. Corte $OY$: $\mathbf{(0, 4)}$.\\
+    Signo: negativo en $(-\infty, -1)$; positivo en $(-1, 2) \cup (2, +\infty)$.
+    \item \textbf{3. Asíntotas y ramas infinitas:}
+    Vertical en $\mathbf{x = -1}$ ($\lim_{x \to -1^-} f = -\infty$, $\lim_{x \to -1^+} f = +\infty$).\\
+    Horizontales: $\mathbf{y = 2}$ cuando $x \to +\infty$; $\mathbf{y = -2}$ cuando $x \to -\infty$ (ambas por debajo de la curva).
+    \item \textbf{4. Monotonía y punto anguloso en $x = 2$:}
+    $f'(x) = \frac{-6}{(x+1)^2} < 0$ para $x < 2$ (decreciente); $f'(x) = \frac{6}{(x+1)^2} > 0$ para $x > 2$ (creciente).\\
+    Derivadas laterales: $f'_-(2) = -2/3 \ne 2/3 = f'_+(2) \implies$ \textbf{Punto anguloso} en $(2, 0)$ (mínimo relativo).
+    \item \textbf{5. Bosquejo de la gráfica:} Curva hiperbólica decreciente en $(-\infty, -1)$ bajo $y = -2$; rama decreciente en $(-1, 2)$ desde $+\infty$ pasando por $(0, 4)$ hasta $(2, 0)$; rama creciente en $(2, +\infty)$ aproximándose a $y = 2$ por debajo.
+\end{itemize}
+
+\end{document}

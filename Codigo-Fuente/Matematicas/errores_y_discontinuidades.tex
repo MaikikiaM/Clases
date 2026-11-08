@@ -1,0 +1,276 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper, top=1.8cm, bottom=1.8cm, left=2cm, right=2cm]{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{lmodern}
+
+% Sin encabezados ni pies de página (diseño limpio fondo blanco tipo hoja de examen/apuntes)
+\pagestyle{empty}
+
+% Paleta de colores sobria y profesional
+\definecolor{mainblue}{RGB}{24, 76, 120}
+\definecolor{subblue}{RGB}{41, 128, 185}
+\definecolor{boxbg}{RGB}{252, 253, 255}
+\definecolor{boxframe}{RGB}{185, 200, 218}
+\definecolor{alertbg}{RGB}{255, 253, 235}
+\definecolor{alertframe}{RGB}{218, 165, 32}
+\definecolor{tipbg}{RGB}{245, 252, 245}
+\definecolor{tipframe}{RGB}{46, 139, 87}
+
+% Formato de secciones
+\titleformat{\section}{\large\bfseries\color{mainblue}}{\thesection.}{0.5em}{}[\vspace{-2pt}\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{mainblue}}{\thesubsection.}{0.5em}{}
+
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+
+% Cajas de avisos y trucos
+\newtcolorbox{trucobox}[1]{
+  colback=tipbg,
+  colframe=tipframe,
+  arc=1.5mm,
+  boxrule=0.9pt,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  title={\textbf{#1}},
+  coltitle=white,
+  colbacktitle=tipframe,
+  fonttitle=\small\bfseries
+}
+
+\newtcolorbox{trampa}[1]{
+  colback=alertbg,
+  colframe=alertframe,
+  arc=1.5mm,
+  boxrule=0.9pt,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  title={\textbf{#1}},
+  coltitle=black,
+  colbacktitle=alertframe!35,
+  fonttitle=\small\bfseries
+}
+
+\newtcolorbox{ejemplobox}[1]{
+  colback=boxbg,
+  colframe=mainblue,
+  arc=1.5mm,
+  boxrule=0.9pt,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  title={\textbf{#1}},
+  coltitle=white,
+  colbacktitle=mainblue,
+  fonttitle=\small\bfseries
+}
+
+\begin{document}
+
+% ==============================================================================
+% PÁGINA 1: ERRORES FRECUENTES Y TRUQUITOS DE EXAMEN
+% ==============================================================================
+\begin{center}
+    {\LARGE \textbf{\color{mainblue} Guía de Errores Frecuentes, Trucos de Examen y Discontinuidades}}\\[2.5mm]
+    {\large \textbf{Análisis Matemático -- Estudio de Funciones y Límites}}
+\end{center}
+
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+
+\section{Las 6 Trampas Clásicas en Exámenes y Cómo Esquivarlas (Truquitos)}
+
+\begin{trampa}{Trampa 1: El Dominio Fantasma en las Tablas de Signos de $f'$ y $f''$}
+\textbf{El error típico:} Igualar $f'(x) = 0$, encontrar los puntos críticos y construir la tabla de monotonía poniendo únicamente esos números.\\
+\textbf{La consecuencia:} Considerar que la función es creciente o decreciente cruzando una asíntota vertical, o clasificar una asíntota como máximo/mínimo.\\
+\textbf{Ejemplo:} Para $f(x) = \frac{1}{x}$, $f'(x) = -\frac{1}{x^2} < 0$. Como $f'(x) = 0$ no tiene solución, muchos alumnos concluyen que $f$ decrece en todo $\mathbb{R}$, lo cual es falso ($f(-1) = -1 < f(1) = 1$).\\
+\textbf{El truquito:} \textit{La regla de la doble barra vertical ($||$)}. Antes de calcular ninguna derivada, escribe en la tabla todos los puntos excluidos del dominio con una doble barra. Esos puntos separan intervalos de signo obligatoriamente.
+\end{trampa}
+
+\vspace{3mm}
+
+\begin{trampa}{Trampa 2: El Falso Mito de la Asíntota Infranqueable}
+\textbf{El error típico:} Creer que la gráfica de una función nunca puede tocar ni cortar a ninguna asíntota.\\
+\textbf{La realidad matemática:} Una función \textbf{jamás} corta a una asíntota vertical (porque no pertenece al dominio o el límite es infinito). Sin embargo, una función \textbf{sí puede cortar a su asíntota horizontal u oblicua} todas las veces que quiera en valores finitos de $x$.\\
+\textbf{El truquito:} Comprueba siempre el corte resolviendo la ecuación $f(x) = y_{\text{asíntota}}$. Si la ecuación tiene soluciones reales $x_0$, la gráfica corta a la asíntota en $(x_0, y_{\text{asíntota}})$.
+\end{trampa}
+
+\vspace{3mm}
+
+\begin{trampa}{Trampa 3: Asimetría en los Infinitos (Exponenciales y Radicales)}
+\textbf{El error típico:} Calcular únicamente el límite cuando $x \to +\infty$ y asumir alegremente que en $x \to -\infty$ la función se comporta igual.\\
+\textbf{Ejemplo:} En $f(x) = \frac{e^x}{e^x + 1}$, cuando $x \to +\infty$ el límite es $1$ (A.H. $y=1$), pero cuando $x \to -\infty$ el límite es $0$ (A.H. $y=0$). Tiene \textbf{dos asíntotas horizontales distintas}.\\
+\textbf{El truquito:} En funciones con $e^x$ o con raíces $\sqrt{x^2+k}$, evalúa siempre por separado $+\infty$ y $-\infty$. Para $-\infty$, usa el cambio de variable formal $x = -t$ con $t \to +\infty$ para no equivocarte jamás con los signos.
+\end{trampa}
+
+\vspace{3mm}
+
+\begin{trucobox}{Truco Maestro: El Atajo de la División para la Asíntota Oblicua}
+En funciones racionales $f(x) = \frac{P(x)}{Q(x)}$ donde $\text{grado}(P) = \text{grado}(Q) + 1$:
+\begin{itemize}\itemsep 1.5pt
+    \item Realiza la división euclídea ordinaria: $P(x) = Q(x) \cdot C(x) + R(x) \implies \frac{P(x)}{Q(x)} = C(x) + \frac{R(x)}{Q(x)}$.
+    \item El cociente $C(x) = mx + n$ es \textbf{directamente la ecuación de la asíntota oblicua}. ¡Te ahorras calcular los límites de Cauchy de $m$ y $n$!
+    \item La posición relativa es inmediata mirando el término restante $\frac{R(x)}{Q(x)}$: si es positivo cuando $x \to +\infty$, la curva está por encima; si es negativo, por debajo.
+\end{itemize}
+\end{trucobox}
+
+\newpage
+
+% ==============================================================================
+% PÁGINA 2: CLASIFICACIÓN RIGUROSA DE DISCONTINUIDADES
+% ==============================================================================
+\section{Esquema General de Discontinuidades en un Punto $x = a$}
+
+Una función $f$ es continua en $x = a$ si y solo si se cumplen simultáneamente tres condiciones:
+$$\text{1. Existe } f(a) \in \mathbb{R} \qquad \text{2. Existe } \lim_{x \to a} f(x) = L \in \mathbb{R} \qquad \text{3. } \lim_{x \to a} f(x) = f(a)$$
+
+Si alguna falla, se produce una discontinuidad clasificada según este árbol de decisión:
+
+\vspace{2mm}
+
+\noindent
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabularx}{\linewidth}{|l|X|X|}
+\hline
+\textbf{Tipo de Discontinuidad} & \textbf{Condición de los Límites Laterales} & \textbf{Comportamiento Gráfico} \\ \hline\hline
+\textbf{1. Evitable} & Existe límite finito: $\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L \in \mathbb{R}$, pero no existe $f(a)$ o $f(a) \neq L$. & Gráfica continua con un ``agujero'' o punto perforado en $(a, L)$. \\ \hline
+\textbf{2. Salto Finito} & Ambos límites laterales existen y son finitos pero distintos: $\lim_{x \to a^-} \neq \lim_{x \to a^+}$. Salto $= |L_1 - L_2|$. & La curva da un escalón vertical finito de altura medible. \\ \hline
+\textbf{3. Salto Infinito} & Al menos uno de los límites laterales es infinito: $\lim_{x \to a^\pm} f(x) = \pm\infty$. & La curva se dispara verticalmente. Hay una \textbf{Asíntota Vertical} en $x = a$. \\ \hline
+\textbf{4. Esencial / 2ª Especie} & Al menos uno de los límites laterales \textbf{no existe} (ni finito ni infinito, típicamente por oscilación infinita). & Oscilación infinita o frontera de definición (ej. $\sin(1/x)$). \\ \hline
+\end{tabularx}
+
+\vspace{5mm}
+
+\section{Cuándo se puede (y cuándo NO) usar la Regla de L'Hôpital}
+
+\begin{trampa}{Condiciones OBLIGATORIAS para aplicar la Regla de L'Hôpital}
+La regla de L'Hôpital establece que $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$ \textbf{únicamente si}:
+\begin{enumerate}\itemsep 1.5pt
+    \item El límite original presenta una indeterminación del tipo $\left[\frac{0}{0}\right]$ o $\left[\frac{\pm\infty}{\pm\infty}\right]$.
+    \item Las funciones $f$ y $g$ son derivables en un entorno de $a$ (salvo quizás en $a$).
+    \item $g'(x) \neq 0$ en dicho entorno.
+    \item Existe el límite del cociente de derivadas $\lim \frac{f'(x)}{g'(x)}$ (finito o infinito).
+\end{enumerate}
+\vspace{1mm}
+\textbf{¡PELIGRO DE EXAMEN!}\\
+Aplicar L'Hôpital a una expresión que da $\left[\frac{k}{0}\right]$ con $k \neq 0$ es un \textbf{error gravísimo} calificado con 0 puntos. Si el numerador no da 0, no es indeterminación: el límite es $\pm\infty$ y se resuelve estudiando los signos laterales.
+\end{trampa}
+
+\newpage
+
+% ==============================================================================
+% PÁGINA 3: RESOLUCIÓN PASO A PASO: EVITABLE Y SALTO FINITO
+% ==============================================================================
+\section{Resolución de Cada Tipo de Discontinuidad: Sin y Con L'Hôpital}
+
+\subsection{Tipo 1: Discontinuidad Evitable}
+
+\begin{ejemplobox}{Caso de Estudio 1: Estudio de continuidad de $f(x) = \frac{\sqrt{x+4} - 2}{x}$ en $x = 0$}
+En $x = 0$, $f(0)$ no está definido (denominador cero). Evaluamos el límite:
+$$\lim_{x \to 0} \frac{\sqrt{x+4} - 2}{x} \quad \longrightarrow \quad \left[\frac{\sqrt{0+4}-2}{0}\right] = \left[\frac{0}{0}\right] \quad \text{(Indeterminación)}$$
+\end{ejemplobox}
+
+\textbf{A. Resolución SIN L'Hôpital (Método del Conjugado):}
+Multiplicamos y dividimos por la expresión conjugada del numerador $(\sqrt{x+4} + 2)$:
+$$\lim_{x \to 0} \frac{(\sqrt{x+4} - 2)(\sqrt{x+4} + 2)}{x(\sqrt{x+4} + 2)} = \lim_{x \to 0} \frac{(x+4) - 4}{x(\sqrt{x+4} + 2)} = \lim_{x \to 0} \frac{x}{x(\sqrt{x+4} + 2)}$$
+Cancelamos el factor común $x$ que causaba la indeterminación:
+$$= \lim_{x \to 0} \frac{1}{\sqrt{x+4} + 2} = \frac{1}{\sqrt{4} + 2} = \frac{1}{2 + 2} = \mathbf{\frac{1}{4}}$$
+
+\textbf{B. Resolución CON L'Hôpital:}
+Como es una indeterminación $\left[\frac{0}{0}\right]$ y numerador y denominador son derivables cerca de $0$:
+$$\lim_{x \to 0} \frac{\frac{d}{dx}[\sqrt{x+4} - 2]}{\frac{d}{dx}[x]} = \lim_{x \to 0} \frac{\frac{1}{2\sqrt{x+4}}}{1} = \frac{\frac{1}{2\sqrt{0+4}}}{1} = \frac{1}{2 \cdot 2} = \mathbf{\frac{1}{4}}$$
+
+\textbf{Conclusión:} Existe límite finito $L = \frac{1}{4}$, pero no existe $f(0)$. Por tanto, en $x = 0$ hay una \textbf{Discontinuidad Evitable}.\\
+\textit{Redefinición continua:} $F(x) = \begin{cases} \frac{\sqrt{x+4}-2}{x} & \text{si } x \neq 0 \\ \frac{1}{4} & \text{si } x = 0 \end{cases}$
+
+\vspace{3mm}
+
+\subsection{Tipo 2: Discontinuidad Inevitable de Salto Finito}
+
+\begin{ejemplobox}{Caso de Estudio 2: Continuidad de $f(x) = \begin{cases} \frac{\ln(1+x)}{x} & \text{si } x > 0 \\ 3 - x^2 & \text{si } x \le 0 \end{cases}$ en el punto de empalme $x = 0$}
+Evaluamos el valor de la función: $f(0) = 3 - 0^2 = 3$. Ahora calculamos los límites laterales:
+\end{ejemplobox}
+
+\begin{itemize}\itemsep 3pt
+    \item \textbf{Límite por la izquierda ($x \to 0^-$):}
+    $$\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (3 - x^2) = 3 - 0 = \mathbf{3}$$
+
+    \item \textbf{Límite por la derecha ($x \to 0^+$):} Presenta indeterminación $\left[\frac{\ln(1)}{0}\right] = \left[\frac{0}{0}\right]$.
+    \begin{itemize}\itemsep 2pt
+        \item \textbf{Sin L'Hôpital (Infinitésimos Equivalentes):} Cuando $u \to 0$, se verifica que $\ln(1+u) \sim u$.
+        $$\lim_{x \to 0^+} \frac{\ln(1+x)}{x} = \lim_{x \to 0^+} \frac{x}{x} = \mathbf{1}$$
+        \item \textbf{Con L'Hôpital:} Derivamos numerador y denominador:
+        $$\lim_{x \to 0^+} \frac{\frac{d}{dx}[\ln(1+x)]}{\frac{d}{dx}[x]} = \lim_{x \to 0^+} \frac{\frac{1}{1+x}}{1} = \frac{\frac{1}{1+0}}{1} = \mathbf{1}$$
+    \end{itemize}
+\end{itemize}
+
+\textbf{Conclusión:}
+$$\lim_{x \to 0^-} f(x) = 3 \quad \neq \quad \lim_{x \to 0^+} f(x) = 1$$
+Ambos límites laterales son finitos pero distintos. Por tanto, en $x = 0$ existe una \textbf{Discontinuidad Inevitable de Salto Finito}.\\
+\textbf{Amplitud del salto:} $|\text{Salto}| = |L_{\text{der}} - L_{\text{izq}}| = |1 - 3| = \mathbf{2}$.
+
+\newpage
+
+% ==============================================================================
+% PÁGINA 4: RESOLUCIÓN PASO A PASO: SALTO INFINITO Y ESENCIAL
+% ==============================================================================
+\subsection{Tipo 3: Discontinuidad Inevitable de Salto Infinito (Asíntota Vertical)}
+
+\begin{ejemplobox}{Caso de Estudio 3: Estudio de continuidad de $f(x) = \frac{1 - \cos x}{x^3}$ en $x = 0$}
+En $x = 0$, $f(0)$ no existe. Evaluamos el límite:
+$$\lim_{x \to 0} \frac{1 - \cos x}{x^3} \quad \longrightarrow \quad \left[\frac{1 - 1}{0}\right] = \left[\frac{0}{0}\right] \quad \text{(Indeterminación)}$$
+\end{ejemplobox}
+
+\textbf{A. Resolución SIN L'Hôpital (Infinitésimo Equivalente Trigonométrico):}
+Sabemos que cuando $x \to 0$, el infinitésimo notable es $1 - \cos x \sim \frac{x^2}{2}$:
+$$\lim_{x \to 0} \frac{1 - \cos x}{x^3} = \lim_{x \to 0} \frac{\frac{x^2}{2}}{x^3} = \lim_{x \to 0} \frac{1}{2x} \quad \longrightarrow \quad \left[\frac{1}{0}\right]$$
+Al llegar a $\left[\frac{1}{0}\right]$, \textbf{no se aplica L'Hôpital}: calculamos límites laterales estudiando el signo del denominador:
+$$\lim_{x \to 0^-} \frac{1}{2x} = \frac{1}{0^-} = \mathbf{-\infty}, \qquad \lim_{x \to 0^+} \frac{1}{2x} = \frac{1}{0^+} = \mathbf{+\infty}$$
+
+\textbf{B. Resolución CON L'Hôpital (Aplicación Encadenada):}
+$$\lim_{x \to 0} \frac{1 - \cos x}{x^3} \left[\frac{0}{0}\right] \stackrel{\text{L'Hôp}}{=} \lim_{x \to 0} \frac{\sin x}{3x^2} \left[\frac{0}{0}\right] \stackrel{\text{L'Hôp}}{=} \lim_{x \to 0} \frac{\cos x}{6x} = \left[\frac{\cos 0}{6 \cdot 0}\right] = \left[\frac{1}{0}\right]$$
+¡Atención! En $\left[\frac{1}{0}\right]$ se detiene L'Hôpital y se pasa al análisis de signos laterales:
+$$\lim_{x \to 0^-} \frac{\cos x}{6x} = \frac{1}{0^-} = \mathbf{-\infty}, \qquad \lim_{x \to 0^+} \frac{\cos x}{6x} = \frac{1}{0^+} = \mathbf{+\infty}$$
+
+\textbf{Conclusión:} Al ser los límites laterales infinitos, en $x = 0$ existe una \textbf{Discontinuidad Inevitable de Salto Infinito} (hay una \textbf{Asíntota Vertical en la recta $x = 0$}).
+
+\vspace{4mm}
+
+\subsection{Tipo 4: Discontinuidad Esencial o de Segunda Especie}
+
+\begin{ejemplobox}{Caso de Estudio 4: Discontinuidades sin Límite (Oscilantes y Asimétricas)}
+Analizar el comportamiento en $x = 0$ de las funciones $f(x) = \sin\left(\frac{1}{x}\right)$ y $g(x) = 2^{1/x}$, justificando por qué no es aplicable la regla de L'Hôpital.
+\end{ejemplobox}
+
+\begin{itemize}\itemsep 3pt
+    \item \textbf{Ejemplo Oscilante: $f(x) = \sin\left(\frac{1}{x}\right)$ en $x = 0$:}
+    Cuando $x \to 0$, el argumento $\frac{1}{x} \to \pm\infty$. Como la función seno oscila indefinidamente entre $-1$ y $+1$ en todo entorno de 0, \textbf{no existe ninguno de los límites laterales} (ni finito ni infinito).\\
+    \textit{¿Aplica L'Hôpital?} \textbf{NO}, porque no es un cociente $\left[\frac{0}{0}\right]$ ni $\left[\frac{\infty}{\infty}\right]$. La función oscila infinitamente rápido cerca del origen.
+
+    \item \textbf{Ejemplo Asimétrico: $g(x) = 2^{1/x}$ en $x = 0$:}
+    $$\lim_{x \to 0^-} 2^{1/x} = 2^{1/0^-} = 2^{-\infty} = \frac{1}{2^{+\infty}} = \mathbf{0}$$
+    $$\lim_{x \to 0^+} 2^{1/x} = 2^{1/0^+} = 2^{+\infty} = \mathbf{+\infty}$$
+    Por la izquierda el límite es finito ($0$) y por la derecha es $+\infty$. Al no existir límite finito por uno de los lados (es infinito), se cataloga formalmente como \textbf{discontinuidad de 2ª especie o salto infinito}.
+\end{itemize}
+
+\vspace{3mm}
+
+\begin{trucobox}{Regla Mnemotécnica de Repaso Rápido para el Examen}
+\small
+\begin{itemize}\itemsep 1.5pt
+    \item $\left[\frac{0}{0}\right] \to$ Factoriza o aplica L'Hôpital. Si el límite da un número $L$, es \textbf{Evitable}.
+    \item Límites laterales finitos y $L_1 \neq L_2 \to$ Es \textbf{Salto Finito} (Amplitud $= |L_1 - L_2|$).
+    \item Límite termina dando $\left[\frac{k}{0}\right] \to$ Signos laterales dan $\pm\infty \to$ Es \textbf{Salto Infinito} (Asíntota Vertical).
+    \item Oscilación infinita o no existencia de límite lateral $\to$ Es \textbf{Esencial / 2ª Especie}.
+\end{itemize}
+\end{trucobox}
+
+\end{document}

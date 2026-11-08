@@ -1,0 +1,1466 @@
+================================================================================
+
+SESIÓN: 29/09/2026 - INICIALIZACIÓN DEL PROTOCOLO DE SEGUIMIENTO Y BITÁCORA
+================================================================================
+
+**Prompts del usuario:**
+- "# PROTOCOLO OBLIGATORIO DE SEGUIMIENTO TEMPORAL Y BITÁCORA..."
+
+**Acciones aplicadas:**
+1. Adopción del protocolo estricto de cabecera temporal en cada mensaje: ⏱️ [Prompt: HH:MM:SS | Respuesta: HH:MM:SS].
+2. Creación e inicialización del archivo cronológico del proyecto: `registro-clases.text`.
+3. Verificación de la estructura del repositorio y espacio de trabajo local (directorio Clases / repositorio Cositas).
+4. Sin cambios en compilación, tests o despliegue en esta fase de inicialización.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - PREPARACIÓN DOCENTE: APUNTES Y CLASE DE LOGARITMOS
+================================================================================
+
+**Prompts del usuario:**
+- "hazme unos apuntes para esta alumna: El lunes tengo examen de mates y literal q no se hacer nada estoy viendo logaritmos,derivadas,indeterminaciones… me podrías explicar hoy más o menos logaritmos? Realmente son para que yo los estudie y luego le de una clase de, en principio logaritmos pero igual el resto de cosas"
+
+**Acciones aplicadas:**
+1. Creación del directorio especializado `03_Matematicas/04_Logaritmos/`.
+2. Elaboración de la Guía Maestra del Profesor (`apuntes_docente_logaritmos.md`) con enfoque pedagógico para desbloquear a la alumna en pánico, deducción intuitiva, propiedades de oro, errores mortales, tipología de examen resuelta paso a paso, puente conceptual hacia derivadas e indeterminaciones, y guion temporizado de clase (60 min).
+3. Elaboración de la Ficha Resumen de la Alumna (`ficha_alumna_logaritmos.md`) con lenguaje directo, reglas mnemotécnicas, pasos para ecuaciones y batería de ejercicios clasificados con soluciones.
+4. Compilación de ambos documentos en formato PDF de alta calidad mediante motor headless Chromium/Edge (`apuntes_docente_logaritmos.pdf` de 262 KB y `ficha_alumna_logaritmos.pdf` de 193 KB).
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados localmente en `03_Matematicas/04_Logaritmos/`).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - PACK INTEGRAL DE EXAMEN (LOGARITMOS, LÍMITES/INDETERMINACIONES Y DERIVADAS)
+================================================================================
+
+**Prompts del usuario:**
+- "pero damelo de todo lo que hay ahi mencionado"
+
+**Acciones aplicadas:**
+1. Creación del directorio especializado `03_Matematicas/05_Pack_Examen_Urgente/`.
+2. Redacción de la Guía Maestra Docente (`guia_profesor_logaritmos_limites_derivadas.md`) cubriendo los 3 bloques del temario:
+   - Bloque 1: Logaritmos, ecuaciones logarítmicas y ecuaciones exponenciales.
+   - Bloque 2: Límites y resolución de las 7 indeterminaciones (factorización para 0/0, conjugados, regla de grados para infinito/infinito, jerarquía de infinitos y fórmula del número e para 1^infinito).
+   - Bloque 3: Derivadas (definición intuitiva, tabla de derivadas compuestas con regla de la cadena, producto/cociente, ecuación de la recta tangente y estudio de monotonía con máximos/mínimos).
+   - Cronograma intensivo de rescate para el fin de semana.
+3. Redacción del Kit de Supervivencia de la Alumna (`chuleta_alumna_logaritmos_limites_derivadas.md`) con recetas directas, tablas de fórmulas, prohibiciones y batería de 11 ejercicios de examen resueltos paso a paso con soluciones de autocorrección.
+4. Compilación de ambos documentos en PDF de alta fidelidad con KaTeX (`guia_profesor_logaritmos_limites_derivadas.pdf` de 300 KB y `chuleta_alumna_logaritmos_limites_derivadas.pdf` de 208 KB).
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - TRATAMIENTO DE NÚMEROS COMPUESTOS (CASO 36) Y VARIAS BASES
+================================================================================
+
+**Prompts del usuario:**
+- "no cubre lo que pasa cuando tengo 36, por ejemplo. Ahi tengo varias "bases""
+
+**Acciones aplicadas:**
+1. Integración de la sección de Números Compuestos y Varias Bases en las 4 guías y fichas:
+   - Descomposición en factores primos del argumento ($36 = 2^2 \cdot 3^2$) para ejercicios tipo $\log(36)$ dados $\log 2$ y $\log 3$.
+   - Incorporación de la regla del comodín $5 = 10/2 \implies \log 5 = 1 - \log 2$ y tratamiento de decimales ($\log 0.36$).
+   - Formulación de la propiedad de potencia en la base: $\log_{b^k}(A) = \frac{1}{k}\log_b(A)$ (ej. $\log_{36}(6) = 1/2$, $\log_{36}(x) = \frac{1}{2}\log_6(x)$).
+   - Resolución de ecuaciones exponenciales con varias bases que originan 36 ($2^x \cdot 3^x = 36$ y ecuaciones cuadráticas ocultas $36^x - 7\cdot 6^x + 6 = 0$).
+2. Actualización de archivos fuente:
+   - `03_Matematicas/04_Logaritmos/apuntes_docente_logaritmos.md`
+   - `03_Matematicas/04_Logaritmos/ficha_alumna_logaritmos.md`
+   - `03_Matematicas/05_Pack_Examen_Urgente/guia_profesor_logaritmos_limites_derivadas.md`
+   - `03_Matematicas/05_Pack_Examen_Urgente/chuleta_alumna_logaritmos_limites_derivadas.md`
+3. Recompilación completa de los 4 archivos PDF con el motor Chromium/Edge headless:
+   - `apuntes_docente_logaritmos.pdf` (283 KB)
+   - `ficha_alumna_logaritmos.pdf` (202 KB)
+   - `guia_profesor_logaritmos_limites_derivadas.pdf` (317 KB)
+   - `chuleta_alumna_logaritmos_limites_derivadas.pdf` (216 KB)
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - ECUACIONES CON VARIAS BASES Y DIFERENTES EXPONENTES
+================================================================================
+
+**Prompts del usuario:**
+- "dime con varios exponentes diferentes tb. Sacame un ejercicio"
+
+**Acciones aplicadas:**
+1. Desarrollo técnico y pedagógico de la resolución de ecuaciones con varias bases y diferentes exponentes:
+   - Método 1 (Desglose de potencias $a^{x+n} = a^x \cdot a^n$ y $a^{x-n} = a^x/a^n$ para extraer coeficientes numéricos y unificar las bases de la incógnita en una base compuesta como $6^x$ o $12^x$).
+   - Creación y resolución detallada del Ejercicio de Examen: $2^{x+2} \cdot 3^{x-1} = 48 \implies \frac{4}{3} \cdot 6^x = 48 \implies 6^x = 36 = 6^2 \implies x = 2$.
+   - Método 2 (Método universal mediante logaritmos para bases y exponentes incompatibles, con desarrollo distributivo y despeje algebraico exacto: $2^{x+1} = 3^{2x-1} \implies x = \frac{\ln 6}{\ln(9/2)}$).
+2. Incorporación de estas técnicas y del ejercicio modelo en los 4 archivos de apuntes y fichas de ejercicios.
+3. Recompilación de los 4 archivos PDF:
+   - `apuntes_docente_logaritmos.pdf` (333 KB)
+   - `ficha_alumna_logaritmos.pdf` (210 KB)
+   - `guia_profesor_logaritmos_limites_derivadas.pdf` (324 KB)
+   - `chuleta_alumna_logaritmos_limites_derivadas.pdf` (218 KB)
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - EXPONENTES POTENCIADOS (GRADO 2 Y TORRES DE POTENCIAS)
+================================================================================
+
+**Prompts del usuario:**
+- "dame con los exponentes siendo potenciados tb"
+
+**Acciones aplicadas:**
+1. Desarrollo técnico y pedagógico de exponentes potenciados y torres de potencias:
+   - Distinción teórica y práctica entre potencia de una potencia $(a^b)^c = a^{bc}$ y torre de exponentes $a^{b^c}$ (ej. $(2^3)^2 = 64 \neq 2^{3^2} = 512$).
+   - Creación y resolución detallada del Ejercicio de Examen con múltiples bases y exponentes cuadráticos:
+     $2^{x^2+1} \cdot 3^{x^2-1} = 24 \implies \frac{2}{3} \cdot 6^{x^2} = 24 \implies 6^{x^2} = 36 = 6^2 \implies x^2 = 2 \implies x = \pm\sqrt{2}$.
+   - Resolución de ecuaciones en torre de exponentes: $2^{3^{x-1}} = 512 = 2^9 \implies 3^{x-1} = 9 = 3^2 \implies x = 3$.
+2. Actualización de los 4 archivos de texto y fichas del repositorio.
+3. Recompilación de los 4 archivos PDF:
+   - `apuntes_docente_logaritmos.pdf` (349 KB)
+   - `ficha_alumna_logaritmos.pdf` (217 KB)
+   - `guia_profesor_logaritmos_limites_derivadas.pdf` (329 KB)
+   - `chuleta_alumna_logaritmos_limites_derivadas.pdf` (222 KB)
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - EXPANSIÓN EXHAUSTIVA INTEGRAL (LOGARITMOS, LÍMITES Y DERIVADAS)
+================================================================================
+
+**Prompts del usuario:**
+- "quiero que el documento que me has hecho para todos los temas que me habia dicho mi alumna este tan completo como el que me habias hecho solo para logaritmos. Cada tema asi de completo"
+
+**Acciones aplicadas:**
+1. Reescritura y profundización total de la Guía Maestra Docente (`guia_profesor_logaritmos_limites_derivadas.md`), elevando cada uno de los temas al mismo nivel enciclopédico y pedagógico que la guía inicial de logaritmos:
+   - **Módulo 0:** Psicología de la alumna bloqueada, cronograma de rescate intensivo de 3 sesiones de fin de semana.
+   - **Tema 1 (Logaritmos y Exponenciales):** Diálogo del minuto 1, definición formal, dominio, 6 propiedades, 3 pecados capitales, número 36 y factores primos, comodín del 5, potencias en la base, 4 casos de ecuaciones exponenciales avanzadas (desglose de potencias, exponentes cuadráticos $x^2$, torres de exponentes y método universal con $\ln$), y algoritmo de ecuaciones logarítmicas con comprobación.
+   - **Tema 2 (Límites e Indeterminaciones):** Intuición de la lupa y el precipicio, Primer Mandamiento (sustituir siempre), desarrollo minucioso de las 7 indeterminaciones ($\frac{0}{0}$ en polinomios por factorización de $(x-a)$, $\frac{0}{0}$ con raíces por conjugado, $\frac{\infty}{\infty}$ con regla de grados y trampa de raíces, jerarquía de infinitos, $[\infty - \infty]$ con conjugado y fracciones, $[0 \cdot \infty]$ por inversión, y $[1^\infty]$ con deducción y fórmula directa de examen del número $e$), y regla de L'Hôpital con advertencias.
+   - **Tema 3 (Derivadas y Aplicaciones):** Intuición física y geométrica (recta tangente y velocímetro), tabla maestra con regla de la cadena (técnica de la cebolla), álgebra de producto y cociente, Aplicación 1 (Recta tangente y normal en 3 pasos con ejercicio resuelto), Aplicación 2 (Monotonía y extremos relativos con tabla de signos en la recta real y cálculo exacto de coordenadas $(x, y)$).
+   - **Módulo 4:** Simulacro general de examen con 6 problemas integradores resueltos con detalle.
+2. Reescritura y ampliación de la Ficha de Supervivencia de la Alumna (`chuleta_alumna_logaritmos_limites_derivadas.md`) con resúmenes ultraclaros, tablas comparativas y batería de 14 ejercicios graduados con soluciones paso a paso.
+3. Recompilación de ambos archivos PDF mediante motor Chromium/Edge headless:
+   - `guia_profesor_logaritmos_limites_derivadas.pdf` (465 KB)
+   - `chuleta_alumna_logaritmos_limites_derivadas.pdf` (244 KB)
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - ANÁLISIS DE LA CLASE DE Alumna 1 Y DIGITALIZACIÓN DE lienzo_1.PDF
+================================================================================
+
+**Prompts del usuario:**
+- "Bueno, ya he hecho la clase y te he dejado los documentos pertinentes, que serían la cosa que Gemini ya ha escrito a mano notas en Google Meet. Te he dejado la transcripción, quiero que la leas, y también lo que hace Gemini de hacer el resumen en función de la transcripción. Que mires los dos y también te he subido el documento sobre el que he estado escribiendo, que no tiene todo porque voy borrando alguna cosilla, pero que te va a servir para ver lo que hemos hecho también un poco. Quiero que me hagas una especie de resumen sobre el documento. Donde está pintado, pues tienes que hacer foto a cada página y ver el contenido. Y quiero que sea al estilo como el que me hiciste para nuevo lienzo y nuevo lien2zo, que ya me lo hiciste en su momento. Puedes verlo y ver un poco cómo fue. Y está todo dentro de la carpeta Alumna 1, que sería el nombre de la niña en este caso. Y a partir de ahí te voy a ir diciendo para qué es, para quién es cada cosa."
+
+**Acciones aplicadas:**
+1. Extracción y análisis exhaustivo de los documentos de Google Meet (`[Sesión de clase sincronizada]
+   - Lectura cruzada entre el resumen automático de Gemini y la transcripción completa de la sesión (44 páginas de interacción verbal).
+   - Identificación de hitos pedagógicos: problemas técnicos iniciales, superación del bloqueo con calculadora mediante preguntas guiadas, detección de que el temario de examen incluye límites (foto enviada al minuto 20), y consolidación de logaritmos y ecuaciones exponenciales con raíces.
+2. Renderizado de alta resolución de las 7 páginas del lienzo manuscrito (`Alumna 1/Lienzo_Digital.pdf`) a imágenes PNG en `Alumna 1/lienzos_digitales/page_1.png` a `page_7.png`.
+3. Creación del documento formal de apuntes del lienzo al estilo de "Nuevo lienzo": `Alumna 1/apuntes_clase_logaritmos_lienzo.md` estructurado Hoja por Hoja (Hojas 1 a 7) con explicaciones teóricas completas, expresiones matemáticas en KaTeX y saltos de página limpios.
+4. Compilación del documento a PDF mediante motor Chromium/Edge headless:
+   - `Alumna 1/apuntes_clase_logaritmos_lienzo.pdf` (180 KB).
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - AUDITORÍA Y NORMALIZACIÓN RIGUROSA DE TERMINOLOGÍA DOCENTE
+================================================================================
+
+**Prompts del usuario:**
+- "He detectado que pones cosas que yo no digo, pero que sí tú dices, por ejemplo, la regla circular. A mí esa regla yo no la llamo así, me parece un nombre de mierda y pues revisa que no hayas hecho otras cosas así. Pero revisa también que no la hayas hecho en otras cosas."
+
+**Acciones aplicadas:**
+1. Auditoría exhaustiva de terminología y conceptos informales en toda la base de materiales y apuntes del repositorio.
+2. Identificación y depuración completa de modismos artificiales y etiquetas informales:
+   - "Regla circular" / "truco del reloj" -> Reemplazado por: "Definición fundamental del logaritmo y paso a potencia exponencial" ($\log_b(a) = c \iff b^c = a$).
+   - "Regla de la catapulta" -> Reemplazado por: "Propiedad del logaritmo de una potencia / bajada multiplicativa del exponente" ($\log_b(A^n) = n\log_b A$).
+   - "Técnica de la cebolla" -> Reemplazado por: "Regla de la cadena" ($[f(g(x))]' = f'(g(x)) \cdot g'(x)$).
+   - "Los 3 pecados capitales" -> Reemplazado por: "Errores frecuentes que deben evitarse en examen".
+   - "Metáfora del precipicio" -> Reemplazado por: "Aproximación intuitiva a un punto límite".
+   - "Subidón de dopamina" -> Reemplazado por: "Generación de confianza inicial".
+   - "Comodín del 5" -> Reemplazado por: "Descomposición del 5 como cociente $10/2$".
+3. Limpieza y reescritura técnica en todos los documentos afectados:
+   - `Alumna 1/apuntes_clase_logaritmos_lienzo.md`
+   - `03_Matematicas/05_Pack_Examen_Urgente/guia_profesor_logaritmos_limites_derivadas.md`
+   - `03_Matematicas/05_Pack_Examen_Urgente/chuleta_alumna_logaritmos_limites_derivadas.md`
+   - `03_Matematicas/04_Logaritmos/apuntes_docente_logaritmos.md`
+   - `03_Matematicas/04_Logaritmos/ficha_alumna_logaritmos.md`
+4. Verificación automatizada con script de búsqueda global: 0 coincidencias de términos informales remanentes en los materiales pedagógicos.
+5. Recompilación completa de los 5 archivos PDF con Microsoft Edge headless y KaTeX:
+   - `Alumna 1/apuntes_clase_logaritmos_lienzo.pdf` (181 KB)
+   - `03_Matematicas/05_Pack_Examen_Urgente/guia_profesor_logaritmos_limites_derivadas.pdf` (465 KB)
+   - `03_Matematicas/05_Pack_Examen_Urgente/chuleta_alumna_logaritmos_limites_derivadas.pdf` (244 KB)
+   - `03_Matematicas/04_Logaritmos/apuntes_docente_logaritmos.pdf` (348 KB)
+   - `03_Matematicas/04_Logaritmos/ficha_alumna_logaritmos.pdf` (217 KB)
+6. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - ACLARACIÓN DE ORIGEN DE MATERIALES Y DESGLOSE DE DOCUMENTOS
+================================================================================
+
+**Prompts del usuario:**
+- "Una pregunta, ¿me podrías decir en qué momento he hablado de la regla de la cadena, aproximación intuitiva a un límite, generación de confianza inicial y descomposición del cinco como cociente? ¿En qué momento he hablado yo de eso en la clase? ¿Me puedes explicar qué has hecho? Es que no entiendo nada."
+
+**Acciones aplicadas:**
+1. Aclaración explícita y desambiguación sobre el origen de los contenidos:
+   - En la clase real con Alumna 1 (audio Meet y Lienzo_Digital.pdf) el docente ÚNICAMENTE trató logaritmos y ecuaciones exponenciales. En ningún momento se habló de límites ni de derivadas durante la sesión presencial.
+   - Las expresiones y conceptos depurados ("regla de la cadena", "límite", etc.) pertenecían a las guías maestras generadas por el asistente en turnos anteriores para preparar el temario global del examen del lunes (carpeta 03_Matematicas/).
+   - Se explica que la auditoría revisó todo el repositorio (incluyendo esas guías previas), lo que causó confusión al mezclar documentos de apoyo futuros con lo estrictamente impartido en la clase de hoy.
+2. Delimitación estricta de carpetas:
+   - Carpeta `Alumna 1/`: Reflejo fiel y exclusivo de la clase impartida (lienzo Lienzo_Digital.pdf y transcripción de Meet sobre logaritmos).
+   - Carpeta `03_Matematicas/`: Material de apoyo y preparación para las próximas sesiones del examen (límites y derivadas).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - CONFIRMACIÓN Y RECEPCIÓN DE INSTRUCCIONES
+================================================================================
+
+**Prompts del usuario:**
+- "ah vale"
+
+**Acciones aplicadas:**
+1. Recepción y confirmación de la aclaración por parte del usuario.
+2. Estado de espera activo para recibir las directrices del usuario sobre la organización, asignación y destinatarios de los documentos generados.
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - GENERACIÓN DE CUADERNO DE EJERCICIOS PARA EXAMEN
+================================================================================
+
+**Prompts del usuario:**
+- "Sacame ejercicios para hacer todas estas cosas"
+
+**Acciones aplicadas:**
+1. Creación de una batería integral de 31 ejercicios prácticos de examen (`cuaderno_ejercicios_examen.md`), estructurada en 3 bloques temáticos:
+   - **Bloque 1 (Logaritmos y Potencias):** Cálculo directo, potencias compuestas con factores primos ($36, 180, 0.75$), compresión de logaritmos, ecuaciones logarítmicas con descarte de soluciones negativas, ecuaciones exponenciales con bases agrupables ($2^{x+2} \cdot 3^{x-1} = 48$), exponentes cuadráticos ($2^{x^2+1} \cdot 3^{x^2-1} = 24$) y resolución mediante logaritmos neperianos.
+   - **Bloque 2 (Límites e Indeterminaciones):** Sustitución, $[0/0]$ con polinomios y raíces (conjugado), $[\infty/\infty]$ con grados y radicales dominantes, $[\infty - \infty]$ con conjugado, y $[1^\infty]$ con fórmula del número $e$.
+   - **Bloque 3 (Derivadas y Aplicaciones):** Regla de la cadena (potencias, raíces, exponenciales, logaritmos, productos y cocientes), recta tangente en un punto de abscisa dada, e intervalos de monotonía con cálculo de coordenadas de máximos y mínimos relativos.
+2. Incorporación de un **Solucionario Completo Paso a Paso** para todos los ejercicios (1 al 31).
+3. Compilación a PDF mediante Microsoft Edge headless y KaTeX:
+   - `03_Matematicas/05_Pack_Examen_Urgente/cuaderno_ejercicios_examen.pdf` (197 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - COPIA Y COMPILACIÓN DE EJERCICIOS EN CARPETA Alumna 1
+================================================================================
+
+**Prompts del usuario:**
+- "Ponmelo en la carpeta alumna 1 anda"
+
+**Acciones aplicadas:**
+1. Copia del cuaderno de ejercicios y su solucionario a la carpeta de la alumna:
+   - `Alumna 1/cuaderno_ejercicios_examen.md`
+2. Compilación del documento a PDF mediante motor Chromium/Edge headless:
+   - `Alumna 1/cuaderno_ejercicios_examen.pdf` (197 KB).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - GENERACIÓN DE FICHA DE DEBERES DE LA CLASE 1 (Alumna 1)
+================================================================================
+
+**Prompts del usuario:**
+- "digo para la clase de hoy tio, no para el examen xd"
+
+**Acciones aplicadas:**
+1. Creación de una ficha de ejercicios (`ejercicios_practica_clase_1.md`) centrada estrictamente en los contenidos trabajados en la primera clase de Alumna 1:
+   - Bloque 1: Cálculo mental oral directo (definición fundamental).
+   - Bloque 2: Argumentos fraccionarios y radicales ($1/32$, $\sqrt[3]{16}$, $\sqrt[5]{49}$).
+   - Bloque 3: Base con raíz cuadrada ($\log_{\sqrt{2}}(16)$, $\log_{\sqrt{3}}(9)$).
+   - Bloque 4: Propiedades (producto, cociente) y trampa de examen explicada en clase: $(\log_b a)^2 \neq \log_b(a^2)$.
+   - Bloque 5: Ecuaciones exponenciales con igualación de bases y raíces (como $2^{x+1} = 4\sqrt{2}$).
+2. Incorporación de Solucionario detallado paso a paso para autocorrección.
+3. Compilación a PDF mediante Microsoft Edge headless y KaTeX:
+   - `Alumna 1/ejercicios_practica_clase_1.pdf` (148 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 29/09/2026 - VISUALIZACIÓN DIRECTA DE LA FICHA DE CLASE 1
+================================================================================
+
+**Prompts del usuario:**
+- "no lo veo"
+
+**Acciones aplicadas:**
+1. Verificación del contenido de la carpeta `Alumna 1/`:
+   - Confirmación de existencia de `ejercicios_practica_clase_1.md` (5.1 KB) y `ejercicios_practica_clase_1.pdf` (148 KB).
+2. Presentación completa y directa del texto íntegro de los ejercicios y su solucionario en el cuerpo del mensaje para acceso inmediato sin depender del visor de archivos.
+3. Indicación de la ruta absoluta del archivo en disco.
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - GUÍA MAESTRA DE ESTUDIO Y CÁTEDRA: OXOÁCIDOS Y OXOSALES
+================================================================================
+
+**Prompts del usuario:**
+- "Hazme un PDF para estudiar los oxoacidos y oxosales y poder explicarlos despues"
+
+**Acciones aplicadas:**
+1. Creación del manual monográfico y didáctico completo en Markdown:
+   - `01_Quimica/04_Formulacion_Inorganica/guia_estudio_docente_oxoacidos_y_oxosales.md`
+2. Estructuración exhaustiva del contenido:
+   - **Fundamentos nucleares:** Estructura general, reacción formal de hidratación, balance eléctrico y tabla de estados de oxidación positivos.
+   - **Algoritmo de deducción rápida (Par/Impar):** Regla matemática directa para calcular subíndices de hidrógeno y oxígeno en 5 segundos sin memorizar ni sumar aguas.
+   - **Ácidos polihidratados y condensados:** Serie completa del fósforo, arsénico, antimonio, boro y silicio (meta, piro/di, orto), convenio oficial de examen (omisión del prefijo orto) y diácidos ($\text{H}_2\text{S}_2\text{O}_7, \text{H}_2\text{Cr}_2\text{O}_7$).
+   - **Oxoácidos de metales de transición:** Cromo (+6) y Manganeso (+6, +7) con sus respectivos oxoaniones.
+   - **Nomenclaturas comparadas:** Tradicional aceptada por la IUPAC, de Hidrógeno (IUPAC 2005) y de Adición (IUPAC 2005).
+   - **Oxoaniones y Oxosales Neutras:** Regla de ionización, correspondencia tradicional (-oso a -ito, -ico a -ato), cruce en aspa con cationes, regla obligatoria del paréntesis y algoritmo inverso para desarmar sales complejas.
+   - **Oxosales Ácidas:** Neutralización parcial de ácidos polipróticos, aniones hidrogenados y veto explícito del prefijo vulgar "bi-".
+   - **Didáctica de pizarra:** Planificación de sesión en 4 tiempos para explicar el tema sin saturar al alumno.
+   - **Batería de ejercicios graduados:** 27 problemas clasificados en 4 niveles con solucionario analítico y razonado.
+3. Compilación a PDF mediante motor Chromium/Edge headless con renderizado KaTeX y tipografía editorial:
+   - `01_Quimica/04_Formulacion_Inorganica/guia_estudio_docente_oxoacidos_y_oxosales.pdf` (397 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - UBICACIÓN Y ACCESO DIRECTO AL PDF DE OXOÁCIDOS Y OXOSALES
+================================================================================
+
+**Prompts del usuario:**
+- "donde esta"
+
+**Acciones aplicadas:**
+1. Copia y sincronización del archivo PDF generado en la raíz principal del proyecto:
+   - `c:\Users\migue\Antigravity\Clases\guia_estudio_docente_oxoacidos_y_oxosales.pdf` (397 KB).
+2. Clarificación de las dos rutas accesibles (en la raíz del proyecto y en el módulo de química):
+   - Raíz del proyecto: `Clases/guia_estudio_docente_oxoacidos_y_oxosales.pdf`
+   - Carpeta temática: `01_Quimica/04_Formulacion_Inorganica/guia_estudio_docente_oxoacidos_y_oxosales.pdf`
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - GUÍA MAESTRA DE FORMULACIÓN Y NOMENCLATURA ORGÁNICA
+================================================================================
+
+**Prompts del usuario:**
+- "Hazme uno para la organica tb. Desde la basica hasta los grupos funcionales"
+
+**Acciones aplicadas:**
+1. Creación del directorio y del manual monográfico en Markdown:
+   - Directorio: `01_Quimica/05_Formulacion_Organica/`
+   - Archivo fuente: `01_Quimica/05_Formulacion_Organica/guia_estudio_docente_quimica_organica.md`
+2. Estructuración exhaustiva del contenido según normativa IUPAC (Libro Azul 2013/2020):
+   - **Fundamentos del Carbono:** Tetravalencia, hibridaciones ($sp^3, sp^2, sp$), tipos de representación (semidesarrollada y esquelética/zig-zag) y prefijos de cadena (1 a 12 carbonos).
+   - **Hidrocarburos Alifáticos:** Alcanos lineales y ramificados (radicales alquilo comunes con nombres IUPAC retenidos: isopropil, isobutil, sec-butil, tert-butil), 4 reglas de oro de numeración y orden alfabético. Alquenos, alquinos e hidrocarburos mixtos ("-eninos") con criterios estrictos de prioridad en dobles y triples enlaces. Hidrocarburos cíclicos.
+   - **Aromáticos (Arenos):** Benceno y derivados monosustituidos aceptados (tolueno, fenol, anilina, ácido benzoico, etc.), derivados disustituidos (posiciones 1,2-, 1,3-, 1,4- y orto/meta/para) y distinción crítica fenilo vs bencilo.
+   - **Derivados Halogenados:** Regla de consideración como sustituyentes sin rango de grupo principal.
+   - **Tabla Maestra de Prioridad IUPAC:** Orden de jerarquía completo (Ácido > Éster > Amida > Nitrilo > Aldehído > Cetona > Alcohol > Amina > Éter > Alqueno > Alquino > Halógeno > Alquilo), con sus sufijos y prefijos correspondientes.
+   - **Grupos Oxigenados y Nitrogenados:** Tratamiento pormenorizado de ácidos carboxílicos, ésteres, amidas, nitrilos, aldehídos, cetonas, alcoholes, éteres, aminas y nitroderivados.
+   - **Estrategia Didáctica de Pizarra:** Árbol de decisión universal en 4 pasos para nombrar cualquier compuesto polifuncional en examen.
+   - **Batería de Ejercicios:** 20 problemas clasificados en 3 bloques con solucionario analítico paso a paso.
+3. Compilación a PDF mediante motor Chromium/Edge headless con renderizado KaTeX:
+   - `01_Quimica/05_Formulacion_Organica/guia_estudio_docente_quimica_organica.pdf` (410 KB).
+   - Copia de acceso inmediato en la raíz: `c:\Users\migue\Antigravity\Clases\guia_estudio_docente_quimica_organica.pdf`.
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - REAJUSTE DE QUÍMICA ORGÁNICA A NIVEL 1º DE BACHILLERATO
+================================================================================
+
+**Prompts del usuario:**
+- "No hables de hibdriaciones ni nada. Quiero organica solo para formulacion y nivel 1º Bach a lo sumo"
+
+**Acciones aplicadas:**
+1. Reescritura completa del manual de química orgánica eliminando todo el contenido teórico orbital (hibridaciones sp3/sp2/sp, ángulos de enlace y estereoisomería).
+2. Enfoque 100% práctico y directo de formulación y nomenclatura para 1º de Bachillerato:
+   - **Regla de los 4 enlaces del carbono:** Cómo completar enlaces con hidrógenos de forma intuitiva.
+   - **Hidrocarburos:** Alcanos (ramas: metil, etil, propil, isopropil, butil, tert-butil), alquenos (-eno), alquinos (-ino), hidrocarburos mixtos (-eninos) con criterio de desempate, y aromáticos básicos (benceno, tolueno, fenol).
+   - **Derivados halogenados:** Tratamiento como ramificaciones ordinarias (cloro-, bromo-).
+   - **Escalera de prioridad simplificada (1º Bach):** Ácido > Éster > Amida > Nitrilo > Aldehído > Cetona > Alcohol > Amina > Éter > Alqueno > Alquino > Ramas/Halógenos.
+   - **Grupos funcionales oxigenados y nitrogenados:** Ficha rápida con aspecto visual, sufijo principal y ejemplos modelo.
+   - **Método de pizarra en 3 pasos:** Algoritmo simple para resolver cualquier ejercicio de examen.
+   - **Batería de 20 ejercicios de 1º de Bachillerato:** 10 de formular y 10 de nombrar, con solucionario detallado paso a paso.
+3. Recompilación del PDF con Microsoft Edge headless:
+   - `01_Quimica/05_Formulacion_Organica/guia_estudio_docente_quimica_organica.pdf` (310 KB).
+   - Copia sincronizada en la raíz: `c:\Users\migue\Antigravity\Clases\guia_estudio_docente_quimica_organica.pdf`.
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - ACLARACIÓN CONCEPTUAL: ÁCIDO DISULFÚRICO (ÓLEUM)
+================================================================================
+
+**Prompts del usuario:**
+- "Nunca habia oido hablar de acido disulfurico"
+
+**Acciones aplicadas:**
+1. Explicación didáctica y técnica sobre el ácido disulfúrico ($\text{H}_2\text{S}_2\text{O}_7$):
+   - Nombres sinónimos: Ácido pirosulfúrico (terminología clásica) y Óleum o ácido sulfúrico fumante (química industrial).
+   - Mecanismo de condensación: $2\,\text{H}_2\text{SO}_4 - \text{H}_2\text{O} \to \text{H}_2\text{S}_2\text{O}_7$.
+   - Contexto curricular: Aclaración de que en 1º de Bachillerato rara vez se exige en exámenes ordinarios (donde predominan el sulfúrico $\text{H}_2\text{SO}_4$ y el sulfuroso $\text{H}_2\text{SO}_3$, y como diácidos típicos se evalúan el dicrómico $\text{H}_2\text{Cr}_2\text{O}_7$ o el difosfórico $\text{H}_4\text{P}_2\text{O}_7$).
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - CORRECCIÓN NORMATIVA IUPAC (CRITERIO CADENA MÁS LARGA)
+================================================================================
+
+**Prompts del usuario:**
+- "La primera regla no la cambiaron en 2020? Que ahora solo importaba la cadena mas larga y ya (a no ser que hablasemos ya de grupos funcionales). Revisa esa revision de la IUPAC"
+
+**Acciones aplicadas:**
+1. Verificación bibliográfica de la revisión de nomenclatura IUPAC (Libro Azul 2013 / adaptaciones RSEQ 2020/2021 para Bachillerato y EvAU):
+   - Confirmación plena de la observación del usuario: la norma clásica de 1993 (que forzaba a incluir los dobles/triples enlaces aunque la cadena fuese más corta) fue sustituida por la regla P-44.4.1 de la IUPAC.
+   - Criterio oficial actual: la cadena continua de mayor longitud de carbonos tiene prioridad sobre las insaturaciones (salvo presencia de grupos funcionales con sufijo). Las insaturaciones solo deciden en caso de empate en longitud entre cadenas.
+2. Modificación del manual en Markdown:
+   - `01_Quimica/05_Formulacion_Organica/guia_estudio_docente_quimica_organica.md`
+   - Incorporación de cuadro destacado sobre el cambio IUPAC y ejemplo comparativo ($\text{3-etenilheptano}$ vs el antiguo $2\text{-propilhex-1-eno}$).
+3. Recompilación del PDF y sincronización:
+   - `01_Quimica/05_Formulacion_Organica/guia_estudio_docente_quimica_organica.pdf` (321 KB).
+   - Copia de acceso directo en la raíz: `c:\Users\migue\Antigravity\Clases\guia_estudio_docente_quimica_organica.pdf`.
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - ACLARACIÓN NORMATIVA: GRUPOS FUNCIONALES Y CADENA PRINCIPAL
+================================================================================
+
+**Prompts del usuario:**
+- "Y con grupos funcionales se mantiene la antigua, no?"
+
+**Acciones aplicadas:**
+1. Aclaración de la jerarquía de selección de cadena principal con grupos funcionales:
+   - El grupo funcional principal (sufijo) mantiene su rango prioritario absoluto: debe formar parte de la cadena principal obligatoriamente.
+   - Respecto a la longitud y ramificaciones a partir del grupo funcional: la revisión IUPAC 2013 (P-44.4.1) unificó el criterio, de modo que una vez incluido el grupo principal, la longitud máxima de la cadena de carbonos sigue prevaleciendo sobre las insaturaciones.
+   - Enfoque pedagógico para 1º de Bachillerato: como los grupos más relevantes (-COOH, -CHO, -CONH2, -CN) son terminales y contienen el propio carbono C1, en la práctica el alumno empieza a contar en el grupo funcional y elige el camino continuo más largo.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - CASUÍSTICA EXHAUSTIVA DE SELECCIÓN DE CADENA PRINCIPAL
+================================================================================
+
+**Prompts del usuario:**
+- "¿Y qué hay si tengo una cadena donde ya he elegido el principal y puedo elegir una que tenga más grupos funcionales o una que tenga más carbonos? ¿Cuál elijo? Grupos funcionales de la misma jerarquía o menor, no lo sé. Dame todos los casos porque te estás faltando bastantes casos."
+
+**Acciones aplicadas:**
+1. Desglose analítico y sistemático de todos los casos de competencia de cadena principal según la regla oficial P-44.4.1 de la IUPAC (Libro Azul 2013 / RSEQ):
+   - **Caso A (Misma jerarquía - Grupos principales):** El número de grupos principales MANDA sobre la longitud de la cadena (ej. dos grupos alcohol en 3 carbonos vencen a una cadena de 6 carbonos con un solo alcohol -> *2-butilpropano-1,3-diol*).
+   - **Caso B (Menor jerarquía - Grupos secundarios/prefijos):** La LONGITUD de la cadena de carbonos MANDA sobre los grupos secundarios (los grupos de menor prioridad son sustituyentes y no pueden acortar la cadena principal; ej. cadena de 7 carbonos con ácido vence a cadena de 5 con alcohol secundario -> *ácido 3-(2-hidroxietil)heptanoico*).
+   - **Caso C (Empate en grupos principales y longitud):** Desempatan las insaturaciones (mayor número de dobles/triples enlaces) y, en segundo término, el número de dobles enlaces frente a triples.
+   - **Caso D (Tres o más grupos terminales idénticos):** Aplicación de la nomenclatura de sufijos especiales *-carboxílico*, *-carbaldehído* o *-carbonitrilo* sobre la cadena que los sustenta (ej. *ácido propano-1,2,3-tricarboxílico*).
+2. Incorporación de la casuística exhaustiva en el manual en Markdown:
+   - `01_Quimica/05_Formulacion_Organica/guia_estudio_docente_quimica_organica.md` (Sección 5).
+3. Recompilación del PDF mediante Microsoft Edge headless y KaTeX:
+   - `01_Quimica/05_Formulacion_Organica/guia_estudio_docente_quimica_organica.pdf` (438 KB).
+   - Copia sincronizada en la raíz: `c:\Users\migue\Antigravity\Clases\guia_estudio_docente_quimica_organica.pdf`.
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - ACLARACIÓN PEDAGÓGICA: ÉSTERES CON ÁCIDOS CARBOXÍLICOS
+================================================================================
+
+**Prompts del usuario:**
+- "Si no me equivoco, que haya un ester con un acido carboxilico es rarisimo, no?"
+
+**Acciones aplicadas:**
+1. Aclaración curricular y química sobre la coexistencia de ésteres y ácidos carboxílicos en la misma molécula:
+   - A nivel de 1º de Bachillerato: Confirmación de que en exámenes escolares es un caso prácticamente inexistente (los ésteres se evalúan casi exclusivamente como función principal, ej. etanoato de etilo).
+   - A nivel de química real y farmacéutica: Explicación de que sí existen compuestos relevantes llamados hemiésteres o monoésteres de ácidos dicarboxílicos, destacando el ejemplo universal del ácido acetilsalicílico (Aspirina), que combina un ácido carboxílico aromático con un grupo éster (*ácido 2-acetoxibenzoico*).
+   - Nomenclatura del éster como sustituyente: Prefijo *alcoxicarbonil-* (si se une por el carbono carbonílico) o *aciloxi-* / *acetoxi-* (si se une por el oxígeno).
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 03/10/2026 - ANÁLISIS QUÍMICO DE LA COEXISTENCIA ÉSTER-ÁCIDO
+================================================================================
+
+**Prompts del usuario:**
+- "pero no es rariismo quimicamente hablando?"
+
+**Acciones aplicadas:**
+1. Análisis de reactividad y estabilidad química de la coexistencia de funciones éster y ácido carboxílico:
+   - Estabilidad termodinámica: Un grupo éster (-COOR) y un ácido carboxílico (-COOH) no reaccionan entre sí de forma espontánea a temperatura ambiente ni en condiciones fisiológicas/neutras; son plenamente compatibles y estables juntos.
+   - Presencia en síntesis orgánica y procesos industriales:
+     * Hemiésteres / monoésteres de diácidos (como el monoetilmalonato, clave en la síntesis malónica).
+     * Síntesis de poliésteres (PET): Intermedios y cadenas en crecimiento con extremos ácido y enlaces éster internos.
+     * Fármacos y química fina: Ácido acetilsalicílico (Aspirina).
+     * Bioquímica: Digestión de lípidos e hidrólisis parcial de triglicéridos a monoglicéridos y ácidos grasos libres.
+   - Distinción entre rareza curricular (ausente en Bachillerato por simplificación didáctica) vs normalidad química real.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - PROCESAMIENTO Y MATERIAL DOCENTE: CLASE DE Alumno 2
+================================================================================
+
+**Prompts del usuario:**
+- "Dentro de la carpeta "Alumno 2" te he dejado la llamada con las notas y trasncripcion de Gemini. Haz lo mismo que hiciste con la de Alumna 1"
+
+**Acciones aplicadas:**
+1. Extracción y análisis exhaustivo del documento de Google Meet de la sesión del 03/10/2026 (`[Sesión de clase sincronizada]
+   - Lectura y depuración de las 41 páginas de transcripción y notas de Gemini (`Alumno 2/resumen_academico.md`).
+   - Diagnóstico pedagógico: El alumno Alumno 2 presentaba dudas en iones inorgánicos complejos (origen de cargas negativas y disociación en agua), oxosales y sales ácidas ("tipo 2" con prefijos multiplicadores bis/tris). En formulación orgánica, arrastraba la inercia del criterio clásico de cadena principal y requería afianzar la distinción éster vs ácido carboxílico y la formulación de amidas N-sustituidas.
+2. Elaboración del documento maestro de apuntes de cátedra:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`
+   - Bloque 1: Química Inorgánica (origen de iones por disociación acuosa de oxoácidos e hidrácidos, formulación sistemática de oxoácidos por familias para grupos 17, 16, 15, 14, metales de transición B, Cr, Mn y especies polihidratadas de P y Si; oxosales neutras y sales ácidas con prefijos multiplicadores bis/tris como en tris[hidrogenotetraoxosulfato] de hierro).
+   - Bloque 2: Química Orgánica (tetravalencia, prefijos y radicales; regla oficial IUPAC 2020 de cadena más larga frente a la regla pre-2020; orden de prelación de grupos funcionales; estudio detallado de ácidos carboxílicos, ésteres y amidas simples y N-sustituidas con localizador N-).
+3. Elaboración de la ficha de ejercicios de refuerzo con solucionario detallado:
+   - `Alumno 2/ejercicios_practica_clase_1.md`
+   - 40 ejercicios divididos en 5 bloques progresivos (iones, oxosales neutras y ácidas con prefijos multiplicadores, cadena principal IUPAC 2020, ácidos y ésteres, amidas simples y N-sustituidas) con solucionario razonado paso a paso para autocorrección autónoma.
+4. Compilación de ambos documentos en PDF de alta fidelidad con KaTeX y mhchem mediante Microsoft Edge headless:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (311 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (194 KB).
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - AUDITORÍA Y EXPLICACIÓN METODOLÓGICA DEL PROCESAMIENTO
+================================================================================
+
+**Prompts del usuario:**
+- "Explicame exactamente qué has hecho para asegurarme de que seguias las instrucciones correctas"
+
+**Acciones aplicadas:**
+1. Desglose analítico y detallado de todo el procedimiento ejecutado para replicar el estándar de trabajo aplicado en la carpeta `Alumna 1/` sobre la carpeta `Alumno 2/`:
+   - Fase 1: Auditoría de archivos fuente y extracción estructurada de texto de la reunión de Google Meet (`[Sesión de clase sincronizada]
+   - Fase 2: Redacción del documento maestro de cátedra (`apuntes_clase_quimica_inorganica_y_organica.md`) con diagnóstico de la sesión, bloque de inorgánica (disociación, oxoácidos, oxosales neutras y ácidas con prefijos multiplicadores bis/tris) y bloque de orgánica (criterio IUPAC 2020 de cadena más larga, ácidos, ésteres y amidas N-sustituidas).
+   - Fase 3: Elaboración de la batería de 40 ejercicios de refuerzo y su solucionario detallado paso a paso (`ejercicios_practica_clase_1.md`).
+   - Fase 4: Compilación a PDF mediante Edge headless, KaTeX y mhchem (`compilar_vectores_pdf.py`).
+   - Fase 5: Registro y trazabilidad en la bitácora cronológica `registro-clases.text`.
+   - Fase 6: Cumplimiento de protocolos de cabecera temporal estricta y terminología académica formal.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - CORRECCIÓN DE IDENTIDAD DEL ALUMNO (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "El alumno es alumno 2. Lo de Olga es el nombre de la cuenta. No hagas NINGUNA mencion a olga"
+
+**Acciones aplicadas:**
+1. Corrección y eliminación exhaustiva de cualquier referencia al nombre de la cuenta en todos los archivos del repositorio:
+   - `Alumno 2/resumen_academico.md`: Reemplazo íntegro de las etiquetas de orador y menciones del resumen por Alumno 2 (208 sustituciones).
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`: Ajuste de encabezados, diagnóstico y ejemplos para fijar como único alumno a Alumno 2.
+   - `Alumno 2/ejercicios_practica_clase_1.md`: Actualización del encabezado y referencias al alumno Alumno 2.
+   - `registro-clases.text`: Depuración de entradas previas para eliminar cualquier mención residual.
+2. Recompilación inmediata de los documentos PDF de la carpeta `Alumno 2/` con el motor Chromium/Edge headless:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf`
+   - `Alumno 2/ejercicios_practica_clase_1.pdf`
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - DEFINICIÓN DEL ROL Y COMETIDO DOCENTE DEL ASISTENTE
+================================================================================
+
+**Prompts del usuario:**
+- "Pero QUÉ tenías que hacer tu digo. CUÁL era tu labor"
+
+**Acciones aplicadas:**
+1. Definición explícita y sintética del cometido y rol pedagógico del asistente en el ecosistema de clases particulares:
+   - Rol principal: Actuar como asistente docente y pedagógico personal tras cada clase impartida.
+   - Cometido 1 (Auditoría de clase): Procesar la llamada grabada (transcripción y notas de Gemini) para identificar los conceptos explicados, el ritmo, los bloqueos específicos del alumno (Alumno 2) y los acuerdos tomados en la sesión.
+   - Cometido 2 (Digitalización y apuntes de cátedra): Pasar la clase a limpio en un documento estructurado, riguroso y formal en Markdown y PDF para que el alumno disponga de apuntes impecables de lo impartido.
+   - Cometido 3 (Generación de deberes específicos de la clase): Elaborar una batería de ejercicios de refuerzo calibrada exclusivamente sobre los contenidos y tropiezos de esa sesión concreta (con solucionario razonado para autocorrección autónoma).
+   - Cometido 4 (Entrega lista para distribución): Dejar los documentos maquetados y compilados en PDF dentro de la carpeta del alumno listos para su envío inmediato.
+   - Cometido 5 (Memoria y bitácora): Registrar la sesión en `registro-clases.text` para mantener la continuidad didáctica clase a clase.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - REDISEÑO EDITORIAL: ESTILO ACADÉMICO LATEX TFG
+================================================================================
+
+**Prompts del usuario:**
+- "ponlo en un formato menos "IA". Por ejemplo, el primer cuadro con un fondo azul yo lo quitaba de en medio directamente. Quiero un formato mas tipo LaTeX TFG. Que es mas blanco todo y mas uniforme y menos infantil"
+
+**Acciones aplicadas:**
+1. Transformación completa del motor de maquetación y estilos CSS (`compilar_vectores_pdf.py`):
+   - Eliminación total de elementos tipo web/callout (cajas con bordes azules, fondos sombreados e iconos informales).
+   - Sustitución tipográfica por fuentes serifa académicas estándar tipo LaTeX (`Computer Modern Roman`, `Latin Modern Roman`, `Cambria`, `Times New Roman`).
+   - Aplicación de diseño editorial sobrio monocromático (blanco y negro estricto `#000000` / `#ffffff`, texto completamente justificado).
+   - Estructuración de tablas al estilo LaTeX `booktabs` (regla superior e inferior de 1.2pt, regla media de 0.8pt, sin líneas verticales ni fondos de fila alternos).
+   - Diseño de bloque de título académico formal (`academic-title-block`) con título centrado, subtítulo en cursiva, metadatos separados por viñetas y línea de corte horizontal.
+2. Adaptación de los documentos fuente en Markdown:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`: Reemplazo del blockquote inicial por encabezado de cátedra LaTeX, conversión de diagramas ASCII a tablas tipográficas formales.
+   - `Alumno 2/ejercicios_practica_clase_1.md`: Adaptación de encabezado e instrucciones a formato académico sobrio.
+3. Recompilación de ambos archivos PDF y verificación visual de fidelidad editorial:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (254 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (178 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - DEPURACIÓN DE ENCABEZADO Y METADATOS RESIDUALES
+================================================================================
+
+**Prompts del usuario:**
+- "saca esto" [Captura de pantalla del subtítulo, metadatos Alumno/Sesión/Materia y línea divisoria]
+
+**Acciones aplicadas:**
+1. Eliminación radical del bloque de subtítulo, línea de metadatos y separador horizontal inferior en todos los documentos del alumno:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`: Se elimina el bloque `<div class="academic-title-block">`, dejando un único título principal centrado (`h1.document-title`) que enlaza de inmediato con el cuerpo del documento sin líneas divisorias.
+   - `Alumno 2/ejercicios_practica_clase_1.md`: Se elimina el subtítulo y línea de metadatos, arrancando directamente con el título de la práctica.
+   - `compilar_vectores_pdf.py`: Ajuste de CSS para prescindir de márgenes y bordes del bloque de metadatos.
+2. Recompilación completa de ambos PDFs:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (249 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (175 KB).
+3. Inspección visual mediante renderizado de comprobación: Documento con apertura editorial limpia, sin cabeceras superfluas.
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+
+
+
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - ELIMINACIÓN DE HIBRIDACIONES Y ADECUACIÓN AL CRITERIO ESCOLAR
+================================================================================
+
+**Prompts del usuario:**
+- "Primero, no quiero que hables de hibridaciones, como hablamos en la clase de hibridaciones, así que no las metas. Y segundo, estás metiendo con la norma antigua de la IUPAC. Pon de declaración, cuando ponemos lo de las prioridades, que realmente ya hablamos nosotros dos, Alumno 2 y yo, que lo hace su profesora de la antigua forma y que simplemente nos adecuamos a ella."
+
+**Acciones aplicadas:**
+1. Supresión total de conceptos y menciones de hibridación orbital ($sp^3, sp^2, sp$) en apuntes y ejercicios de Alumno 2.
+2. Inclusión formal de la Declaración Metodológica en la sección de prioridades orgánicas (Sección 3.2 de apuntes y Bloque 3 de ejercicios):
+   - Se hace constar explícitamente el diálogo y acuerdo alcanzado durante la clase entre el profesor y Alumno 2, confirmando que su profesora del colegio evalúa según el criterio tradicional de la IUPAC (obligatoriedad de incluir todos los dobles y triples enlaces en la cadena principal).
+   - Se adecuan la jerarquía de selección de cadena principal, las pautas explicativas y las soluciones al método exigido en su colegio para maximizar su nota de examen.
+3. Actualización de ejercicios y solucionario:
+   - Ejercicio 32 formulado y resuelto bajo el criterio escolar prioritario como 3-propilhept-1-eno (cadena de 7 carbonos que contiene el doble enlace), con nota comparativa informativa de IUPAC 2020 (4-eteniloctano).
+4. Recompilación de los documentos en formato PDF con diseño LaTeX TFG:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (252 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (178 KB).
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - ELIMINACIÓN DE DIAGNÓSTICO METODOLÓGICO Y TONO DOCENTE DIRECTO
+================================================================================
+
+**Prompts del usuario:**
+- "Explicame qué cojones es esto. Alumno 2 tiene que ver esto como si lo hubiese escrito yo para él en forma de apuntes. Estas loco poniendome estas gilipolleces"
+
+**Acciones aplicadas:**
+1. Eliminación radical de toda sección de auditoría interna y diagnóstico pedagógico ("Diagnóstico Pedagógico y Resumen de la Sesión", "Punto de Partida y Obstáculos Detectados", "Intervención Docente y Desbloqueos Logrados").
+2. Reescritura integral de los apuntes para que sean apuntes directos de estudio entregables al alumno:
+   - Apertura directa e inmediata con el contenido de la materia: "1. Bloque I: Química Inorgánica (Iones, Oxoácidos y Sales)".
+   - Tono natural y directo de profesor a alumno en todas las explicaciones ("Ejemplos vistos en clase", "Como comentamos en clase, tu profesora sigue el criterio...").
+   - Eliminación de cualquier referencia en tercera persona ("el alumno", "Alumno 2 expresó inseguridad", etc.).
+3. Homogeneización en la hoja de ejercicios prácticos: Enunciados y pautas formulados en tono directo ("Siguiendo el criterio de tu profesora...", "Nombre para tus exámenes").
+4. Recompilación de ambos PDFs con el motor LaTeX TFG:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (235 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (178 KB).
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - ENFOQUE CONTEXTUALIZADO: IONES DE LA WEB DE FORMULACIÓN
+================================================================================
+
+**Prompts del usuario:**
+- "y pq pones iones poliatomicos segun empiezas? "Los iones de los oxoacidos que preguntan en la web de formulacion...""
+
+**Acciones aplicadas:**
+1. Eliminación de tecnicismos y denominaciones abstractas de manual ("iones poliatómicos", "iones complejos").
+2. Contextualización directa de la sección 1.1 al hilo real de la clase:
+   - Título adaptado a la conversación: "1.1 Los Iones de los Oxoácidos (los que te preguntan en la web de formulación)".
+   - Explicación didáctica y cercana: el alumno no tiene que memorizarlos, sino deducirlos quitando los hidrógenos al oxoácido o hidrácido, donde cada $\text{H}^+$ liberado equivale a una carga negativa.
+3. Actualización equivalente en el cuaderno de ejercicios prácticos.
+4. Recompilación de ambos archivos PDF con diseño LaTeX TFG:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (239 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (178 KB).
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - ELIMINACIÓN DE LA REFERENCIA A HIDRÁCIDOS
+================================================================================
+
+**Prompts del usuario:**
+- "por que pones hidracido aunque sea entre oarentesis BROOOOOOOOOOOOOOOOOOOO"
+
+**Acciones aplicadas:**
+1. Supresión total del término "hidrácido" en todas las explicaciones, paréntesis y pautas de los apuntes y ejercicios de Alumno 2.
+2. La explicación queda 100% enfocada en los oxoácidos (el núcleo de la sesión y de la formulación trabajada). El caso de $\text{H}_2\text{S} \to \text{HS}^-$ se formula de manera limpia y directa sin clasificaciones teóricas añadidas.
+3. Recompilación de ambos PDFs:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (239 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (178 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - PAGINACIÓN EDITORIAL ESTRICTA (APARTADOS EN PÁGINA NUEVA)
+================================================================================
+
+**Prompts del usuario:**
+- "Si vas a empezar un apartado, hazlo en la siguiente pagina que esto queda horrible" [Captura de pantalla de la sección 1.2 cortada al pie de la página 1]
+
+**Acciones aplicadas:**
+1. Reestructuración de la paginación con saltos de página explícitos (`<div class="page-break"></div>`) en todos los documentos de Alumno 2:
+   - Apuntes (`apuntes_clase_quimica_inorganica_y_organica.md`):
+     * Página 1: Título e Introducción a Iones de Oxoácidos (Sección 1.1 completa).
+     * Página 2: Formulación de Oxoácidos por Familias (Sección 1.2: Regla general, tabla y familias A, B, C).
+     * Página 3: Excepciones polihidratadas y metales de transición (D, E, F).
+     * Página 4: Oxosales neutras y ácidas con prefijos multiplicadores (Secciones 1.3 y 1.4 completas).
+     * Página 5: Química Orgánica, Fundamentos y Cadena Principal según el criterio escolar (Secciones 2.1 y 2.2).
+     * Página 6: Escalera completa de Prioridad de Grupos Funcionales (Sección 2.3).
+     * Página 7: Familias orgánicas trabajadas en detalle (Sección 2.4).
+     * Página 8: Tablas de síntesis y pautas clave de consulta rápida (Sección 3).
+   - Cuaderno de ejercicios (`ejercicios_practica_clase_1.md`):
+     * Cada bloque de ejercicios (Bloques 1, 2, 3-4, 5) y cada sección del solucionario comienzan exactamente en la cabecera de una página limpia.
+2. Eliminación de encabezados huérfanos, fórmulas aisladas a pie de página o desbordamientos de una sola línea.
+3. Recompilación y verificación con `pypdf` de ambos PDFs:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (8 páginas limpias, 238 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (6 páginas limpias, 179 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - AJUSTE DE TONO COLOQUIAL ("TU PROFE")
+================================================================================
+
+**Prompts del usuario:**
+- "Aqui pon "tu profe"" [Captura de pantalla de la nota de la sección 2.2 con el texto "tu profesora"]
+
+**Acciones aplicadas:**
+1. Sustitución de "tu profesora" por "tu profe" de manera integral en los apuntes y en los ejercicios de Alumno 2:
+   - Sección 2.2 de apuntes: *"Como comentamos en clase, tu profe sigue el criterio tradicional..."* y *"el criterio de tu profe de incluir obligatoriamente las insaturaciones"*.
+   - Sección 3.3 de apuntes: *"el criterio que te pide tu profe"*.
+   - Bloque 3 y solucionario de ejercicios: *"Siguiendo el criterio de tu profe..."* y *"Criterio de tu profe"*.
+2. Recompilación de ambos PDFs con el motor LaTeX TFG:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (238 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (179 KB).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - CORRECCIÓN DE SELECCIÓN Y COPIADO DE TEXTO EN PDF
+================================================================================
+
+**Prompts del usuario:**
+- "No me gusta que cuando tú seleccionas cosas es como si no funcionase bien la selección. Por ejemplo, nada más empiezas, cuando tienes ese protón o hidrógeno más con (H+) que tienes ahí, por ejemplo, funciona rara la selección. Me refiero a la selección con un ratón, como para copiar y pegar, y además funciona muy rarete. Quiero que funcione normal. No sé qué has hecho, pero no hagas eso, ponlo bien."
+
+**Acciones aplicadas:**
+1. Diagnóstico y resolución de la fragmentación de la capa de texto en el PDF:
+   - Se suprime en `compilar_vectores_pdf.py` la regla artificial `p, li, div { position: relative; }` y la ocultación forzada de `.katex-mathml`, que rompían el árbol de renderizado de texto de Chromium en capas desalineadas.
+   - En el cuerpo del texto y enunciados, las fórmulas e iones entre paréntesis que forman parte de la redacción (como `(H⁺)`, `(2 H⁺)`, `(H₂SO₄)`, `(HS⁻)`, `(H₂CO₃)`, etc.) se convierten a texto directo continuo. Esto elimina los contenedores inline-block de KaTeX que provocaban que los paréntesis se separasen del contenido `( ).H +` al arrastrar el ratón.
+   - Las ecuaciones químicas display y de desarrollo se mantienen centradas en su bloque correspondiente.
+2. Comprobación de selección y extracción de texto mediante `pypdf`: flujo de caracteres 100% continuo, contiguo y sin saltos anómalos.
+3. Recompilación de ambos archivos PDF:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (237 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (178 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 04/10/2026 - DEPURACIÓN TOTAL DE INDICIOS DE IA Y REDACCIÓN ACADÉMICA HUMANA
+================================================================================
+
+**Prompts del usuario:**
+- "La probabilidad de que este documento haya sido redactado por una inteligencia artificial es muy alta (entre un 90 % y un 98 %)..." [Informe de detección con análisis de filtración de prompts, clichés de asistente y meta-comentarios]
+
+**Acciones aplicadas:**
+1. Erradicación sistemática de los 3 indicios detectados en el informe:
+   - Indicador 1 (Instrucciones de prompt integradas en el texto):
+     * Eliminadas todas las menciones a plataformas o ejercicios externos ("la web de formulación", "el caso de HS- que te salía en la web").
+     * Eliminada la metanarrativa de adaptación de tutor ("Como comentamos en clase, tu profe sigue el criterio...", "En estos apuntes nos adecuamos rigurosamente al criterio de tu colegio").
+     * El criterio de la cadena principal se formula como una pauta técnica objetiva propia de bachillerato y exámenes de acceso universitario, con una nota científica sobria sobre la evolución IUPAC 2020 vs. criterio clásico.
+   - Indicador 2 (Estructura y formateo mecánico):
+     * Redacción fluida, orgánica y académica, sin rigideces sintéticas ni modularidad artificial.
+   - Indicador 3 (Vocabulario y clichés de chatbot):
+     * "Escalera Oficial de Prioridad de Grupos Funcionales" sustituido por "Jerarquía de Prioridad de Grupos Funcionales".
+     * "Ejemplos Vistos en Clase" sustituido por "Ejemplos".
+     * "Síntesis y Tablas de Consulta Rápida" sustituido por "Resumen de Fórmulas y Tablas".
+     * "Pautas Clave de Nomenclatura Orgánica" sustituido por "Reglas Fundamentales de Nomenclatura Orgánica".
+2. Homogeneización en el cuaderno de ejercicios (`ejercicios_practica_clase_1.md`):
+   - Pautas técnicas asépticas ("La carga negativa del anión coincide con el número de protones cedidos...").
+   - Enunciados y solucionario redactados como exámenes oficiales estándar sin comentarios meta-educativos.
+3. Recompilación limpia de ambos archivos PDF:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (235 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (177 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - REESCRITURA INTEGRAL HUMANA: ERRADICACIÓN DE HUELLAS LATEX/MATHJAX Y SESGO ESTRUCTURAL DE IA
+================================================================================
+
+**Prompts del usuario:**
+- "esto es solo evaluando el pdf de teoria: La probabilidad sigue siendo prácticamente la misma: muy alta (85 % - 95 %)..." [Informe detallado señalando huellas de LaTeX/MathJax como 'Ani\delta n', llaves rotas, fracciones en flechas de reacción, patrón de sustitución por re-prompt y estructura simétrica con sección final de tablas de LLM]
+
+**Acciones aplicadas:**
+1. Erradicación total de MathJax / KaTeX en las fórmulas químicas:
+   - Eliminados todos los entornos matemáticos ($ y $$) y macros de LaTeX (\text, \implies, \xrightarrow).
+   - Conversión de toda la formulación a tipografía Unicode pura y etiquetas HTML nativas (H₂SO₄, SO₄²⁻, Fe³⁺, Fe₂(SO₄)₃, BaSO₄, etc.).
+   - Eliminación garantizada de artefactos sintácticos (cero \delta por tildes, cero llaves huérfanas, cero fracciones matemáticas en flechas).
+   - Restauración del copiado y selección de texto con ratón al 100 % de fidelidad estándar.
+2. Ruptura completa del patrón de re-prompt y de la simetría artificial de IA:
+   - Supresión integral de la sección final de tablas recapitulativas ("Sección 3: Resumen de Fórmulas y Tablas"), identificada como la huella más repetida de resúmenes de LLM.
+   - Eliminación del listado rígido de grupos periódicos (A, B, C, D, E, F).
+   - Redacción completamente nueva y orgánica en 6 apartados pedagógicos naturales con tono docente auténtico:
+     1. Oxoácidos: Deducción Rápida de Fórmulas.
+     2. Formación y Nomenclatura de Aniones.
+     3. Sales Neutras y Sales Ácidas.
+     4. Cadena Principal e Insaturaciones en Orgánica.
+     5. Prioridad de Grupos Funcionales.
+     6. Familias Oxigenadas y Nitrogenadas Clave.
+3. Desarrollo del motor de compilación `compilar_apuntes_quimica.py`:
+   - Conversión limpia de Markdown a HTML nativo con maquetación académica LaTeX TFG (fuentes serif Latin Modern/Cambria, márgenes de 22mm/18mm, tablas booktabs).
+   - Eliminación de scripts de KaTeX en el encabezado del visor para evitar inyecciones de fuentes matemáticas ocultas.
+4. Distribución perfecta de maquetación:
+   - Apuntes de teoría: exactamente 6 páginas completas (1 página equilibrada por apartado temático, sin desbordamientos ni líneas huérfanas).
+   - Cuaderno de ejercicios: exactamente 5 páginas completas (ejercicios y solucionario detallado en formato Unicode limpio).
+5. Recompilación de los archivos PDF:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (6 páginas, 220 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (5 páginas, 167 KB).
+6. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - RESTAURACIÓN EXACTA AL ESTADO PREVIO AL DETECTOR DE IA
+================================================================================
+
+**Prompts del usuario:**
+- "Mira, ponlo como antes de que te mandase el detector de IA. Como estaba hace unos 2-4 prompts"
+
+**Acciones aplicadas:**
+1. Restauración integral de ambos archivos Markdown a su estado exacto previo al envío de los informes de detección de IA (estado del paso 1190):
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`
+   - `Alumno 2/ejercicios_practica_clase_1.md`
+2. Mantenimiento íntegro de las preferencias y correcciones personalizadas solicitadas:
+   - Presencia de "tu profe", el criterio tradicional del colegio y las notas contextuales de la clase y la web de formulación.
+   - Conservación del arreglo de selección fluida con ratón en fórmulas parentéticas `(H⁺)`, `(H₂SO₄)`, etc.
+   - Organización con saltos de página `<div class="page-break"></div>` entre apartados.
+3. Recompilación de ambos documentos PDF con `compilar_vectores_pdf.py`:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (exactamente 237.358 bytes).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (exactamente 178.080 bytes).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - CONSULTA SOBRE INCORPORACIÓN DEL LIENZO DE CLASE (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "Por cierto, quieres que te pase el documento sobre el que dibujaba para asegurar o no hace falta"
+
+**Acciones aplicadas:**
+1. Confirmación de utilidad pedagógica del documento manuscrito / lienzo de pizarra digital:
+   - Permite contrastar las estructuras químicas reales dibujadas frente a posibles omisiones o erratas de la transcripción oral de Gemini.
+   - Posibilita revisar si se incluyeron capturas de enunciados del colegio o esquemas visuales clave de Alumno 2.
+2. Estado de espera para procesar el lienzo en cuanto el usuario lo deposite en la carpeta `Alumno 2/`.
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - AUDITORÍA Y COTEJO DEL LIENZO DE PIZARRA DIGITAL (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "guardado" [Aporte del documento manuscrito de clase `Alumno 2/Pizarra_Digital.pdf`]
+
+**Acciones aplicadas:**
+1. Renderizado y análisis visual exhaustivo de las 5 páginas del lienzo de pizarra digital:
+   - **Página 1:** Oxoácidos por grupos de la tabla periódica (17: Cl, Br, I en +1, +3, +5, +7; 16: S, Se, Te en +2, +4, +6; 15: N en +3, +5 y derivados de P, As, Sb con prefijos meta, piro y orto; 14: C en +4 y Si en +4 distinguiendo ion metasilicato SiO₃²⁻ y ortosilicato SiO₄⁴⁻). Disociación del ácido sulfúrico y fosfórico en agua.
+   - **Página 2:** Grupo 13 (Boro +3 en H₃BO₃), metales de transición con comportamiento ácido (Cromo +6 en crómico H₂CrO₄ y dicrómico H₂Cr₂O₇; Manganeso +6 en mangánico H₂MnO₄ y +7 en permangánico HMnO₄). Regla de intercambio mnemotécnico -oso → -ito e -ico → -ato. Formulación y formulación de sales neutras (BaSO₄, Fe₂(SO₄)₃, NaClO, NaMnO₄) y sales ácidas (NaHCO₃, hidrogenosulfato HSO₄⁻).
+   - **Página 3:** Estudio del caso particular de sal ácida compleja: Fe(HSO₄)₃ como tris[hidrogeno(tetraoxidosulfato)] de hierro, con anotación de los prefijos multiplicadores griegos (2 → bis, 3 → tris, 4 → tetrakis).
+   - **Página 4:** Fundamentos de orgánica: tetravalencia del carbono, prefijos de longitud (met-, et-, prop-, but-, penta-), alcanos, alquenos y alquinos. Criterio de cadena principal priorizando la insaturación frente a la longitud pura (but-2-eno con ramificación) y radicales alquilo habituales (metil, etil, propil, butil, isopropil, terc-butil). Escalera completa de prioridad de grupos funcionales dibujada con flecha descendente (ácido carboxílico > éster > amida > nitrilo > aldehído > cetona > alcohol > amina > éter).
+   - **Página 5:** Ejemplos moleculares desarrollados en la pizarra: ácidos carboxílicos (ácido propanoico, ácido butanoico), ésteres (butanoato de metilo), amidas primarias (metanamida, etanamida, butanamida) y amidas N-sustituidas dibujadas con el enlace al nitrógeno (N-metilmetanamida y N-etiletanamida).
+2. Verificación de correspondencia curricular y didáctica:
+   - Los apuntes [`apuntes_clase_quimica_inorganica_y_organica.md`](file:///c:/Users/migue/Antigravity/Clases/Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md) y el cuaderno de ejercicios [`ejercicios_practica_clase_1.md`](file:///c:/Users/migue/Antigravity/Clases/Alumno 2/ejercicios_practica_clase_1.md) cubren con una fidelidad del 100% todas y cada una de las moléculas, reacciones y conceptos manuscritos en el lienzo.
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - CORRECCIÓN DE ALINEACIÓN Y TIPOGRAFÍA EN EJEMPLO DE SAL COMPLEJA
+================================================================================
+
+**Prompts del usuario:**
+- "por que esta asi" [Captura mostrando la viñeta de nomenclatura sistemática estricta con 'tris[hidrogenotetraoxosulfato] de hierro' descolgado en una línea centrada con tipografía matemática]
+
+**Acciones aplicadas:**
+1. Diagnóstico del fallo de maquetación:
+   - En el código fuente Markdown se había utilizado un bloque display math `$$\mathbf{tris[hidrogenotetraoxosulfato] \text{ de hierro}}$$`.
+   - Esto obligaba a KaTeX a renderizar el nombre químico como si fuera una ecuación algebraica centrada, creando un salto de línea huérfano respecto a la viñeta y mezclando fuentes matemáticas con texto ordinario.
+2. Corrección tipográfica:
+   - Se sustituye el bloque `$$` por texto continuo en la misma línea: `* Nomenclatura sistemática estricta: **tris[hidrogenotetraoxosulfato] de hierro**.`.
+3. Recompilación del PDF:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (236 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - SIMPLIFICACIÓN DEL TÍTULO 2.4 Y NUMERACIÓN DE FAMILIAS (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "Pon simplmenete "Grupos funcionales". Saca los indices en letras y ponlos por numeros" [Captura de pantalla de la sección '2.4 Familias Orgánicas Trabajadas en Detalle']
+
+**Acciones aplicadas:**
+1. Modificación en `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`:
+   - Título de la sección simplificado a: `### 2.4 Grupos funcionales`.
+   - Sustitución de los índices por letras (A, B, C, D) por numeración ordinaria:
+     * `#### 1. Ácidos Carboxílicos (-COOH)`
+     * `#### 2. Ésteres (-COO-R')`
+     * `#### 3. Amidas Primarias (-CONH₂)`
+     * `#### 4. Amidas N-Sustituidas`
+2. Recompilación del PDF:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (236 KB, 8 páginas).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - ACTUALIZACIÓN DE ENCABEZADO 2.3 (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "'Ordenes de prioridad grupos funcionales'" [Captura de pantalla mostrando '2.3 Escalera Oficial de Prioridad de Grupos Funcionales']
+
+**Acciones aplicadas:**
+1. Modificación en `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`:
+   - Sustituido el título de la sección 2.3 por: `### 2.3 Órdenes de prioridad de grupos funcionales`.
+2. Recompilación del PDF:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (236 KB).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+================================================================================
+
+SESIÓN: 04/10/2026 - HOMOGENEIZACIÓN DE PREFIJO MULTIPLICADOR: TETRAKIS- (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "tetraquis no es tetrakis?"
+
+**Acciones aplicadas:**
+1. Aclaración ortográfica y normativa:
+   - En la normativa internacional IUPAC original se escribe **tetrakis-** (con 'k', de raíz griega).
+   - En español se aceptan ambas formas: la hispanización tradicional propuesta por la RAE (*tetraquis-*) y la forma IUPAC directa (*tetrakis-*), que es la habitual en textos científicos y la que el propio docente anotó de forma manuscrita en la página 3 del lienzo de pizarra digital (`4 -> Tetrakis`).
+2. Actualización en los archivos de Alumno 2:
+   - Modificado *tetraquis-* por **tetrakis-** en `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md` (sección 1.4).
+   - Modificado en `Alumno 2/ejercicios_practica_clase_1.md` (pauta del Bloque 2).
+3. Recompilación de ambos archivos PDF:
+   - `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (236 KB).
+   - `Alumno 2/ejercicios_practica_clase_1.pdf` (178 KB).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+================================================================================
+
+SESIÓN: 10/10/2026 - EXPLICACIÓN TEÓRICA DE NÚMEROS CUÁNTICOS (MAGNÉTICO Y ESPÍN)
+================================================================================
+
+**Prompts del usuario:**
+- "que indica el jumero magnetico? n indica nivel, l periodo, pero ml y ms desconozco"
+
+**Acciones aplicadas:**
+1. Clarificación de la jerarquía de los 4 números cuánticos:
+   - $n$ (principal): Nivel de energía principal, tamaño del orbital y periodo en la tabla periódica ($n = 1, 2, 3\dots$).
+   - $l$ (azimutal/secundario): Subnivel de energía y forma geométrica del orbital ($l = 0 \to s$ esférico, $1 \to p$ bilobulado, $2 \to d$, $3 \to f$).
+   - $m_l$ (magnético): Orientación espacial del orbital en 3D ante un campo magnético externo (valores desde $-l$ hasta $+l$, determinando el número de orbitales por subnivel: 1 en $s$, 3 en $p$, 5 en $d$, 7 en $f$).
+   - $m_s$ (espín): Sentido de giro intrínseco del electrón sobre su propio eje ($+\frac{1}{2}$ o $-\frac{1}{2}$), base del Principio de Exclusión de Pauli (máximo 2 electrones por orbital con espines opuestos).
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 11/10/2026 - BÚSQUEDA Y RECUPERACIÓN HISTÓRICA: RADIO ATÓMICO Y $Z_{\text{ef}}$ (MAYO-JUNIO 2026)
+================================================================================
+
+**Prompts del usuario:**
+- "¿Podrías buscar en los antiguos archivos cómo explicaba yo todo el tema del radio atómico mediante carga nuclear efectiva y mediante apantallamiento? Dime cuál fue la mejor forma que encontré para hacerlo, encuéntra exactamente cómo lo hacía, cítame cómo lo hacía. Básicamente eso fue aproximadamente a principios de junio, finales de mayo."
+
+**Acciones aplicadas:**
+1. Búsqueda y localización de los archivos originales redactados a finales de mayo de 2026:
+   - Archivo docente principal: `Miscelanea/Antiguos archivos IA/IA/codigo-fuente/PAU/Química/JR/Ejercicios_Tipos_Estructura_Enlace.tex` (fecha: 25/05/2026 23:50:10).
+   - Archivos complementarios: `Miscelanea/Antiguos archivos IA/IA/codigo-fuente/universidad/Quimica/OpenCode/Combinados/Apuntes_Resumidos_Combinados.tex` y `Universidad/Quimica/Apuntes mios/Teoría/Tema 1 - Estructura Atomica/Tema_1_Apuntes.md`.
+2. Extracción de la formulación metodológica y pedagógica estrella:
+   - Regla de los dos ejes ortogonales (Periodo con $S \approx \text{cte}$ y $Z_{\text{ef}} \uparrow \implies \text{radio} \downarrow$ frente a Grupo donde domina $n \uparrow \implies \text{radio} \uparrow$).
+   - Demostración irrefutable con especies isoelectrónicas ($S$ constante, gobernado puramente por $Z$).
+   - Protocolo sistemático de resolución en 4 pasos.
+3. Cita textual completa de las cajas de fórmulas, intuición y resolución de problemas modelo.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 11/10/2026 - MODELO CONCEPTUAL ELECTROSTÁTICO DE PERIODOS Y GRUPOS
+================================================================================
+
+**Prompts del usuario:**
+- "La idea del grupo es que se justifica todo con el apantallamiento porque el hecho de que haya un nuevo nivel hace que todos los que antes no apantallaban tanto empiecen a apantallar un montón... ¿no?"
+
+**Acciones aplicadas:**
+1. Validación y formalización del modelo mental del docente:
+   - Principio de no división de la carga nuclear: el campo electrostático no se reparte como una tarta ($F = k \frac{Z_{\text{ef}} e^2}{r^2}$), cada electrón experimenta todo el núcleo.
+   - Justificación física del periodo: electrones en la misma capa ($n$) comparten distancia media y apenas se interponen ($\sigma \approx 0{,}35$), por lo que cada protón neto contrae la capa.
+   - Justificación física del grupo: transición de electrones periféricos a corteza interna esférica ($n \to n+1$), pantalla casi completa por Teorema de Gauss ($\sigma \approx 0{,}85 - 1{,}00$), desplome de $Z_{\text{ef}}$ relativo a la carga total y aumento drástico de $r$.
+2. Vinculación con las Reglas de Slater y la ley de Coulomb.
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 11/10/2026 - COMPATIBILIDAD CONCEPTUAL: $Z_{\text{ef}}$ Y APANTALLAMIENTO VS TEORÍA DE ORBITALES MOLECULARES (TOM)
+================================================================================
+
+**Prompts del usuario:**
+- "Tengo un problema con esto y es que no casa con la teoría de orbitales moleculares y el concepto de electrones enlazantes y electrones antienlazantes, porque no acaba de casar del todo, no me convence mucho."
+
+**Acciones aplicadas:**
+1. Resolución del choque intuitivo entre el átomo aislado monomodal y la molécula polimodal (TOM):
+   - Cambio de geometría: de 1 núcleo central con simetría esférica a 2 centros positivos que se repelen por repulsión directa de Coulomb ($V_{NN} = \frac{k Z_A Z_B e^2}{R}$).
+   - Apantallamiento direccional cuántico en TOM:
+     * Orbital enlazante ($\sigma$, interferencia constructiva): acumula densidad electrónica en el espacio internuclear, apantalla la repulsión protón-protón y atrae ambos núcleos.
+     * Orbital antienlazante ($\sigma^*$, interferencia destructiva): plano nodal con densidad nula entre núcleos; los electrones huyen a los extremos exteriores, dejando a los núcleos sin apantallar y tirando de ellos hacia fuera.
+   - Conexión causal entre $Z_{\text{ef}}$ y TOM: la energía inicial de los orbitales atómicos en el diagrama de LCAO viene fijada por su carga nuclear efectiva.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 11/10/2026 - IDENTIFICACIÓN DE TÉRMINOS EN ECUACIÓN DE BORN-LANDÉ
+================================================================================
+
+**Prompts del usuario:**
+- "Aqui la K es la cte de Coulomb?" [Imagen de la fórmula de Born-Landé: $U = -k \cdot \frac{N \cdot A \cdot Z_+ \cdot Z_- \cdot e^2}{d_0}\left(1 - \frac{1}{n}\right)$]
+
+**Acciones aplicadas:**
+1. Confirmación de la constante electrostática $k = \frac{1}{4\pi\varepsilon_0} \approx 8{,}99 \times 10^9 \text{ N}\cdot\text{m}^2/\text{C}^2$ en el Sistema Internacional.
+2. Desglose analítico de los parámetros de la Ecuación de Born-Landé:
+   - $U$: Energía reticular cristalina molar.
+   - $k$: Constante de Coulomb.
+   - $N$: Número de Avogadro ($N_A$).
+   - $A$: Constante geométrica de Madelung.
+   - $Z_+, Z_-$: Cargas o valencias iónicas.
+   - $e$: Carga elemental ($1{,}602 \times 10^{-19}\text{ C}$).
+   - $d_0$: Distancia interiónica de equilibrio ($r_+ + r_-$).
+   - $n$: Exponente de compresibilidad de Born (repulsión de Pauli).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 11/10/2026 - CRITERIO DE COMPARACIÓN DE ENERGÍA RETICULAR ($U$)
+================================================================================
+
+**Prompts del usuario:**
+- "Y ahí lo que más importa para la energía red es la carga de los iones, ¿verdad? Primero te fijas en la carga y después en la distancia, que básicamente sería el radio de cada elemento..."
+
+**Acciones aplicadas:**
+1. Validación de la jerarquía estándar de factores en la Energía Reticular de cristales iónicos:
+   - 1º Factor dominante: Producto de cargas $|Z_+ \cdot Z_-|$. Multiplica discretamente la energía por 2, 4 o más (ej. $\text{MgO}$ con cargas $\pm 2$ cuadruplica la atracción de $\text{NaCl}$ con $\pm 1$).
+   - 2º Factor de desempate: Distancia interiónica de equilibrio $d_0 = r_+ + r_-$ (suma de radios iónicos). A menor distancia, mayor atracción electrostática.
+2. Clarificación conceptual entre radio atómico y radio iónico:
+   - En $d_0$ intervienen estrictamente los radios iónicos ($r_{\text{catión}} \ll r_{\text{átomo}}$ y $r_{\text{anión}} \gg r_{\text{átomo}}$).
+   - Se utiliza la tendencia periódica del radio atómico para comparar iones análogos de un mismo grupo o periodo (a mayor número de capas electrónicas $n$, mayor radio iónico).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 11/10/2026 - DISTINCIÓN CONCEPTUAL: VSEPR (RPECV) VS TEORÍA DEL ENLACE DE VALENCIA (TEV)
+================================================================================
+
+**Prompts del usuario:**
+- "la VSEPR se encarga de la geometria y la TEV de que?"
+
+**Acciones aplicadas:**
+1. Delimitación de competencias entre modelos de enlace covalente:
+   - VSEPR (RPECV): Modelo geométrico/electrostático que predice la disposición tridimensional y los ángulos de enlace minimizando la repulsión coulómbica entre pares de electrones (enlazantes y solitarios).
+   - TEV (Teoría del Enlace de Valencia): Teoría mecanocuántica que explica la formación física del enlace mediante:
+     * Solapamiento de orbitales atómicos semillenos con espines opuestos.
+     * Tipos de enlace según la simetría del solapamiento: frontal ($\sigma$) y lateral ($\pi$).
+     * Hibridación de orbitales ($sp, sp^2, sp^3, sp^3d, sp^3d^2$): mezcla matemática de funciones de onda que justifica físicamente cómo los orbitales atómicos se orientan en las direcciones que predice VSEPR.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+
+SESIÓN: 11/10/2026 - MECANISMO DE HIBRIDACIÓN $sp^3$ EN EL METANO ($\text{CH}_4$)
+================================================================================
+
+**Prompts del usuario:**
+- "la idea del CH4 que mencionas es que forman 4 nuevos orbitales a partir de los otros 3, una especie de mix, y asi hay 4 desapareados"
+
+**Acciones aplicadas:**
+1. Detalle del proceso mecánico-cuántico en el átomo de Carbono ($Z=6$):
+   - Conservación del número de orbitales: se combinan 4 orbitales atómicos ($1 \times 2s + 3 \times 2p$) para generar 4 orbitales híbridos degenerados ($sp^3$).
+   - Promoción electrónica previa: paso de $2s^2 2p_x^1 2p_y^1 2p_z^0$ (2 e⁻ desapareados) a $2s^1 2p_x^1 2p_y^1 2p_z^1$ (4 e⁻ desapareados).
+   - Mezcla lineal (hibridación): degeneración energética y simetría geométrica hacia los vértices de un tetraedro regular ($109{,}5^\circ$).
+   - Balance termodinámico: el coste energético de la promoción se ve ampliamente compensado por la formación de 4 enlaces $\sigma$ covalentes estables con los orbitales $1s$ de cuatro hidrógenos.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - CORRECCIÓN Y COMPLETITUD DE OXOÁCIDOS POLIHIDRATADOS DEL FÓSFORO(+3) (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "con el fosforo +3 faltan dos casos, no?" [Captura de la sección D de apuntes de Alumno 2: Excepciones Polihidratadas: Fósforo (P: +3, +5)]
+
+**Acciones aplicadas:**
+1. Verificación química y normativa tradicional:
+   - En el esquema polihidratado del Fósforo(+3) [$\text{P}_2\text{O}_3$], faltaban efectivamente los casos Meta (+1 $\text{H}_2\text{O}$) y Piro/Di (+2 $\text{H}_2\text{O}$):
+     * Meta (+1 $\text{H}_2\text{O}$): $\text{P}_2\text{O}_3 + \text{H}_2\text{O} = \text{H}_2\text{P}_2\text{O}_4 \to \mathbf{HPO_2}$ (Ácido metafosforoso).
+     * Piro / Di (+2 $\text{H}_2\text{O}$): $\text{P}_2\text{O}_3 + 2\,\text{H}_2\text{O} = \mathbf{H_4P_2O_5}$ (Ácido difosforoso / pirofosforoso).
+     * Orto (+3 $\text{H}_2\text{O}$): $\text{P}_2\text{O}_3 + 3\,\text{H}_2\text{O} = \text{H}_6\text{P}_2\text{O}_6 \to \mathbf{H_3PO_3}$ (Ácido ortofosforoso / ácido fosforoso).
+2. Actualización de archivos fuente y compilación:
+   - Modificado `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md` integrando los casos completos de Meta y Piro para Fósforo(+3).
+   - Recompilado `Alumno 2/apuntes_quimica_inorganica_organica.pdf` (211 KB) mediante `compilar_apuntes_quimica.py`.
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - ESTRATEGIA PEDAGÓGICA: DEDUCCIÓN POR REACCIÓN EN OXOÁCIDOS POLIHIDRATADOS
+================================================================================
+
+**Prompts del usuario:**
+- "estas dos ramas de compuetsos es mejor aprenderlas con las reacciones y ya, no?"
+
+**Acciones aplicadas:**
+1. Validación metodológica docente:
+   - Deducción sistemática mediante la reacción estequiométrica elemental: $\text{Anhídrido} + n\,\text{H}_2\text{O}$ frente a la memorización estéril de fórmulas moleculares.
+   - Algoritmo en 3 pasos: (1) Formulación del óxido cruzando valencias, (2) Regla mnemotécnica del código numérico $1-2-3$ (Meta = $1\,\text{H}_2\text{O}$, Piro = $2\,\text{H}_2\text{O}$, Orto = $3\,\text{H}_2\text{O}$), (3) Suma de átomos y simplificación de pares.
+   - Seguridad y reproducibilidad en situaciones de estrés de examen (evita confusiones críticas de subíndices en oxisales).
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - REPARACIÓN DEL MOTOR KATEX Y RECOMPILACIÓN DE PDFS (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "algo has roto" [Captura mostrando fórmulas en crudo sin renderizar tipo `$\text{P}_2\text{O}_5$` en el PDF]
+
+**Acciones aplicadas:**
+1. Diagnóstico del fallo de renderizado:
+   - En la invocación previa se utilizó accidentalmente una versión alternativa de `compilar_apuntes_quimica.py` que carecía de las librerías CDN de KaTeX, `auto-render` y `mhchem`, provocando que las fórmulas matemáticas de los oxoácidos se imprimieran como código LaTeX plano.
+2. Corrección del motor de compilación:
+   - Se actualizó `compilar_apuntes_quimica.py` equiparándolo a `compilar_vectores_pdf.py` con las funciones `protectMath`, `restoreMath`, hojas de estilo de KaTeX 0.16.9 y renderizador automático por delimitadores.
+3. Recompilación limpia y sincronizada:
+   - Regenerados `Alumno 2/apuntes_quimica_inorganica_organica.pdf` (237 KB) y `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.pdf` (237 KB) con todas las fórmulas químicas y subíndices matemáticos perfectamente procesados.
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - ANÁLISIS QUÍMICO DEL CARBONO(+2), ÁCIDO FÓRMICO Y EL ANIÓN FORMIATO [HCO2]-
+================================================================================
+
+**Prompts del usuario:**
+- "pero si el carbono tb actua con +2 (HCO2)"
+
+**Acciones aplicadas:**
+1. Análisis químico-estructural del Carbono(+2):
+   - En inorgánica tradicional, el óxido con $\text{C}(+2)$ es el monóxido de carbono ($\text{CO}$), considerado óxido neutro (no hidrata espontáneamente a oxoácido en condiciones estándar).
+   - El oxoácido formal con valencia par $+2$ sería $\text{H}_2\text{C}(+2)\text{O}_2(-4) \implies \mathbf{H_2CO_2}$ (ácido fórmico / metanoico, $\text{HCOOH}$).
+   - La especie $\mathbf{[HCO_2]^-}$ es el **anión formiato (o metanoato)**, obtenido por pérdida de un protón ácido: $\text{HCOOH} \to \text{H}^+ + [\text{HCO}_2]^-$.
+   - Justificación pedagógica de por qué se estudia habitualmente en química orgánica y no en la tabla básica de oxoácidos inorgánicos, aunque aparece frecuentemente en sales como el formiato sódico ($\text{HCOONa}$) o cálcico ($\text{Ca}(\text{HCO}_2)_2$).
+2. Actualización de apuntes y recompilación de PDFs:
+   - Añadida nota aclaratoria en la sección E de `Alumno 2/apuntes_clase_quimica_inorganica_y_organica.md`.
+   - Recompilados ambos documentos: `apuntes_quimica_inorganica_organica.pdf` (241 KB) y `apuntes_clase_quimica_inorganica_y_organica.pdf` (241 KB).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - NOMENCLATURA HABITUAL DE OXOÁCIDOS DEL SILICIO (META VS ORTO)
+================================================================================
+
+**Prompts del usuario:**
+- "como se le llama al acido metasilicico de normal? y al ortosilicico?"
+
+**Acciones aplicadas:**
+1. Clarificación de convenciones tradicionales y sistemáticas en el Grupo 14 (Silicio):
+   - $\text{H}_2\text{SiO}_3$ (Metasilícico, $+1\,\text{H}_2\text{O}$): «De normal» (omitiendo el prefijo) se le denomina **Ácido silícico** habitual (análogo al carbónico $\text{H}_2\text{CO}_3$). Sus sales se denominan simplemente **silicatos** (ej. $\text{Na}_2\text{SiO}_3$).
+   - $\text{H}_4\text{SiO}_4$ (Ortosilícico, $+2\,\text{H}_2\text{O}$): Mantiene explícitamente el prefijo en exámenes y libros: **Ácido ortosilícico** (para distinguirlo de la forma meta habitual). Sus sales se denominan **ortosilicatos** (anión $[\text{SiO}_4]^{4-}$).
+   - Contraste con el Grupo 15 (Fósforo) y Grupo 13 (Boro): mientras que en $\text{P}$ y $\text{B}$ la forma por defecto a secas es la *orto* ($\text{H}_3\text{PO}_4$ y $\text{H}_3\text{BO}_3$), en el silicio la forma por defecto a secas es la *meta* ($\text{H}_2\text{SiO}_3$).
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - AUDITORÍA Y CÁLCULO DE HORAS DE CLASE IMPARTIDAS (DESDE 27/09/2026)
+================================================================================
+
+**Prompts del usuario:**
+- "cuantas horas de clase he dado desde el 27 de sept"
+
+**Acciones aplicadas:**
+1. Auditoría cronológica y extracción de duraciones exactas:
+   - Clase 1 (Alumna 1, 29/09/2026, 19:55 CEST): `01:15:31` (1 hora, 15 minutos y 31 segundos / 1,26 h).
+   - Clase 2 (Alumno 2, 03/10/2026, 18:49 CEST): `01:24:19` (1 hora, 24 minutos y 19 segundos / 1,405 h).
+   - Horas totales de clase registradas: 2.66 h.
+   - Contexto de sesiones previas en lienzo digital (26-27/09/2026): llamada del 26/09 con 1:46:12 y lienzos de formulación/vectores subidos el 27/09.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - EPISTEMOLOGÍA Y DIDÁCTICA DEL CÁLCULO: NOTACIÓN $df/dx$ Y ANÁLISIS DIMENSIONAL
+================================================================================
+
+**Prompts del usuario:**
+- "Una pregunta, cuando escribes lo de derivada de f respecto a x que pones df/dx, no estás dividiendo respecto a x, ¿no? Es que hoy estaba un alumno y ha preguntado mucho eso..."
+
+**Acciones aplicadas:**
+1. Justificación matemática y física del cociente diferencial:
+   - Naturaleza analítica estándar: $\frac{df}{dx}$ no es una fracción estática de números reales, sino el límite de un cociente incremental real: $\lim_{\Delta x \to 0} \frac{\Delta f}{\Delta x}$.
+   - Explicación de las unidades dimensionales ($m/s$): en la tasa de variación media $\frac{\Delta x}{\Delta t}$ existe una división algebraica real de metros entre segundos; la operación de paso al límite $\lim_{\Delta t \to 0}$ preserva las unidades y dimensiones físicas.
+   - Validez del comportamiento como fracción en física: justificación mediante el concepto de diferencial ($df = f'(x)dx$), regla de la cadena y formas diferenciales en 1D.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 12/10/2026 - VALIDACIÓN DE RESPUESTA DOCENTE: OPERADOR DIFERENCIAL
+================================================================================
+
+**Prompts del usuario:**
+- "mi respuesta era valida, de todas formas?"
+
+**Acciones aplicadas:**
+1. Validación pedagógica de la explicación del docente:
+   - Conformidad rigurosa: interpretar $\frac{df}{dx}$ como "la derivada de la función respecto a la variable $x$" corresponde exactamente a la definición de operador diferencial $\frac{d}{dx}[f]$.
+   - Protección contra errores algebraicos comunes en el alumnado (evita la cancelación ingenua de símbolos).
+   - Complementariedad didáctica: tu respuesta da la visión funcional/operacional correcta, complementándose con la justificación del límite de la división incremental para explicar las unidades físicas.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 14/10/2026 - GENERACIÓN DE CUADERNO DE EJERCICIOS DE CINEMÁTICA VECTORIAL (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "hacer un PDF con ejercicios para Alumno 2 y ahora tiene una cosa de física que básicamente es cinemática en una, dos y tres dimensiones, pero realmente no hay nada en tres dimensiones, en plan igual se la mencionan. Pero bueno, principalmente en dos, pero es una cinemática en la que en vez de utilizar todas las ecuaciones que se suelen usar, que también las usas, pero no de la misma forma, lo que haces es utilizar vectores, derivadas y demás. Entonces, podrías hacer unos ejercicios de eso? Hm, ejercicios que yo ya he visto que tengas que hacer, pues bueno, muchas veces le dan el vector posición y le preguntan cosas como la velocidad instantánea o la velocidad media. Y a veces, ¿en qué punto acaba tras X segundos? La velocidad instantánea y la media pues también se la piden tras X segundos y demás. Hm, a ver qué puedes hacer."
+
+**Acciones aplicadas:**
+1. Diseño pedagógico de un cuaderno monográfico de cinemática vectorial con cálculo diferencial e integral adaptado a 1.º de Bachillerato:
+   - Sección 0: Caja de herramientas vectoriales y definiciones formales ($\vec{r}(t)$, vector desplazamiento $\Delta\vec{r}$, velocidad media $\vec{v}_m$, velocidad instantánea $\vec{v} = \frac{d\vec{r}}{dt}$, celeridad $|\vec{v}|$, aceleración media e instantánea $\vec{a} = \frac{d\vec{v}}{dt}$, componentes intrínsecas $a_t = \frac{\vec{a}\cdot\vec{v}}{v}$, $a_n = \sqrt{a^2 - a_t^2}$, radio de curvatura $\rho = \frac{v^2}{a_n}$, ecuación de la trayectoria $y(x)$ y cálculo integral para obtener $\vec{v}(t)$ y $\vec{r}(t)$ desde $\vec{a}(t)$).
+   - Bloque I (Batería de Enunciados - 6 ejercicios de examen graduados):
+     * Ejercicio 1 (2D Básico): Vector posición, evaluación en $t=0, 2\text{ s}$, desplazamiento, velocidad media e ecuación de la trayectoria $y(x)$.
+     * Ejercicio 2 (Cálculo Diferencial en 2D): Derivación de $\vec{v}(t)$ y $\vec{a}(t)$, celeridad instantánea, aceleración constante y contraste crítico conceptual con la velocidad media.
+     * Ejercicio 3 (Tiro Parabólico Vectorial): Tratamiento analítico diferencial de proyectiles ($\vec{v}_0$, ángulo de elevación $\alpha$, condición de altura máxima $v_y=0$, aceleración de la gravedad y alcance horizontal).
+     * Ejercicio 4 (Componentes Intrínsecas y Curvatura): Descomposición en aceleración tangencial ($a_t$) por proyección/derivada del módulo, aceleración normal ($a_n$) y radio de curvatura ($\rho$).
+     * Ejercicio 5 (Cinemática en 3D - Dron): Vector posición tridimensional con cota constante $z=5\text{ m}$, distancia euclídea al origen, vector velocidad y vector aceleración en base canónica $(\vec{i}, \vec{j}, \vec{k})$.
+     * Ejercicio 6 (Problema Inverso - Integración de la Aceleración): Determinación de constantes de integración a partir de condiciones iniciales $(\vec{v}_0, \vec{r}_0)$ para obtener las ecuaciones horarias completas.
+   - Bloque II (Solucionario Completo y Razonado): Resolución analítica paso a paso de cada ejercicio con justificación física, matemáticas detalladas y unidades del S.I.
+2. Maquetación y compilación editorial a PDF de alta resolución con KaTeX y diseño monocromático LaTeX TFG:
+   - `Alumno 2/ejercicios_cinematica_vectorial.md`
+   - `Alumno 2/ejercicios_cinematica_vectorial.pdf` (244 KB).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+SESIÓN: 14/10/2026 - CONVERSIÓN A FORMATO BOLSA DE EJERCICIOS PURA (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "Te tengo dicho que no quiero encabezados ni mierdas. Que sea un documento donde cada ejercicio parezca sacado de una bolsa de ejercicios"
+
+**Acciones aplicadas:**
+1. Supresión total de cabeceras, títulos, bloques de metadatos, resúmenes teóricos y subtítulos descriptivos de ejercicios.
+2. Reestructuración integral del documento como una relación / bolsa de problemas pura:
+   - 10 ejercicios numerados directamente (**1.** a **10.**) con enunciados estándar y apartados ordenados (a, b, c, d).
+   - Inclusión de soluciones analíticas concisas al final de cada apartado en formato `*(Sol: ...)*`.
+   - Distribución de saltos de página estratégicos para evitar roturas de ejercicios entre páginas.
+3. Recompilación limpia a PDF:
+   - `Alumno 2/ejercicios_cinematica_vectorial.md`
+   - `Alumno 2/ejercicios_cinematica_vectorial.pdf` (131 KB, 4 páginas).
+4. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 14/10/2026 - CONFIRMACIÓN: SUPRESIÓN TOTAL DE CAJA DE HERRAMIENTAS Y TEORÍA
+================================================================================
+
+**Prompts del usuario:**
+- "Tampoco quiero una "caja de herramientas" lol, te he pedido ejercicios, no teoria"
+
+**Acciones aplicadas:**
+1. Verificación y confirmación de eliminación absoluta de teoría:
+   - Se ratifica que en el PDF generado (`Alumno 2/ejercicios_cinematica_vectorial.pdf`) no existe ninguna "caja de herramientas", ni formulario, ni introducción teórica.
+   - El documento arranca directamente en la línea 1 con el primer problema (**1.**) y contiene única y exclusivamente los 10 ejercicios prácticos con sus preguntas y soluciones finales entre paréntesis `*(Sol: ...)*`.
+2. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+SESIÓN: 14/10/2026 - REUBICACIÓN DE SOLUCIONES AL FINAL DE CADA EJERCICIO (Alumno 2)
+================================================================================
+
+**Prompts del usuario:**
+- "Pon las soluciones al final del ejercicio, no de cada apartado"
+
+**Acciones aplicadas:**
+1. Reorganización de respuestas: Se retiran los paréntesis de solución de cada apartado individual y se concentran en una línea unificada de solución `*(Sol: a) ...; b) ...; c) ...)*` al pie de cada uno de los 10 ejercicios.
+2. Recompilación limpia a PDF:
+   - `Alumno 2/ejercicios_cinematica_vectorial.md`
+   - `Alumno 2/ejercicios_cinematica_vectorial.pdf` (127 KB, 4 páginas).
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+================================================================================
+SESIÓN: 02/11/2026 - GENERACIÓN DE RELACIÓN DE EJERCICIOS DE PLANCK Y RYDBERG
+================================================================================
+**Prompts del usuario:**
+- "podrias hacerme un documento PDF con 3 ejercicios de plank con potenciales de frenado y demas y otros 3 ejercicios usando rydberg?"
+
+**Acciones aplicadas:**
+1. Diseño de una relación de problemas pura (banco de ejercicios) de 6 problemas tipo examen de Física Cuántica / Estructura Atómica:
+   - Formato directo sin encabezados, sin títulos, sin cajas teóricas ni metadatos: inicio inmediato en la línea 1 con la numeración de los ejercicios (**1.** a **6.**) y soluciones agrupadas al final de cada problema `*(Sol: a) ...; b) ...; c) ...)*`.
+   - Distribución editorial en 3 páginas (2 ejercicios por página) con saltos controlados (`<div class="page-break"></div>`).
+   - Bloque Planck y Efecto Fotoeléctrico (3 ejercicios):
+     * Ejercicio 1: Emisión en cesio, energía de fotón, energía cinética máxima, velocidad de fotoelectrones, potencial de frenado ($V_0 = 0{,}82\text{ V}$) y longitud de onda umbral ($\lambda_0 = 581\text{ nm}$).
+     * Ejercicio 2: Determinación experimental de la constante de Planck ($h \approx 6{,}59 \cdot 10^{-34}\text{ J}\cdot\text{s}$) y trabajo de extracción ($W_0$) mediante dos potenciales de frenado correspondientes a dos longitudes de onda distintas ($300\text{ nm}$ y $400\text{ nm}$).
+     * Ejercicio 3: Haz láser monocromático, potencia luminosa ($4\text{ mW}$), flujo de fotones por segundo ($N \approx 4{,}83 \cdot 10^{15}\text{ fotones/s}$), momento lineal de fotones, potencial de frenado e invariancia de $V_0$ frente a la intensidad.
+   - Bloque Rydberg y Espectros Atómicos (3 ejercicios):
+     * Ejercicio 4: Serie de Balmer ($n_1 = 2$), líneas visibles $H_\alpha$ ($656{,}3\text{ nm}$, rojo) y $H_\beta$ ($486{,}2\text{ nm}$), longitud de onda límite de la serie ($n_2 \to \infty$, $364{,}6\text{ nm}$) y energía en eV.
+     * Ejercicio 5: Serie de Lyman ($n_1 = 1$), identificación del nivel inicial ($n_2 = 3$) a partir de un fotón emitido de $\lambda = 102{,}6\text{ nm}$, energía del fotón y transición intermedia $3 \to 2$.
+     * Ejercicio 6: Ionización del hidrógeno desde el estado fundamental ($n = 1 \to \infty$, $E_{\text{ion}} \approx 13{,}64\text{ eV}$, $\lambda_{\text{máx}} = 91{,}2\text{ nm}$), absorción a nivel $n=4$ y diagrama de las 6 transiciones posibles de desexcitación en cascada (Lyman, Balmer y Paschen).
+2. Compilación del documento con KaTeX a formato PDF:
+   - `ejercicios_planck_y_rydberg.pdf` (111 KB, 3 páginas exactas).
+   - Copias disponibles en raíz, `Alumno 2/ejercicios_planck_y_rydberg.pdf` y `02_Fisica/04_Fisica_Cuantica/ejercicios_planck_y_rydberg.pdf`.
+3. Sincronización en Git / commits realizados: Sin commits en esta sesión.
+================================================================================
+
+
+================================================================================
+SESIÓN: 02/11/2026 - GENERACIÓN DE 50 REACCIONES ORGÁNICAS (FORMATO CRUDO .DOCX)
+================================================================================
+**Prompts del usuario:**
+- "Hazme un plan para hacer un documento PDF con 50 reacciones organicas xfa. Lo planeas tu (gemini 4 argon) y lo ejecuta gemini 3.8 flash. No quiero polimerizacion. Eliminacion, adicion a dobles y triples enlaces, sustitucion, RedOx organica, combustion, acido base y condensacion... Que parezca que cada ejercicio ha sido sacado de una bolsa y juntado sin mas. Algo mas bien crudo"
+
+**Acciones aplicadas:**
+1. Diseño y planificación rigurosa con Gemini 4 Argon:
+   - Selección y balanceo de 50 reacciones orgánicas sin polimerizaciones, cubriendo las 7 familias requeridas: adición a dobles y triples enlaces (11), sustitución nucleófila/radicalaria/aromática (10), condensación e hidrólisis (8), eliminación (6), redox orgánica (6), ácido-base orgánica (5) y combustión (4).
+   - Estructuración pedagógica en 9 ejercicios con diversas mecánicas de examen: tiras directas con productos y tipo de reacción, regioselectividad Markovnikov/Zaitsev con productos mayoritarios/minoritarios, enunciados nominales desde cero, deducción de incógnita única A en reactivo/producto/flecha, dos incógnitas A y B, secuencias sintéticas lineales encadenadas, deducción inversa y ramificada desde sustrato A desconocido, tiras de consolidación de A y síntesis con derivados nitrogenados.
+2. Ejecución y desarrollo técnico con Gemini 3.8 Flash:
+   - Creación del directorio especializado `01_Quimica/06_Reacciones_Organicas/`.
+   - Desarrollo del script generador `generar_50_reacciones.py` con validación estricta programática (`assert total_rxns == 50`).
+   - Maquetación cruda pura estilo `.docx` sin títulos de documento, sin encabezados, sin pies de página, sin numeración de página y con tipografía Calibri nativa (11 pt).
+   - Implementación de flechas químicas proporcionales y limpias en HTML/CSS sin MathJax/KaTeX para evitar saltos tipográficos y permitir selección fluida de texto.
+   - Paginación balanceada simétricamente en 3 páginas exactas tanto en la versión del alumno como en el solucionario:
+     * Página 1: Ejercicios 1 y 2 (18 reacciones).
+     * Página 2: Ejercicios 3, 4 y 5 (18 reacciones).
+     * Página 3: Ejercicios 6, 7, 8 y 9 (14 reacciones).
+3. Compilación a PDF mediante Microsoft Edge Headless (`--no-pdf-header-footer`):
+   - Documento del alumno: `01_Quimica/06_Reacciones_Organicas/ejercicios_50_reacciones_organicas.pdf` (152 KB, 3 páginas).
+   - Solucionario completo: `01_Quimica/06_Reacciones_Organicas/ejercicios_50_reacciones_organicas_resueltos.pdf` (263 KB, 3 páginas).
+   - Copias sincronizadas en la raíz de `Clases/`:
+     * `ejercicios_50_reacciones_organicas.pdf`
+     * `ejercicios_50_reacciones_organicas_resueltos.pdf`
+4. Inspección visual y validación de calidad: comprobación de ausencia total de elementos decorativos, alineación impecable de subíndices químicos y ausencia de cortes o viñetas huérfanas.
+5. Sincronización en Git / commits realizados: Sin commits en esta sesión (archivos generados en local).
+================================================================================
+
+NOTA DE ACTUALIZACIÓN (02/11/2026 - 12:35):
+- Sustituida la reacción 5e (neutralización de fenol con NaOH) por una reacción ácido-base convencional con ácido acético:
+  CH3–COOH + NaOH ⟶ CH3–COONa + H2O (etanoato de sodio + agua).
+- Recompilados y sincronizados ambos PDFs en la raíz y en el módulo 06_Reacciones_Organicas.
+================================================================================
+
+NOTA DE DEPURACIÓN INTEGRAL DE REACCIONES (02/11/2026 - 12:50):
+- Depurada la lista completa de las 50 reacciones para eliminar todo tecnicismo, reactivo o condición ajena a 2º de Bachillerato:
+  1. 3b: Sustituida la deshidratación a éter a 140 °C por esterificación directa entre ácido propanoico y etanol (propanoato de etilo + agua).
+  2. 5b: Sustituida la síntesis de Williamson por sustitución nucleófila estándar de alcohol con hidrácido: CH3–CH2–OH + HBr ⟶ CH3–CH2–Br + H2O.
+  3. 2c: Retirado el reactivo de Lindlar ("Pd/Lindlar"), sustituido por hidrogenación parcial ordinaria con Pt: CH3–C≡C–CH3 + H2 (1 mol) ──(Pt)──> but-2-eno.
+  4. 4d y 8b: Eliminados hidruros metálicos específicos (NaBH4 y LiAlH4), sustituidos por la notación universal de Bachillerato [H] (reducción).
+  5. 6b: Eliminado el reactivo PCC (clorocromato de piridinio), sustituido por la notación estándar [O] suave.
+  6. 1d, 2e, 2g, 4g, 7d: Simplificadas las condiciones térmicas de 180 °C o símbolos aislados a la expresión estándar "calor" o "H2SO4 conc., calor".
+- Recompilados y sincronizados ambos PDFs de 3 páginas exactas en la raíz y en el módulo 06_Reacciones_Organicas.
+================================================================================
+
+NOTA (02/11/2026 - 12:53):
+- Restablecido el reactivo LiAlH4 en el ejercicio 8b para la reducción de ácido propanoico a propan-1-ol:
+  CH3–CH2–COOH ──(LiAlH4)──> A (A = CH3–CH2–CH2–OH).
+- Recompilados ambos documentos PDF.
+================================================================================
+
+NOTA (02/11/2026 - 12:57):
+- Ajustada la solución de 8b para priorizar la reducción inmediata a aldehído solicitada por el docente:
+  A = CH3–CH2–CHO (propanal) [con indicación de que también se admite propan-1-ol].
+- Recompilados ambos documentos PDF.
+================================================================================
+
+NOTA (02/11/2026 - 13:08):
+- Sustituida la reacción 1e (halogenación radicalaria de etano con luz UV) por adición directa de HCl a eteno:
+  CH2=CH2 + HCl ⟶ CH3–CH2–Cl (cloroetano) — Adición (hidrohalogenación).
+- Recompilados ambos documentos PDF.
+================================================================================
+
+NOTA (02/11/2026 - 13:15):
+- Sustituida la reacción 5c (alquilación de Friedel-Crafts con AlCl3) por una esterificación clásica con incógnitas A y B:
+  A + CH3–CH2–OH ──(H+)──⇌── CH3–COO–CH2–CH3 + B
+  (A = CH3–COOH, ácido etanoico; B = H2O).
+- Recompilados ambos documentos PDF.
+================================================================================
+
+NOTA (02/11/2026 - 13:17):
+- Modificado el título de metadatos del documento (etiqueta <title> del visor de PDF) a "bolsa de reacciones quimicas" (y "bolsa de reacciones quimicas (resueltos)").
+- Recompilados ambos documentos PDF.
+================================================================================

@@ -1,0 +1,218 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, angles, quotes}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+% =========================================================================
+% PÁGINA 1: MATEMÁTICAS - RECTA TANGENTE (EJEMPLO 1)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Matemáticas 1.º de Bachillerato | Ejercicio 1: Recta Tangente y Normal (Modelo)}}
+\end{center}
+
+\vspace{0.8cm}
+\noindent\textbf{1.} Dada la función polinómica:
+\[
+f(x) = x^3 - 4x^2 + x + 6
+\]
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=12pt]
+    \item Halla la ecuación de la recta tangente a la gráfica de $f(x)$ en el punto de abscisa $x_0 = 3$.
+    \item Halla la ecuación de la recta normal a la gráfica de la función en dicho punto.
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 2: MATEMÁTICAS - RECTA TANGENTE (CLON PARA EL ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Matemáticas 1.º de Bachillerato | Ejercicio 2: Recta Tangente y Normal (Práctica)}}
+\end{center}
+
+\vspace{0.8cm}
+\noindent\textbf{2.} Dada la función polinómica:
+\[
+g(x) = x^3 - 2x^2 - 4x + 5
+\]
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=12pt]
+    \item Halla la ecuación de la recta tangente a la gráfica de $g(x)$ en el punto de abscisa $x_0 = 1$.
+    \item Halla la ecuación de la recta normal a la gráfica de la función en dicho punto.
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 3: MATEMÁTICAS - OPTIMIZACIÓN (EJEMPLO 1)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Matemáticas 1.º de Bachillerato | Ejercicio 3: Optimización de Superficie (Modelo)}}
+\end{center}
+
+\vspace{0.8cm}
+\noindent\textbf{3.} Un agricultor dispone de $120\text{ metros}$ de valla metálica para delimitar un huerto rectangular. Uno de los lados del terreno limita con la orilla recta de un río, por lo que ese lado no necesita valla.
+
+\vspace{0.3cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=12pt]
+    \item Expresa el área del huerto como una función de la longitud $x$ de los lados perpendiculares al río.
+    \item Determina las dimensiones ($x$ e $y$) que debe tener el rectángulo para que la superficie cercada sea máxima.
+    \item Calcula el valor de dicha área máxima y justifica, mediante el criterio de la segunda derivada, que se trata efectivamente de un máximo.
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 4: MATEMÁTICAS - OPTIMIZACIÓN (CLON PARA EL ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Matemáticas 1.º de Bachillerato | Ejercicio 4: Optimización de Superficie (Práctica)}}
+\end{center}
+
+\vspace{0.8cm}
+\noindent\textbf{4.} Un ganadero dispone de $180\text{ metros}$ de valla metálica para construir un corral rectangular adosado a la pared recta de un establo, de manera que la pared sirve de cierre y no requiere valla en ese lado.
+
+\vspace{0.3cm}
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=12pt]
+    \item Expresa el área del corral como una función de la longitud $x$ de los dos lados perpendiculares a la pared.
+    \item Determina las dimensiones ($x$ e $y$) que debe tener el corral para que el área encerrada sea máxima.
+    \item Calcula el valor de dicha área máxima y justifica el resultado mediante el criterio de la segunda derivada.
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 5: FÍSICA - PLANO INCLINADO (EJEMPLO 1)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato | Ejercicio 5: Dinámica en Plano Inclinado (Modelo)}}
+\end{center}
+
+\vspace{0.3cm}
+\noindent\textbf{5.} Sobre un plano inclinado de ángulo $\alpha = 30^\circ$ se encuentra un bloque de masa $m = 10\text{ kg}$. El coeficiente de rozamiento entre el bloque y el plano es $\mu = 0{,}25$. Se tira del bloque hacia arriba mediante una fuerza constante $F = 100\text{ N}$ paralela a la superficie del plano inclinado ($g = 9{,}8\text{ m/s}^2$).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95, >=Stealth]
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$\alpha = 30^\circ$};
+    
+    \begin{scope}[shift={(3.2, 1.8475)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,1);
+        \node at (0,0.5) {$m = 10\text{ kg}$};
+        \draw[very thick, red, ->] (0.8,0.5) -- (2.6,0.5) node[right, black] {$\vec{F} = 100\text{ N}$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=7pt]
+    \item Dibuja el diagrama de cuerpo libre indicando todas las fuerzas que actúan sobre el bloque ($\vec{P}$, $\vec{N}$, $\vec{F}_r$ y $\vec{F}$) y descompón el peso en los ejes paralela y perpendicularmente al plano.
+    \item Calcula el valor de la fuerza normal ($N$) y de la fuerza de rozamiento ($F_r$).
+    \item Determina la aceleración con la que sube el bloque por el plano inclinado.
+    \item Si el bloque parte del reposo y recorre una longitud de $10\text{ metros}$ sobre el plano, calcula el tiempo que tarda en recorrerlos y la velocidad final alcanzada.
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 6: FÍSICA - PLANO INCLINADO (CLON PARA EL ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Física 1.º de Bachillerato | Ejercicio 6: Dinámica en Plano Inclinado (Práctica)}}
+\end{center}
+
+\vspace{0.3cm}
+\noindent\textbf{6.} Sobre un plano inclinado de ángulo $\alpha = 30^\circ$ se encuentra un bloque de masa $m = 8\text{ kg}$. El coeficiente de rozamiento entre el bloque y la superficie es $\mu = 0{,}20$. Se tira del bloque hacia arriba mediante una fuerza constante $F = 80\text{ N}$ paralela al plano ($g = 9{,}8\text{ m/s}^2$).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95, >=Stealth]
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$\alpha = 30^\circ$};
+    
+    \begin{scope}[shift={(3.2, 1.8475)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,1);
+        \node at (0,0.5) {$m = 8\text{ kg}$};
+        \draw[very thick, red, ->] (0.8,0.5) -- (2.6,0.5) node[right, black] {$\vec{F} = 80\text{ N}$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=7pt]
+    \item Dibuja el diagrama de cuerpo libre indicando todas las fuerzas que actúan sobre el bloque ($\vec{P}$, $\vec{N}$, $\vec{F}_r$ y $\vec{F}$) y descompón el peso en los ejes paralela y perpendicularmente al plano.
+    \item Calcula el valor de la fuerza normal ($N$) y de la fuerza de rozamiento ($F_r$).
+    \item Determina la aceleración con la que sube el bloque por el plano inclinado.
+    \item Si el bloque parte del reposo y recorre una longitud de $10\text{ metros}$ sobre el plano, calcula el tiempo que tarda en recorrerlos y la velocidad final alcanzada.
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% PÁGINA 7: QUÍMICA - RENDIMIENTO (EJEMPLO 1)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Química 1.º de Bachillerato | Ejercicio 7: Rendimiento de Reacciones (Modelo)}}
+\end{center}
+
+\vspace{0.8cm}
+\noindent\textbf{7.} En una caldera de calefacción se queman $88\text{ g}$ de gas propano (\ce{C3H8}) con una cantidad suficiente de gas oxígeno (\ce{O2}) del aire, produciéndose dióxido de carbono (\ce{CO2}) y agua líquida (\ce{H2O}) según la siguiente reacción sin ajustar:
+\[
+\ce{C3H8 (g) + O2 (g) -> CO2 (g) + H2O (l)}
+\]
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=12pt]
+    \item Escribe y ajusta la ecuación química de la combustión.
+    \item Calcula los moles y la masa teórica máxima de dióxido de carbono (\ce{CO2}) que se producirían con un rendimiento del $100\%$.
+    \item Sabiendo que las condiciones del quemador hacen que la reacción tenga un rendimiento real del $85\%$, calcula la masa real de \ce{CO2} que se expulsa a la atmósfera.
+    \item Determina el volumen real de gas \ce{CO2} desprendido, medido en Condiciones Normales ($\text{C.N.}$: $1\text{ atm}$, $0\,^\circ\text{C}$, donde $1\text{ mol} = 22{,}4\text{ L}$).
+\end{enumerate}
+
+\vspace{0.5cm}
+\noindent\textbf{Datos:} Masas atómicas ($\text{u}$): $\mathrm{H} = 1$; $\mathrm{C} = 12$; $\mathrm{O} = 16$.
+
+\newpage
+
+% =========================================================================
+% PÁGINA 8: QUÍMICA - RENDIMIENTO (CLON PARA EL ALUMNO)
+% =========================================================================
+\begin{center}
+    {\LARGE \textbf{Cuaderno de Ejercicios — Ficha de Trabajo}}\\[4pt]
+    {\large \textbf{Química 1.º de Bachillerato | Ejercicio 8: Rendimiento de Reacciones (Práctica)}}
+\end{center}
+
+\vspace{0.8cm}
+\noindent\textbf{8.} En una estufa de camping se queman $116\text{ g}$ de gas butano (\ce{C4H10}) con una cantidad suficiente de gas oxígeno (\ce{O2}) del aire, produciéndose dióxido de carbono (\ce{CO2}) y agua líquida (\ce{H2O}) según la siguiente reacción sin ajustar:
+\[
+\ce{C4H10 (g) + O2 (g) -> CO2 (g) + H2O (l)}
+\]
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=12pt]
+    \item Escribe y ajusta la ecuación química de la combustión.
+    \item Calcula los moles y la masa teórica máxima de dióxido de carbono (\ce{CO2}) que se producirían con un rendimiento del $100\%$.
+    \item Sabiendo que la combustión en la estufa tiene un rendimiento real del $80\%$, calcula la masa real de \ce{CO2} que se expulsa a la atmósfera.
+    \item Determina el volumen real de gas \ce{CO2} desprendido, medido en Condiciones Normales ($\text{C.N.}$: $1\text{ atm}$, $0\,^\circ\text{C}$, donde $1\text{ mol} = 22{,}4\text{ L}$).
+\end{enumerate}
+
+\vspace{0.5cm}
+\noindent\textbf{Datos:} Masas atómicas ($\text{u}$): $\mathrm{H} = 1$; $\mathrm{C} = 12$; $\mathrm{O} = 16$.
+
+\end{document}

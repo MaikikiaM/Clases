@@ -1,0 +1,117 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent\textbf{Resolución paso a paso del ejercicio de cinemática vectorial ($g = 18\text{ m/s}^2$)}
+
+\vspace{0.3cm}
+\noindent Dada la ecuación vectorial de posición:
+\[
+\vec{r}(t) = (24t + 5)\,\vec{i} + (-9t^2 + 25t + 10)\,\vec{j} \quad (\text{en metros})
+\]
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=7pt]
+    \item \textbf{Vector de posición en el instante inicial ($t = 0\text{ s}$):}
+    \[
+    \vec{r}(0) = (24\cdot 0 + 5)\,\vec{i} + (-9\cdot 0^2 + 25\cdot 0 + 10)\,\vec{j} = \mathbf{5\,\vec{i} + 10\,\vec{j}\text{ m}}
+    \]
+
+    \item \textbf{Vector desplazamiento en los dos primeros segundos ($\Delta t = [0, 2]\text{ s}$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item Posición en $t = 2\text{ s}$:
+        \[
+        x(2) = 24(2) + 5 = 53\text{ m} \qquad y(2) = -9(2)^2 + 25(2) + 10 = -36 + 50 + 10 = 24\text{ m}
+        \]
+        \[
+        \vec{r}(2) = 53\,\vec{i} + 24\,\vec{j}\text{ m}
+        \]
+        \item Vector desplazamiento ($\Delta\vec{r} = \vec{r}(2) - \vec{r}(0)$):
+        \[
+        \Delta\vec{r} = (53 - 5)\,\vec{i} + (24 - 10)\,\vec{j} = \mathbf{48\,\vec{i} + 14\,\vec{j}\text{ m}}
+        \]
+        \item Módulo del desplazamiento:
+        \[
+        |\Delta\vec{r}| = \sqrt{48^2 + 14^2} = \sqrt{2304 + 196} = \sqrt{2500} = \mathbf{50\text{ m}}
+        \]
+    \end{itemize}
+
+    \item \textbf{Vector velocidad media en los dos primeros segundos:}
+    \[
+    \vec{v}_m = \frac{\Delta\vec{r}}{\Delta t} = \frac{48\,\vec{i} + 14\,\vec{j}\text{ m}}{2\text{ s} - 0\text{ s}} = \mathbf{24\,\vec{i} + 7\,\vec{j}\text{ m/s}}
+    \]
+    \[
+    |\vec{v}_m| = \sqrt{24^2 + 7^2} = \sqrt{576 + 49} = \sqrt{625} = \mathbf{25\text{ m/s}}
+    \]
+
+    \item \textbf{Ecuación de la trayectoria, $y(x)$:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+        \item Despejamos el parámetro $t$ de la componente horizontal:
+        \[
+        x = 24t + 5 \implies t = \frac{x - 5}{24}
+        \]
+        \item Sustituimos en la componente vertical:
+        \[
+        y(x) = -9\left(\frac{x - 5}{24}\right)^2 + 25\left(\frac{x - 5}{24}\right) + 10 = \mathbf{-\frac{1}{64}(x - 5)^2 + \frac{25}{24}(x - 5) + 10}
+        \]
+        \item En forma polinómica general desarrollada:
+        \[
+        y(x) = -\frac{1}{64}x^2 + \frac{115}{96}x + \frac{845}{192} \approx -0{,}0156x^2 + 1{,}1979x + 4{,}4010\text{ m}
+        \]
+    \end{itemize}
+
+    \item \textbf{Vector velocidad instantánea y su módulo en $t = 1\text{ s}$:}
+    \[
+    \vec{v}(t) = \frac{d\vec{r}(t)}{dt} = \frac{dx}{dt}\,\vec{i} + \frac{dy}{dt}\,\vec{j} = 24\,\vec{i} + (-18t + 25)\,\vec{j}\text{ m/s}
+    \]
+    Para $t = 1\text{ s}$:
+    \[
+    \vec{v}(1) = 24\,\vec{i} + (-18(1) + 25)\,\vec{j} = \mathbf{24\,\vec{i} + 7\,\vec{j}\text{ m/s}}
+    \]
+    \[
+    v(1) = |\vec{v}(1)| = \sqrt{24^2 + 7^2} = \sqrt{625} = \mathbf{25\text{ m/s}}
+    \]
+
+    \item \textbf{Vector aceleración y su módulo en $t = 1\text{ s}$:}
+    \[
+    \vec{a}(t) = \frac{d\vec{v}(t)}{dt} = 0\,\vec{i} + (-18)\,\vec{j} = \mathbf{-18\,\vec{j}\text{ m/s}^2}
+    \]
+    \[
+    a = |\vec{a}| = \sqrt{0^2 + (-18)^2} = \mathbf{18\text{ m/s}^2} \quad (\text{constante en todo el movimiento})
+    \]
+
+    \item \textbf{Aceleración tangencial ($a_t$) en $t = 1\text{ s}$:}
+    \[
+    a_t = \frac{\vec{v} \cdot \vec{a}}{|\vec{v}|} = \frac{(24)(0) + (7)(-18)}{25} = \frac{-126}{25} = \mathbf{-5{,}04\text{ m/s}^2}
+    \]
+    \textit{Nota: El valor negativo indica que en ese instante la partícula está desacelerando en su trayectoria.}
+
+    \item \textbf{Aceleración normal o centrípeta ($a_n$) en $t = 1\text{ s}$:}
+    Dado que $\vec{a} = \vec{a}_t + \vec{a}_n$ y son componentes perpendiculares:
+    \[
+    a^2 = a_t^2 + a_n^2 \implies a_n = \sqrt{|\vec{a}|^2 - a_t^2}
+    \]
+    \[
+    a_n = \sqrt{18^2 - (-5{,}04)^2} = \sqrt{324 - 25{,}4016} = \sqrt{298{,}5984} = \mathbf{17{,}28\text{ m/s}^2}
+    \]
+    \textit{Alternativa por producto vectorial:}
+    \[
+    a_n = \frac{|\vec{v} \times \vec{a}|}{|\vec{v}|} = \frac{|(24)(-18) - (7)(0)|}{25} = \frac{432}{25} = \mathbf{17{,}28\text{ m/s}^2}
+    \]
+
+    \item \textbf{Radio de curvatura ($\rho$) en $t = 1\text{ s}$:}
+    \[
+    a_n = \frac{v^2}{\rho} \implies \rho = \frac{v^2}{a_n} = \frac{25^2}{17{,}28} = \frac{625}{\frac{432}{25}} = \frac{15625}{432} \approx \mathbf{36{,}17\text{ m}}
+    \]
+\end{enumerate}
+
+\end{document}

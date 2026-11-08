@@ -1,0 +1,102 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    {\LARGE \textbf{Resolución: Ejercicios de Recta Tangente y Normal}}\\[4pt]
+    {\large \textbf{Matemáticas 1.º de Bachillerato}}
+\end{center}
+
+\vspace{0.3cm}
+\noindent\textbf{Fórmulas clave:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Punto de tangencia: $P(x_0, y_0) = (x_0, f(x_0))$.
+    \item Pendiente de la recta tangente: $m = f'(x_0)$.
+    \item \textbf{Ecuación de la recta tangente:} $y - f(x_0) = f'(x_0)(x - x_0)$.
+    \item \textbf{Ecuación de la recta normal:} $y - f(x_0) = -\frac{1}{f'(x_0)}(x - x_0) \quad (\text{si } f'(x_0) \neq 0)$.
+\end{itemize}
+
+\vspace{0.3cm}
+\noindent\textbf{1. Resolución del ejercicio 1: $f(x) = x^3 - 4x^2 + x + 6$ en $x_0 = 3$}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Recta tangente en $x_0 = 3$:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item 1. Calculamos la ordenada del punto $y_0 = f(3)$:
+        \[
+        f(3) = 3^3 - 4(3^2) + 3 + 6 = 27 - 36 + 3 + 6 = \mathbf{0} \implies P(3, 0)
+        \]
+        \item 2. Calculamos la derivada general $f'(x)$:
+        \[
+        f'(x) = 3x^2 - 8x + 1
+        \]
+        \item 3. Calculamos la pendiente en el punto $m = f'(3)$:
+        \[
+        m = 3(3^2) - 8(3) + 1 = 27 - 24 + 1 = \mathbf{4}
+        \]
+        \item 4. Ecuación punto-pendiente de la tangente:
+        \[
+        y - 0 = 4(x - 3) \implies \mathbf{y = 4x - 12}
+        \]
+    \end{itemize}
+
+    \item \textbf{Recta normal en $x_0 = 3$:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item La pendiente normal es perpendicular a la tangente: $m_{\text{normal}} = -\frac{1}{m} = -\frac{1}{4}$.
+        \item Ecuación punto-pendiente:
+        \[
+        y - 0 = -\frac{1}{4}(x - 3) \implies \mathbf{y = -\frac{1}{4}x + \frac{3}{4}} \quad (\text{o en forma general: } x + 4y - 3 = 0)
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.4cm}
+\noindent\textbf{2. Resolución del ejercicio 2: $g(x) = x^2 - 6x + 5$}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=6pt]
+    \item \textbf{Tangente paralela a la recta $r: y = 2x + 7$:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Dos rectas paralelas tienen la misma pendiente: $m = 2$.
+        \item Igualamos la derivada a la pendiente para hallar la abscisa $x_0$:
+        \[
+        g'(x) = 2x - 6 \implies 2x_0 - 6 = 2 \implies 2x_0 = 8 \implies \mathbf{x_0 = 4}
+        \]
+        \item Hallamos la ordenada $y_0 = g(4)$:
+        \[
+        g(4) = 4^2 - 6(4) + 5 = 16 - 24 + 5 = \mathbf{-3} \implies P(4, -3)
+        \]
+        \item Ecuación de la recta tangente:
+        \[
+        y - (-3) = 2(x - 4) \implies y + 3 = 2x - 8 \implies \mathbf{y = 2x - 11}
+        \]
+    \end{itemize}
+
+    \item \textbf{Tangente horizontal (pendiente $m = 0$):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Una recta horizontal tiene pendiente $m = 0 \implies g'(x_0) = 0$:
+        \[
+        2x_0 - 6 = 0 \implies \mathbf{x_0 = 3}
+        \]
+        \item Hallamos el vértice/ordenada $y_0 = g(3)$:
+        \[
+        g(3) = 3^2 - 6(3) + 5 = 9 - 18 + 5 = \mathbf{-4} \implies P(3, -4)
+        \]
+        \item Ecuación de la recta tangente horizontal:
+        \[
+        y - (-4) = 0(x - 3) \implies \mathbf{y = -4}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

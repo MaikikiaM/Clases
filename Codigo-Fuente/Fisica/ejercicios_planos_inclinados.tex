@@ -1,0 +1,97 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, angles, quotes}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\begin{document}
+\pagestyle{empty}
+
+% PÁGINA 1: EJERCICIO 1
+\begin{center}
+    {\LARGE \textbf{Física 1.º de Bachillerato: Dinámica de Newton}}\\[4pt]
+    {\large \textbf{Ejercicio 1: Plano Inclinado con Fuerza de Tracción y Rozamiento}}
+\end{center}
+
+\vspace{0.4cm}
+\noindent\textbf{1.} Sobre un plano inclinado de ángulo $\alpha = 30^\circ$ se encuentra un bloque de masa $m = 10\text{ kg}$. El coeficiente de rozamiento entre el bloque y la superficie del plano es $\mu = 0{,}25$. Se tira del bloque hacia arriba mediante una fuerza constante $F = 100\text{ N}$ paralela a la superficie del plano inclinado ($g = 9{,}8\text{ m/s}^2$).
+
+\begin{center}
+\begin{tikzpicture}[scale=1, >=Stealth]
+    % Plano inclinado
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$\alpha = 30^\circ$};
+    
+    % Bloque sobre el plano
+    \begin{scope}[shift={(3.2, 1.8475)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,1);
+        \node at (0,0.5) {$m = 10\text{ kg}$};
+        % Fuerza F aplicada
+        \draw[very thick, red, ->] (0.8,0.5) -- (2.6,0.5) node[right, black] {$\vec{F} = 100\text{ N}$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item Dibuja el diagrama de cuerpo libre indicando todas las fuerzas que actúan sobre el bloque ($\vec{P}$, $\vec{N}$, $\vec{F}_r$ y $\vec{F}$) y descomponiendo el peso en los ejes paralela y perpendicularmente al plano.
+    \item Calcula el valor de la fuerza normal ($N$) y de la fuerza de rozamiento ($F_r$).
+    \item Determina la aceleración con la que sube el bloque por el plano inclinado.
+    \item Si el bloque parte del reposo y recorre una longitud de $10\text{ metros}$ sobre el plano, calcula el tiempo que tarda en recorrerlos y la velocidad que alcanza al final.
+\end{enumerate}
+
+\newpage
+
+% PÁGINA 2: EJERCICIO 2
+\begin{center}
+    {\LARGE \textbf{Física 1.º de Bachillerato: Dinámica de Newton}}\\[4pt]
+    {\large \textbf{Ejercicio 2: Sistema de Dos Cuerpos con Polea y Plano Inclinado}}
+\end{center}
+
+\vspace{0.4cm}
+\noindent\textbf{2.} Dos cuerpos de masas $m_1 = 6\text{ kg}$ y $m_2 = 8\text{ kg}$ están unidos mediante una cuerda inextensible y de masa despreciable que pasa por una polea ideal situada en el vértice superior de un plano inclinado de $\alpha = 30^\circ$. El coeficiente de rozamiento entre el cuerpo 1 y el plano es $\mu = 0{,}20$ ($g = 9{,}8\text{ m/s}^2$).
+
+\begin{center}
+\begin{tikzpicture}[scale=1, >=Stealth]
+    % Cuña / Plano
+    \draw[thick, fill=gray!10] (0,0) -- (6,0) -- (6,3.464) -- cycle;
+    \draw (1.2,0) arc (0:30:1.2);
+    \node at (1.6,0.3) {$\alpha = 30^\circ$};
+    
+    % Polea en la cúspide
+    \draw[thick, fill=gray!40] (6, 3.464) circle (0.35);
+    \fill[black] (6,3.464) circle (0.06);
+    
+    % Bloque 1 sobre el plano
+    \begin{scope}[shift={(3.0, 1.732)}, rotate=30]
+        \draw[thick, fill=blue!15] (-0.8,0) rectangle (0.8,0.9);
+        \node at (0,0.45) {$m_1 = 6\text{ kg}$};
+    \end{scope}
+    
+    % Cuerda bloque 1 a polea
+    \draw[thick] (3.5, 2.45) -- (6, 3.8);
+    
+    % Cuerda colgando
+    \draw[thick] (6.35, 3.464) -- (6.35, 1.5);
+    
+    % Bloque 2 colgante
+    \draw[thick, fill=orange!20] (5.85, 0.6) rectangle (6.85, 1.5);
+    \node at (6.35, 1.05) {$m_2 = 8\text{ kg}$};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=8pt]
+    \item Dibuja los diagramas de cuerpo libre para cada uno de los dos cuerpos por separado.
+    \item Justifica física y matemáticamente el sentido en el que se moverá el sistema al liberarse desde el reposo.
+    \item Plantea las ecuaciones de la 2.ª Ley de Newton para cada cuerpo y calcula la aceleración del sistema ($a$).
+    \item Calcula la tensión de la cuerda ($T$) durante el movimiento.
+\end{enumerate}
+
+\end{document}

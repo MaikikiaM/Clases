@@ -1,0 +1,113 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+
+\setmainfont{Calibri}
+\linespread{1.15}
+
+\tcbset{
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    {\LARGE \textbf{Resolución: Problemas de Optimización Sencillos}}\\[4pt]
+    {\large \textbf{Matemáticas 1.º de Bachillerato}}
+\end{center}
+
+\vspace{0.2cm}
+\begin{tcolorbox}
+\textbf{Pasos sistemáticos para resolver cualquier problema de optimización:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+    \item \textbf{Variables y dibujo:} Identificar las incógnitas y plantear la ligadura o restricción.
+    \item \textbf{Función objetivo:} Expresar la magnitud a maximizar/minimizar en función de una única variable.
+    \item \textbf{Derivada primera:} Calcular $f'(x) = 0$ para encontrar los puntos críticos candidatos.
+    \item \textbf{Comprobación del extremo:} Usar la segunda derivada ($f''(x_0) < 0 \implies \text{Máximo}$; $f''(x_0) > 0 \implies \text{Mínimo}$).
+    \item \textbf{Conclusión:} Responder a lo que pide el enunciado con sus unidades correspondientes.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+\noindent\textbf{1. Resolución del problema del huerto contiguo al río:}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Sean $x$ los dos lados perpendiculares al río e $y$ el lado paralelo al río.
+    \item \textbf{Restricción (longitud de valla):} $2x + y = 120 \implies y = 120 - 2x$.
+\end{itemize}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=4pt]
+    \item \textbf{Función área $A(x)$:}
+    \[
+    A(x) = \text{base} \times \text{altura} = y \cdot x = (120 - 2x)x = \mathbf{120x - 2x^2} \quad (\text{para } 0 < x < 60)
+    \]
+
+    \item \textbf{Dimensiones para área máxima:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Derivamos e igualamos a cero:
+        \[
+        A'(x) = 120 - 4x = 0 \implies 4x = 120 \implies \mathbf{x = 30\text{ m}}
+        \]
+        \item Calculamos la otra dimensión $y$:
+        \[
+        y = 120 - 2(30) = 120 - 60 = \mathbf{60\text{ m}}
+        \]
+        \item Las dimensiones óptimas son \textbf{$30\text{ m}$ de fondo} y \textbf{$60\text{ m}$ de frente al río}.
+    \end{itemize}
+
+    \item \textbf{Área máxima y comprobación:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Área máxima: $A(30) = 30\text{ m} \times 60\text{ m} = \mathbf{1800\text{ m}^2}$.
+        \item Criterio de la 2.ª derivada: $A''(x) = -4 < 0 \implies$ Es un \textbf{máximo absoluto}.
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.3cm}
+\noindent\textbf{2. Resolución del problema de la caja con cartón de $30\text{ cm} \times 30\text{ cm}$:}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Al cortar esquinas cuadradas de lado $x$, la base de la caja mide $(30 - 2x)$ de lado y la altura de la caja es $x$.
+\end{itemize}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=2em, itemsep=4pt]
+    \item \textbf{Función volumen $V(x)$ y dominio:}
+    \[
+    V(x) = \text{Área base} \times \text{altura} = (30 - 2x)^2 \cdot x = (900 - 120x + 4x^2)x = \mathbf{4x^3 - 120x^2 + 900x}
+    \]
+    Dominio físico: para que las dimensiones sean positivas, $x > 0$ y $30 - 2x > 0 \implies \mathbf{x \in (0, 15)\text{ cm}}$.
+
+    \item \textbf{Corte $x$ para volumen máximo:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Derivada primera:
+        \[
+        V'(x) = 12x^2 - 240x + 900 = 0 \implies x^2 - 20x + 75 = 0
+        \]
+        \item Resolvemos la ecuación de segundo grado:
+        \[
+        x = \frac{20 \pm \sqrt{(-20)^2 - 4(1)(75)}}{2} = \frac{20 \pm \sqrt{400 - 300}}{2} = \frac{20 \pm 10}{2}
+        \]
+        \[
+        x_1 = 15\text{ cm } (\text{no válido, anularía la caja}) \qquad \mathbf{x_2 = 5\text{ cm}}
+        \]
+        \item Debe recortarse un cuadrado de \textbf{$5\text{ cm} \times 5\text{ cm}$} en cada esquina.
+    \end{itemize}
+
+    \item \textbf{Volumen máximo y comprobación:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item Dimensiones de la caja: Base cuadrada de $30 - 2(5) = 20\text{ cm}$ y altura $5\text{ cm}$.
+        \item Volumen máximo: $V(5) = 20^2 \times 5 = 400 \times 5 = \mathbf{2000\text{ cm}^3} = \mathbf{2\text{ litros}}$.
+        \item Comprobación 2.ª derivada: $V''(x) = 24x - 240 \implies V''(5) = 24(5) - 240 = -120 < 0 \implies$ Es un \textbf{máximo}.
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
