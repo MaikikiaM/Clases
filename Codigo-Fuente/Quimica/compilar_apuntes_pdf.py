@@ -252,10 +252,6 @@ def generate_pdf(md_path, pdf_path):
     if os.path.exists(abs_pdf) and os.path.getsize(abs_pdf) > 2000:
         print(f"[OK] PDF generado con exito: {abs_pdf}")
         print(f"     Tamano del archivo: {os.path.getsize(abs_pdf)} bytes")
-        clases_root_pdf = r"C:\Users\migue\Antigravity\Clases\apuntes_clase_formulacion_lienzo.pdf"
-        import shutil
-        shutil.copyfile(abs_pdf, clases_root_pdf)
-        print(f"[OK] Copia sincronizada en: {clases_root_pdf}")
         return True
     else:
         print(f"[ERROR] No se pudo generar {pdf_path}. Detalle: {res.stderr}")
@@ -263,8 +259,10 @@ def generate_pdf(md_path, pdf_path):
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    md_file = os.path.join(current_dir, "apuntes_clase_formulacion_lienzo.md")
-    pdf_file = os.path.join(current_dir, "apuntes_clase_formulacion_lienzo.pdf")
+    clases_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+    default_dir = os.path.join(clases_root, "Apuntes-y-Ejercicios", "Quimica", "Formulacion-Inorganica")
+    md_file = os.path.join(default_dir, "apuntes_clase_formulacion_lienzo.md")
+    pdf_file = os.path.join(default_dir, "apuntes_clase_formulacion_lienzo.pdf")
 
     if len(sys.argv) >= 3:
         generate_pdf(sys.argv[1], sys.argv[2])

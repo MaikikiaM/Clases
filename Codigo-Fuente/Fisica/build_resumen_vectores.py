@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-OUTPUT_DIR = r"c:\Users\migue\Antigravity\Clases"
+OUTPUT_DIR = r"C:\Users\migue\Antigravity\Clases\Apuntes-y-Ejercicios\Fisica\Vectores"
 EDGE_EXE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
 HTML_CONTENT = r"""<!DOCTYPE html>

@@ -492,8 +492,10 @@ def generate_pdf(md_path, pdf_path):
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    md_file = os.path.join(current_dir, "guion_chuleta_formulacion_inorganica.md")
-    pdf_file = os.path.join(current_dir, "guion_chuleta_formulacion_inorganica.pdf")
+    clases_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+    default_dir = os.path.join(clases_root, "Apuntes-y-Ejercicios", "Quimica", "Formulacion-Inorganica")
+    md_file = os.path.join(default_dir, "guion_chuleta_formulacion_inorganica.md")
+    pdf_file = os.path.join(default_dir, "guion_chuleta_formulacion_inorganica.pdf")
 
     if len(sys.argv) >= 3:
         generate_pdf(sys.argv[1], sys.argv[2])
