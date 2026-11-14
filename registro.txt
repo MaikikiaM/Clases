@@ -1419,12 +1419,20 @@ SESIÓN: 02/11/2026 - GENERACIÓN DE 50 REACCIONES ORGÁNICAS (FORMATO CRUDO .DO
 ================================================================================
 
 NOTA DE ACTUALIZACIÓN (02/11/2026 - 12:35):
-- Sustituida la reacción 5e (neutralización de fenol con NaOH) por una reacción ácido-base convencional con ácido acético:
-  CH3–COOH + NaOH ⟶ CH3–COONa + H2O (etanoato de sodio + agua).
-- Recompilados y sincronizados ambos PDFs en la raíz y en el módulo 06_Reacciones_Organicas.
+- Prompts literales del usuario:
+  * [02/11/2026 12:32]: "como cojones sabes que el 5e es un acido? xd"
+  * [02/11/2026 12:34]: "mete ahi un carboxilico normal anda"
+- Acciones aplicadas:
+  * Sustituida la reacción 5e (neutralización de fenol con NaOH) por una reacción ácido-base convencional con ácido acético:
+    CH3–COOH + NaOH ⟶ CH3–COONa + H2O (etanoato de sodio + agua).
+  * Recompilados y sincronizados ambos PDFs en la raíz y en el módulo 06_Reacciones_Organicas.
 ================================================================================
 
 NOTA DE DEPURACIÓN INTEGRAL DE REACCIONES (02/11/2026 - 12:50):
+- Prompts literales del usuario:
+  * [02/11/2026 12:35]: "y la reaccion 3b no la entiendo"
+  * [02/11/2026 12:37]: "por que en el 5b no se sustituyen en yodo con el sodio?"
+  * [02/11/2026 12:46]: "Es una matada lo de la reaccion 3b. Tb lo es la matada que pusiste que te dije que eliminases. Quita todas las cosas que sean idas de olla anda"
 - Depurada la lista completa de las 50 reacciones para eliminar todo tecnicismo, reactivo o condición ajena a 2º de Bachillerato:
   1. 3b: Sustituida la deshidratación a éter a 140 °C por esterificación directa entre ácido propanoico y etanol (propanoato de etilo + agua).
   2. 5b: Sustituida la síntesis de Williamson por sustitución nucleófila estándar de alcohol con hidrácido: CH3–CH2–OH + HBr ⟶ CH3–CH2–Br + H2O.
@@ -1436,24 +1444,32 @@ NOTA DE DEPURACIÓN INTEGRAL DE REACCIONES (02/11/2026 - 12:50):
 ================================================================================
 
 NOTA (02/11/2026 - 12:53):
+- Prompt literal del usuario:
+  * [02/11/2026 12:52]: "LiAlH4 si lo uso yo debo decir"
 - Restablecido el reactivo LiAlH4 en el ejercicio 8b para la reducción de ácido propanoico a propan-1-ol:
   CH3–CH2–COOH ──(LiAlH4)──> A (A = CH3–CH2–CH2–OH).
 - Recompilados ambos documentos PDF.
 ================================================================================
 
 NOTA (02/11/2026 - 12:57):
+- Prompt literal del usuario:
+  * [02/11/2026 12:56]: "sin embargo, yo de resultado admito cualquier tipo de reduccion siempre. Prefiero que me pongan el inmediato y ya, como aqui seria un aldehido y punto"
 - Ajustada la solución de 8b para priorizar la reducción inmediata a aldehído solicitada por el docente:
   A = CH3–CH2–CHO (propanal) [con indicación de que también se admite propan-1-ol].
 - Recompilados ambos documentos PDF.
 ================================================================================
 
 NOTA (02/11/2026 - 13:08):
+- Prompt literal del usuario:
+  * [02/11/2026 13:05]: "el 1e es un porro tb"
 - Sustituida la reacción 1e (halogenación radicalaria de etano con luz UV) por adición directa de HCl a eteno:
   CH2=CH2 + HCl ⟶ CH3–CH2–Cl (cloroetano) — Adición (hidrohalogenación).
 - Recompilados ambos documentos PDF.
 ================================================================================
 
 NOTA (02/11/2026 - 13:15):
+- Prompt literal del usuario:
+  * [02/11/2026 13:13]: "el 5c es un porro"
 - Sustituida la reacción 5c (alquilación de Friedel-Crafts con AlCl3) por una esterificación clásica con incógnitas A y B:
   A + CH3–CH2–OH ──(H+)──⇌── CH3–COO–CH2–CH3 + B
   (A = CH3–COOH, ácido etanoico; B = H2O).
@@ -1461,6 +1477,20 @@ NOTA (02/11/2026 - 13:15):
 ================================================================================
 
 NOTA (02/11/2026 - 13:17):
+- Prompt literal del usuario:
+  * [02/11/2026 13:15]: "Cambia ell nombre que sale arriba a la izquierda por "bolsa de reacciones quimicas" xfa"
 - Modificado el título de metadatos del documento (etiqueta <title> del visor de PDF) a "bolsa de reacciones quimicas" (y "bolsa de reacciones quimicas (resueltos)").
 - Recompilados ambos documentos PDF.
+================================================================================
+
+================================================================================
+SESIÓN: 15/11/2026 - NORMALIZACIÓN DE REGLAS Y REGISTRO LITERAL DE PROMPTS
+================================================================================
+- Prompts literales del usuario:
+  * [15/11/2026 00:38]: "Cometiste un error al hacer todo el tema de la reorganización, sobre todo con el registro de las cosas. Lo que están haciendo en los diferentes proyectos, que ya lo he corregido en algún proyecto como es Apps, simplemente lo que hacen es el objetivo del prompt lo resumen, el que digo yo, y lo ponen como un objetivo y entonces dicen lo que han hecho. Yo quiero que literalmente pongan se ponga lo que yo he dicho. Y si eso después que resuman el objetivo, resuman lo que he dicho, pero debe aparecer lo que he dicho yo tal cual. Y no entiendo que estén ahora haciéndolo mal cuando, por ejemplo, justamente en Apps, SpotiLocal lo registraba correctamente. Y, por ejemplo, Minecraft, aunque no he vuelto to a trabajar en ello, el proyecto de Minecraft del servidor también lo registraba tal cual, que yo sepa. Entonces, mira a ver qué pasa y actualiza todos los proyectos. Obviamente no te cargues nada."
+- Objetivo: Dotar al proyecto `Clases` de reglas locales explícitas para exigir prompts literales palabra por palabra en `registro.txt` y completar notas recientes del 02/11/2026.
+
+**Cambios aplicados:**
+- `Clases/AGENTS.md`: creado protocolo operativo local con el requisito obligatorio de `- Prompts literales del usuario:` antes de cualquier `- Objetivo:`, anonimización estricta (cero PII) y exclusión de PDFs en Git.
+- `Clases/registro.txt`: añadidos los prompts literales exactos (`27ec8b0b`) en las 7 notas del 02/11/2026 sobre las 50 reacciones orgánicas sin alterar ninguna línea histórica existente.
 ================================================================================
