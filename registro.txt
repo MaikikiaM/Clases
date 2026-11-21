@@ -1571,3 +1571,9 @@ NOTA (21/11/2026 - 17:00):
   * [21/11/2026 17:00]: "Entonces la sustitucion trata de jugar con absolutamente todo? Siempre hay que jugar tanto con dx como con f(x)?"
 - Respuesta: Aclaración de que en el cambio de variable hay que transformar TODO el integrando (incluido el diferencial $\mathrm{d}x$) a la nueva variable $t$, por qué el $\mathrm{d}x$ no es decorativo, las dos formas de hacerlo (despejar $\mathrm{d}x$ o reconocer $u'\,\mathrm{d}x = \mathrm{d}t$) y el criterio de éxito (que al final no quede ninguna $x$).
 ================================================================================
+
+NOTA (21/11/2026 - 17:01):
+- Prompt literal del usuario:
+  * [21/11/2026 17:01]: "Se puede no usar nunca sustitucion?"
+- Respuesta: Explicación de que la sustitución explícita se puede evitar en muchos casos (casi inmediatas y sustituciones "mentales", partes, racionales, trigonométricas con identidades) pero no en todos (radicales con distinto índice, $\sqrt{a^2-x^2}$, exponenciales sin $u'$, $x$ suelta con raíz), con tabla comparativa y recomendación de examen.
+================================================================================
