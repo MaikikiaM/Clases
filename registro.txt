@@ -1559,3 +1559,9 @@ NOTA (21/11/2026 - 16:43):
   * [21/11/2026 16:43]: "Puedes poner un ejemplo y resolverlo?"
 - Respuesta: Resolución paso a paso de $\int \frac{4x^2 + 3x - 4}{x^3 - x^2 - 2x}\,\mathrm{d}x = 2\ln|x| + 3\ln|x-2| - \ln|x+1| + K$ mediante factorización y descomposición en fracciones simples $\frac{A}{x} + \frac{B}{x-2} + \frac{C}{x+1}$, verificada numéricamente en Python.
 ================================================================================
+
+NOTA (21/11/2026 - 16:58):
+- Prompt literal del usuario:
+  * [21/11/2026 16:58]: "No entiendo qué hace aquo" [con captura del Ejemplo 3.7: $\int \frac{\mathrm{d}x}{x\sqrt{1+\ln x}}$]
+- Respuesta: Desglose paso a paso de cada transformación del Ejemplo 3.7 (por qué se eleva al cuadrado $t^2 = 1+\ln x$, cómo se obtiene $2t\,\mathrm{d}t = \frac{1}{x}\,\mathrm{d}x$, cómo se reagrupa $\frac{\mathrm{d}x}{x\sqrt{1+\ln x}}$ y la alternativa despejando $\mathrm{d}x = 2xt\,\mathrm{d}t$ o haciéndola como casi inmediata).
+================================================================================
