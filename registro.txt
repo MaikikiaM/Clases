@@ -1565,3 +1565,9 @@ NOTA (21/11/2026 - 16:58):
   * [21/11/2026 16:58]: "No entiendo qué hace aquo" [con captura del Ejemplo 3.7: $\int \frac{\mathrm{d}x}{x\sqrt{1+\ln x}}$]
 - Respuesta: Desglose paso a paso de cada transformación del Ejemplo 3.7 (por qué se eleva al cuadrado $t^2 = 1+\ln x$, cómo se obtiene $2t\,\mathrm{d}t = \frac{1}{x}\,\mathrm{d}x$, cómo se reagrupa $\frac{\mathrm{d}x}{x\sqrt{1+\ln x}}$ y la alternativa despejando $\mathrm{d}x = 2xt\,\mathrm{d}t$ o haciéndola como casi inmediata).
 ================================================================================
+
+NOTA (21/11/2026 - 17:00):
+- Prompt literal del usuario:
+  * [21/11/2026 17:00]: "Entonces la sustitucion trata de jugar con absolutamente todo? Siempre hay que jugar tanto con dx como con f(x)?"
+- Respuesta: Aclaración de que en el cambio de variable hay que transformar TODO el integrando (incluido el diferencial $\mathrm{d}x$) a la nueva variable $t$, por qué el $\mathrm{d}x$ no es decorativo, las dos formas de hacerlo (despejar $\mathrm{d}x$ o reconocer $u'\,\mathrm{d}x = \mathrm{d}t$) y el criterio de éxito (que al final no quede ninguna $x$).
+================================================================================
