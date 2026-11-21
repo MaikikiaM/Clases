@@ -1,0 +1,1627 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage[a4paper, top=1.85cm, bottom=1.95cm, left=1.75cm, right=1.75cm, headheight=14pt]{geometry}
+\usepackage{array,tabularx,booktabs,multicol,multirow}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, patterns, calc, babel}
+\usepgfplotslibrary{fillbetween}
+\usepackage[hidelinks, bookmarks=true, bookmarksdepth=2, pdftitle={Apuntes Completos de Calculo Integral}, pdfsubject={Tipos de integrales, metodos de resolucion y ejercicios resueltos}]{hyperref}
+
+% ==============================================================================
+% PALETA DE COLORES SOBRIA Y ACADEMICA
+% ==============================================================================
+\definecolor{mainblue}{RGB}{24, 76, 120}
+\definecolor{subblue}{RGB}{41, 105, 160}
+\definecolor{softblue}{RGB}{244, 248, 253}
+\definecolor{borderblue}{RGB}{185, 204, 224}
+\definecolor{tipgreen}{RGB}{36, 115, 72}
+\definecolor{tipbg}{RGB}{244, 251, 246}
+\definecolor{alertred}{RGB}{168, 44, 40}
+\definecolor{alertbg}{RGB}{254, 246, 245}
+\definecolor{warnamber}{RGB}{180, 115, 12}
+\definecolor{warnbg}{RGB}{255, 252, 240}
+\definecolor{slatetext}{RGB}{55, 65, 81}
+
+% ==============================================================================
+% FORMATO DE SECCIONES, INDICE, ENCABEZADOS Y PIES
+% ==============================================================================
+\titleformat{\section}{\Large\bfseries\color{mainblue}}{\thesection.}{0.55em}{}[\vspace{-3pt}\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{subblue}}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{slatetext}}{\thesubsubsection.}{0.45em}{}
+
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+\titlespacing*{\subsection}{0pt}{7pt}{3.5pt}
+\titlespacing*{\subsubsection}{0pt}{5pt}{2.5pt}
+
+% Espacio limpio en el indice para secciones de 2 digitos (10.) y profundidad 2
+\setcounter{tocdepth}{2}
+\makeatletter
+\renewcommand*\l@section[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty\@secpenalty
+    \addvspace{0.34em \@plus\p@}%
+    \setlength\@tempdima{2.1em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.1em}{2.6em}}
+\makeatother
+
+% Macro para evitar inicios de seccion huerfanos al pie de pagina
+\newcommand{\minspace}[1]{\par\ifdim\dimexpr\pagegoal-\pagetotal\relax<#1\newpage\fi}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\color{slatetext}\textit{Apuntes Completos de Cálculo Integral}}
+\fancyhead[R]{\footnotesize\color{slatetext}\nouppercase{\leftmark}}
+\fancyfoot[L]{\footnotesize\color{slatetext}Matemáticas --- Análisis Integral}
+\fancyfoot[R]{\footnotesize\color{slatetext}Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\footnotesize\color{slatetext}Matemáticas --- Análisis Integral}
+  \fancyfoot[R]{\footnotesize\color{slatetext}Página \thepage\ de \pageref{LastPage}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% ==============================================================================
+% CAJAS DIDACTICAS REUTILIZABLES
+% ==============================================================================
+\newtcolorbox{formulabox}[1]{
+  breakable,
+  enhanced,
+  colback=softblue,
+  colframe=mainblue,
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=3.8mm, right=3.8mm, top=2.4mm, bottom=2.4mm,
+  title={\textbf{#1}},
+  coltitle=white,
+  colbacktitle=mainblue,
+  fonttitle=\small\bfseries,
+  before skip=4pt, after skip=5pt
+}
+
+\newtcolorbox{trucobox}[1]{
+  breakable,
+  enhanced,
+  colback=tipbg,
+  colframe=tipgreen,
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=3.8mm, right=3.8mm, top=2.4mm, bottom=2.4mm,
+  title={\textbf{#1}},
+  coltitle=white,
+  colbacktitle=tipgreen,
+  fonttitle=\small\bfseries,
+  before skip=4pt, after skip=5pt
+}
+
+\newtcolorbox{trampabox}[1]{
+  breakable,
+  enhanced,
+  colback=alertbg,
+  colframe=alertred,
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=3.8mm, right=3.8mm, top=2.4mm, bottom=2.4mm,
+  title={\textbf{#1}},
+  coltitle=white,
+  colbacktitle=alertred,
+  fonttitle=\small\bfseries,
+  before skip=4pt, after skip=5pt
+}
+
+% Cajas de ejemplo: no se parten para evitar lineas "Solucion" huerfanas
+\newtcolorbox{ejemplobox}[1]{
+  unbreakable,
+  enhanced,
+  colback=white,
+  colframe=borderblue,
+  borderline west={2.4pt}{0pt}{mainblue},
+  arc=1.2mm,
+  boxrule=0.6pt,
+  left=3.8mm, right=3.2mm, top=2.0mm, bottom=2.0mm,
+  title={\color{mainblue}\textbf{#1}},
+  colbacktitle=softblue,
+  attach boxed title to top left={yshift=0mm},
+  boxed title style={empty, boxrule=0pt, left=2.8mm, right=2.8mm, top=1.2mm, bottom=1.0mm},
+  fonttitle=\small\bfseries,
+  before skip=4pt, after skip=4pt
+}
+
+% Variante divisible solo para ejemplos muy extensos con figuras o tablas
+\newtcolorbox{ejemploboxlong}[1]{
+  breakable,
+  enhanced,
+  colback=white,
+  colframe=borderblue,
+  borderline west={2.4pt}{0pt}{mainblue},
+  arc=1.2mm,
+  boxrule=0.6pt,
+  left=3.8mm, right=3.2mm, top=2.0mm, bottom=2.0mm,
+  title={\color{mainblue}\textbf{#1}},
+  colbacktitle=softblue,
+  attach boxed title to top left={yshift=0mm},
+  boxed title style={empty, boxrule=0pt, left=2.8mm, right=2.8mm, top=1.2mm, bottom=1.0mm},
+  fonttitle=\small\bfseries,
+  before skip=4pt, after skip=4pt
+}
+
+% Macro practica para resaltar resultado final
+\newcommand{\sol}[1]{\par\smallskip\noindent\textbf{Solución:} \fcolorbox{mainblue}{softblue}{$\displaystyle #1$}}
+\newcommand{\dif}{\,\mathrm{d}}
+
+\begin{document}
+\thispagestyle{plain}
+
+% ==============================================================================
+% PORTADILLA E INDICE
+% ==============================================================================
+\begin{center}
+  {\LARGE \textbf{\color{mainblue} Apuntes Maestros de Cálculo Integral}}\\[2.5mm]
+  {\large \textbf{Tipos de Integrales, Métodos de Resolución y Más de 85 Ejemplos Resueltos}}\\[2mm]
+  {\small \color{slatetext} Desde primitivas inmediatas hasta aplicaciones geométricas e integrales impropias}
+\end{center}
+
+\vspace{2mm}
+\hrule
+\vspace{3mm}
+
+\begin{formulabox}{Cómo utilizar estos apuntes}
+Cada tema sigue la misma estructura práctica: \textbf{(1) Cómo reconocer el tipo de integral}, \textbf{(2) Receta mecánica paso a paso}, \textbf{(3) Batería graduada de ejemplos resueltos} desde nivel básico hasta examen, y \textbf{(4) Errores frecuentes que evitar}. Antes de memorizar técnicas avanzadas, domina los dos primeros temas: el $80\%$ de las integrales de examen se reducen a ellos tras una transformación algebraica o un cambio de variable.
+\end{formulabox}
+
+\renewcommand{\contentsname}{Índice General de Contenidos}
+{\footnotesize
+\tableofcontents
+}
+
+\newpage
+
+% ==============================================================================
+% CAPITULO 1: PRIMITIVA E INTEGRALES INMEDIATAS
+% ==============================================================================
+\section{Concepto de Primitiva, Propiedades e Integrales Inmediatas}
+
+\subsection{¿Qué es integrar? Primitiva y constante de integración \texorpdfstring{$+C$}{+C}}
+
+Integrar es la operación inversa de derivar. Dada una función $f(x)$, buscamos otra función $F(x)$, llamada \textbf{primitiva} (o antiderivada) de $f(x)$, tal que su derivada devuelva la función original:
+$$F(x) \text{ es primitiva de } f(x) \quad \Longleftrightarrow \quad F'(x) = f(x)$$
+
+\textbf{¿Por qué aparece siempre $+C$?} Como la derivada de cualquier constante $C \in \mathbb{R}$ es $0$, si $F(x)$ es una primitiva de $f(x)$, entonces $F(x) + C$ también lo es, porque $(F(x) + C)' = F'(x) + 0 = f(x)$. A la familia de todas las primitivas se la llama \textbf{integral indefinida}:
+$$\int f(x)\,dx = F(x) + C, \qquad C \in \mathbb{R}$$
+En la notación $\int f(x)\,dx$: $\int$ es el signo integral, $f(x)$ es el \textbf{integrando}, y $dx$ indica la \textbf{variable respecto a la que integramos} (imprescindible escribirlo siempre).
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=9.5cm, height=4.8cm,
+  axis lines=middle,
+  xlabel={$x$}, ylabel={$y$},
+  xmin=-2.4, xmax=2.4,
+  ymin=-2.6, ymax=6.5,
+  xtick={-2,-1,0,1,2},
+  ytick={-2,0,2,4,6},
+  grid=major,
+  grid style={gray!20},
+  samples=80,
+  domain=-2.1:2.1,
+  legend pos=outer north east,
+  legend style={font=\footnotesize, draw=borderblue, fill=softblue}
+]
+  \addplot[mainblue, thick] {x^2 + 4}; \addlegendentry{$F(x)=x^2+4$}
+  \addplot[tipgreen, thick] {x^2 + 2}; \addlegendentry{$F(x)=x^2+2$}
+  \addplot[subblue, dashed, thick] {x^2}; \addlegendentry{$F(x)=x^2$}
+  \addplot[alertred, thick] {x^2 - 2}; \addlegendentry{$F(x)=x^2-2$}
+  \addplot[only marks, mark=*, mark size=2.3pt, tipgreen] coordinates {(1,3)};
+  \node[anchor=west, font=\footnotesize\color{tipgreen}, fill=white, fill opacity=0.9, text opacity=1, inner sep=1.2pt] at (axis cs:1.10,2.85) {$(1,3)$ fija $C=2$};
+\end{axis}
+\end{tikzpicture}
+\par\vspace{-2pt}
+{\footnotesize \textbf{Figura 1:} Todas las primitivas de $f(x)=2x$ son de la forma $F(x)=x^2+C$ (traslación vertical). Un punto inicial fija un único valor de $C$.}
+\end{center}
+
+\subsection{Propiedades de linealidad y lo que NUNCA se puede hacer}
+
+\begin{formulabox}{Propiedades operativas de la integral indefinida}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Integral de una suma o resta:} $\displaystyle \int \big[f(x) \pm g(x)\big]\,dx = \int f(x)\,dx \pm \int g(x)\,dx$.
+  \item \textbf{Sacar constantes multiplicativas:} $\displaystyle \int k \cdot f(x)\,dx = k \cdot \int f(x)\,dx \quad (k \in \mathbb{R})$.
+\end{enumerate}
+\end{formulabox}
+
+\begin{trampabox}{Prohibiciones absolutas al integrar}
+\begin{itemize}\itemsep 1.5pt
+  \item \textbf{NO existe regla del producto:} $\displaystyle \int f(x)\cdot g(x)\,dx \;\neq\; \left(\int f(x)\,dx\right)\cdot\left(\int g(x)\,dx\right)$.
+  \item \textbf{NO existe regla del cociente:} $\displaystyle \int \frac{f(x)}{g(x)}\,dx \;\neq\; \frac{\int f(x)\,dx}{\int g(x)\,dx}$.
+  \item \textbf{NUNCA saques la variable $x$ fuera de la integral:} solo pueden entrar y salir \textbf{números} constantes.
+\end{itemize}
+\end{trampabox}
+
+\newpage
+\subsection{Tabla Maestra de Integrales Inmediatas y Casi Inmediatas}
+
+En la columna izquierda figura la fórmula básica (cuando el argumento es $x$); en la derecha, la versión compuesta con una función $u = u(x)$ acompañada de su derivada $u' = u'(x)$ (consecuencia directa de la regla de la cadena).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.55}
+\small
+\begin{tabularx}{\linewidth}{@{}l X X@{}}
+\toprule
+\textbf{Tipo} & \textbf{Forma Simple (con $x$)} & \textbf{Forma Compuesta (con $u = u(x)$)} \\
+\midrule
+Constante & $\displaystyle \int k\,dx = kx + C$ & $\displaystyle \int k\,u'\,dx = k\,u + C$ \\
+Potencia ($n \neq -1$) & $\displaystyle \int x^n\,dx = \frac{x^{n+1}}{n+1} + C$ & $\displaystyle \int u^n \cdot u'\,dx = \frac{u^{n+1}}{n+1} + C$ \\
+Logarítmica ($n = -1$) & $\displaystyle \int \frac{1}{x}\,dx = \ln|x| + C$ & $\displaystyle \int \frac{u'}{u}\,dx = \ln|u| + C$ \\
+Exponencial base $e$ & $\displaystyle \int e^x\,dx = e^x + C$ & $\displaystyle \int e^u \cdot u'\,dx = e^u + C$ \\
+Exponencial base $a$ & $\displaystyle \int a^x\,dx = \frac{a^x}{\ln a} + C \quad (a>0, a\neq 1)$ & $\displaystyle \int a^u \cdot u'\,dx = \frac{a^u}{\ln a} + C$ \\
+Seno & $\displaystyle \int \sin x\,dx = -\cos x + C$ & $\displaystyle \int \sin(u)\cdot u'\,dx = -\cos(u) + C$ \\
+Coseno & $\displaystyle \int \cos x\,dx = \sin x + C$ & $\displaystyle \int \cos(u)\cdot u'\,dx = \sin(u) + C$ \\
+Tangente & $\displaystyle \int \tan x\,dx = -\ln|\cos x| + C$ & $\displaystyle \int \tan(u)\cdot u'\,dx = -\ln|\cos u| + C$ \\
+Cotangente & $\displaystyle \int \cot x\,dx = \ln|\sin x| + C$ & $\displaystyle \int \cot(u)\cdot u'\,dx = \ln|\sin u| + C$ \\
+Secante cuadrado & $\displaystyle \int \frac{dx}{\cos^2 x} = \int (1+\tan^2 x)\,dx = \tan x + C$ & $\displaystyle \int \frac{u'}{\cos^2 u}\,dx = \tan u + C$ \\
+Cosecante cuadrado & $\displaystyle \int \frac{dx}{\sin^2 x} = \int (1+\cot^2 x)\,dx = -\cot x + C$ & $\displaystyle \int \frac{u'}{\sin^2 u}\,dx = -\cot u + C$ \\
+Arcoseno & $\displaystyle \int \frac{dx}{\sqrt{1-x^2}} = \arcsin x + C$ & $\displaystyle \int \frac{u'}{\sqrt{a^2 - u^2}}\,dx = \arcsin\!\left(\frac{u}{a}\right) + C$ \\
+Arcotangente & $\displaystyle \int \frac{dx}{1+x^2} = \arctan x + C$ & $\displaystyle \int \frac{u'}{a^2 + u^2}\,dx = \frac{1}{a}\arctan\!\left(\frac{u}{a}\right) + C$ \\
+Hiperbólicas (extra) & $\displaystyle \int \sinh x\,dx = \cosh x + C$ & $\displaystyle \int \cosh x\,dx = \sinh x + C$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{trucobox}{¿Por qué escribimos $\ln|x|$ con valor absoluto y qué pasa con las raíces?}
+\begin{itemize}\itemsep 1.5pt
+  \item El dominio de $\frac{1}{x}$ incluye tanto $x>0$ como $x<0$, pero $\ln x$ solo existe para $x>0$. Con el valor absoluto, $(\ln|x|)' = \frac{1}{x}$ para todo $x \neq 0$.
+  \item \textbf{Truco universal para raíces y potencias en el denominador:} antes de integrar, conviértelo \textbf{todo} a potencia con exponente fraccionario o negativo: $\sqrt[n]{x^m} = x^{m/n}$ y $\frac{1}{x^k} = x^{-k}$.
+\end{itemize}
+\end{trucobox}
+
+\subsection{Ejemplos Resueltos — Bloque 1: Inmediatas y Manipulación Algebraica Previa}
+
+\begin{ejemplobox}{Ejemplo 1.1 --- Polinomio directo}
+Calcula $\displaystyle \int \left(5x^4 - 3x^2 + 6x - 7\right)\,dx$.
+\par\textbf{Resolución:} Aplicamos linealidad y la regla de la potencia $\int x^n\,dx = \frac{x^{n+1}}{n+1}$ a cada término:
+$$\int \left(5x^4 - 3x^2 + 6x - 7\right)\,dx = 5\frac{x^5}{5} - 3\frac{x^3}{3} + 6\frac{x^2}{2} - 7x + C$$
+\sol{x^5 - x^3 + 3x^2 - 7x + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.2 --- Producto de polinomios (desarrollar antes de integrar)}
+Calcula $\displaystyle \int (x - 1)(2x + 3)\,dx$.
+\par\textbf{Resolución:} Como no existe regla del producto para integrales, multiplicamos primero los paréntesis:
+$$(x-1)(2x+3) = 2x^2 + 3x - 2x - 3 = 2x^2 + x - 3$$
+Ahora integramos término a término:
+$$\int (2x^2 + x - 3)\,dx = 2\frac{x^3}{3} + \frac{x^2}{2} - 3x + C$$
+\sol{\frac{2}{3}x^3 + \frac{1}{2}x^2 - 3x + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.3 --- Potencias negativas y fraccionarias}
+Calcula $\displaystyle \int \left(\frac{3}{x^4} - 4\sqrt{x} + \frac{5}{\sqrt[3]{x}}\right)\,dx$.
+\par\textbf{Resolución:} Pasamos todas las fracciones y raíces a potencias de exponente real:
+$$\int \left(3x^{-4} - 4x^{1/2} + 5x^{-1/3}\right)\,dx = 3\frac{x^{-3}}{-3} - 4\frac{x^{3/2}}{3/2} + 5\frac{x^{2/3}}{2/3} + C$$
+Simplificamos las fracciones de los exponentes (dividir entre $\frac{a}{b}$ es multiplicar por $\frac{b}{a}$):
+\sol{-\frac{1}{x^3} - \frac{8}{3}\sqrt{x^3} + \frac{15}{2}\sqrt[3]{x^2} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.4 --- Cociente entre raíz y potencia}
+Calcula $\displaystyle \int \frac{\sqrt[3]{x}}{x^2}\,dx$.
+\par\textbf{Resolución:} Expresamos como una única potencia restando exponentes: $\frac{x^{1/3}}{x^2} = x^{\frac{1}{3} - 2} = x^{-5/3}$.
+$$\int x^{-5/3}\,dx = \frac{x^{-5/3 + 1}}{-\frac{5}{3} + 1} + C = \frac{x^{-2/3}}{-\frac{2}{3}} + C = -\frac{3}{2}x^{-2/3} + C$$
+\sol{-\frac{3}{2\sqrt[3]{x^2}} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.5 --- División término a término por un monomio}
+Calcula $\displaystyle \int \frac{2x^3 - 5x + \sqrt{x}}{x^2}\,dx$.
+\par\textbf{Resolución:} Cuando en el denominador hay un solo término (un monomio), partimos la fracción en tantos sumandos como tenga el numerador:
+$$\int \left(\frac{2x^3}{x^2} - \frac{5x}{x^2} + \frac{x^{1/2}}{x^2}\right)\,dx = \int \left(2x - \frac{5}{x} + x^{-3/2}\right)\,dx$$
+Integramos cada sumando (cuidado: el término $\frac{5}{x}$ es potencia $-1$, luego da logaritmo):
+$$= 2\frac{x^2}{2} - 5\ln|x| + \frac{x^{-1/2}}{-1/2} + C$$
+\sol{x^2 - 5\ln|x| - \frac{2}{\sqrt{x}} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.6 --- Binomio al cuadrado partido de raíz}
+Calcula $\displaystyle \int \frac{(\sqrt{x} - 3)^2}{\sqrt{x}}\,dx$.
+\par\textbf{Resolución:} Desarrollamos la identidad notable $(a-b)^2 = a^2 - 2ab + b^2$ y dividimos cada sumando entre $\sqrt{x} = x^{1/2}$:
+$$\int \frac{x - 6\sqrt{x} + 9}{\sqrt{x}}\,dx = \int \left(\frac{x}{x^{1/2}} - \frac{6\sqrt{x}}{\sqrt{x}} + \frac{9}{x^{1/2}}\right)\,dx = \int \left(x^{1/2} - 6 + 9x^{-1/2}\right)\,dx$$
+Integramos término a término:
+$$= \frac{x^{3/2}}{3/2} - 6x + 9\frac{x^{1/2}}{1/2} + C$$
+\sol{\frac{2}{3}x^{3/2} - 6x + 18\sqrt{x} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.7 --- Truco de sumar y restar en el numerador}
+Calcula las dos integrales: \quad \textbf{a)} $\displaystyle \int \frac{x}{x + 1}\,dx$ \qquad \textbf{b)} $\displaystyle \int \frac{x^2}{x^2 + 1}\,dx$.
+\par\textbf{Resolución:} El numerador y el denominador tienen el mismo grado. En vez de dividir polinomios en caja, sumamos y restamos la constante adecuada para replicar el denominador arriba:
+\begin{itemize}\itemsep 3pt
+  \item \textbf{a)} $\displaystyle \int \frac{x + 1 - 1}{x + 1}\,dx = \int \left(\frac{x+1}{x+1} - \frac{1}{x+1}\right)\,dx = \int \left(1 - \frac{1}{x+1}\right)\,dx = \mathbf{x - \ln|x + 1| + C}$.
+  \item \textbf{b)} $\displaystyle \int \frac{x^2 + 1 - 1}{x^2 + 1}\,dx = \int \left(\frac{x^2+1}{x^2+1} - \frac{1}{x^2+1}\right)\,dx = \int \left(1 - \frac{1}{x^2+1}\right)\,dx = \mathbf{x - \arctan x + C}$.
+\end{itemize}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.8 --- Producto de exponenciales con igual exponente}
+Calcula $\displaystyle \int 2^x \cdot 3^x\,dx$.
+\par\textbf{Resolución:} Usamos propiedades de potencias ($a^x \cdot b^x = (a\cdot b)^x$) para unificarlas en una sola exponencial inmediata:
+$$\int 2^x \cdot 3^x\,dx = \int (2 \cdot 3)^x\,dx = \int 6^x\,dx$$
+\sol{\frac{6^x}{\ln 6} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.9 --- Cociente de exponenciales reducible}
+Calcula $\displaystyle \int \frac{e^{2x} - 3e^x + 1}{e^x}\,dx$.
+\par\textbf{Resolución:} Separamos la fracción término a término y restamos exponentes ($e^{2x}/e^x = e^x$ y $1/e^x = e^{-x}$):
+$$\int \left(\frac{e^{2x}}{e^x} - \frac{3e^x}{e^x} + \frac{1}{e^x}\right)\,dx = \int \left(e^x - 3 + e^{-x}\right)\,dx$$
+La integral de $e^{-x}$ es $-e^{-x}$ (por el signo menos del exponente, ya que $( -e^{-x} )' = e^{-x}$):
+\sol{e^x - 3x - e^{-x} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.10 --- Combinación lineal de trigonométricas inmediatas}
+Calcula $\displaystyle \int \left(3\sin x - 4\cos x + \frac{2}{\cos^2 x}\right)\,dx$.
+\par\textbf{Resolución:} Cada término está directamente en la tabla maestra ($\int \sin x\,dx = -\cos x$, $\int \cos x\,dx = \sin x$, $\int \frac{1}{\cos^2 x}\,dx = \tan x$):
+\sol{-3\cos x - 4\sin x + 2\tan x + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.11 --- La integral de $\tan^2 x$ mediante identidad pitagórica}
+Calcula $\displaystyle \int \tan^2 x\,dx$.
+\par\textbf{Resolución:} $\tan^2 x$ no aparece directamente en la tabla, pero sabemos que $1 + \tan^2 x = \frac{1}{\cos^2 x} = \sec^2 x$, de donde $\tan^2 x = \frac{1}{\cos^2 x} - 1$:
+$$\int \tan^2 x\,dx = \int \left(\frac{1}{\cos^2 x} - 1\right)\,dx$$
+\sol{\tan x - x + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 1.12 --- Cálculo de la constante $C$ (Problema de valor inicial)}
+Halla la primitiva $F(x)$ de $\displaystyle f(x) = 3x^2 - \frac{2}{x} + e^x$ cuya gráfica pasa por el punto $P(1, e)$.
+\par\textbf{Resolución:}
+\begin{enumerate}\itemsep 2pt
+  \item Integramos $f(x)$ para obtener la familia general de primitivas:
+  $$F(x) = \int \left(3x^2 - \frac{2}{x} + e^x\right)\,dx = x^3 - 2\ln|x| + e^x + C$$
+  \item Imponemos la condición inicial $F(1) = e$ para determinar $C$:
+  $$F(1) = 1^3 - 2\ln(1) + e^1 + C = e \implies 1 - 0 + e + C = e \implies C = -1$$
+\end{enumerate}
+\sol{F(x) = x^3 - 2\ln|x| + e^x - 1}
+\end{ejemplobox}
+
+\minspace{6.5cm}
+
+% ==============================================================================
+% CAPITULO 2: INTEGRALES CASI INMEDIATAS
+% ==============================================================================
+\section{Integrales Casi Inmediatas (Regla de la Cadena Inversa)}
+
+\subsection{¿Cómo se reconocen y cómo se resuelven?}
+
+Una integral es \textbf{casi inmediata} cuando aparece una función compuesta $f(u(x))$ multiplicada por una expresión que coincide con la derivada interna $u'(x)$, \textbf{salvo por una constante numérica que falta o sobra}.
+
+\begin{formulabox}{Protocolo en 4 pasos para ajustar constantes}
+\begin{enumerate}\itemsep 1.5pt
+  \item \textbf{Identifica la función interna $u(x)$} (lo que está dentro de una potencia, una raíz, un denominador, un exponente, un seno/coseno, etc.).
+  \item \textbf{Calcula mentalmente o al margen su derivada $u'(x)$}.
+  \item \textbf{Compara} el resto del integrando con $u'(x)$:
+  \begin{itemize}\itemsep 1pt
+    \item Si solo difieren en una \textbf{constante multiplicativa $k \neq 0$}, multiplica dentro de la integral por $k$ y divide fuera por $\frac{1}{k}$ (porque $\frac{1}{k} \cdot k = 1$).
+    \item Si falta o sobra alguna \textbf{variable $x$}, NO es casi inmediata: pasa a Cambio de Variable, Partes o Racionales.
+  \end{itemize}
+  \item \textbf{Aplica la tabla compuesta} absorbiendo $u'(x)\,dx$ como diferencial de $u$.
+\end{enumerate}
+\end{formulabox}
+
+\subsection{Subtipo 2.1: Potencias y Raíces Compuestas \texorpdfstring{$\int u^n \cdot u'\,dx$}{u\^{}n u'}}
+
+\begin{ejemplobox}{Ejemplo 2.1 --- Potencia de polinomio con ajuste numérico}
+Calcula $\displaystyle \int x^2 (x^3 + 5)^7\,dx$.
+\par\textbf{Resolución:} Tomamos $u = x^3 + 5 \implies u' = 3x^2$. Tenemos $x^2$, así que nos falta un $3$ multiplicando dentro. Multiplicamos dentro por $3$ y compensamos fuera con $\frac{1}{3}$:
+$$\int x^2 (x^3 + 5)^7\,dx = \frac{1}{3} \int \underbrace{3x^2}_{u'} \underbrace{(x^3 + 5)^7}_{u^7}\,dx = \frac{1}{3}\cdot\frac{(x^3+5)^8}{8} + C$$
+\sol{\frac{(x^3 + 5)^8}{24} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.2 --- Potencia en el denominador}
+Calcula $\displaystyle \int \frac{x}{(3x^2 + 5)^4}\,dx$.
+\par\textbf{Resolución:} Subimos el denominador con exponente negativo: $\int x(3x^2+5)^{-4}\,dx$.
+Sea $u = 3x^2 + 5 \implies u' = 6x$. Multiplicamos dentro por $6$ y fuera por $\frac{1}{6}$:
+$$\frac{1}{6}\int 6x(3x^2+5)^{-4}\,dx = \frac{1}{6}\cdot\frac{(3x^2+5)^{-3}}{-3} + C$$
+\sol{-\frac{1}{18(3x^2 + 5)^3} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.3 --- Raíz compuesta con ajuste de signo}
+Calcula $\displaystyle \int x\sqrt{1 - x^2}\,dx$.
+\par\textbf{Resolución:} Escribimos $\sqrt{1-x^2} = (1-x^2)^{1/2}$. Sea $u = 1 - x^2 \implies u' = -2x$. Necesitamos un $-2$ dentro, luego sacamos $-\frac{1}{2}$ fuera:
+$$-\frac{1}{2}\int (-2x)(1-x^2)^{1/2}\,dx = -\frac{1}{2}\cdot\frac{(1-x^2)^{3/2}}{3/2} + C = -\frac{1}{2}\cdot\frac{2}{3}(1-x^2)^{3/2} + C$$
+\sol{-\frac{1}{3}\sqrt{(1 - x^2)^3} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.4 --- Logaritmo por su derivada}
+Calcula $\displaystyle \int \frac{\ln x}{x}\,dx$.
+\par\textbf{Resolución:} Reescribimos como producto $\int (\ln x)^1 \cdot \frac{1}{x}\,dx$. Como la derivada de $u = \ln x$ es exactamente $u' = \frac{1}{x}$, es inmediata del tipo $\int u^1 u'\,dx$:
+\sol{\frac{(\ln x)^2}{2} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.5 --- Potencia trigonométrica con su derivada al lado}
+Calcula $\displaystyle \int \sin^3 x \cdot \cos x\,dx$.
+\par\textbf{Resolución:} Observa que $\sin^3 x = (\sin x)^3$. Tomando $u = \sin x$, su derivada $u' = \cos x$ ya está multiplicando intacta:
+$$\int (\sin x)^3 \cdot \cos x\,dx = \frac{(\sin x)^4}{4} + C$$
+\sol{\frac{\sin^4 x}{4} + C}
+\end{ejemplobox}
+
+\subsection{Subtipo 2.2: Tipo Logaritmo Neperiano \texorpdfstring{$\int \frac{u'}{u}\,dx$}{u'/u}}
+
+\textbf{¿Cómo la reconozco?} Aparece una fracción donde el denominador $u(x)$ está elevado a $1$ (sin raíz ni potencia global) y en el numerador está $u'(x)$ o un múltiplo numérico suyo.
+
+\begin{ejemplobox}{Ejemplo 2.6 --- Denominador lineal con signo negativo}
+Calcula $\displaystyle \int \frac{1}{3 - 2x}\,dx$.
+\par\textbf{Resolución:} Para $u = 3 - 2x$, su derivada es $u' = -2$. Ajustamos multiplicando dentro por $-2$ y fuera por $-\frac{1}{2}$:
+$$-\frac{1}{2}\int \frac{-2}{3 - 2x}\,dx$$
+\sol{-\frac{1}{2}\ln|3 - 2x| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.7 --- Logaritmo en el denominador}
+Calcula $\displaystyle \int \frac{1}{x \ln x}\,dx$.
+\par\textbf{Resolución:} Subimos el factor $\frac{1}{x}$ al numerador para visualizar la estructura $\frac{u'}{u}$:
+$$\int \frac{1/x}{\ln x}\,dx$$
+Tomando $u = \ln x$, tenemos $u' = \frac{1}{x}$ justo arriba. Por tanto, da un doble logaritmo:
+\sol{\ln|\ln x| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.8 --- Cociente trigonométrico (cuidado con el signo)}
+Calcula $\displaystyle \int \frac{\sin x - \cos x}{\sin x + \cos x}\,dx$.
+\par\textbf{Resolución:} Derivamos el denominador: $u = \sin x + \cos x \implies u' = \cos x - \sin x = -(\sin x - \cos x)$.
+El numerador es exactamente $-u'$. Sacamos un signo menos fuera:
+$$-\int \frac{\cos x - \sin x}{\sin x + \cos x}\,dx$$
+\sol{-\ln|\sin x + \cos x| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.9 --- Trigonométrica compuesta en el denominador}
+Calcula $\displaystyle \int \frac{\sin(2x - 1)}{\cos(2x - 1) + 3}\,dx$.
+\par\textbf{Resolución:} Tomamos el denominador completo: $u = \cos(2x-1) + 3$. Su derivada (por regla de la cadena) es $u' = -2\sin(2x-1)$. Nos falta un factor $-2$ arriba:
+$$-\frac{1}{2}\int \frac{-2\sin(2x-1)}{\cos(2x-1) + 3}\,dx$$
+\sol{-\frac{1}{2}\ln|\cos(2x - 1) + 3| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.10 --- Cociente de exponenciales simétricas}
+Calcula $\displaystyle \int \frac{e^{3x} - e^{-3x}}{e^{3x} + e^{-3x}}\,dx$.
+\par\textbf{Resolución:} Si $u = e^{3x} + e^{-3x}$, entonces $u' = 3e^{3x} - 3e^{-3x} = 3(e^{3x} - e^{-3x})$. Solo falta un factor $3$ en el numerador (y nótese que $e^{3x} + e^{-3x} > 0$ siempre, por lo que el valor absoluto es opcional):
+$$\frac{1}{3}\int \frac{3(e^{3x} - e^{-3x})}{e^{3x} + e^{-3x}}\,dx$$
+\sol{\frac{1}{3}\ln(e^{3x} + e^{-3x}) + C}
+\end{ejemplobox}
+
+\subsection{Subtipo 2.3: Exponenciales y Trigonométricas Compuestas}
+
+\begin{ejemplobox}{Ejemplo 2.11 --- Coseno de un polinomio}
+Calcula $\displaystyle \int x^3 \cos(x^4 - 3)\,dx$.
+\par\textbf{Resolución:} Argumento del coseno: $u = x^4 - 3 \implies u' = 4x^3$. Multiplicamos dentro por $4$ y dividimos fuera entre $4$:
+$$\frac{1}{4}\int \cos(x^4 - 3)\cdot 4x^3\,dx$$
+\sol{\frac{1}{4}\sin(x^4 - 3) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.12 --- Seno de raíz cuadrada}
+Calcula $\displaystyle \int \frac{\sin(\sqrt{x})}{\sqrt{x}}\,dx$.
+\par\textbf{Resolución:} El argumento del seno es $u = \sqrt{x}$, cuya derivada es $u' = \frac{1}{2\sqrt{x}}$. En la integral tenemos $\frac{1}{\sqrt{x}}$, luego solo nos falta el $\frac{1}{2}$ en el denominador (compensamos fuera multiplicando por $2$):
+$$2 \int \sin(\sqrt{x}) \cdot \frac{1}{2\sqrt{x}}\,dx = 2\big(-\cos(\sqrt{x})\big) + C$$
+\sol{-2\cos(\sqrt{x}) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.13 --- Exponencial con arcotangente}
+Calcula $\displaystyle \int \frac{e^{\arctan x}}{1 + x^2}\,dx$.
+\par\textbf{Resolución:} El exponente es $u = \arctan x$, cuya derivada es exactamente $u' = \frac{1}{1+x^2}$:
+$$\int e^{\arctan x} \cdot \frac{1}{1 + x^2}\,dx$$
+\sol{e^{\arctan x} + C}
+\end{ejemplobox}
+
+\subsection{Subtipo 2.4: Arcotangente y Arcoseno Camuflados}
+
+\begin{trucobox}{Fórmulas de reconocimiento instantáneo para $\arctan$ y $\arcsin$}
+Cuando el denominador tiene suma de cuadrados o raíz de diferencia de cuadrados, intenta reescribirlo como $a^2 + u^2$ o $\sqrt{a^2 - u^2}$:
+$$\int \frac{u'}{a^2 + u^2}\,dx = \frac{1}{a}\arctan\!\left(\frac{u}{a}\right) + C \qquad\qquad \int \frac{u'}{\sqrt{a^2 - u^2}}\,dx = \arcsin\!\left(\frac{u}{a}\right) + C$$
+\end{trucobox}
+
+\begin{ejemplobox}{Ejemplo 2.14 --- Arcotangente con exponencial}
+Calcula $\displaystyle \int \frac{e^x}{1 + e^{2x}}\,dx$.
+\par\textbf{Resolución:} Observamos que $e^{2x} = (e^x)^2$. Así el denominador es $1^2 + u^2$ con $u = e^x$ y $u' = e^x$, que ya está en el numerador:
+$$\int \frac{e^x}{1 + (e^x)^2}\,dx$$
+\sol{\arctan(e^x) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.15 --- Arcotangente de potencia par}
+Calcula $\displaystyle \int \frac{x}{1 + x^4}\,dx$.
+\par\textbf{Resolución:} Escribimos $x^4 = (x^2)^2$. Tomando $u = x^2$, tenemos $u' = 2x$ y $a = 1$. Multiplicamos dentro por $2$ y fuera por $\frac{1}{2}$:
+$$\frac{1}{2}\int \frac{2x}{1 + (x^2)^2}\,dx$$
+\sol{\frac{1}{2}\arctan(x^2) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 2.16 --- Arcoseno con constantes distintas de $1$}
+Calcula $\displaystyle \int \frac{1}{\sqrt{9 - 4x^2}}\,dx$.
+\par\textbf{Resolución:} Reescribimos el radicando como diferencia de cuadrados: $9 - 4x^2 = 3^2 - (2x)^2$. Identificamos $a = 3$ y $u = 2x \implies u' = 2$. Ajustamos multiplicando dentro por $2$ y fuera por $\frac{1}{2}$:
+$$\frac{1}{2}\int \frac{2}{\sqrt{3^2 - (2x)^2}}\,dx$$
+\sol{\frac{1}{2}\arcsin\!\left(\frac{2x}{3}\right) + C}
+\end{ejemplobox}
+
+\minspace{6.5cm}
+
+% ==============================================================================
+% CAPITULO 3: CAMBIO DE VARIABLE O SUSTITUCION
+% ==============================================================================
+\section{Integración por Cambio de Variable (Sustitución)}
+
+\subsection{¿Cuándo se usa y cómo elegir el cambio?}
+
+Recurrimos al \textbf{cambio de variable} cuando la integral no es casi inmediata porque sobran o faltan potencias de $x$, aparecen raíces molestas (sobre todo raíces de distinto índice), exponenciales en un denominador o radicales cuadráticos del tipo $\sqrt{a^2 - x^2}$.
+
+\begin{formulabox}{Protocolo en 4 pasos y Tabla de Cambios Recomendados}
+\begin{enumerate}\itemsep 1.5pt
+  \item \textbf{Elige la sustitución} $t = g(x)$ (o $x = \varphi(t)$).
+  \item \textbf{Calcula el diferencial} derivando ambos miembros: $\mathrm{d}t = g'(x)\,\mathrm{d}x$ (despeja $\mathrm{d}x$, y también $x$ si queda alguna suelta).
+  \item \textbf{Sustituye todo} en la integral hasta que \textbf{solo exista la variable $t$}. \textit{Prohibido mezclar $x$ y $t$ dentro de la misma integral.}
+  \item \textbf{Integra respecto a $t$} y \textbf{deshaz el cambio} volviendo a escribir el resultado en términos de $x$.
+\end{enumerate}
+
+\vspace{2mm}
+\centering
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule
+\textbf{Patrón en el integrando} & \textbf{Cambio recomendado} & \textbf{Motivo / Ventaja} \\
+\midrule
+Potencia o raíz lineal: $(ax+b)^n$, $\sqrt[n]{ax+b}$ & $t = ax+b$ \;ó\; $t^n = ax+b$ & Libera el factor $x$ suelto o elimina la raíz. \\
+Varias raíces de $x$: $\sqrt[p]{x}$, $\sqrt[q]{x}$ & $x = t^m$, con $m = \mathrm{m.c.m.}(p, q)$ & Transforma el integrando en una función racional. \\
+Exponenciales sin $u'$ arriba: $R(e^x)$ & $t = e^x \implies \mathrm{d}x = \frac{\mathrm{d}t}{t}$ & Convierte la exponencial en fracción polinómica. \\
+Radical cuadrático $\sqrt{a^2 - x^2}$ & $x = a\sin t$ \quad ($\mathrm{d}x = a\cos t\,\mathrm{d}t$) & Transforma $\sqrt{a^2 - a^2\sin^2 t} = a\cos t$. \\
+Radical o suma $\sqrt{a^2 + x^2}$ o $(x^2+a^2)^k$ & $x = a\tan t$ \quad ($\mathrm{d}x = a\sec^2 t\,\mathrm{d}t$) & Transforma $a^2 + a^2\tan^2 t = a^2\sec^2 t$. \\
+Radical cuadrático $\sqrt{x^2 - a^2}$ & $x = a\sec t$ \quad ($\mathrm{d}x = a\sec t\tan t\,\mathrm{d}t$) & Transforma $\sqrt{a^2\sec^2 t - a^2} = a\tan t$. \\
+\bottomrule
+\end{tabularx}
+\end{formulabox}
+
+\subsection{Ejemplos Resueltos --- Bloque 3: Sustituciones Algebraicas, Radicales y Trigonométricas}
+
+\begin{ejemplobox}{Ejemplo 3.1 --- Potencia alta con una $x$ suelta}
+Calcula $\displaystyle \int x(x + 2)^8\,dx$.
+\par\textbf{Resolución:} Expandir $(x+2)^8$ sería larguísimo. Hacemos el cambio para simplificar la potencia:
+$$t = x + 2 \implies x = t - 2, \qquad \mathrm{d}t = \mathrm{d}x$$
+Sustituimos todo en la integral y multiplicamos:
+$$\int (t - 2)t^8\,\mathrm{d}t = \int (t^9 - 2t^8)\,\mathrm{d}t = \frac{t^{10}}{10} - \frac{2t^9}{9} + C$$
+Deshacemos el cambio ($t = x + 2$):
+\sol{\frac{(x + 2)^{10}}{10} - \frac{2(x + 2)^9}{9} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.2 --- Producto con raíz cuadrada lineal}
+Calcula $\displaystyle \int x\sqrt{x + 1}\,dx$.
+\par\textbf{Resolución:} Para eliminar la raíz directamente, conviene tomar $t = \sqrt{x + 1}$, es decir:
+$$t^2 = x + 1 \implies x = t^2 - 1 \implies \mathrm{d}x = 2t\,\mathrm{d}t$$
+Sustituimos (recordando que $\sqrt{x+1} = t$ para $t \ge 0$):
+$$\int (t^2 - 1)\cdot t \cdot 2t\,\mathrm{d}t = 2\int (t^4 - t^2)\,\mathrm{d}t = 2\left(\frac{t^5}{5} - \frac{t^3}{3}\right) + C = \frac{2}{5}t^5 - \frac{2}{3}t^3 + C$$
+Deshacemos el cambio sustituyendo $t = \sqrt{x+1} = (x+1)^{1/2}$:
+\sol{\frac{2}{5}(x + 1)^{5/2} - \frac{2}{3}(x + 1)^{3/2} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.3 --- Cociente con raíz cuadrada en el denominador}
+Calcula $\displaystyle \int \frac{1}{1 + \sqrt{x}}\,dx$.
+\par\textbf{Resolución:} Tomamos $t = \sqrt{x} \implies x = t^2 \implies \mathrm{d}x = 2t\,\mathrm{d}t$.
+$$\int \frac{1}{1 + t}\cdot 2t\,\mathrm{d}t = 2\int \frac{t}{t + 1}\,\mathrm{d}t$$
+Aplicamos el truco de sumar y restar $1$ en el numerador:
+$$2\int \frac{t + 1 - 1}{t + 1}\,\mathrm{d}t = 2\int \left(1 - \frac{1}{t + 1}\right)\mathrm{d}t = 2t - 2\ln|t + 1| + C$$
+Deshacemos $t = \sqrt{x}$ (como $1 + \sqrt{x} > 0$, sobra el valor absoluto):
+\sol{2\sqrt{x} - 2\ln(1 + \sqrt{x}) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.4 --- Raíces de distinto índice (m.c.m.)}
+Calcula $\displaystyle \int \frac{\mathrm{d}x}{\sqrt{x} + \sqrt[3]{x}}$.
+\par\textbf{Resolución:} Los índices son $2$ y $3$, cuyo mínimo común múltiplo es $6$. Tomamos:
+$$x = t^6 \implies \mathrm{d}x = 6t^5\,\mathrm{d}t, \qquad \sqrt{x} = t^3, \qquad \sqrt[3]{x} = t^2$$
+Sustituimos y sacamos factor común $t^2$ en el denominador para simplificar:
+$$\int \frac{6t^5}{t^3 + t^2}\,\mathrm{d}t = 6\int \frac{t^5}{t^2(t + 1)}\,\mathrm{d}t = 6\int \frac{t^3}{t + 1}\,\mathrm{d}t$$
+Dividimos $t^3$ entre $t + 1$ (por Ruffini o identidad $t^3 + 1 = (t+1)(t^2 - t + 1)$):
+$$\frac{t^3}{t + 1} = t^2 - t + 1 - \frac{1}{t + 1}$$
+Integramos término a término:
+$$6\int \left(t^2 - t + 1 - \frac{1}{t + 1}\right)\mathrm{d}t = 6\left(\frac{t^3}{3} - \frac{t^2}{2} + t - \ln|t + 1|\right) + C = 2t^3 - 3t^2 + 6t - 6\ln|t + 1| + C$$
+Deshacemos el cambio sabiendo que $t = \sqrt[6]{x}$, luego $t^3 = \sqrt{x}$ y $t^2 = \sqrt[3]{x}$:
+\sol{2\sqrt{x} - 3\sqrt[3]{x} + 6\sqrt[6]{x} - 6\ln(1 + \sqrt[6]{x}) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.5 --- Exponencial sin derivada en el numerador}
+Calcula $\displaystyle \int \frac{1}{e^x + 1}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Hacemos $t = e^x \implies \mathrm{d}t = e^x\,\mathrm{d}x = t\,\mathrm{d}x \implies \mathrm{d}x = \frac{\mathrm{d}t}{t}$.
+$$\int \frac{1}{t + 1}\cdot\frac{\mathrm{d}t}{t} = \int \frac{1}{t(t + 1)}\,\mathrm{d}t$$
+Descomponemos en fracciones simples mentalmente ($\frac{1}{t(t+1)} = \frac{1}{t} - \frac{1}{t+1}$):
+$$\int \left(\frac{1}{t} - \frac{1}{t + 1}\right)\mathrm{d}t = \ln|t| - \ln|t + 1| + C$$
+Como $t = e^x > 0$, $\ln(e^x) = x$:
+\sol{x - \ln(e^x + 1) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.6 --- Exponencial con radical}
+Calcula $\displaystyle \int \frac{e^{2x}}{\sqrt{e^x + 1}}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Tomamos $t = \sqrt{e^x + 1} \implies t^2 = e^x + 1 \implies e^x = t^2 - 1$. Diferenciando $t^2 = e^x + 1$:
+$$2t\,\mathrm{d}t = e^x\,\mathrm{d}x$$
+Como $e^{2x}\,\mathrm{d}x = e^x \cdot (e^x\,\mathrm{d}x) = (t^2 - 1)\cdot 2t\,\mathrm{d}t$, sustituimos:
+$$\int \frac{(t^2 - 1)\cdot 2t}{t}\,\mathrm{d}t = 2\int (t^2 - 1)\,\mathrm{d}t = \frac{2}{3}t^3 - 2t + C$$
+Volvemos a $x$ con $t = \sqrt{e^x + 1}$:
+\sol{\frac{2}{3}(e^x + 1)^{3/2} - 2\sqrt{e^x + 1} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.7 --- Logarítmica no inmediata con radical}
+Calcula $\displaystyle \int \frac{\mathrm{d}x}{x\sqrt{1 + \ln x}}$.
+\par\textbf{Resolución:} Hacemos $t = \sqrt{1 + \ln x} \implies t^2 = 1 + \ln x$. Diferenciamos:
+$$2t\,\mathrm{d}t = \frac{1}{x}\,\mathrm{d}x$$
+Sustituimos directamente en la integral:
+$$\int \frac{2t\,\mathrm{d}t}{t} = \int 2\,\mathrm{d}t = 2t + C$$
+\sol{2\sqrt{1 + \ln x} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.8 --- Trigonométrica reductible a arcotangente}
+Calcula $\displaystyle \int \frac{\cos x}{1 + \sin^2 x}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Como $\cos x$ es exactamente la derivada de $\sin x$, tomamos $t = \sin x \implies \mathrm{d}t = \cos x\,\mathrm{d}x$:
+$$\int \frac{1}{1 + t^2}\,\mathrm{d}t = \arctan(t) + C$$
+\sol{\arctan(\sin x) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.9 --- Sustitución trigonométrica tipo $\sqrt{a^2 - x^2}$}
+Calcula $\displaystyle \int \sqrt{4 - x^2}\,\mathrm{d}x$ \quad ($-2 \le x \le 2$).
+\par\textbf{Resolución:} Aparece $\sqrt{2^2 - x^2}$. Hacemos $x = 2\sin t$ con $t \in [-\frac{\pi}{2}, \frac{\pi}{2}]$, de modo que $\mathrm{d}x = 2\cos t\,\mathrm{d}t$ y $\cos t \ge 0$:
+$$\sqrt{4 - x^2} = \sqrt{4 - 4\sin^2 t} = 2\sqrt{1 - \sin^2 t} = 2\cos t$$
+Sustituimos y aplicamos la fórmula del ángulo mitad $\cos^2 t = \frac{1 + \cos(2t)}{2}$:
+$$\int (2\cos t)(2\cos t)\,\mathrm{d}t = 4\int \cos^2 t\,\mathrm{d}t = 4\int \frac{1 + \cos(2t)}{2}\,\mathrm{d}t = 2\left(t + \frac{\sin(2t)}{2}\right) + C = 2t + \sin(2t) + C$$
+Para deshacer el cambio, usamos $\sin(2t) = 2\sin t\cos t$, donde $\sin t = \frac{x}{2}$, $t = \arcsin\!\left(\frac{x}{2}\right)$ y $\cos t = \frac{\sqrt{4 - x^2}}{2}$:
+$$2\arcsin\!\left(\frac{x}{2}\right) + 2\left(\frac{x}{2}\right)\left(\frac{\sqrt{4 - x^2}}{2}\right) + C$$
+\sol{2\arcsin\!\left(\frac{x}{2}\right) + \frac{x\sqrt{4 - x^2}}{2} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.10 --- Sustitución trigonométrica tipo $(x^2 + a^2)^k$}
+Calcula $\displaystyle \int \frac{\mathrm{d}x}{(x^2 + 1)^{3/2}}$.
+\par\textbf{Resolución:} Tomamos $x = \tan t$ con $t \in (-\frac{\pi}{2}, \frac{\pi}{2})$, luego $\mathrm{d}x = \sec^2 t\,\mathrm{d}t = \frac{\mathrm{d}t}{\cos^2 t}$ y $x^2 + 1 = \tan^2 t + 1 = \frac{1}{\cos^2 t}$:
+$$\int \frac{\frac{1}{\cos^2 t}\,\mathrm{d}t}{\left(\frac{1}{\cos^2 t}\right)^{3/2}} = \int \frac{\cos^3 t}{\cos^2 t}\,\mathrm{d}t = \int \cos t\,\mathrm{d}t = \sin t + C$$
+Para volver a $x$ a partir de $\tan t = \frac{x}{1}$, construimos el triángulo rectángulo de catetos $x$ (opuesto) y $1$ (contiguo), con hipotenusa $\sqrt{x^2 + 1}$. Por tanto, $\sin t = \frac{x}{\sqrt{x^2 + 1}}$:
+\sol{\frac{x}{\sqrt{x^2 + 1}} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 3.11 --- Sustitución trigonométrica tipo $\sqrt{x^2 - a^2}$}
+Calcula $\displaystyle \int \frac{\sqrt{x^2 - 9}}{x}\,\mathrm{d}x$ \quad ($x > 3$).
+\par\textbf{Resolución:} Hacemos $x = 3\sec t = \frac{3}{\cos t}$ con $t \in (0, \frac{\pi}{2})$. Entonces $\mathrm{d}x = 3\sec t\tan t\,\mathrm{d}t$ y $\sqrt{x^2 - 9} = \sqrt{9\sec^2 t - 9} = 3\tan t$:
+$$\int \frac{3\tan t}{3\sec t}\cdot 3\sec t\tan t\,\mathrm{d}t = 3\int \tan^2 t\,\mathrm{d}t = 3\int (\sec^2 t - 1)\,\mathrm{d}t = 3(\tan t - t) + C$$
+Deshacemos el cambio: como $\sec t = \frac{x}{3}$, se tiene $\cos t = \frac{3}{x} \implies t = \arccos\!\left(\frac{3}{x}\right)$ y $3\tan t = \sqrt{x^2 - 9}$:
+\sol{\sqrt{x^2 - 9} - 3\arccos\!\left(\frac{3}{x}\right) + C}
+\end{ejemplobox}
+
+\minspace{6.5cm}
+
+% ==============================================================================
+% CAPITULO 4: INTEGRACION POR PARTES
+% ==============================================================================
+\section{Integración por Partes}
+
+\subsection{Fórmula, Regla ALPES y los 4 patrones clásicos}
+
+Al integrar la regla de la derivada de un producto, $(u\cdot v)' = u'\,v + u\,v'$, se obtiene el método de \textbf{integración por partes}, ideal para productos de funciones de distinta naturaleza (por ejemplo, polinomio $\times$ exponencial o polinomio $\times$ logaritmo) y para integrar logaritmos o arcos aislados.
+
+\begin{formulabox}{Fórmula de Integración por Partes y Regla ALPES}
+$$\int u\,\mathrm{d}v = u\cdot v - \int v\,\mathrm{d}u$$
+\textbf{Criterio práctico para elegir $u$ (lo que se deriva) frente a $\mathrm{d}v$ (lo que se integra): Regla ALPES} (de mayor a menor prioridad para ser $u$):
+\begin{center}
+\textbf{A}rcos ($\arcsin, \arccos, \arctan$) $\;>\;$ \textbf{L}ogaritmos ($\ln, \log$) $\;>\;$ \textbf{P}olinomios ($x^n$) $\;>\;$ \textbf{E}xponenciales ($e^x, a^x$) $\;>\;$ \textbf{S}eno/Coseno
+\end{center}
+\textit{Por qué funciona:} Las funciones de la izquierda (\textbf{A}, \textbf{L}) no tienen primitiva elemental directa, pero al derivarlas desaparecen el arco o el logaritmo; las de la derecha (\textbf{E}, \textbf{S}) son facilísimas de integrar y los polinomios (\textbf{P}) bajan de grado al derivarlos.
+\end{formulabox}
+
+\subsection{Ejemplos Resueltos --- Bloque 4: Todos los Patrones de Integración por Partes}
+
+\subsubsection{Patrón 1: Polinomio $\times$ Exponencial o Trigonométrica (simple y reiterada)}
+
+\begin{ejemplobox}{Ejemplo 4.1 --- Partes directa básica}
+Calcula $\displaystyle \int x\,e^x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Según ALPES, elegimos $u = x$ (Polinomio) y $\mathrm{d}v = e^x\,\mathrm{d}x$ (Exponencial):
+$$\begin{cases} u = x \implies \mathrm{d}u = \mathrm{d}x \\ \mathrm{d}v = e^x\,\mathrm{d}x \implies v = e^x \end{cases}$$
+Aplicamos $\int u\,\mathrm{d}v = u v - \int v\,\mathrm{d}u$:
+$$\int x e^x\,\mathrm{d}x = x e^x - \int e^x\,\mathrm{d}x = x e^x - e^x + C$$
+\sol{(x - 1)e^x + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 4.2 --- Polinomio lineal $\times$ Trigonométrica}
+Calcula $\displaystyle \int (x - 2)\sin x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Elegimos $u = x - 2$ y $\mathrm{d}v = \sin x\,\mathrm{d}x$:
+$$\begin{cases} u = x - 2 \implies \mathrm{d}u = \mathrm{d}x \\ \mathrm{d}v = \sin x\,\mathrm{d}x \implies v = -\cos x \end{cases}$$
+$$\int (x-2)\sin x\,\mathrm{d}x = -(x-2)\cos x - \int (-\cos x)\,\mathrm{d}x = -(x-2)\cos x + \int \cos x\,\mathrm{d}x$$
+\sol{-(x - 2)\cos x + \sin x + C}
+\end{ejemplobox}
+
+\begin{ejemploboxlong}{Ejemplo 4.3 --- Integración por partes reiterada (grado 2) y Método Tabular}
+Calcula $\displaystyle \int (x^2 + 1)\sin(2x)\,\mathrm{d}x$.
+\par\textbf{Resolución:} Al tener un polinomio de grado $2$, aplicamos partes \textbf{dos veces} hasta que el polinomio desaparezca.
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Primera aplicación:} $u = x^2 + 1 \implies \mathrm{d}u = 2x\,\mathrm{d}x$; \quad $\mathrm{d}v = \sin(2x)\,\mathrm{d}x \implies v = -\frac{1}{2}\cos(2x)$.
+  $$I = -\frac{x^2 + 1}{2}\cos(2x) - \int \left(-\frac{1}{2}\cos(2x)\right)(2x\,\mathrm{d}x) = -\frac{x^2 + 1}{2}\cos(2x) + \int x\cos(2x)\,\mathrm{d}x$$
+  \item \textbf{Segunda aplicación} para $J = \int x\cos(2x)\,\mathrm{d}x$: $u = x \implies \mathrm{d}u = \mathrm{d}x$; \quad $\mathrm{d}v = \cos(2x)\,\mathrm{d}x \implies v = \frac{1}{2}\sin(2x)$.
+  $$J = \frac{x}{2}\sin(2x) - \int \frac{1}{2}\sin(2x)\,\mathrm{d}x = \frac{x}{2}\sin(2x) + \frac{1}{4}\cos(2x)$$
+\end{enumerate}
+Sustituimos $J$ en $I$:
+\sol{-\frac{x^2 + 1}{2}\cos(2x) + \frac{x}{2}\sin(2x) + \frac{1}{4}\cos(2x) + C}
+
+\medskip
+\noindent\textbf{Atajo --- Método Tabular (útil para comprobar en 15 segundos):} Se deriva la columna $u$ hasta llegar a $0$, se integra repetidamente $\mathrm{d}v$ y se multiplican en diagonal alternando signos ($+, -, +, \dots$):
+\begin{center}
+\small
+\begin{tabular}{c c c l}
+\toprule
+\textbf{Signo} & \textbf{Derivar ($u$)} & \textbf{Integrar ($\mathrm{d}v$)} & \textbf{Producto diagonal} \\
+\midrule
+$+$ & $x^2 + 1$ & $\sin(2x)$ & $+\,(x^2+1)\left(-\frac{1}{2}\cos(2x)\right)$ \\
+$-$ & $2x$ & $-\frac{1}{2}\cos(2x)$ & $-\,(2x)\left(-\frac{1}{4}\sin(2x)\right) = +\frac{x}{2}\sin(2x)$ \\
+$+$ & $2$ & $-\frac{1}{4}\sin(2x)$ & $+\,(2)\left(\frac{1}{8}\cos(2x)\right) = +\frac{1}{4}\cos(2x)$ \\
+$-$ & $0$ & $\frac{1}{8}\cos(2x)$ & \textit{(fin del proceso)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{ejemploboxlong}
+
+\subsubsection{Patrón 2: Polinomio o Potencia $\times$ Logaritmo (¡$u$ es el logaritmo!)}
+
+\begin{ejemplobox}{Ejemplo 4.4 --- Potencia positiva por logaritmo}
+Calcula $\displaystyle \int x^2 \ln x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Por ALPES, el logaritmo tiene prioridad sobre el polinomio, así que $u = \ln x$ y $\mathrm{d}v = x^2\,\mathrm{d}x$:
+$$\begin{cases} u = \ln x \implies \mathrm{d}u = \frac{1}{x}\,\mathrm{d}x \\ \mathrm{d}v = x^2\,\mathrm{d}x \implies v = \frac{x^3}{3} \end{cases}$$
+$$I = \frac{x^3}{3}\ln x - \int \frac{x^3}{3}\cdot\frac{1}{x}\,\mathrm{d}x = \frac{x^3}{3}\ln x - \frac{1}{3}\int x^2\,\mathrm{d}x$$
+\sol{\frac{x^3}{3}\ln x - \frac{x^3}{9} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 4.5 --- Cociente con logaritmo}
+Calcula $\displaystyle \int \frac{\ln x}{x^2}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Reescribimos como $\int x^{-2}\ln x\,\mathrm{d}x$. Elegimos $u = \ln x$ y $\mathrm{d}v = x^{-2}\,\mathrm{d}x$:
+$$\begin{cases} u = \ln x \implies \mathrm{d}u = \frac{1}{x}\,\mathrm{d}x \\ \mathrm{d}v = x^{-2}\,\mathrm{d}x \implies v = -x^{-1} = -\frac{1}{x} \end{cases}$$
+$$I = -\frac{\ln x}{x} - \int \left(-\frac{1}{x}\right)\frac{1}{x}\,\mathrm{d}x = -\frac{\ln x}{x} + \int x^{-2}\,\mathrm{d}x$$
+\sol{-\frac{\ln x}{x} - \frac{1}{x} + C}
+\end{ejemplobox}
+
+\subsubsection{Patrón 3: Funciones "solas" ($\ln x$, $\arctan x$, $\arcsin x$) usando $\mathrm{d}v = 1\,\mathrm{d}x$}
+
+\begin{ejemplobox}{Ejemplo 4.6 --- Integral de $\ln x$}
+Calcula $\displaystyle \int \ln x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Parece que no hay producto, pero hacemos $\mathrm{d}v = 1\,\mathrm{d}x$ y $u = \ln x$:
+$$\begin{cases} u = \ln x \implies \mathrm{d}u = \frac{1}{x}\,\mathrm{d}x \\ \mathrm{d}v = 1\,\mathrm{d}x \implies v = x \end{cases}$$
+$$\int \ln x\,\mathrm{d}x = x\ln x - \int x \cdot \frac{1}{x}\,\mathrm{d}x = x\ln x - \int 1\,\mathrm{d}x$$
+\sol{x\ln x - x + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 4.7 --- Integral de $\arctan x$}
+Calcula $\displaystyle \int \arctan x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Tomamos $u = \arctan x$ y $\mathrm{d}v = 1\,\mathrm{d}x$:
+$$\begin{cases} u = \arctan x \implies \mathrm{d}u = \frac{1}{1 + x^2}\,\mathrm{d}x \\ \mathrm{d}v = 1\,\mathrm{d}x \implies v = x \end{cases}$$
+$$\int \arctan x\,\mathrm{d}x = x\arctan x - \int \frac{x}{1 + x^2}\,\mathrm{d}x$$
+La integral restante es casi inmediata de tipo logaritmo (falta un $2$ arriba):
+$$= x\arctan x - \frac{1}{2}\int \frac{2x}{1 + x^2}\,\mathrm{d}x$$
+\sol{x\arctan x - \frac{1}{2}\ln(1 + x^2) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 4.8 --- Integral de $\arcsin x$}
+Calcula $\displaystyle \int \arcsin x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Tomamos $u = \arcsin x$ y $\mathrm{d}v = 1\,\mathrm{d}x$:
+$$\begin{cases} u = \arcsin x \implies \mathrm{d}u = \frac{1}{\sqrt{1 - x^2}}\,\mathrm{d}x \\ \mathrm{d}v = 1\,\mathrm{d}x \implies v = x \end{cases}$$
+$$\int \arcsin x\,\mathrm{d}x = x\arcsin x - \int \frac{x}{\sqrt{1 - x^2}}\,\mathrm{d}x = x\arcsin x + \frac{1}{2}\int (-2x)(1 - x^2)^{-1/2}\,\mathrm{d}x$$
+Integrando la potencia $(1-x^2)^{-1/2}$: $\frac{1}{2}\cdot\frac{(1-x^2)^{1/2}}{1/2} = \sqrt{1 - x^2}$.
+\sol{x\arcsin x + \sqrt{1 - x^2} + C}
+\end{ejemplobox}
+
+\subsubsection{Patrón 4: Integrales Cíclicas (reaparece la integral original $I$)}
+
+\begin{trampabox}{Regla de oro en integrales cíclicas}
+En las integrales cíclicas (como $e^{ax}\cos(bx)$, $e^{ax}\sin(bx)$, $\cos(\ln x)$ o $\sin(\ln x)$) es necesario aplicar partes \textbf{dos veces}. \textbf{Mantén siempre el mismo criterio de elección en ambos pasos} (si elegiste la exponencial como $u$ la primera vez, vuelve a elegir la exponencial o trigonométrica coherentemente la segunda). Si inviertes los papeles de $u$ y $\mathrm{d}v$ en el segundo paso, desharás lo hecho y llegarás a la identidad inútil $I = I$.
+\end{trampabox}
+
+\begin{ejemplobox}{Ejemplo 4.9 --- Cíclica clásica: $e^x \cos(2x)$}
+Calcula $\displaystyle I = \int e^x \cos(2x)\,\mathrm{d}x$.
+\par\textbf{Resolución:}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Primera aplicación:} $u = e^x \implies \mathrm{d}u = e^x\,\mathrm{d}x$; \quad $\mathrm{d}v = \cos(2x)\,\mathrm{d}x \implies v = \frac{1}{2}\sin(2x)$.
+  $$I = \frac{1}{2}e^x\sin(2x) - \frac{1}{2}\int e^x\sin(2x)\,\mathrm{d}x$$
+  \item \textbf{Segunda aplicación} (mismo orden: $u = e^x$ y $\mathrm{d}v = \sin(2x)\,\mathrm{d}x \implies v = -\frac{1}{2}\cos(2x)$):
+  $$\int e^x\sin(2x)\,\mathrm{d}x = -\frac{1}{2}e^x\cos(2x) - \int \left(-\frac{1}{2}\cos(2x)\right)e^x\,\mathrm{d}x = -\frac{1}{2}e^x\cos(2x) + \frac{1}{2}I$$
+  \item \textbf{Sustituimos y despejamos $I$ como una ecuación:}
+  $$I = \frac{1}{2}e^x\sin(2x) - \frac{1}{2}\left(-\frac{1}{2}e^x\cos(2x) + \frac{1}{2}I\right) = \frac{1}{2}e^x\sin(2x) + \frac{1}{4}e^x\cos(2x) - \frac{1}{4}I$$
+  Pasamos $-\frac{1}{4}I$ sumando al primer miembro:
+  $$\left(1 + \frac{1}{4}\right)I = \frac{5}{4}I = \frac{e^x}{4}\big(2\sin(2x) + \cos(2x)\big)$$
+  Multiplicamos ambos lados por $\frac{4}{5}$ y añadimos $+C$:
+\end{enumerate}
+\sol{\frac{e^x}{5}\big(\cos(2x) + 2\sin(2x)\big) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 4.10 --- Cíclica de examen: $\cos(\ln x)$}
+Calcula $\displaystyle I = \int \cos(\ln x)\,\mathrm{d}x$.
+\par\textbf{Resolución:} Aplicamos partes con la función trigonométrica en $u$ y $\mathrm{d}v = 1\,\mathrm{d}x$:
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Primera aplicación:} $u = \cos(\ln x) \implies \mathrm{d}u = -\frac{\sin(\ln x)}{x}\,\mathrm{d}x$; \quad $\mathrm{d}v = 1\,\mathrm{d}x \implies v = x$.
+  $$I = x\cos(\ln x) - \int x\left(-\frac{\sin(\ln x)}{x}\right)\mathrm{d}x = x\cos(\ln x) + \int \sin(\ln x)\,\mathrm{d}x$$
+  \item \textbf{Segunda aplicación} para $\int \sin(\ln x)\,\mathrm{d}x$: $u = \sin(\ln x) \implies \mathrm{d}u = \frac{\cos(\ln x)}{x}\,\mathrm{d}x$; \quad $\mathrm{d}v = 1\,\mathrm{d}x \implies v = x$.
+  $$\int \sin(\ln x)\,\mathrm{d}x = x\sin(\ln x) - \int x\cdot\frac{\cos(\ln x)}{x}\,\mathrm{d}x = x\sin(\ln x) - I$$
+  \item \textbf{Despejamos $I$:}
+  $$I = x\cos(\ln x) + x\sin(\ln x) - I \implies 2I = x\big(\cos(\ln x) + \sin(\ln x)\big)$$
+\end{enumerate}
+\sol{\frac{x}{2}\big(\cos(\ln x) + \sin(\ln x)\big) + C}
+\end{ejemplobox}
+
+\minspace{6.5cm}
+
+% ==============================================================================
+% CAPITULO 5: INTEGRALES RACIONALES
+% ==============================================================================
+\section[Integrales Racionales]{Integrales Racionales \texorpdfstring{$\displaystyle \int \frac{P(x)}{Q(x)}\,\mathrm{d}x$}{P(x)/Q(x)}}
+
+\subsection{Algoritmo maestro de resolución}
+
+Una integral es \textbf{racional} cuando el integrando es el cociente de dos polinomios $P(x)$ y $Q(x)$. Antes de aplicar fracciones simples, sigue \textbf{obligatoriamente} este orden:
+
+\begin{formulabox}{Los 3 pasos obligatorios ante cualquier cociente de polinomios}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Paso 0 (¿División previa?):} Comprueba los grados. Si $\operatorname{grado}(P) \ge \operatorname{grado}(Q)$, realiza la división euclídea $P(x) = Q(x)\cdot C(x) + R(x)$ y sustituye:
+  $$\frac{P(x)}{Q(x)} = C(x) + \frac{R(x)}{Q(x)} \qquad \text{donde ya se cumple } \operatorname{grado}(R) < \operatorname{grado}(Q)$$
+  El cociente $C(x)$ es un polinomio de integración inmediata.
+
+  \item \textbf{Paso 1 (Comprueba si es inmediata de tipo $\ln$ o $\arctan$):} Si el denominador es de grado $2$ irreducible ($\Delta = b^2 - 4ac < 0$), NO tiene raíces reales: se resuelve directamente separando la derivada arriba y completando cuadrados abajo (\textbf{Método Neperiano + Arcotangente}).
+
+  \item \textbf{Paso 2 (Factoriza $Q(x)$ y descompón en fracciones simples):} Según la factorización real de $Q(x)$, asigna una fracción simple por cada factor:
+  \begin{itemize}\itemsep 1.5pt
+    \item \textbf{Raíz real simple} $(x - r)$: añade $\displaystyle \frac{A}{x - r}$.
+    \item \textbf{Raíz real múltiple} $(x - r)^k$: añade $\displaystyle \frac{B_1}{x - r} + \frac{B_2}{(x - r)^2} + \dots + \frac{B_k}{(x - r)^k}$.
+    \item \textbf{Factor cuadrático irreducible} $(ax^2 + bx + c)$ con $\Delta < 0$: añade $\displaystyle \frac{Mx + N}{ax^2 + bx + c}$.
+  \end{itemize}
+\end{enumerate}
+\end{formulabox}
+
+\begin{trucobox}{Cómo hallar las constantes $A, B, M, N$ sin perder tiempo}
+Después de reducir las fracciones simples a común denominador e igualar los numeradores:
+\begin{itemize}\itemsep 1.5pt
+  \item \textbf{Para raíces reales:} sustituye $x$ por cada una de las raíces reales de $Q(x)$ en la identidad de polinomios. Casi todos los términos se anulan y obtienes las constantes al instante.
+  \item \textbf{Para constantes restantes} (raíces múltiples o factores cuadráticos): da otros valores sencillos ($x=0, x=1, x=-1$) o iguala los coeficientes de $x^2, x, 1$ a ambos lados.
+\end{itemize}
+\end{trucobox}
+
+\newpage
+\subsection{Ejemplos Resueltos --- Bloque 5: Casuística Completa de Racionales}
+
+\subsubsection{Caso A: División previa de polinomios ($\operatorname{grado}(P) \ge \operatorname{grado}(Q)$)}
+
+\begin{ejemplobox}{Ejemplo 5.1 --- División previa con divisor lineal}
+Calcula $\displaystyle \int \frac{x^3 - 3x^2 + 2x - 1}{x - 2}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Como el grado del numerador ($3$) es mayor que el del denominador ($1$), dividimos primero (por caja o Ruffini con $x=2$):
+\begin{center}
+\small
+\begin{tabular}{r|rrrr}
+ & $1$ & $-3$ & $2$ & $-1$ \\
+$2$ & & $2$ & $-2$ & $0$ \\
+\hline
+ & $1$ & $-1$ & $0$ & $\mathbf{-1}$ \\
+\end{tabular}
+\end{center}
+Cociente $C(x) = x^2 - x$ y resto $R = -1$. Por tanto:
+$$\int \left(x^2 - x - \frac{1}{x - 2}\right)\mathrm{d}x$$
+\sol{\frac{x^3}{3} - \frac{x^2}{2} - \ln|x - 2| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 5.2 --- Mismo grado + raíces reales simples}
+Calcula $\displaystyle \int \frac{x^2 + 1}{x^2 - 1}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Grado arriba = grado abajo ($2 = 2$). Dividimos sumando y restando $1$ en el numerador:
+$$\frac{x^2 + 1}{x^2 - 1} = \frac{(x^2 - 1) + 2}{x^2 - 1} = 1 + \frac{2}{x^2 - 1}$$
+Ahora descomponemos $\frac{2}{x^2 - 1} = \frac{2}{(x-1)(x+1)}$ en fracciones simples:
+$$\frac{2}{(x-1)(x+1)} = \frac{A}{x - 1} + \frac{B}{x + 1} \implies 2 = A(x + 1) + B(x - 1)$$
+\begin{itemize}\itemsep 1pt
+  \item Si $x = 1 \implies 2 = 2A \implies A = 1$.
+  \item Si $x = -1 \implies 2 = -2B \implies B = -1$.
+\end{itemize}
+Integramos todo:
+$$\int \left(1 + \frac{1}{x - 1} - \frac{1}{x + 1}\right)\mathrm{d}x = x + \ln|x - 1| - \ln|x + 1| + C$$
+\sol{x + \ln\left|\frac{x - 1}{x + 1}\right| + C}
+\end{ejemplobox}
+
+\subsubsection{Caso B: Raíces reales simples en el denominador}
+
+\begin{ejemplobox}{Ejemplo 5.3 --- Dos raíces reales simples}
+Calcula $\displaystyle \int \frac{2x + 18}{x^2 + 2x - 3}\,\mathrm{d}x$.
+\par\textbf{Resolución:} $\operatorname{grado}(P) < \operatorname{grado}(Q)$. Hallamos las raíces de $x^2 + 2x - 3 = 0$:
+$$x = \frac{-2 \pm \sqrt{4 + 12}}{2} = \frac{-2 \pm 4}{2} \implies x_1 = 1, \quad x_2 = -3$$
+Factorizamos $x^2 + 2x - 3 = (x - 1)(x + 3)$ y planteamos:
+$$\frac{2x + 18}{(x - 1)(x + 3)} = \frac{A}{x - 1} + \frac{B}{x + 3} \implies 2x + 18 = A(x + 3) + B(x - 1)$$
+\begin{itemize}\itemsep 1pt
+  \item Para $x = 1$: $2(1) + 18 = 4A \implies 20 = 4A \implies A = 5$.
+  \item Para $x = -3$: $2(-3) + 18 = -4B \implies 12 = -4B \implies B = -3$.
+\end{itemize}
+$$\int \left(\frac{5}{x - 1} - \frac{3}{x + 3}\right)\mathrm{d}x$$
+\sol{5\ln|x - 1| - 3\ln|x + 3| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 5.4 --- Tres raíces reales simples}
+Calcula $\displaystyle \int \frac{x + 5}{x^3 - x}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Factorizamos el denominador sacando factor común $x$ y usando diferencia de cuadrados:
+$$x^3 - x = x(x^2 - 1) = x(x - 1)(x + 1)$$
+Descomponemos en tres fracciones simples:
+$$\frac{x + 5}{x(x - 1)(x + 1)} = \frac{A}{x} + \frac{B}{x - 1} + \frac{D}{x + 1}$$
+$$x + 5 = A(x - 1)(x + 1) + B\,x(x + 1) + D\,x(x - 1)$$
+Evaluamos en las tres raíces:
+\begin{itemize}\itemsep 1pt
+  \item $x = 0 \implies 5 = A(-1)(1) \implies A = -5$.
+  \item $x = 1 \implies 6 = B(1)(2) \implies B = 3$.
+  \item $x = -1 \implies 4 = D(-1)(-2) = 2D \implies D = 2$.
+\end{itemize}
+$$\int \left(-\frac{5}{x} + \frac{3}{x - 1} + \frac{2}{x + 1}\right)\mathrm{d}x$$
+\sol{-5\ln|x| + 3\ln|x - 1| + 2\ln|x + 1| + C}
+\end{ejemplobox}
+
+\subsubsection{Caso C: Raíces reales múltiples en el denominador}
+
+\begin{ejemplobox}{Ejemplo 5.5 --- Raíz real doble y raíz real simple}
+Calcula $\displaystyle \int \frac{5x + 1}{(x - 1)^2(x + 2)}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Por el factor doble $(x-1)^2$ ponemos dos fracciones (exponentes $1$ y $2$):
+$$\frac{5x + 1}{(x - 1)^2(x + 2)} = \frac{A}{x - 1} + \frac{B}{(x - 1)^2} + \frac{D}{x + 2}$$
+Quitando denominadores:
+$$5x + 1 = A(x - 1)(x + 2) + B(x + 2) + D(x - 1)^2$$
+\begin{itemize}\itemsep 1pt
+  \item $x = 1 \implies 6 = 3B \implies B = 2$.
+  \item $x = -2 \implies -9 = 9D \implies D = -1$.
+  \item Valor auxiliar $x = 0$: $1 = A(-1)(2) + B(2) + D(1) = -2A + 4 - 1 \implies -2A = -2 \implies A = 1$.
+\end{itemize}
+Integramos cada fracción (recuerda que $\int \frac{1}{(x-1)^2}\,\mathrm{d}x = \int (x-1)^{-2}\,\mathrm{d}x = -\frac{1}{x-1}$):
+$$\int \left(\frac{1}{x - 1} + \frac{2}{(x - 1)^2} - \frac{1}{x + 2}\right)\mathrm{d}x$$
+\sol{\ln|x - 1| - \frac{2}{x - 1} - \ln|x + 2| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 5.6 --- Raíz real triple (comparación con cambio de variable)}
+Calcula $\displaystyle \int \frac{x^2 + 1}{(x - 1)^3}\,\mathrm{d}x$.
+\par\textbf{Resolución (vía fracciones simples):} Planteamos $\displaystyle \frac{x^2+1}{(x-1)^3} = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{D}{(x-1)^3}$, es decir:
+$$x^2 + 1 = A(x - 1)^2 + B(x - 1) + D = A x^2 + (-2A + B)x + (A - B + D)$$
+Igualando coeficientes: $A = 1$; $-2(1) + B = 0 \implies B = 2$; $1 - 2 + D = 1 \implies D = 2$.
+\par\textbf{Atajo alternativo:} con el cambio $t = x - 1 \implies x = t + 1$, el numerador es $(t+1)^2+1 = t^2+2t+2$, que al dividir entre $t^3$ da directamente $\frac{1}{t} + \frac{2}{t^2} + \frac{2}{t^3}$ sin sistemas de ecuaciones.
+$$\int \left(\frac{1}{x - 1} + 2(x - 1)^{-2} + 2(x - 1)^{-3}\right)\mathrm{d}x = \ln|x - 1| + 2\frac{(x-1)^{-1}}{-1} + 2\frac{(x-1)^{-2}}{-2} + C$$
+\sol{\ln|x - 1| - \frac{2}{x - 1} - \frac{1}{(x - 1)^2} + C}
+\end{ejemplobox}
+
+\subsubsection{Caso D: Denominador cuadrático irreducible ($\Delta < 0$) --- Método Neperiano + Arcotangente}
+
+\begin{ejemplobox}{Ejemplo 5.7 --- Solo constante en el numerador (completar cuadrados)}
+Calcula: \quad \textbf{a)} $\displaystyle \int \frac{1}{x^2 + 2x + 5}\,\mathrm{d}x$ \qquad \textbf{b)} $\displaystyle \int \frac{1}{4x^2 + 4x + 5}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Comprobamos que $\Delta < 0$ (no hay raíces reales) y completamos el cuadrado en el denominador:
+\begin{itemize}\itemsep 3pt
+  \item \textbf{a)} $x^2 + 2x + 5 = (x + 1)^2 - 1 + 5 = (x + 1)^2 + 2^2$. Aplicando $\int \frac{u'}{u^2 + a^2}\,\mathrm{d}x = \frac{1}{a}\arctan\!\left(\frac{u}{a}\right)$ con $u = x + 1$, $u' = 1$, $a = 2$:
+  $$\int \frac{1}{(x + 1)^2 + 2^2}\,\mathrm{d}x = \mathbf{\frac{1}{2}\arctan\!\left(\frac{x + 1}{2}\right) + C}$$
+  \item \textbf{b)} \textit{(Trampa típica: el coeficiente de $x^2$ no es $1$)} Observa que $4x^2 + 4x + 5 = (2x + 1)^2 + 4 = (2x + 1)^2 + 2^2$. Aquí $u = 2x + 1$, luego $\mathbf{u' = 2}$. Debemos multiplicar dentro por $2$ y compensar fuera con $\frac{1}{2}$:
+  $$\frac{1}{2}\int \frac{2}{(2x + 1)^2 + 2^2}\,\mathrm{d}x = \frac{1}{2}\cdot\frac{1}{2}\arctan\!\left(\frac{2x + 1}{2}\right) + C = \mathbf{\frac{1}{4}\arctan\!\left(\frac{2x + 1}{2}\right) + C}$$
+\end{itemize}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 5.8 --- Numerador lineal sobre cuadrática irreducible (Neperiano + Arcotangente)}
+Calcula $\displaystyle \int \frac{4x + 7}{x^2 + 2x + 5}\,\mathrm{d}x$.
+\par\textbf{Resolución:} El denominador $u = x^2 + 2x + 5$ es irreducible ($\Delta = 4 - 20 = -16 < 0$). Su derivada es $u' = 2x + 2$.
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Fabricamos $u' = 2x + 2$ en el numerador:} Como tenemos $4x$, sacamos factor $2$ de $4x$:
+  $$4x + 7 = 2(2x + 2) + 3$$
+  (Comprobación: $2(2x+2) + 3 = 4x + 4 + 3 = 4x + 7$).
+  \item \textbf{Separamos en dos integrales:} la primera da un logaritmo neperiano y la segunda una arcotangente (como en el Ejemplo 5.7a):
+  $$2\int \frac{2x + 2}{x^2 + 2x + 5}\,\mathrm{d}x + 3\int \frac{1}{(x + 1)^2 + 2^2}\,\mathrm{d}x = 2\ln(x^2 + 2x + 5) + 3\cdot\frac{1}{2}\arctan\!\left(\frac{x + 1}{2}\right) + C$$
+\end{enumerate}
+(No hace falta valor absoluto en el logaritmo porque $x^2 + 2x + 5 = (x+1)^2 + 4 > 0$ siempre).
+\sol{2\ln(x^2 + 2x + 5) + \frac{3}{2}\arctan\!\left(\frac{x + 1}{2}\right) + C}
+\end{ejemplobox}
+
+\subsubsection{Caso E: Combinación de raíz real y factor cuadrático irreducible}
+
+\begin{ejemplobox}{Ejemplo 5.9 --- Factor real simple + factor cuadrático irreducible}
+Calcula $\displaystyle \int \frac{3x^2 + 2x}{(x - 1)(x^2 + 4)}\,\mathrm{d}x$.
+\par\textbf{Resolución:} $x^2 + 4$ es irreducible en $\mathbb{R}$, así que su numerador en fracciones simples debe ser lineal ($Mx + N$):
+$$\frac{3x^2 + 2x}{(x - 1)(x^2 + 4)} = \frac{A}{x - 1} + \frac{Mx + N}{x^2 + 4}$$
+Multiplicamos por $(x-1)(x^2+4)$:
+$$3x^2 + 2x = A(x^2 + 4) + (Mx + N)(x - 1)$$
+\begin{itemize}\itemsep 1pt
+  \item Si $x = 1$: $3 + 2 = 5A \implies A = 1$.
+  \item Si $x = 0$: $0 = 4A - N \implies N = 4A = 4$.
+  \item Igualando coeficientes de $x^2$: $3 = A + M \implies M = 3 - 1 = 2$.
+\end{itemize}
+Separamos la integral y dividimos la segunda fracción en parte logarítmica y parte arcotangente:
+$$\int \left(\frac{1}{x - 1} + \frac{2x + 4}{x^2 + 4}\right)\mathrm{d}x = \int \frac{1}{x - 1}\,\mathrm{d}x + \int \frac{2x}{x^2 + 4}\,\mathrm{d}x + 4\int \frac{1}{x^2 + 2^2}\,\mathrm{d}x$$
+$$= \ln|x - 1| + \ln(x^2 + 4) + 4\cdot\frac{1}{2}\arctan\!\left(\frac{x}{2}\right) + C$$
+\sol{\ln|x - 1| + \ln(x^2 + 4) + 2\arctan\!\left(\frac{x}{2}\right) + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 5.10 --- Síntesis completa: División + factorización + fracciones simples}
+Calcula $\displaystyle \int \frac{x^3 + 2x - 3}{x^2 - x - 2}\,\mathrm{d}x$.
+\par\textbf{Resolución:}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{División euclídea} ($\deg 3 \ge \deg 2$): Dividiendo $x^3 + 0x^2 + 2x - 3$ entre $x^2 - x - 2$ resulta cociente $C(x) = x + 1$ y resto $R(x) = 5x - 1$.
+  $$\frac{x^3 + 2x - 3}{x^2 - x - 2} = x + 1 + \frac{5x - 1}{x^2 - x - 2}$$
+  \item \textbf{Factorizamos el denominador:} $x^2 - x - 2 = (x - 2)(x + 1)$.
+  \item \textbf{Fracciones simples:} $\frac{5x - 1}{(x-2)(x+1)} = \frac{A}{x - 2} + \frac{B}{x + 1} \implies 5x - 1 = A(x + 1) + B(x - 2)$.
+  \begin{itemize}\itemsep 1pt
+    \item $x = 2 \implies 9 = 3A \implies A = 3$.
+    \item $x = -1 \implies -6 = -3B \implies B = 2$.
+  \end{itemize}
+  \item \textbf{Integramos:} $\displaystyle \int \left(x + 1 + \frac{3}{x - 2} + \frac{2}{x + 1}\right)\mathrm{d}x$.
+\end{enumerate}
+\sol{\frac{x^2}{2} + x + 3\ln|x - 2| + 2\ln|x + 1| + C}
+\end{ejemplobox}
+
+\minspace{6.5cm}
+
+% ==============================================================================
+% CAPITULO 6: INTEGRALES TRIGONOMETRICAS
+% ==============================================================================
+\section{Integrales Trigonométricas}
+
+\subsection{Identidades clave y árbol de decisión}
+
+\begin{formulabox}{Formulario Trigonométrico Imprescindible para Integrar}
+\begin{multicols}{2}
+\begin{itemize}\itemsep 2pt
+  \item \textbf{Pitagórica:} $\sin^2 x + \cos^2 x = 1$
+  \item \textbf{Tangente / Secante:} $1 + \tan^2 x = \sec^2 x = \frac{1}{\cos^2 x}$
+  \item \textbf{Reducción de grado (pares):}
+  \begin{align*}
+    \sin^2 x &= \frac{1 - \cos(2x)}{2} \\
+    \cos^2 x &= \frac{1 + \cos(2x)}{2}
+  \end{align*}
+  \item \textbf{Ángulo doble:} $\sin(2x) = 2\sin x\cos x$
+  \item \textbf{Producto a suma (frecuencias distintas):}
+  \begin{align*}
+    \sin A\cos B &= \tfrac{1}{2}\big[\sin(A+B) + \sin(A-B)\big] \\
+    \cos A\cos B &= \tfrac{1}{2}\big[\cos(A+B) + \cos(A-B)\big] \\
+    \sin A\sin B &= \tfrac{1}{2}\big[\cos(A-B) - \cos(A+B)\big]
+  \end{align*}
+\end{itemize}
+\end{multicols}
+\end{formulabox}
+
+\begin{trucobox}{Estrategia según la forma trigonométrica}
+\begin{itemize}\itemsep 1.5pt
+  \item \textbf{Producto $\displaystyle \int \sin^m x \cos^n x\,\mathrm{d}x$:}
+  \begin{enumerate}\itemsep 1pt
+    \item \textit{Al menos un exponente es impar positivo:} aparta \textbf{un} factor ($\sin x$ o $\cos x$) junto a $\mathrm{d}x$ para fabricar el diferencial, y convierte el resto (que habrá quedado con potencia par) mediante $\sin^2 x + \cos^2 x = 1$.
+    \item \textit{Ambos exponentes son pares ($\ge 0$):} sustituye $\sin^2 x$ y $\cos^2 x$ por las identidades del ángulo mitad $\frac{1 \mp \cos(2x)}{2}$ para bajar el grado.
+  \end{enumerate}
+  \item \textbf{Racionales $R(\sin x, \cos x)$:} Si no funciona ningún atajo por conjugado o paridad (impar en $\sin \to t=\cos x$; impar en $\cos \to t=\sin x$; par en ambos $\to t=\tan x$), siempre funciona el \textbf{cambio universal} $t = \tan(x/2)$:
+  $$\sin x = \frac{2t}{1 + t^2}, \qquad \cos x = \frac{1 - t^2}{1 + t^2}, \qquad \mathrm{d}x = \frac{2\,\mathrm{d}t}{1 + t^2}$$
+\end{itemize}
+\end{trucobox}
+
+\subsection{Ejemplos Resueltos --- Bloque 6: Trigonométricas de Todo Tipo}
+
+\begin{ejemplobox}{Ejemplo 6.1 --- Potencia impar aislada: $\sin^3 x$}
+Calcula $\displaystyle \int \sin^3 x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Exponente impar ($3$). Apartamos un $\sin x$ para el diferencial y convertimos $\sin^2 x = 1 - \cos^2 x$:
+$$\int \sin^2 x \cdot \sin x\,\mathrm{d}x = \int (1 - \cos^2 x)\sin x\,\mathrm{d}x$$
+Hacemos $t = \cos x \implies \mathrm{d}t = -\sin x\,\mathrm{d}x \implies \sin x\,\mathrm{d}x = -\mathrm{d}t$:
+$$\int (1 - t^2)(-\mathrm{d}t) = \int (t^2 - 1)\,\mathrm{d}t = \frac{t^3}{3} - t + C$$
+\sol{-\cos x + \frac{\cos^3 x}{3} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 6.2 --- Producto con un exponente impar: $\sin^2 x \cos^3 x$}
+Calcula $\displaystyle \int \sin^2 x \cos^3 x\,\mathrm{d}x$.
+\par\textbf{Resolución:} El exponente del coseno es impar ($3$). Apartamos un $\cos x$ junto a $\mathrm{d}x$ y pasamos $\cos^2 x = 1 - \sin^2 x$:
+$$\int \sin^2 x (1 - \sin^2 x)\cos x\,\mathrm{d}x$$
+Cambio $t = \sin x \implies \mathrm{d}t = \cos x\,\mathrm{d}x$:
+$$\int t^2(1 - t^2)\,\mathrm{d}t = \int (t^2 - t^4)\,\mathrm{d}t = \frac{t^3}{3} - \frac{t^5}{5} + C$$
+\sol{\frac{\sin^3 x}{3} - \frac{\sin^5 x}{5} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 6.3 --- Potencia par: $\sin^2 x$}
+Calcula $\displaystyle \int \sin^2 x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Exponente par. Aplicamos la fórmula de reducción $\sin^2 x = \frac{1 - \cos(2x)}{2}$:
+$$\int \frac{1 - \cos(2x)}{2}\,\mathrm{d}x = \frac{1}{2}\int \mathrm{d}x - \frac{1}{2}\int \cos(2x)\,\mathrm{d}x = \frac{x}{2} - \frac{1}{2}\cdot\frac{\sin(2x)}{2} + C$$
+\sol{\frac{x}{2} - \frac{\sin(2x)}{4} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 6.4 --- Potencia par de grado 4: $\cos^4 x$}
+Calcula $\displaystyle \int \cos^4 x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Escribimos $\cos^4 x = (\cos^2 x)^2$ y aplicamos la reducción dos veces seguidas:
+$$\cos^4 x = \left(\frac{1 + \cos(2x)}{2}\right)^2 = \frac{1 + 2\cos(2x) + \cos^2(2x)}{4}$$
+Sustituimos de nuevo $\cos^2(2x) = \frac{1 + \cos(4x)}{2}$:
+$$\cos^4 x = \frac{1}{4}\left(1 + 2\cos(2x) + \frac{1 + \cos(4x)}{2}\right) = \frac{3}{8} + \frac{1}{2}\cos(2x) + \frac{1}{8}\cos(4x)$$
+Integramos término a término:
+$$\int \left(\frac{3}{8} + \frac{1}{2}\cos(2x) + \frac{1}{8}\cos(4x)\right)\mathrm{d}x = \frac{3}{8}x + \frac{1}{2}\frac{\sin(2x)}{2} + \frac{1}{8}\frac{\sin(4x)}{4} + C$$
+\sol{\frac{3x}{8} + \frac{\sin(2x)}{4} + \frac{\sin(4x)}{32} + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 6.5 --- Potencia de tangente: $\tan^3 x$}
+Calcula $\displaystyle \int \tan^3 x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Separamos $\tan^2 x \cdot \tan x$ y sustituimos $\tan^2 x = \frac{1}{\cos^2 x} - 1$:
+$$\int \tan x\left(\frac{1}{\cos^2 x} - 1\right)\mathrm{d}x = \int \frac{\tan x}{\cos^2 x}\,\mathrm{d}x - \int \tan x\,\mathrm{d}x$$
+La primera integral es inmediata de tipo potencia ($\int u \cdot u'\,\mathrm{d}x$ con $u = \tan x$, $u' = \frac{1}{\cos^2 x}$) y la segunda es $\int \frac{\sin x}{\cos x}\,\mathrm{d}x = -\ln|\cos x|$:
+$$= \frac{\tan^2 x}{2} - (-\ln|\cos x|) + C$$
+\sol{\frac{\tan^2 x}{2} + \ln|\cos x| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 6.6 --- Secante al cubo (cíclica trigonométrica)}
+Calcula $\displaystyle I = \int \frac{\mathrm{d}x}{\cos^3 x} = \int \sec^3 x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Partimos $\sec^3 x = \sec x \cdot \sec^2 x$ e integramos por partes:
+$$\begin{cases} u = \sec x \implies \mathrm{d}u = \sec x \tan x\,\mathrm{d}x \\ \mathrm{d}v = \sec^2 x\,\mathrm{d}x \implies v = \tan x \end{cases}$$
+$$I = \sec x \tan x - \int \sec x \tan^2 x\,\mathrm{d}x$$
+Sustituimos $\tan^2 x = \sec^2 x - 1$:
+$$I = \sec x \tan x - \int \sec x(\sec^2 x - 1)\,\mathrm{d}x = \sec x \tan x - I + \int \sec x\,\mathrm{d}x$$
+Recordando que $\int \sec x\,\mathrm{d}x = \ln|\sec x + \tan x|$ (multiplica y divide por $\sec x + \tan x$), pasamos $-I$ sumando:
+$$2I = \sec x \tan x + \ln|\sec x + \tan x|$$
+\sol{\frac{1}{2}\sec x \tan x + \frac{1}{2}\ln|\sec x + \tan x| + C}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 6.7 --- Producto de frecuencias distintas}
+Calcula $\displaystyle \int \sin(3x)\cos(x)\,\mathrm{d}x$.
+\par\textbf{Resolución:} Usamos la identidad producto-a-suma $\sin A \cos B = \frac{1}{2}[\sin(A+B) + \sin(A-B)]$ con $A = 3x$ y $B = x$:
+$$\int \frac{1}{2}\big[\sin(4x) + \sin(2x)\big]\,\mathrm{d}x = \frac{1}{2}\left(-\frac{\cos(4x)}{4} - \frac{\cos(2x)}{2}\right) + C$$
+\sol{-\frac{\cos(4x)}{8} - \frac{\cos(2x)}{4} + C}
+\end{ejemplobox}
+
+\begin{ejemploboxlong}{Ejemplo 6.8 --- Racionales trigonométricas: Conjugado vs. Cambio Universal $t = \tan(x/2)$}
+Calcula: \quad \textbf{a)} $\displaystyle \int \frac{1}{1 + \cos x}\,\mathrm{d}x$ \qquad \textbf{b)} $\displaystyle \int \frac{1}{2 + \cos x}\,\mathrm{d}x$ \qquad \textbf{c)} $\displaystyle \int \frac{1}{\sin x}\,\mathrm{d}x$.
+\par\textbf{Resolución:}
+\begin{itemize}\itemsep 4pt
+  \item \textbf{a) Atajo del conjugado:} Multiplicamos numerador y denominador por $(1 - \cos x)$:
+  $$\int \frac{1 - \cos x}{1 - \cos^2 x}\,\mathrm{d}x = \int \frac{1 - \cos x}{\sin^2 x}\,\mathrm{d}x = \int \frac{1}{\sin^2 x}\,\mathrm{d}x - \int (\sin x)^{-2}\cos x\,\mathrm{d}x = -\cot x + \frac{1}{\sin x} + C$$
+  (Que equivale trigonométricamente a $\displaystyle \mathbf{\tan\!\left(\frac{x}{2}\right) + C}$, resultado inmediato del cambio universal).
+
+  \item \textbf{b) Cambio universal $t = \tan(x/2)$:} Como hay un $2$, el conjugado no simplifica a monomio. Aplicamos $\cos x = \frac{1-t^2}{1+t^2}$ y $\mathrm{d}x = \frac{2\,\mathrm{d}t}{1+t^2}$:
+  $$\int \frac{1}{2 + \frac{1 - t^2}{1 + t^2}}\cdot\frac{2\,\mathrm{d}t}{1 + t^2} = \int \frac{2\,\mathrm{d}t}{2(1 + t^2) + (1 - t^2)} = \int \frac{2\,\mathrm{d}t}{t^2 + 3} = \frac{2}{\sqrt{3}}\arctan\!\left(\frac{t}{\sqrt{3}}\right) + C$$
+  Deshacemos $t = \tan(x/2)$:
+  $$\mathbf{\frac{2}{\sqrt{3}}\arctan\!\left(\frac{\tan(x/2)}{\sqrt{3}}\right) + C}$$
+
+  \item \textbf{c) Por cambio universal $t = \tan(x/2)$:} Sustituimos $\sin x = \frac{2t}{1+t^2}$ y $\mathrm{d}x = \frac{2\,\mathrm{d}t}{1+t^2}$:
+  $$\int \frac{1}{\frac{2t}{1+t^2}}\cdot\frac{2\,\mathrm{d}t}{1+t^2} = \int \frac{\mathrm{d}t}{t} = \ln|t| + C = \mathbf{\ln\!\left|\tan\!\left(\frac{x}{2}\right)\right| + C}$$
+\end{itemize}
+\end{ejemploboxlong}
+
+\minspace{6.5cm}
+
+% ==============================================================================
+% CAPITULO 7: INTEGRAL DEFINIDA, TEOREMA FUNDAMENTAL Y BARROW
+% ==============================================================================
+\section{Integral Definida, Regla de Barrow y Teorema Fundamental}
+
+\subsection{Concepto, propiedades y diferencia entre integral definida y área}
+
+Dada una función continua $f(x)$ en $[a, b]$, la \textbf{integral definida} $\displaystyle \int_a^b f(x)\,\mathrm{d}x$ representa el límite de las sumas de áreas de rectángulos infinitesimales (sumas de Riemann) y devuelve un \textbf{número real} igual al \textbf{área neta con signo}: las regiones por encima del eje $X$ suman en positivo y las regiones por debajo suman en negativo.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=9.6cm, height=5.0cm,
+  axis lines=middle,
+  xlabel={$x$}, ylabel={$y$},
+  ylabel style={at={(ticklabel cs:0.95)}, anchor=east},
+  xmin=-2.5, xmax=2.55,
+  ymin=-3.6, ymax=4.9,
+  xtick={-2,-1,0,1,2},
+  ytick={-3,0,3},
+  grid=major,
+  grid style={gray!20},
+  samples=100
+]
+  \addplot[name path=curve, mainblue, very thick, domain=-2.15:2.15] {x^3 - 4*x};
+  \addplot[name path=axis, draw=none, domain=-2.15:2.15] {0};
+  \addplot[subblue!28] fill between[of=curve and axis, soft clip={domain=-2:0}];
+  \addplot[alertred!25] fill between[of=curve and axis, soft clip={domain=0:2}];
+  \node[font=\footnotesize\bfseries\color{mainblue}] at (axis cs:-1.05,1.4) {$A_1 = +4$};
+  \node[font=\footnotesize\bfseries\color{alertred}] at (axis cs:1.05,-1.4) {$A_2 = -4$};
+  \node[anchor=north east, font=\scriptsize, fill=white, draw=borderblue, rounded corners=1.5pt, inner sep=2.5pt, align=left] at (axis cs:2.45,4.65)
+    {$\displaystyle \int_{-2}^2 (x^3-4x)\,\mathrm{d}x = 4 - 4 = 0$ \\[2pt] $\text{Área} = |4| + |-4| = 8\;\text{u}^2$};
+\end{axis}
+\end{tikzpicture}
+\par\vspace{-2pt}
+{\footnotesize \textbf{Figura 2:} La integral definida mide área neta con signo ($0$ en $[-2,2]$ para $f(x)=x^3-4x$ por simetría impar), mientras que el área geométrica suma valores absolutos ($8\text{ u}^2$).}
+\end{center}
+
+\begin{formulabox}{Propiedades y Teoremas Clave de la Integral Definida}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Propiedades operativas:}
+  \begin{itemize}\itemsep 1pt
+    \item $\displaystyle \int_a^a f(x)\,\mathrm{d}x = 0$, \qquad $\displaystyle \int_b^a f(x)\,\mathrm{d}x = -\int_a^b f(x)\,\mathrm{d}x$, \qquad $\displaystyle \int_a^b f(x)\,\mathrm{d}x = \int_a^c f(x)\,\mathrm{d}x + \int_c^b f(x)\,\mathrm{d}x$.
+    \item \textbf{Simetría en $[-a, a]$:} si $f$ es \textbf{par} ($f(-x)=f(x)$), entonces $\int_{-a}^a f(x)\,\mathrm{d}x = 2\int_0^a f(x)\,\mathrm{d}x$; si $f$ es \textbf{impar} ($f(-x)=-f(x)$), entonces $\int_{-a}^a f(x)\,\mathrm{d}x = 0$.
+  \end{itemize}
+  \item \textbf{Regla de Barrow:} Si $F(x)$ es una primitiva cualquiera de $f(x)$ (no hace falta escribir $+C$), entonces:
+  $$\int_a^b f(x)\,\mathrm{d}x = \Big[F(x)\Big]_a^b = F(b) - F(a)$$
+  \item \textbf{Teorema del Valor Medio del Cálculo Integral:} Si $f$ es continua en $[a,b]$, existe $c \in (a,b)$ tal que:
+  $$\int_a^b f(x)\,\mathrm{d}x = f(c)\,(b - a) \qquad \Longleftrightarrow \qquad \text{Valor medio: } \mu = f(c) = \frac{1}{b-a}\int_a^b f(x)\,\mathrm{d}x$$
+  \item \textbf{Teorema Fundamental del Cálculo Integral (TFCI) + Regla de la Cadena:} Si $f$ es continua, la función área acumulada $F(x) = \int_a^x f(t)\,\mathrm{d}t$ es derivable y $F'(x) = f(x)$. En general, para límites variables derivables $g(x)$ y $h(x)$:
+  $$\frac{\mathrm{d}}{\mathrm{d}x}\left[\int_{h(x)}^{g(x)} f(t)\,\mathrm{d}t\right] = f\big(g(x)\big)\cdot g'(x) - f\big(h(x)\big)\cdot h'(x)$$
+\end{enumerate}
+\end{formulabox}
+
+\subsection{Ejemplos Resueltos --- Bloque 7: Barrow, Simetrías, Cambio de Límites y TFCI}
+
+\begin{ejemplobox}{Ejemplo 7.1 --- Regla de Barrow directa}
+Calcula $\displaystyle \int_2^3 \frac{x}{x^2 - 1}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Hallamos una primitiva ajustando el $2$ del numerador (tipo $\frac{u'}{u}$):
+$$\int \frac{x}{x^2 - 1}\,\mathrm{d}x = \frac{1}{2}\int \frac{2x}{x^2 - 1}\,\mathrm{d}x = \frac{1}{2}\ln|x^2 - 1|$$
+Aplicamos Barrow entre $2$ y $3$ (usando propiedades de logaritmos para simplificar):
+$$\left[\frac{1}{2}\ln|x^2 - 1|\right]_2^3 = \frac{1}{2}\ln(3^2 - 1) - \frac{1}{2}\ln(2^2 - 1) = \frac{1}{2}\big(\ln 8 - \ln 3\big)$$
+\sol{\frac{1}{2}\ln\!\left(\frac{8}{3}\right)}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 7.2 --- Cambio de variable en integral definida (actualizando límites)}
+Calcula: \quad \textbf{a)} $\displaystyle \int_0^{\pi/2} \cos x \cdot e^{\sin x}\,\mathrm{d}x$ \qquad \textbf{b)} $\displaystyle \int_0^3 x\sqrt{x + 1}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Al hacer un cambio de variable en una integral definida, \textbf{cambia también los límites de integración} a la nueva variable $t$ para no tener que deshacer el cambio al final:
+\begin{itemize}\itemsep 4pt
+  \item \textbf{a)} Tomamos $t = \sin x \implies \mathrm{d}t = \cos x\,\mathrm{d}x$. Límites: si $x = 0 \to t = \sin 0 = 0$; si $x = \frac{\pi}{2} \to t = \sin(\frac{\pi}{2}) = 1$.
+  $$\int_0^1 e^t\,\mathrm{d}t = \Big[e^t\Big]_0^1 = e^1 - e^0 = \mathbf{e - 1}$$
+
+  \item \textbf{b)} Tomamos $t = \sqrt{x + 1} \implies t^2 = x + 1 \implies x = t^2 - 1$ y $\mathrm{d}x = 2t\,\mathrm{d}t$. Límites: si $x = 0 \to t = \sqrt{1} = 1$; si $x = 3 \to t = \sqrt{4} = 2$.
+  \begin{align*}
+    \int_1^2 (t^2 - 1)\cdot t \cdot 2t\,\mathrm{d}t &= 2\int_1^2 (t^4 - t^2)\,\mathrm{d}t = 2\left[\frac{t^5}{5} - \frac{t^3}{3}\right]_1^2 \\
+    &= 2\left[\left(\frac{32}{5} - \frac{8}{3}\right) - \left(\frac{1}{5} - \frac{1}{3}\right)\right] = 2\left(\frac{31}{5} - \frac{7}{3}\right) = 2\cdot\frac{58}{15} = \mathbf{\frac{116}{15}}
+  \end{align*}
+\end{itemize}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 7.3 --- Integración por partes definida}
+Calcula $\displaystyle \int_1^e x \ln x\,\mathrm{d}x$.
+\par\textbf{Resolución:} Elegimos $u = \ln x \implies \mathrm{d}u = \frac{1}{x}\,\mathrm{d}x$ y $\mathrm{d}v = x\,\mathrm{d}x \implies v = \frac{x^2}{2}$:
+$$\int_1^e x\ln x\,\mathrm{d}x = \left[\frac{x^2}{2}\ln x\right]_1^e - \int_1^e \frac{x^2}{2}\cdot\frac{1}{x}\,\mathrm{d}x = \left(\frac{e^2}{2}\ln e - \frac{1}{2}\ln 1\right) - \frac{1}{2}\left[\frac{x^2}{2}\right]_1^e$$
+$$= \frac{e^2}{2} - \frac{1}{4}(e^2 - 1) = \frac{2e^2 - e^2 + 1}{4}$$
+\sol{\frac{e^2 + 1}{4}}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 7.4 --- Simplificación instantánea por simetría en $[-a, a]$}
+Calcula $\displaystyle \int_{-2}^2 \left(x^5 \cos x + 3x^2 - 1\right)\mathrm{d}x$.
+\par\textbf{Resolución:} Como el intervalo $[-2, 2]$ es simétrico respecto al origen:
+\begin{itemize}\itemsep 1.5pt
+  \item $f_1(x) = x^5\cos x$ es \textbf{impar}, ya que $(-x)^5\cos(-x) = -x^5\cos x = -f_1(x) \implies \int_{-2}^2 x^5\cos x\,\mathrm{d}x = 0$ sin necesidad de integrar por partes cinco veces.
+  \item $f_2(x) = 3x^2 - 1$ es \textbf{par} $\implies \int_{-2}^2 (3x^2 - 1)\,\mathrm{d}x = 2\int_0^2 (3x^2 - 1)\,\mathrm{d}x$.
+\end{itemize}
+$$2\Big[x^3 - x\Big]_0^2 = 2\big((8 - 2) - 0\big) = 2\cdot 6$$
+\sol{12}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 7.5 --- Integral definida de un valor absoluto}
+Calcula $\displaystyle \int_{-1}^3 |x^2 - 1|\,\mathrm{d}x$.
+\par\textbf{Resolución:} Estudiamos el signo de $x^2 - 1$ dentro de $[-1, 3]$. Se anula en $x = \pm 1$:
+\begin{itemize}\itemsep 1pt
+  \item En $[-1, 1]$, $x^2 - 1 \le 0 \implies |x^2 - 1| = 1 - x^2$.
+  \item En $[1, 3]$, $x^2 - 1 \ge 0 \implies |x^2 - 1| = x^2 - 1$.
+\end{itemize}
+Partimos la integral por aditividad en $x = 1$:
+$$\int_{-1}^1 (1 - x^2)\,\mathrm{d}x + \int_1^3 (x^2 - 1)\,\mathrm{d}x = \left[x - \frac{x^3}{3}\right]_{-1}^1 + \left[\frac{x^3}{3} - x\right]_1^3$$
+$$= \left[\left(1 - \frac{1}{3}\right) - \left(-1 + \frac{1}{3}\right)\right] + \left[(9 - 3) - \left(\frac{1}{3} - 1\right)\right] = \left(\frac{2}{3} + \frac{2}{3}\right) + \left(6 + \frac{2}{3}\right) = \frac{4}{3} + \frac{20}{3}$$
+\sol{8}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 7.6 --- Teorema Fundamental del Cálculo y L'Hôpital (clásico de examen)}
+\textbf{a)} Halla $F'(x)$ para $\displaystyle F(x) = \int_x^{x^2} e^{-t^2}\,\mathrm{d}t$. \qquad \textbf{b)} Calcula $\displaystyle \lim_{x \to 0} \frac{\int_0^x \sin(t^2)\,\mathrm{d}t}{x^3}$.
+\par\textbf{Resolución:}
+\begin{itemize}\itemsep 3pt
+  \item \textbf{a)} Aunque $e^{-t^2}$ no tiene primitiva elemental, el TFCI nos da la derivada directamente usando $g(x) = x^2$ ($g'=2x$) y $h(x) = x$ ($h'=1$):
+  $$F'(x) = e^{-(x^2)^2}\cdot(2x) - e^{-x^2}\cdot 1 = \mathbf{2x\,e^{-x^4} - e^{-x^2}}$$
+
+  \item \textbf{b)} Al sustituir $x = 0$ resulta $\frac{\int_0^0 \sin(t^2)\,\mathrm{d}t}{0^3} = \left[\frac{0}{0}\right]$. Aplicamos la Regla de L'Hôpital derivando el numerador con el TFCI:
+  $$\lim_{x \to 0} \frac{\frac{\mathrm{d}}{\mathrm{d}x}\left[\int_0^x \sin(t^2)\,\mathrm{d}t\right]}{\frac{\mathrm{d}}{\mathrm{d}x}[x^3]} = \lim_{x \to 0} \frac{\sin(x^2)}{3x^2} = \left[\frac{0}{0}\right] \stackrel{\text{L'Hôp}}{=} \lim_{x \to 0} \frac{2x\cos(x^2)}{6x} = \lim_{x \to 0} \frac{\cos(x^2)}{3} = \mathbf{\frac{1}{3}}$$
+\end{itemize}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 7.7 --- Teorema del Valor Medio Integral}
+Halla el valor medio de $f(x) = x^2$ en el intervalo $[0, 3]$ y el punto $c \in (0, 3)$ en el que la función alcanza dicho valor.
+\par\textbf{Resolución:} Calculamos la integral definida y dividimos entre la longitud del intervalo ($3 - 0 = 3$):
+$$\mu = \frac{1}{3 - 0}\int_0^3 x^2\,\mathrm{d}x = \frac{1}{3}\left[\frac{x^3}{3}\right]_0^3 = \frac{1}{3}\cdot 9 = 3$$
+Buscamos $c \in (0, 3)$ tal que $f(c) = 3$:
+$$c^2 = 3 \implies c = \sqrt{3} \in (0, 3) \quad (\text{descartamos } -\sqrt{3} \text{ por estar fuera del intervalo})$$
+\sol{\mu = 3, \quad c = \sqrt{3}}
+\end{ejemplobox}
+
+\newpage
+
+% ==============================================================================
+% CAPITULO 8: APLICACIONES GEOMETRICAS (AREAS Y VOLUMENES)
+% ==============================================================================
+\section{Aplicaciones Geométricas: Cálculo de Áreas y Volúmenes}
+
+\subsection{Métodos rigurosos para áreas y sólidos de revolución}
+
+\begin{formulabox}{Fórmulas de Áreas Planas y Volúmenes de Revolución}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Área encerrada por $f(x)$ y el eje $X$ en $[a, b]$:}
+  \begin{itemize}\itemsep 1pt
+    \item Resuelve $f(x) = 0$ y quédate con las raíces $c_1, \dots, c_k$ interiores a $(a, b)$.
+    \item Suma el valor absoluto de las integrales en cada subintervalo:
+    $$A = \left|\int_a^{c_1} f(x)\,\mathrm{d}x\right| + \left|\int_{c_1}^{c_2} f(x)\,\mathrm{d}x\right| + \dots + \left|\int_{c_k}^b f(x)\,\mathrm{d}x\right|$$
+  \end{itemize}
+  \item \textbf{Área encerrada entre dos curvas $f(x)$ y $g(x)$:}
+  \begin{itemize}\itemsep 1pt
+    \item Resuelve $f(x) = g(x)$ para obtener todos los puntos de corte ordenados $x_1 < x_2 < \dots < x_n$.
+    \item En cada intervalo $(x_i, x_{i+1})$ integra $(\text{curva superior} - \text{curva inferior})$, o bien toma el valor absoluto de la integral de la diferencia:
+    $$A = \sum_{i=1}^{n-1} \left|\int_{x_i}^{x_{i+1}} \big(f(x) - g(x)\big)\,\mathrm{d}x\right|$$
+  \end{itemize}
+  \item \textbf{Volumen de revolución al girar alrededor del eje $X$ entre $x = a$ y $x = b$:}
+  $$V_{\text{una curva}} = \pi \int_a^b \big[f(x)\big]^2\,\mathrm{d}x \qquad\qquad V_{\text{arandela (entre dos curvas)}} = \pi \int_a^b \Big(\big[f_{\text{ext}}(x)\big]^2 - \big[f_{\text{int}}(x)\big]^2\Big)\,\mathrm{d}x$$
+\end{enumerate}
+\end{formulabox}
+
+\subsection{Ejemplos Resueltos --- Bloque 8: Áreas con Cambios de Signo, Parámetros y Volúmenes}
+
+\begin{ejemploboxlong}{Ejemplo 8.1 --- Área entre una curva cúbica y una recta (con cambio de signo)}
+Calcula el área encerrada entre la curva $f(x) = x^3 + x^2$ y la recta $g(x) = 2x$.
+\par\textbf{Resolución:}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Puntos de corte:} Igualamos $f(x) = g(x)$:
+  $$x^3 + x^2 = 2x \implies x^3 + x^2 - 2x = 0 \implies x(x^2 + x - 2) = 0 \implies x(x + 2)(x - 1) = 0$$
+  Las raíces ordenadas son $x_1 = -2$, $x_2 = 0$, $x_3 = 1$. Hay \textbf{dos regiones} cerradas: $[-2, 0]$ y $[0, 1]$.
+  \item \textbf{Signo de $h(x) = f(x) - g(x) = x^3 + x^2 - 2x$ en cada subintervalo:}
+  \begin{itemize}\itemsep 1pt
+    \item En $(-2, 0)$ (probamos $x=-1$): $h(-1) = -1 + 1 + 2 = +2 > 0 \implies f(x)$ va por encima.
+    \item En $(0, 1)$ (probamos $x=0.5$): $h(0.5) = 0.125 + 0.25 - 1 = -0.625 < 0 \implies g(x)$ va por encima.
+  \end{itemize}
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=8.6cm, height=4.4cm,
+  axis lines=middle,
+  xlabel={$x$}, ylabel={$y$},
+  xmin=-2.35, xmax=1.45,
+  ymin=-4.8, ymax=3.0,
+  xtick={-2,-1,0,1},
+  ytick={-4,-2,0,2},
+  grid=major, grid style={gray!20},
+  samples=100,
+  legend pos=north west,
+  legend style={font=\scriptsize, draw=borderblue, fill=white}
+]
+  \addplot[name path=fc, mainblue, very thick, domain=-2.25:1.3] {x^3 + x^2};
+  \addlegendentry{$f(x)=x^3+x^2$}
+  \addplot[name path=gc, alertred, thick, dashed, domain=-2.25:1.3] {2*x};
+  \addlegendentry{$g(x)=2x$}
+  \addplot[subblue!28] fill between[of=fc and gc, soft clip={domain=-2:0}];
+  \addplot[tipgreen!28] fill between[of=fc and gc, soft clip={domain=0:1}];
+  \addplot[only marks, mark=*, mark size=2pt, black] coordinates {(-2,-4) (0,0) (1,2)};
+\end{axis}
+\end{tikzpicture}
+\par\vspace{-3pt}
+{\footnotesize \textbf{Figura 3:} Área encerrada entre $f(x)=x^3+x^2$ y $g(x)=2x$ dividida en $[-2, 0]$ y $[0, 1]$.}
+\end{center}
+
+\begin{enumerate}\setcounter{enumi}{2}\itemsep 2pt
+  \item \textbf{Calculamos una primitiva de $h(x)$:} $H(x) = \frac{x^4}{4} + \frac{x^3}{3} - x^2$.
+  $$A_1 = \left|\int_{-2}^0 (x^3 + x^2 - 2x)\,\mathrm{d}x\right| = \big|H(0) - H(-2)\big| = \left|0 - \left(4 - \frac{8}{3} - 4\right)\right| = \frac{8}{3}$$
+  $$A_2 = \left|\int_0^1 (x^3 + x^2 - 2x)\,\mathrm{d}x\right| = \big|H(1) - H(0)\big| = \left|\frac{1}{4} + \frac{1}{3} - 1\right| = \left|-\frac{5}{12}\right| = \frac{5}{12}$$
+  $$A_{\text{total}} = \frac{8}{3} + \frac{5}{12} = \frac{32 + 5}{12}$$
+\end{enumerate}
+\sol{\frac{37}{12}\;\text{u}^2}
+\end{ejemploboxlong}
+
+\begin{ejemplobox}{Ejemplo 8.2 --- Área entre dos cúbicas con tres puntos de corte}
+Calcula el área encerrada entre $f(x) = x^3 + x^2 - 6$ y $g(x) = x^2 + 7x$.
+\par\textbf{Resolución:}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Puntos de corte:} $f(x) - g(x) = (x^3 + x^2 - 6) - (x^2 + 7x) = x^3 - 7x - 6 = 0$.\\
+  Factorizando por Ruffini (probando divisores de $-6$):
+  $$x^3 - 7x - 6 = (x + 1)(x^2 - x - 6) = (x + 2)(x + 1)(x - 3) = 0$$
+  Cortes ordenados: $x = -2$, $x = -1$ y $x = 3$.
+  \item \textbf{Primitiva de la diferencia:} $H(x) = \frac{x^4}{4} - \frac{7x^2}{2} - 6x$.
+  \begin{itemize}\itemsep 1.5pt
+    \item Evaluamos en los tres extremos:
+    $$H(-2) = 4 - 14 + 12 = 2, \qquad H(-1) = \frac{1}{4} - \frac{7}{2} + 6 = \frac{11}{4}, \qquad H(3) = \frac{81}{4} - \frac{63}{2} - 18 = -\frac{117}{4}$$
+    \item En $[-2, -1]$: $A_1 = |H(-1) - H(-2)| = \left|\frac{11}{4} - 2\right| = \frac{3}{4}$.
+    \item En $[-1, 3]$: $A_2 = |H(3) - H(-1)| = \left|-\frac{117}{4} - \frac{11}{4}\right| = \frac{128}{4} = 32$.
+  \end{itemize}
+\end{enumerate}
+$$A_{\text{total}} = \frac{3}{4} + 32 = \frac{131}{4}$$
+\sol{\frac{131}{4}\;\text{u}^2 = 32.75\;\text{u}^2}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 8.3 --- Área entre una parábola, su recta tangente y el eje $X$}
+Halla el área del recinto limitado por la parábola $f(x) = x^2$, la recta tangente a $f(x)$ en $x = 2$, y el eje $X$.
+\par\textbf{Resolución:}
+\begin{enumerate}\itemsep 2pt
+  \item \textbf{Ecuación de la recta tangente en $x_0 = 2$:} $f(2) = 4$ y $f'(x) = 2x \implies m = f'(2) = 4$.
+  $$y - 4 = 4(x - 2) \implies y_{\text{tan}} = 4x - 4$$
+  \item \textbf{Límites del recinto:}
+  \begin{itemize}\itemsep 1pt
+    \item La parábola corta al eje $X$ en $x = 0$.
+    \item La recta tangente corta al eje $X$ en $4x - 4 = 0 \implies x = 1$.
+    \item Parábola y tangente tocan en $x = 2$.
+  \end{itemize}
+  \item \textbf{Planteamos el área en dos tramos:} de $0$ a $1$ el techo es $x^2$ y el suelo es el eje $X$ ($y=0$); de $1$ a $2$ el techo es $x^2$ y el suelo es la tangente $4x - 4$:
+  $$A = \int_0^1 x^2\,\mathrm{d}x + \int_1^2 \big(x^2 - (4x - 4)\big)\,\mathrm{d}x = \left[\frac{x^3}{3}\right]_0^1 + \left[\frac{x^3}{3} - 2x^2 + 4x\right]_1^2$$
+  $$= \frac{1}{3} + \left[\left(\frac{8}{3} - 8 + 8\right) - \left(\frac{1}{3} - 2 + 4\right)\right] = \frac{1}{3} + \left(\frac{8}{3} - \frac{7}{3}\right) = \frac{1}{3} + \frac{1}{3}$$
+\end{enumerate}
+\sol{\frac{2}{3}\;\text{u}^2}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 8.4 --- Área entre exponenciales y una recta vertical}
+Calcula el área del recinto limitado por las gráficas $y = e^x$, $y = e^{-x}$ y la recta $x = 1$.
+\par\textbf{Resolución:} Hallamos el punto de corte entre ambas exponenciales: $e^x = e^{-x} \implies x = -x \implies x = 0$. En $[0, 1]$, claramente $e^x \ge e^{-x}$:
+$$A = \int_0^1 (e^x - e^{-x})\,\mathrm{d}x = \Big[e^x + e^{-x}\Big]_0^1 = (e^1 + e^{-1}) - (e^0 + e^0)$$
+\sol{e + \frac{1}{e} - 2\;\text{u}^2}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 8.5 --- Problema inverso con parámetro (muy frecuente en examen)}
+Halla el valor del parámetro $a > 0$ para que el área encerrada entre $f(x) = x^2$ y $g(x) = ax$ valga exactamente $\frac{9}{2}\;\text{u}^2$.
+\par\textbf{Resolución:} Buscamos los cortes: $x^2 = ax \implies x(x - a) = 0 \implies x = 0$ y $x = a$. Como $a > 0$, en $[0, a]$ la recta $ax$ está por encima de $x^2$:
+$$A = \int_0^a (ax - x^2)\,\mathrm{d}x = \left[\frac{a x^2}{2} - \frac{x^3}{3}\right]_0^a = \frac{a^3}{2} - \frac{a^3}{3} = \frac{a^3}{6}$$
+Igualamos al área dada:
+$$\frac{a^3}{6} = \frac{9}{2} \implies a^3 = 27 \implies a = 3$$
+\sol{a = 3}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 8.6 --- Volúmenes de revolución alrededor del eje $X$ (una curva)}
+Calcula el volumen del sólido generado al girar alrededor del eje $X$: \quad
+\textbf{a)} $f(x) = \sqrt{3x}$ entre $x = 0$ y $x = 3$; \qquad \textbf{b)} $f(x) = \sin x$ entre $x = 0$ y $x = \pi$; \qquad \textbf{c)} $f(x) = x e^x$ entre $x = 0$ y $x = 1$.
+\par\textbf{Resolución:} Aplicamos $V = \pi \int_a^b [f(x)]^2\,\mathrm{d}x$ (elevando al cuadrado \textbf{antes} de integrar):
+\begin{itemize}\itemsep 4pt
+  \item \textbf{a)} $V = \pi \int_0^3 (\sqrt{3x})^2\,\mathrm{d}x = \pi \int_0^3 3x\,\mathrm{d}x = \pi\left[\frac{3x^2}{2}\right]_0^3 = \mathbf{\frac{27\pi}{2}\;\text{u}^3}$.
+
+  \item \textbf{b)} $V = \pi \int_0^\pi \sin^2 x\,\mathrm{d}x = \pi \int_0^\pi \frac{1 - \cos(2x)}{2}\,\mathrm{d}x = \frac{\pi}{2}\left[x - \frac{\sin(2x)}{2}\right]_0^\pi = \frac{\pi}{2}(\pi - 0) = \mathbf{\frac{\pi^2}{2}\;\text{u}^3}$.
+
+  \item \textbf{c)} $V = \pi \int_0^1 x^2 e^{2x}\,\mathrm{d}x$. Aplicando partes dos veces (o método tabular con $u = x^2$ y $\mathrm{d}v = e^{2x}\,\mathrm{d}x$):
+  $$\int x^2 e^{2x}\,\mathrm{d}x = e^{2x}\left(\frac{x^2}{2} - \frac{x}{2} + \frac{1}{4}\right)$$
+  Evaluamos entre $0$ y $1$: en $x=1$ vale $e^2(\frac{1}{2} - \frac{1}{2} + \frac{1}{4}) = \frac{e^2}{4}$; en $x=0$ vale $1\cdot\frac{1}{4} = \frac{1}{4}$. Por tanto:
+  $$V = \mathbf{\frac{\pi(e^2 - 1)}{4}\;\text{u}^3}$$
+\end{itemize}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 8.7 --- Volumen de arandela (sólido hueco entre dos curvas)}
+Calcula el volumen generado al girar alrededor del eje $X$ la región encerrada entre $f(x) = \sqrt{x}$ y $g(x) = x^2$.
+\par\textbf{Resolución:}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=8.2cm, height=4.4cm,
+  axis lines=middle,
+  xlabel={$x$}, ylabel={$y$},
+  xmin=-0.1, xmax=1.18,
+  ymin=-1.15, ymax=1.15,
+  xtick={0,0.5,1}, ytick={-1,0,1},
+  grid=major, grid style={gray!20},
+  samples=80
+]
+  \addplot[name path=top1, mainblue, very thick, domain=0:1] {sqrt(x)};
+  \addplot[name path=bot1, tipgreen, very thick, domain=0:1] {x^2};
+  \addplot[subblue!25] fill between[of=top1 and bot1];
+  \addplot[name path=top2, mainblue!45, dashed, domain=0:1] {-sqrt(x)};
+  \addplot[name path=bot2, tipgreen!45, dashed, domain=0:1] {-x^2};
+  \addplot[subblue!12] fill between[of=top2 and bot2];
+  \draw[alertred, very thick, <->] (axis cs:0.55, 0.3025) -- (axis cs:0.55, 0.7416);
+  \node[font=\footnotesize\color{mainblue}, anchor=south] at (axis cs:0.35, 0.62) {$R(x)=\sqrt{x}$};
+  \node[font=\footnotesize\color{tipgreen}, anchor=north] at (axis cs:0.72, 0.44) {$r(x)=x^2$};
+\end{axis}
+\end{tikzpicture}
+\par\vspace{-3pt}
+{\footnotesize \textbf{Figura 4:} Al girar la región entre $\sqrt{x}$ y $x^2$ alrededor del eje $X$ se genera una corona circular de radio exterior $R(x)=\sqrt{x}$ e interior $r(x)=x^2$.}
+\end{center}
+Igualamos $\sqrt{x} = x^2 \implies x = x^4 \implies x(1 - x^3) = 0 \implies$ cortes en $x = 0$ y $x = 1$. En $[0, 1]$, $\sqrt{x} \ge x^2$:
+$$V = \pi \int_0^1 \Big((\sqrt{x})^2 - (x^2)^2\Big)\,\mathrm{d}x = \pi \int_0^1 (x - x^4)\,\mathrm{d}x = \pi\left[\frac{x^2}{2} - \frac{x^5}{5}\right]_0^1 = \pi\left(\frac{1}{2} - \frac{1}{5}\right)$$
+\sol{\frac{3\pi}{10}\;\text{u}^3}
+\end{ejemplobox}
+
+\minspace{6.5cm}
+
+% ==============================================================================
+% CAPITULO 9: INTEGRALES IMPROPIAS (AMPLIACION)
+% ==============================================================================
+\section{Ampliación: Integrales Impropias Básicas}
+
+Una integral definida se llama \textbf{impropia} cuando falla alguna de las dos hipótesis de Riemann: o bien el intervalo de integración es infinito (\textbf{1ª especie}), o bien la función presenta una asíntota vertical dentro o en los extremos del intervalo (\textbf{2ª especie}). Se resuelven sustituyendo el punto problemático por un límite.
+
+\begin{formulabox}{Definiciones y Criterio de las $p$-Integrales}
+\begin{itemize}\itemsep 2pt
+  \item \textbf{1ª especie (intervalo infinito):} $\displaystyle \int_a^{+\infty} f(x)\,\mathrm{d}x = \lim_{b \to +\infty} \int_a^b f(x)\,\mathrm{d}x$. Si el límite existe y es finito, la integral \textbf{converge}; si da $\pm\infty$ o no existe, \textbf{diverge}.
+  \item \textbf{2ª especie (asíntota en $x=a$):} $\displaystyle \int_a^b f(x)\,\mathrm{d}x = \lim_{\varepsilon \to 0^+} \int_{a+\varepsilon}^b f(x)\,\mathrm{d}x$ (análogo si la asíntota está en $b$).
+  \item \textbf{Regla de referencia ($p$-integrales):}
+  $$\int_1^{+\infty} \frac{\mathrm{d}x}{x^p} \;\begin{cases} \text{Converge si } p > 1 \\ \text{Diverge si } p \le 1 \end{cases} \qquad\qquad \int_0^1 \frac{\mathrm{d}x}{x^p} \;\begin{cases} \text{Converge si } p < 1 \\ \text{Diverge si } p \ge 1 \end{cases}$$
+\end{itemize}
+\end{formulabox}
+
+\subsection{Ejemplos Resueltos --- Bloque 9: Convergencia y Divergencia}
+
+\begin{ejemplobox}{Ejemplo 9.1 --- Impropia de 1ª especie convergente}
+Estudia y calcula $\displaystyle \int_1^{+\infty} \frac{1}{x^2}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Sustituimos $+\infty$ por un límite $b \to +\infty$:
+$$\int_1^{+\infty} x^{-2}\,\mathrm{d}x = \lim_{b \to +\infty} \int_1^b x^{-2}\,\mathrm{d}x = \lim_{b \to +\infty} \left[-\frac{1}{x}\right]_1^b = \lim_{b \to +\infty} \left(-\frac{1}{b} + 1\right) = 0 + 1$$
+\sol{1 \;\;(\text{Converge})}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 9.2 --- Impropia de 1ª especie divergente}
+Estudia la convergencia de $\displaystyle \int_1^{+\infty} \frac{1}{x}\,\mathrm{d}x$.
+\par\textbf{Resolución:}
+$$\int_1^{+\infty} \frac{1}{x}\,\mathrm{d}x = \lim_{b \to +\infty} \Big[\ln|x|\Big]_1^b = \lim_{b \to +\infty} (\ln b - \ln 1) = +\infty$$
+\sol{+\infty \;\;(\text{Diverge})}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 9.3 --- Impropia por partes + L'Hôpital}
+Calcula $\displaystyle \int_0^{+\infty} x\,e^{-x}\,\mathrm{d}x$.
+\par\textbf{Resolución:} Integrando por partes ($u = x$, $\mathrm{d}v = e^{-x}\,\mathrm{d}x$), una primitiva es $-(x + 1)e^{-x}$:
+$$\lim_{b \to +\infty} \left[-(x + 1)e^{-x}\right]_0^b = \lim_{b \to +\infty} \left(-\frac{b + 1}{e^b} + 1\right)$$
+El cociente $\frac{b+1}{e^b}$ presenta indeterminación $\left[\frac{\infty}{\infty}\right]$, que por L'Hôpital vale $\lim_{b \to +\infty} \frac{1}{e^b} = 0$:
+\sol{1 \;\;(\text{Converge})}
+\end{ejemplobox}
+
+\begin{ejemplobox}{Ejemplo 9.4 --- Impropia de 2ª especie (asíntota vertical en $x=0$)}
+Calcula $\displaystyle \int_0^1 \frac{1}{\sqrt{x}}\,\mathrm{d}x$.
+\par\textbf{Resolución:} En $x = 0$ hay discontinuidad infinita ($\frac{1}{\sqrt{0^+}} = +\infty$). Tomamos el límite por la derecha:
+$$\int_0^1 x^{-1/2}\,\mathrm{d}x = \lim_{\varepsilon \to 0^+} \int_\varepsilon^1 x^{-1/2}\,\mathrm{d}x = \lim_{\varepsilon \to 0^+} \Big[2\sqrt{x}\Big]_\varepsilon^1 = \lim_{\varepsilon \to 0^+} \big(2 - 2\sqrt{\varepsilon}\big) = 2 - 0$$
+\sol{2 \;\;(\text{Converge})}
+\end{ejemplobox}
+
+\newpage
+
+% ==============================================================================
+% CAPITULO 10: MAPA MAESTRO DE DECISION Y 10 ERRORES LETALES
+% ==============================================================================
+\section{Mapa Maestro de Decisión y los 10 Errores Letales}
+
+\subsection{¿Qué método aplico al ver una integral en el examen?}
+
+Sigue este árbol de decisión de arriba hacia abajo antes de escribir la primera línea:
+
+\begin{center}
+\begin{tikzpicture}[
+  box/.style={rectangle, rounded corners=1.8mm, draw=mainblue, thick, fill=softblue, text width=5.2cm, align=center, font=\scriptsize, inner sep=3pt},
+  action/.style={rectangle, rounded corners=1.8mm, draw=tipgreen, thick, fill=tipbg, text width=5.8cm, align=center, font=\scriptsize\bfseries, inner sep=3pt},
+  arr/.style={-{Stealth[length=2mm]}, thick, mainblue},
+  lbl/.style={font=\scriptsize\bfseries, fill=white, inner sep=1pt}
+]
+  \node[box] (n0) {\textbf{1. ¿Puedo simplificar algebraicamente?}\\(desarrollar productos, pasar raíces a potencias, separar entre monomio)};
+  \node[action, right=1.2cm of n0] (a0) {¡Hazlo siempre primero!\\Muchas se vuelven inmediatas};
+
+  \node[box, below=0.52cm of n0] (n1) {\textbf{2. ¿Está en la tabla o falta solo una constante $k$ para tener $u'$?}};
+  \node[action, right=1.2cm of n1] (a1) {Inmediata / Casi Inmediata\\(ajusta $k$ dentro y $1/k$ fuera)};
+
+  \node[box, below=0.52cm of n1] (n2) {\textbf{3. ¿Es un cociente de polinomios $\frac{P(x)}{Q(x)}$?}};
+  \node[action, right=1.2cm of n2] (a2) {Racional: si $\deg P \ge \deg Q$, divide primero; luego fracciones simples o $\ln/\arctan$};
+
+  \node[box, below=0.52cm of n2] (n3) {\textbf{4. ¿Multiplica familias distintas (ALPES) o aparece $\ln, \arctan, \arcsin$ sola?}};
+  \node[action, right=1.2cm of n3] (a3) {Integración por Partes\\($u$ según ALPES; si es cíclica, 2 veces igual)};
+
+  \node[box, below=0.52cm of n3] (n4) {\textbf{5. ¿Solo senos y cosenos (o $\tan, \sec$)?}};
+  \node[action, right=1.2cm of n4] (a4) {Trigonométrica: impar $\to$ aparta 1 factor;\\pares $\to$ ángulo mitad; cociente $\to t=\tan(x/2)$};
+
+  \node[box, below=0.52cm of n4] (n5) {\textbf{6. ¿Raíces rebeldes, $e^x$ mezclado o $\sqrt{a^2 \pm x^2}$?}};
+  \node[action, right=1.2cm of n5] (a5) {Cambio de Variable\\(m.c.m. raíces, $t=e^x$, o sustit. trigonométrica)};
+
+  \draw[arr] (n0) -- node[lbl, above] {Sí} (a0);
+  \draw[arr] (n0) -- node[lbl, left=2pt] {Lista} (n1);
+  \draw[arr] (n1) -- node[lbl, above] {Sí} (a1);
+  \draw[arr] (n1) -- node[lbl, left=2pt] {No} (n2);
+  \draw[arr] (n2) -- node[lbl, above] {Sí} (a2);
+  \draw[arr] (n2) -- node[lbl, left=2pt] {No} (n3);
+  \draw[arr] (n3) -- node[lbl, above] {Sí} (a3);
+  \draw[arr] (n3) -- node[lbl, left=2pt] {No} (n4);
+  \draw[arr] (n4) -- node[lbl, above] {Sí} (a4);
+  \draw[arr] (n4) -- node[lbl, left=2pt] {No} (n5);
+  \draw[arr] (n5) -- node[lbl, above] {Sí} (a5);
+\end{tikzpicture}
+\par\vspace{1pt}
+{\footnotesize \textbf{Figura 5:} Secuencia óptima de diagnóstico para elegir método en menos de 10 segundos.}
+\end{center}
+
+\subsection{Checklist de los 10 Errores Letales en Examen}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.12}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}c X X@{}}
+\toprule
+\textbf{\#} & \textbf{Error típico (0 puntos)} & \textbf{Forma correcta (10 puntos)} \\
+\midrule
+\textbf{1} & Integrar un producto o cociente por separado: $\int x e^x \neq \frac{x^2}{2} e^x$. & Desarrollar el producto si es algebraico o aplicar partes / sustitución. \\
+\textbf{2} & Sacar variables $x$ fuera de la integral para ajustar $u'$. & Solo pueden entrar y salir \textbf{números} constantes; si falta $x$, usa cambio de variable. \\
+\textbf{3} & Olvidar el $+C$ en integrales indefinidas u olvidar el $\mathrm{d}x$. & Escribir siempre $+C$ ($C \in \mathbb{R}$) al final de toda primitiva indefinida. \\
+\textbf{4} & Confundir $\int \frac{1}{x^2}\,\mathrm{d}x = \ln(x^2)$ o $\int \frac{1}{u^2}\,\mathrm{d}x = \ln(u^2)$. & Solo da logaritmo si el denominador tiene exponente $1$. Para $x^{-2}$, suma $1$: $-x^{-1}$. \\
+\textbf{5} & Olvidar la constante del ángulo o del denominador en compuestas. & En $\int \sin(3x)\,\mathrm{d}x = -\frac{1}{3}\cos(3x)+C$, comprueba siempre derivando mentalmente. \\
+\textbf{6} & No deshacer el cambio de variable al terminar una integral indefinida. & Expresar el resultado final en la variable original $x$ (o cambiar límites si es definida). \\
+\textbf{7} & Invertir $u$ y $\mathrm{d}v$ en la segunda vuelta de una integral por partes cíclica. & Mantener el mismo orden de elección en ambas aplicaciones para despejar $I$. \\
+\textbf{8} & Descomponer en fracciones simples cuando $\operatorname{grado}(P) \ge \operatorname{grado}(Q)$. & Dividir los polinomios primero siempre que $\operatorname{grado}(P) \ge \operatorname{grado}(Q)$. \\
+\textbf{9} & Calcular un área haciendo $\int_a^b f(x)\,\mathrm{d}x$ sin buscar raíces intermedias. & Resolver $f(x)=0$ (o $f=g$), partir en los cortes y sumar los valores absolutos. \\
+\textbf{10} & Olvidar el $\pi$ o no elevar al cuadrado en volúmenes de revolución. & Recordar $V = \pi \int_a^b [f(x)]^2\,\mathrm{d}x$; en arandelas es $[f_{\text{ext}}]^2 - [f_{\text{int}}]^2$, nunca $[f-g]^2$. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{trucobox}{La comprobación definitiva de 10 segundos}
+En cualquier integral indefinida, \textbf{deriva siempre tu resultado final} antes de pasar al siguiente ejercicio: si la derivada coincide exactamente con el integrando original, tienes garantizados el $100\%$ de los puntos en ese apartado.
+\end{trucobox}
+
+\end{document}
