@@ -1529,3 +1529,9 @@ NOTA (21/11/2026 - 14:05):
   * `Apuntes-y-Ejercicios/Matematicas/Derivadas/tabla_derivadas.md`: versión Markdown para lectura directa en repositorio.
   * Verificados los 10 ejemplos numéricamente en Python (error relativo < 1e-7) y revisadas ambas páginas en PNG con `pdftoppm`.
 ================================================================================
+
+NOTA (21/11/2026 - 14:11):
+- Prompt literal del usuario:
+  * [21/11/2026 14:11]: "Que es la cotangente?"
+- Respuesta: Definición de cotangente ($\cot\alpha = \frac{\cos\alpha}{\sin\alpha} = \frac{1}{\tan\alpha}$, cateto contiguo entre opuesto), dominio/asíntotas ($\sin\alpha \neq 0$), distinción frente a $\arctan$, identidad pitagórica, derivada e integral.
+================================================================================
