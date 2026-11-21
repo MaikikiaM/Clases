@@ -1577,3 +1577,9 @@ NOTA (21/11/2026 - 17:01):
   * [21/11/2026 17:01]: "Se puede no usar nunca sustitucion?"
 - Respuesta: Explicación de que la sustitución explícita se puede evitar en muchos casos (casi inmediatas y sustituciones "mentales", partes, racionales, trigonométricas con identidades) pero no en todos (radicales con distinto índice, $\sqrt{a^2-x^2}$, exponenciales sin $u'$, $x$ suelta con raíz), con tabla comparativa y recomendación de examen.
 ================================================================================
+
+NOTA (21/11/2026 - 17:07):
+- Prompt literal del usuario:
+  * [21/11/2026 17:07]: "Hazme una demostracion de division de dos polinomios"
+- Respuesta: Demostración paso a paso de la división euclídea de polinomios en caja (con hueco $0x^2$, cambio de signo al restar y criterio de parada $\deg R < \deg Q$), traducción a la fórmula $\frac{P(x)}{Q(x)} = C(x) + \frac{R(x)}{Q(x)}$ para integrales y ejemplo rápido por Ruffini.
+================================================================================
