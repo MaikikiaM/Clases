@@ -1547,3 +1547,9 @@ NOTA (21/11/2026 - 14:18):
   * [21/11/2026 14:18]: "queria decir que por que la integral de la secante al cuadrado es asi"
 - Respuesta: Deducción paso a paso de por qué $\int \sec^2 x\,dx = \int \frac{1}{\cos^2 x}\,dx = \int (1+\tan^2 x)\,dx = \tan x + C$ mediante la derivada del cociente $\frac{\sin x}{\cos x}$ y la identidad $\sin^2 x + \cos^2 x = 1$.
 ================================================================================
+
+NOTA (21/11/2026 - 16:41):
+- Prompt literal del usuario:
+  * [21/11/2026 16:41]: "Y lo de ponerlo como A + B + C cuando se hace?" [con captura del Ejemplo 1.5: división término a término por un monomio]
+- Respuesta: Distinción clara entre partir una fracción término a término (cuando el denominador es un único monomio, como $x^2$ en el Ejemplo 1.5) y la descomposición en fracciones simples con $A, B, C$ (integrales racionales $\frac{P(x)}{Q(x)}$ con $\deg P < \deg Q$ y denominador factorizable con sumas/restas, Tema 5), incluyendo las condiciones previas y cuándo NO hace falta.
+================================================================================
