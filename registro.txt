@@ -1513,3 +1513,9 @@ SESIÓN: 21/11/2026 - APUNTES COMPLETOS DE CÁLCULO INTEGRAL
 - Verificación numérica en Python (`scipy.integrate.quad` y diferenciación finita de 4º orden) de todos los ejemplos indefinidos, definidos, áreas, volúmenes e impropias (`verify_all_integrals.py` + comprobación adicional de 5 casos extra): 0 errores (error relativo < 1e-9 en indefinidas y < 1e-12 en definidas).
 - Compilación `pdflatex -interaction=nonstopmode -disable-installer` (3 pasadas): código de salida 0, 0 errores, 0 cajas `Overfull \hbox`, 0 advertencias de `hyperref` o `fancyhdr`, capa UTF-8 validada con `pypdf` y maquetación revisada visualmente mediante renderizado PNG (`pdftoppm`).
 ================================================================================
+
+NOTA (21/11/2026 - 14:01):
+- Prompt literal del usuario:
+  * [21/11/2026 14:01]: "Explicame la inmediata a^x"
+- Respuesta: Explicación conceptual y algebraica de $\int a^x\,dx = \frac{a^x}{\ln a} + C$ (derivación inversa, conversión a base $e$, caso $e^x$, restricciones $a>0, a\neq 1$, versión compuesta $\int a^u u'\,dx$ y error frecuente con la regla de la potencia).
+================================================================================
