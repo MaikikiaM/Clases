@@ -1541,3 +1541,9 @@ NOTA (21/11/2026 - 14:17):
   * [21/11/2026 14:17]: "no entiendo el de la cosecante. Por que la derivada de tan^2 x es tan x"
 - Respuesta: Aclaración de la dirección derivada/integral en $(\tan x)' = \frac{1}{\cos^2 x} = 1 + \tan^2 x$ (frente a $(\tan^2 x)' = 2\tan x \sec^2 x$) y deducción paso a paso de $\csc x = \frac{1}{\sin x}$, $(\csc x)' = -\csc x\cot x$, $(\cot x)' = -\csc^2 x = -(1+\cot^2 x)$ y $\int \csc^2 x\,dx = -\cot x + C$.
 ================================================================================
+
+NOTA (21/11/2026 - 14:18):
+- Prompt literal del usuario:
+  * [21/11/2026 14:18]: "queria decir que por que la integral de la secante al cuadrado es asi"
+- Respuesta: Deducción paso a paso de por qué $\int \sec^2 x\,dx = \int \frac{1}{\cos^2 x}\,dx = \int (1+\tan^2 x)\,dx = \tan x + C$ mediante la derivada del cociente $\frac{\sin x}{\cos x}$ y la identidad $\sin^2 x + \cos^2 x = 1$.
+================================================================================
