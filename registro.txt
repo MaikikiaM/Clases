@@ -1553,3 +1553,9 @@ NOTA (21/11/2026 - 16:41):
   * [21/11/2026 16:41]: "Y lo de ponerlo como A + B + C cuando se hace?" [con captura del Ejemplo 1.5: división término a término por un monomio]
 - Respuesta: Distinción clara entre partir una fracción término a término (cuando el denominador es un único monomio, como $x^2$ en el Ejemplo 1.5) y la descomposición en fracciones simples con $A, B, C$ (integrales racionales $\frac{P(x)}{Q(x)}$ con $\deg P < \deg Q$ y denominador factorizable con sumas/restas, Tema 5), incluyendo las condiciones previas y cuándo NO hace falta.
 ================================================================================
+
+NOTA (21/11/2026 - 16:43):
+- Prompt literal del usuario:
+  * [21/11/2026 16:43]: "Puedes poner un ejemplo y resolverlo?"
+- Respuesta: Resolución paso a paso de $\int \frac{4x^2 + 3x - 4}{x^3 - x^2 - 2x}\,\mathrm{d}x = 2\ln|x| + 3\ln|x-2| - \ln|x+1| + K$ mediante factorización y descomposición en fracciones simples $\frac{A}{x} + \frac{B}{x-2} + \frac{C}{x+1}$, verificada numéricamente en Python.
+================================================================================
