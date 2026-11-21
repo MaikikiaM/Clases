@@ -1535,3 +1535,9 @@ NOTA (21/11/2026 - 14:11):
   * [21/11/2026 14:11]: "Que es la cotangente?"
 - Respuesta: Definición de cotangente ($\cot\alpha = \frac{\cos\alpha}{\sin\alpha} = \frac{1}{\tan\alpha}$, cateto contiguo entre opuesto), dominio/asíntotas ($\sin\alpha \neq 0$), distinción frente a $\arctan$, identidad pitagórica, derivada e integral.
 ================================================================================
+
+NOTA (21/11/2026 - 14:17):
+- Prompt literal del usuario:
+  * [21/11/2026 14:17]: "no entiendo el de la cosecante. Por que la derivada de tan^2 x es tan x"
+- Respuesta: Aclaración de la dirección derivada/integral en $(\tan x)' = \frac{1}{\cos^2 x} = 1 + \tan^2 x$ (frente a $(\tan^2 x)' = 2\tan x \sec^2 x$) y deducción paso a paso de $\csc x = \frac{1}{\sin x}$, $(\csc x)' = -\csc x\cot x$, $(\cot x)' = -\csc^2 x = -(1+\cot^2 x)$ y $\int \csc^2 x\,dx = -\cot x + C$.
+================================================================================
