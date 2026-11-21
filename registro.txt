@@ -1519,3 +1519,13 @@ NOTA (21/11/2026 - 14:01):
   * [21/11/2026 14:01]: "Explicame la inmediata a^x"
 - Respuesta: Explicación conceptual y algebraica de $\int a^x\,dx = \frac{a^x}{\ln a} + C$ (derivación inversa, conversión a base $e$, caso $e^x$, restricciones $a>0, a\neq 1$, versión compuesta $\int a^u u'\,dx$ y error frecuente con la regla de la potencia).
 ================================================================================
+
+NOTA (21/11/2026 - 14:05):
+- Prompt literal del usuario:
+  * [21/11/2026 14:05]: "Podrias hacerme en otro documento una tabla de derivadas? no me acordaba de esa derivada"
+- Acciones aplicadas:
+  * `Codigo-Fuente/Matematicas/tabla_derivadas.tex`: fuente LaTeX en 2 páginas A4 (Página 1: reglas operativas y tabla completa simple/compuesta destacando $a^x$ y $\log_a x$; Página 2: comparación $x^n$ vs $a^x$ vs $f(x)^{g(x)}$, derivación logarítmica, atajos previos, 10 ejemplos resueltos y los 6 errores típicos).
+  * `Apuntes-y-Ejercicios/Matematicas/Derivadas/tabla_derivadas.pdf`: compilado mediante `pdflatex` (2 pasadas, 2 páginas, 472.998 bytes, 0 errores, 0 warnings).
+  * `Apuntes-y-Ejercicios/Matematicas/Derivadas/tabla_derivadas.md`: versión Markdown para lectura directa en repositorio.
+  * Verificados los 10 ejemplos numéricamente en Python (error relativo < 1e-7) y revisadas ambas páginas en PNG con `pdftoppm`.
+================================================================================

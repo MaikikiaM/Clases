@@ -9,7 +9,8 @@ Repositorio docente privado de apoyo escolar y universitario en Matemáticas, F�
 ## 2. Estructura y Estado Operativo
 - `Apuntes-y-Ejercicios/`: Material definitivo para el alumnado y profesorado (.md y .pdf), organizado por materia (`Quimica/`, `Fisica/`, `Matematicas/`) y tema sin prefijos numéricos.
   - `Matematicas/Integrales/`: Apuntes maestros completos de cálculo integral (`apuntes_integrales.md` y `.pdf`, 38 págs., 85 bloques de ejemplos / 93 apartados resueltos).
-- `Codigo-Fuente/`: Scripts generadores Python y fuentes LaTeX (.tex) organizados por materia (incluye `Matematicas/apuntes_integrales.tex`).
+  - `Matematicas/Derivadas/`: Añadida `tabla_derivadas.md` y `.pdf` (2 págs., tabla completa simple/compuesta, derivación logarítmica y 10 ejemplos).
+- `Codigo-Fuente/`: Scripts generadores Python y fuentes LaTeX (.tex) organizados por materia (incluye `Matematicas/apuntes_integrales.tex` y `Matematicas/tabla_derivadas.tex`).
 - `Diario-Clases/diario.md`: Seguimiento pedagógico y bitácora estructurada por Alumno (Alumno 1, Alumno 2, Alumno 3...).
 - `Recursos-Oficiales/`: Enunciados oficiales y temarios de apoyo.
 - `registro.txt`: Historial técnico infinito de todas las sesiones de trabajo.
